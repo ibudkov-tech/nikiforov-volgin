@@ -263,7 +263,7 @@
   }
   .fn-ref:hover { color: var(--gold); }
 
-  /* Tooltip */
+  /* Desktop tooltip */
   .fn-ref .fn-tooltip {
     visibility: hidden;
     opacity: 0;
@@ -278,7 +278,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.55;
-    width: 340px;
+    width: 360px;
     max-width: 90vw;
     padding: 12px 15px;
     border: 1px solid var(--gold);
@@ -303,9 +303,61 @@
     visibility: visible;
     opacity: 1;
   }
-  /* Tooltip near right edge: shift left */
   .fn-ref.fn-right .fn-tooltip { left: auto; right: 0; transform: none; }
   .fn-ref.fn-right .fn-tooltip::after { left: auto; right: 12px; transform: none; }
+
+  /* Mobile bottom sheet */
+  .fn-sheet-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 200;
+    animation: overlayIn 0.2s ease;
+  }
+  .fn-sheet-overlay.active { display: block; }
+  @keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .fn-sheet {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--ink);
+    border-top: 2px solid var(--gold);
+    padding: 20px 22px 32px;
+    z-index: 201;
+    max-height: 55vh;
+    overflow-y: auto;
+    animation: sheetUp 0.28s cubic-bezier(0.32,0.72,0,1);
+    border-radius: 12px 12px 0 0;
+  }
+  @keyframes sheetUp { from { transform: translateY(100%); } to { transform: none; } }
+
+  .fn-sheet-close {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .fn-sheet-close::before {
+    content: '';
+    width: 40px; height: 4px;
+    background: rgba(196,152,58,0.4);
+    border-radius: 2px;
+  }
+  .fn-sheet-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold-light);
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+  }
+  .fn-sheet-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--parchment);
+    line-height: 1.65;
+  }
+
+  /* Tooltips hidden on touch — handled via JS */
+  .fn-ref.touch-device .fn-tooltip { display: none !important; }
 
   .footnotes-section {
     margin-top: 28px;
@@ -468,7 +520,7 @@
 <!-- ══ HEADER ══ -->
 <header class="site-header">
   <div class="header-ornament">✦ ✦ ✦</div>
-  <h1 class="site-title">Great Lent in the Stories of<br>Vasily Nikiforov-Volgin</h1>
+  <h1 class="site-title">Great Lent<br>in the Stories<br>of Vasily Nikiforov-Volgin</h1>
   <p class="site-subtitle">translated by Fr. Joseph Gleason</p>
   <div class="header-rule"><span>☩</span></div>
 </header>
@@ -1226,6 +1278,15 @@ and to give Himself as food to the faithful…</span>
   </div>
 </footer>
 
+<!-- Mobile footnote bottom sheet -->
+<div class="fn-sheet-overlay" id="fnOverlay" onclick="closeSheet()">
+  <div class="fn-sheet" id="fnSheet" onclick="event.stopPropagation()">
+    <div class="fn-sheet-close"></div>
+    <div class="fn-sheet-num" id="fnSheetNum"></div>
+    <div class="fn-sheet-text" id="fnSheetText"></div>
+  </div>
+</div>
+
 <script>
 // Bio expand/collapse
 function toggleBio() {
@@ -1243,24 +1304,62 @@ function toggleBio() {
   }
 }
 
-// Adjust tooltip direction for footnote refs near right edge
-document.querySelectorAll('.fn-ref').forEach(ref => {
-  ref.addEventListener('mouseenter', () => {
-    const rect = ref.getBoundingClientRect();
-    const tip = ref.querySelector('.fn-tooltip');
-    if (!tip) return;
-    if (rect.left > window.innerWidth * 0.6) {
-      ref.classList.add('fn-right');
-    } else {
-      ref.classList.remove('fn-right');
-    }
-  });
-});
-// Make fn-ref focusable for accessibility
-document.querySelectorAll('.fn-ref').forEach(ref => {
+// Detect touch device — reliable cross-browser method
+const isTouchDevice = () => {
+  return ('ontouchstart' in window) ||
+         (navigator.maxTouchPoints > 0) ||
+         (navigator.msMaxTouchPoints > 0);
+};
+
+// Bottom sheet
+function openSheet(num, text) {
+  document.getElementById('fnSheetNum').textContent = 'Note ' + num;
+  document.getElementById('fnSheetText').textContent = text;
+  document.getElementById('fnOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeSheet() {
+  document.getElementById('fnOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+// Close on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+
+// Wire up all footnote refs
+document.querySelectorAll('.fn-ref').forEach((ref, idx) => {
+  const tip = ref.querySelector('.fn-tooltip');
+  const text = tip ? tip.textContent.trim() : '';
+  const num = ref.childNodes[0].nodeValue ? ref.childNodes[0].nodeValue.trim() : (idx + 1);
+
   ref.setAttribute('tabindex', '0');
   ref.setAttribute('role', 'button');
-  ref.setAttribute('aria-label', 'footnote');
+  ref.setAttribute('aria-label', 'footnote ' + num);
+
+  // On touch devices: mark ref so CSS hides tooltip, and open sheet on tap
+  if (isTouchDevice()) {
+    ref.classList.add('touch-device');
+
+    ref.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      openSheet(num, text);
+    });
+  } else {
+    // Desktop: adjust tooltip direction on hover
+    ref.addEventListener('mouseenter', () => {
+      const rect = ref.getBoundingClientRect();
+      if (rect.left > window.innerWidth * 0.6) ref.classList.add('fn-right');
+      else ref.classList.remove('fn-right');
+    });
+  }
+
+  // Keyboard always opens sheet
+  ref.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openSheet(num, text);
+    }
+  });
 });
 </script>
 </body>
