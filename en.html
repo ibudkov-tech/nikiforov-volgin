@@ -593,22 +593,28 @@
   .site-header{
     padding:16px 16px 28px;
     display:flex;flex-direction:column;align-items:center;
+    overflow:visible;
   }
   .site-header-nav{
     display:flex!important;justify-content:space-between;align-items:center;
     width:100%;margin-bottom:16px;
     position:static!important;
+    box-sizing:border-box;
+    overflow:visible;
   }
   .section-nav{
     position:static!important;
-    font-size:.65rem;letter-spacing:.06em;
+    font-size:.62rem;letter-spacing:.04em;
+    flex-shrink:1;min-width:0;
   }
-  .section-nav a{padding:3px 6px}
+  .section-nav a{padding:3px 5px;white-space:nowrap}
   .lang-switcher{
     position:static!important;
-    font-size:.7rem;
+    font-size:.68rem;letter-spacing:.08em;
+    flex-shrink:0;
+    margin-left:6px;
   }
-  .lang-switcher a{padding:3px 6px}
+  .lang-switcher a{padding:3px 5px}
   .header-ornament{font-size:1rem;letter-spacing:.3em;margin-bottom:12px}
   .fn-ref .fn-tooltip{width:min(300px,88vw)}
 }
