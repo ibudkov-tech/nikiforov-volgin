@@ -6,7 +6,7 @@
 <title>Great Lent in the Stories of Vasily Nikiforov-Volgin</title>
 
 <!-- Favicon: golden cross on dark background -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231e1a14'/%3E%3Crect x='14' y='4' width='4' height='24' rx='1' fill='%23c4983a'/%3E%3Crect x='6' y='10' width='20' height='4' rx='1' fill='%23c4983a'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%23700000'/><text x='16' y='23' font-family='serif' font-size='20' fill='%23c89400' text-anchor='middle'>✦</text></svg>">
 
 <!-- Open Graph / Social sharing preview -->
 <meta property="og:type" content="website">
@@ -66,6 +66,19 @@
     background-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,152,58,0.08) 0%, transparent 70%);
     pointer-events: none;
   }
+  .section-nav {
+    position: absolute; top: 20px; left: 24px;
+    display: flex; align-items: center; gap: 0; z-index: 10;
+    font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.1em;
+  }
+  .section-nav a {
+    color: rgba(196,152,58,0.55); text-decoration: none;
+    padding: 4px 10px; border: 1px solid transparent;
+    transition: color .2s, border-color .2s; white-space: nowrap;
+  }
+  .section-nav a:hover { color: var(--gold-light); }
+  .section-nav a.active { color: var(--parchment); border-color: rgba(196,152,58,0.5); }
+  .section-nav span { color: rgba(196,152,58,0.3); font-size: 0.7rem; padding: 0 2px; }
   .lang-switcher {
     position: absolute; top: 20px; right: 24px;
     display: flex; align-items: center; gap: 4px; z-index: 10;
@@ -548,28 +561,76 @@
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: none; }
   }
+
+/* ── Кнопка "К оглавлению" ── */
+.to-toc-btn{
+  position:fixed;bottom:28px;right:24px;z-index:500;
+  display:flex;align-items:center;gap:7px;
+  padding:8px 14px 8px 11px;
+  background:rgba(139,105,20,0.82);
+  color:#f5efe0;
+  border:1px solid rgba(196,152,58,0.6);
+  border-radius:24px;
+  font-family:'Forum',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  box-shadow:0 4px 18px rgba(30,26,20,0.28);
+  opacity:0;pointer-events:none;
+  transition:opacity .35s,transform .35s,background .2s;
+  transform:translateY(10px);
+  cursor:pointer;
+}
+.to-toc-btn.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-toc-btn:hover{background:rgba(139,105,20,0.97)}
+.to-toc-btn svg{flex-shrink:0}
+@media(max-width:640px){.to-toc-btn{bottom:20px;right:16px;padding:7px 12px 7px 10px;font-size:.68rem}}
+.site-header-nav{display:contents}
+
+@media(max-width:520px){
+  .site-header{padding:20px 16px 32px}
+  .section-nav,.lang-switcher{
+    position:static;display:inline-flex;
+    margin:0;padding:0;
+  }
+  .site-header-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    width:100%;margin-bottom:18px;
+  }
+  .header-ornament{margin-bottom:14px;font-size:1.1rem}
+  .fn-ref .fn-tooltip{width:min(300px,88vw)}
+  .story-audio-wrap{margin:10px 0 0}
+}
+
 </style>
 </head>
 <body>
 
 <!-- ══ HEADER ══ -->
 <header class="site-header">
-  <div class="lang-switcher">
-    <a href="index.html">РУС</a>
+  <div class="site-header-nav">
+  <nav class="section-nav">
+    <a href="en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">Great Lent</a>
     <span>|</span>
-    <a href="en.html" class="active">ENG</a>
+    <a href="pascha_red_en.html" onclick="sessionStorage.setItem('manualNav','1')">From Pascha to Pentecost</a>
+  </nav>
+  
+  <div class="lang-switcher">
+    <a href="index.html" onclick="sessionStorage.setItem('manualNav','1')">РУС</a>
+    <span>|</span>
+    <a href="en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">ENG</a>
   </div>
+</div>
   <div class="header-ornament">✦ ✦ ✦</div>
   <h1 class="site-title">Great Lent<br>in the Stories<br>of Vasily Nikiforov-Volgin</h1>
-  <p class="site-subtitle">translated by Fr. Joseph Gleason*</p>
-  <p class="site-subtitle-note">* stories 1, 2, 3, 5, 6, 9, 11</p>
+  <p class="site-subtitle">Ten stories from the cycle <em>"Memories of Childhood"</em></p>
+  <p class="site-subtitle-note">translated by Fr. Joseph Gleason*<br><span style="font-size:.85em;opacity:.8">* stories 1, 2, 3, 5, 6, 9</span></p>
   <div class="header-rule"><span>☩</span></div>
 </header>
 
 <div class="page-wrap">
 
 <!-- ══ TABLE OF CONTENTS ══ -->
-<nav class="toc-section" aria-label="Table of Contents">
+<nav class="toc-section" aria-label="Table of Contents" id="toc">
   <div class="toc-title">Contents</div>
   <ol class="toc-list">
     <li><a href="#story1">The Eve of Great Lent</a><span class="toc-subtitle">Pre-Lenten Weeks</span></li>
@@ -582,7 +643,6 @@
     <li><a href="#story8">The Shroud</a><span class="toc-subtitle">Great Friday</span></li>
     <li><a href="#story9">The Day Before Pascha</a><span class="toc-subtitle">Holy Saturday Morning</span></li>
     <li><a href="#story10">Holy Saturday</a><span class="toc-subtitle">Holy Saturday Daytime</span></li>
-    <li><a href="#story11">Pascha</a><span class="toc-subtitle">Holy Pascha</span></li>
   </ol>
 </nav>
 
@@ -1261,88 +1321,6 @@ For the King of kings and Lord of lords<br>
 cometh forth to be slain<br>
 and to give Himself as food to the faithful…</span>
   </div>
-  <div class="ornament-divider">✦ ✦ ✦</div>
-</article>
-
-<!-- ══ STORY 9 ══ -->
-<article class="story-card" id="story11">
-  <div class="story-header">
-    <div class="story-number">Story Eleven</div>
-    <h2 class="story-title">Pascha</h2>
-    <div class="story-timing">Holy Pascha</div>
-  </div>
-  <div class="story-body">
-<p>The liturgical hymn of the day was fading over the earth: "Let all mortal flesh keep silence, and with fear and trembling stand…"<span class="fn-ref">1<span class="fn-tooltip">This hymn is sung annually in the Orthodox Church on Holy Saturday. It encapsulates the moment of holy stillness, calling all humanity to stand in awe before the mystery of Christ's descent into death and His imminent triumph over it.</span></span></p>
-
-<p>The evening earth grew quiet. Homes were opening the glass fronts of their icon corners.<span class="fn-ref">2<span class="fn-tooltip">An icon corner is a dedicated space in a traditional Orthodox Christian home, typically on an eastern wall, where icons (sacred images of Christ and the saints) are displayed for prayer. Opening the glass doors on a major feast like Pascha is a symbolic gesture, signifying the opening of the heavenly kingdom and direct, unimpeded access to God.</span></span> I asked my father: "What's that for?" "As a sign that on Pascha,<span class="fn-ref">3<span class="fn-tooltip">Pascha is an Eastern Orthodox term for Easter — the annual celebration of the resurrection of Jesus.</span></span> the doors of paradise are opened!"</p>
-
-<p>Before the start of the Matins<span class="fn-ref">4<span class="fn-tooltip">In this story, the author is specifically referring to the very special Paschal Matins service, which takes place in Orthodox churches every year at midnight on Pascha (Easter). For Orthodox Christians, it is the greatest and most joyous celebration of the entire year.</span></span> service, my father and I wanted to get some sleep, but we couldn't. We lay next to each other on the bed, and he told me about how, as a boy, he had to celebrate Pascha in Moscow.</p>
-
-<p class="dialogue">"Moscow's Pascha, son, is mighty! Whoever has seen it once will remember it until the grave. At midnight, the first strike of the bell from the Ivan the Great bell tower<span class="fn-ref">5<span class="fn-tooltip">The Ivan the Great bell tower contains a set of bells. Its largest bell, cast in 1817, weighs approximately 65 tons. The figure of 6,000 poods in the story is a traditional exaggeration, used to emphasize the bell's legendary, earth-shaking power in the cultural imagination.</span></span> booms, it's as if the sky with all its stars is falling to the earth! And that bell, son, weighs six thousand poods,<span class="fn-ref">6<span class="fn-tooltip">A pood is an obsolete Russian unit of mass equal to approximately 36.1 pounds (16.38 kilograms). The father is exaggerating, emphasizing the colossal size and earth-shaking power of the great bell.</span></span> and it took twelve men to swing its clapper!<span class="fn-ref">7<span class="fn-tooltip">A clapper is a pendulum-like object suspended inside a bell that strikes against the bell's inner wall to produce the sound. In the context of the massive bell described, its great weight is why the story mentions it took twelve men to set it in motion.</span></span> The first strike was timed to the chiming of the clock on the Spasskaya Tower…"</p>
-
-<p>Father raised himself up in bed and spoke of Moscow with a tremor in his voice: "Yes… the clock on the Spasskaya Tower… They would strike it — and immediately a rocket would soar into the sky… followed by a gun salute from the old cannons on the Taynitskaya Tower — one hundred and one shots!…"</p>
-
-<p>"Ivan the Great spreads out over Moscow like a sea, and the other forty times forty<span class="fn-ref">8<span class="fn-tooltip">The phrase "forty times forty" is a traditional Russian expression meaning an innumerably large amount. Moscow was historically famous for its many churches, and "forty times forty" evokes the image of a vast, uncountable sea of churches all ringing their bells at once.</span></span> churches echo it, like rivers in flood! Such power, I tell you, flows over the Primatial City,<span class="fn-ref">9<span class="fn-tooltip">"Primatial City" refers to Moscow's historical status as the seat of the Primate — the leading bishop or patriarch. Moscow is home to the main seat of the Russian Orthodox Church, the Dormition Cathedral, where patriarchs were inaugurated and tsars and emperors were crowned.</span></span> that you don't seem to be walking, but are rocking on the waves like a tiny splinter! A mighty night, like the thunder of the Lord! Ah, son, words cannot depict Pascha in Moscow!"</p>
-
-<p>Father fell silent and closed his eyes.</p>
-<p class="dialogue">"Are you falling asleep?" "No. I'm looking at Moscow." "Where is it for you?" "Before my eyes. As if alive…" "Tell me something else about Pascha!"</p>
-
-<p class="dialogue">"I also had the chance to celebrate Easter in a monastery. In its simplicity and holy splendor, it was even better than Moscow's! Just imagine that monastery! All around — untrodden forest, animal trails, and by the monastery walls — a river splashes. The taiga<span class="fn-ref">10<span class="fn-tooltip">The taiga is the vast, dense, snowforest biome that stretches across northern Russia, Canada, and Scandinavia. Taiga trees are the hardy, cold-adapted conifers that dominate this landscape, primarily spruces, pines, firs, and larches.</span></span> trees and the church, built from strong, resinous logs, are reflected in it. A great multitude of pilgrims gathered here from the surrounding villages for the Bright Matins.<span class="fn-ref">11<span class="fn-tooltip">Bright Matins is the solemn and joyful Orthodox Christian service held at midnight on Easter Sunday morning. It follows a procession around the church and is filled with triumphant hymns proclaiming the Resurrection of Christ.</span></span> There was a rare custom here. After Matins, girls would go down to the river with candles, sing 'Christ is Risen,' bow deeply to the river water, and then stick their candles to a wooden disk and take turns setting them afloat on the river. There was a sign: if the Pascha candle does not go out, the girl will get married, but if it goes out — she will remain a bitter old maid!</p>
-
-<p>"Just imagine, what a marvel it was there! In the middle of the night, a hundred lights float on the water, and meanwhile the bells are ringing, and the forest is rustling!"</p>
-
-<p>"That's enough chatting for you," our mother interrupted us, "you'd better get some sleep, or you'll be standing at Matins like sleepyheads!"</p>
-
-<p>I was in no mood for sleep. My soul was seized by a premonition of something inexplicably vast, resembling either Moscow, or a hundred candles floating down a forest river.</p>
-
-<p>A full two hours until Matins, but the churchyard was already full of kids.</p>
-
-<p>The night was without a single star, without wind, and somehow frightening in its unusualness and vastness. Kulich cakes<span class="fn-ref">12<span class="fn-tooltip">Kulich is a tall, cylindrical, sweet bread baked especially for Pascha. The phrase "in white headscarves" is a poetic visual description: the women carrying the kulich to church for the blessing service would have been wearing traditional white headscarves, making the loaves seem to float through the dark streets as their most visible feature.</span></span> in white headscarves floated along the dark street — they alone were visible; the people themselves seemed not to be there.</p>
-
-<p>In the semi-dark church, a line of eager readers stood by the Holy Shroud,<span class="fn-ref">13<span class="fn-tooltip">The Holy Shroud (Plashchanitsa) is a large, embroidered cloth depicting the body of Christ after the Crucifixion, lying in the tomb. In Orthodox services on Good Friday and Holy Saturday, it is venerated as a central focal point, representing the burial of Christ, before being ceremonially taken into the altar to await the Resurrection.</span></span> waiting to read the Acts of the Apostles. I joined them too. They asked me: "Do you know how to read?" "I do." "Well, then you start first!"</p>
-
-<p>I approached the analogion<span class="fn-ref">14<span class="fn-tooltip">An analogion is a standing lectern or slanted desk used in Eastern Orthodox churches to hold icons, gospel books, or other religious texts for veneration or reading during services.</span></span> and began to sound out syllabically: "The former treatise have I made, O Theophilus,"<span class="fn-ref">15<span class="fn-tooltip">The boy is attempting to read the opening verse of the book of Acts in the New Testament. This book is addressed to a person named "Theophilus." The boy's struggle with the formal, Church Slavonic text and the name "Theophilus" highlights his youthful eagerness to participate in the sacred ritual, contrasting with his still-developing skill.</span></span> — and I simply couldn't pronounce "Theophilus." I got flustered, embarrassedly lowered my head and stopped reading. Someone came over to me and scolded: "Why are you pushing in when you can't read?" "I wanted to try!" "You'd better try the kulich," — and they pushed me aside.</p>
-
-<p>I couldn't stand still in the church. I went out into the yard and sat on the church steps.</p>
-
-<p>"Where is Pascha right now?" I wondered. "Is it hovering in the sky, or is it walking outside the city, in the forest, over swamp hummocks, pine needles, snowdrops, along heather and juniper paths, and what form does it take?" I remembered someone's story that on the night of Christ's Bright Resurrection, a ladder descends from heaven to earth, and upon it, the Lord descends to us with the holy apostles, venerable fathers, passion-bearers, and martyrs. The Lord walks the earth, blessing the fields, forests, lakes, rivers, birds, people, animals, and everything created by His holy will, and the saints sing 'Christ is Risen from the dead'… The song of the saints scatters like seeds upon the earth, and from these seeds, the delicate, fragrant lilies of the valley spring up in the forests…</p>
-
-<p>Time was approaching midnight. The churchyard was buzzing more and more thickly with talk. Someone came out of the church watchman's hut<span class="fn-ref">16<span class="fn-tooltip">The church watchman's hut (or storozhka in Russian) was a small building or cabin located within the churchyard. Its primary function was to house the church watchman — a custodian responsible for the security of the church property, ringing the bells for services, and performing maintenance tasks.</span></span> with a lantern.</p>
-
-<p>"He's coming, he's coming!" the kids shouted frantically, clapping their hands. "Who's coming?" "The bell-ringer, Leksandra! He's about to boom!"</p>
-
-<p>And he boomed…</p>
-
-<p>From the first strike of the bell, it was as if a large silver wheel rolled across the earth, and when its hum passed, another rolled, followed by a third, and the night Pascha darkness began to spin in the silver humming of all the town's churches.</p>
-
-<p>The beggar Yakov noticed me in the darkness. "The light-proclaiming peal!" he said and crossed himself several times.</p>
-
-<p>In the church, they began to serve the Great Midnight Office.<span class="fn-ref">17<span class="fn-tooltip">The Great Midnight Office is a solemn service in the Eastern Orthodox Church, traditionally served late on the night of Holy and Great Saturday, immediately before the procession and festivities of Pascha begin. During this service, the Plashchanitsa — a cloth icon depicting Christ's body prepared for burial — is carried in a solemn procession around the church and then taken into the altar, symbolizing Christ's descent into hell and His imminent victory over death.</span></span> They sang "By the wave of the sea." The priests in white vestments lifted the Holy Shroud and carried it into the altar, where it would lie on the altar table until the Feast of the Ascension.<span class="fn-ref">18<span class="fn-tooltip">The Feast of the Ascension commemorates the bodily ascent of Jesus Christ into heaven forty days after his Resurrection on Pascha (Easter Sunday). In the story, the Plashchanitsa (the burial shroud) is taken into the altar on Pascha and remains there until this feast day, symbolizing Christ's physical presence with his disciples during the forty days before his Ascension.</span></span> The heavy golden tomb structure was moved aside with a rumble to its usual place, and in that rumble there was also something significant, Pascha-like — as if a huge stone was being rolled away from the Lord's tomb.</p>
-
-<p>I saw my father and mother. I went up to them and said: "I will never offend you!" I pressed close to them and exclaimed loudly: "How joyful it is!"</p>
-
-<p>And the Pascha joy kept expanding, like the Volga in flood, which father had often told me about. The tall banners began to sway like spring trees in a sunny breeze. They began to prepare for the procession around the church. From the altar, they brought out the silver processional cross, the golden Gospel, the huge round bread — the artos; the raised icons seemed to smile, and everyone lit their red Pascha candles.<span class="fn-ref">19<span class="fn-tooltip">Red Pascha candles are special candles used in Eastern Orthodox churches during the Pascha services and throughout the subsequent 40-day season. The color red symbolizes the blood of Christ shed for salvation and the triumphant, joyous flame of His Resurrection.</span></span></p>
-
-<p>A silence fell. It was transparent and so light — if you blew on it, it would quiver like a spider's web. And within this silence, they began to sing: "Thy Resurrection, O Christ Saviour, the angels sing in heaven." And to the sound of this uplifting song, the procession began to stream forth with lights. Someone stepped on my foot, and dripped wax on my head, but I hardly felt anything and thought: "That's how it's supposed to be." — "Pascha! The Lord's Pascha!" — sunbeams danced in my soul.</p>
-
-<p>Pressed closely together, in the night darkness, along the streams of the resurrection song, showered with the pealing of bells and warmed by the little flames of the candles, we walked around the church, white-seen from a hundred lights, and stopped in expectation before the tightly closed doors. The bells fell silent. My heart held its breath. My face flushed with heat. The earth had disappeared somewhere — you weren't standing on it, but as if on the blue heavens. And the people? Where were they? Everyone had turned into jubilant Pascha candles!</p>
-
-<p>And then that vast thing, which I couldn't grasp at first — happened! They began to sing "Christ is Risen from the dead."</p>
-
-<p>They sang "Christ is Risen" three times, and the tall doors swung open before us. We entered the resurrected church — and before our eyes, in the radiance of the chandeliers, the large and small icon lamps, in the glints of silver, gold, precious stones on the icons, in the bright paper flowers on the kulich — the Lord's Pascha flashed into view! The priest, enveloped in incense smoke, with a radiant face, exclaimed brightly and loudly: "Christ is Risen!" — and the people answered him with a roar like heavy, icy snow falling from a height: "Indeed He is Risen!"</p>
-
-<p>Grishka<span class="fn-ref">20<span class="fn-tooltip">The name Grishka (Гришка) is a familiar, diminutive, or informal form of the Russian male name Grigory (Григорий), which is the equivalent of Gregory in English. It is akin to a nickname like "Greg."</span></span> appeared nearby. I took his hands and said: "Tomorrow I'll give you a red egg!<span class="fn-ref">21<span class="fn-tooltip">A central symbol of Orthodox Pascha, red-dyed eggs represent new life and the resurrection of Jesus Christ. The tradition is rooted in the story that after Christ's resurrection, Mary Magdalene presented a red egg to the Roman Emperor Tiberius, declaring "Christ is risen!" The boy's promise to give Grishka the "very best" red egg is a heartfelt expression of friendship within the shared joy of the Pascha celebration.</span></span> The very best one! Christ is Risen!"</p>
-
-<p>Fedka was standing not far away too. I promised him a red egg as well. I saw the yardkeeper David, went up to him and said: "I will never call you 'the sweeper martyr' again.<span class="fn-ref">22<span class="fn-tooltip">The phrase "sweeper martyr" is the narrator's childhood nickname for David, the church groundskeeper — a melodramatic, slightly mocking title invented by the local children. The narrator's promise to stop using this nickname is a sign of his personal growth and the sincere, forgiving spirit of the Pascha holiday.</span></span> Christ is Risen!"</p>
-
-<p>And through the church, the words of the Paschal Canon flew like lightning. Every word a spark of merry, quick fire: "Let the heavens worthily rejoice, let the earth be glad, and let the whole world, visible and invisible, keep festival. For Christ is risen, eternal joy…"</p>
-
-<p>My heart skipped a beat with joy — near the ambo,<span class="fn-ref">23<span class="fn-tooltip">The ambo is a raised platform or lectern in the center of an Eastern Orthodox church, traditionally in front of the iconostasis. It is from the ambo that the Scriptures are read, the Gospel is proclaimed, and the priest delivers sermons.</span></span> I saw the girl with the fair braids whom I had noticed during the bringing out of the Shroud! Not acting like myself, I went up to her, and all blushing, lowering my eyes, I whispered: "Christ is Risen!"</p>
-
-<p>She became flustered and dropped her little candle from her hands. It reached for me with a quiet flame. And we exchanged the Pascha greeting<span class="fn-ref">24<span class="fn-tooltip">It is a traditional greeting among Orthodox Christians on Pascha to kiss each other on the cheek three times while saying, "Christ is risen! Indeed He is risen!"</span></span> — including the traditional three kisses on the cheek — and then we became so embarrassed that we stood for a long time with our heads bowed.</p>
-
-<p>And at that time, from the ambo, the Paschal sermon of John Chrysostom<span class="fn-ref">25<span class="fn-tooltip">The Paschal sermon of John Chrysostom is a famous, deeply beloved homily read aloud in every Eastern Orthodox church near the conclusion of the Easter Sunday liturgy. Its core message is one of universal forgiveness and joyous inclusion, proclaiming that all — whether devout or lax — should enter into the feast and celebrate the Resurrection of Christ.</span></span> thundered: "If any be pious and God-loving, let him enjoy this good and bright festival… Christ is risen, and life reigns!"</p>
-  </div>
   <div class="ornament-divider">☩ ☩ ☩</div>
 </article>
 
@@ -1381,7 +1359,7 @@ and to give Himself as food to the faithful…</span>
         <p><span class="fn-num">**</span> For more detailed information about the writer's family and genealogy, please refer to Igor Budkov's article, "The Genealogy of Writer Vasily Nikiforov-Volgin" at <a href="https://pravoslavie.ru/167348.html" target="_blank" rel="noopener">pravoslavie.ru/167348.html</a> (in Russian).</p>
       </div>
     </div>
-    <div class="copyright">Vasily Nikiforov-Volgin · Great Lent Stories · English Edition</div>
+    <div class="copyright">Vasily Nikiforov-Volgin · Great Lent · Memories of Childhood</div>
   </div>
 </footer>
 
@@ -1468,6 +1446,30 @@ document.querySelectorAll('.fn-ref').forEach((ref, idx) => {
     }
   });
 });
+</script>
+
+<!-- ── Back to Contents button ── -->
+<a class="to-toc-btn" id="toTocBtn" href="#toc" aria-label="Back to Contents">
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5 11V2M2 6l4.5-4.5L11 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Contents
+</a>
+<script>
+// ── Кнопка "К оглавлению" ──
+(function(){
+  var btn = document.getElementById('toTocBtn');
+  var toc = document.getElementById('toc');
+  if (!btn || !toc) return;
+  var tocBottom = 0;
+  function update(){
+    tocBottom = toc.getBoundingClientRect().bottom + window.scrollY + 120;
+    btn.classList.toggle('visible', window.scrollY > tocBottom);
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
 </script>
 </body>
 </html>

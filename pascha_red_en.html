@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Pascha to Pentecost — Vasily Nikiforov-Volgin</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%23700000'/><text x='16' y='23' font-family='serif' font-size='20' fill='%23c89400' text-anchor='middle'>✦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Forum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#fffbf0;
+  --parchment-dark:#f5e8cc;
+  --cream:#fdf6e3;
+  --ink:#1a0800;
+  --ink-light:#3a1400;
+  --gold:#9a6e00;
+  --gold-light:#c89400;
+  --gold-bright:#e8b800;
+  --red:#b81c0e;
+  --red-light:#d42a1a;
+  --crimson:#8c1008;
+  --border:#d4a020;
+  --border-light:#e8c840;
+  --shadow:rgba(100,30,0,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--parchment);
+  background-image:
+    radial-gradient(ellipse 80% 35% at 50% 0%,rgba(232,184,0,0.12) 0%,transparent 60%),
+    repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(180,100,0,0.025) 28px,rgba(180,100,0,0.025) 29px);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  color:var(--ink);
+  min-height:100vh;
+}
+.site-header{
+  background:linear-gradient(180deg,#c8100a 0%,#a80c08 55%,#900a06 100%);
+  text-align:center;
+  padding:56px 20px 48px;
+  border-bottom:4px solid var(--gold-bright);
+  position:relative;
+  overflow:hidden;
+}
+.site-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% -5%,rgba(255,200,0,0.18) 0%,transparent 65%);
+  pointer-events:none;
+}
+.site-header::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,transparent,var(--gold-bright),#fff8c0,var(--gold-bright),transparent);
+}
+.lang-switcher{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:4px;z-index:10;font-family:'Forum',serif;font-size:.8rem;letter-spacing:.12em}
+.lang-switcher a{color:rgba(255,220,100,.55);text-decoration:none;padding:4px 8px;border:1px solid transparent;transition:color .2s,border-color .2s}
+.lang-switcher a:hover{color:var(--gold-bright)}
+.lang-switcher a.active{color:#fff;border-color:rgba(232,184,0,.5)}
+.lang-switcher span{color:rgba(255,220,100,.3);font-size:.7rem}
+.section-nav{position:absolute;top:20px;left:24px;display:flex;align-items:center;gap:0;z-index:10;font-family:'Forum',serif;font-size:.75rem;letter-spacing:.1em}
+.section-nav a{color:rgba(255,220,100,.55);text-decoration:none;padding:4px 10px;border:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
+.section-nav a:hover{color:var(--gold-bright)}
+.section-nav a.active{color:#fff;border-color:rgba(232,184,0,.5)}
+.section-nav span{color:rgba(255,220,100,.3);font-size:.7rem;padding:0 2px}
+.header-ornament{color:rgba(255,220,100,.8);font-size:1.4rem;letter-spacing:.5em;margin-bottom:20px}
+.site-title{font-family:'Forum',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:400;color:#fff;letter-spacing:.08em;line-height:1.15;text-transform:uppercase;max-width:820px;margin:0 auto 12px;text-shadow:0 1px 0 rgba(120,30,0,.4),0 2px 20px rgba(0,0,0,.3),0 0 2px rgba(255,220,100,.2)}
+.site-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.2rem);color:rgba(255,220,100,.9);letter-spacing:.03em;margin-bottom:4px}
+.site-translator{font-family:'Cormorant Garamond',serif;font-size:clamp(.78rem,1.6vw,.95rem);color:rgba(255,220,100,.65);letter-spacing:.05em;margin-top:6px;line-height:1.5}
+.site-translator sup{font-size:.65em;vertical-align:super}
+.header-rule{display:flex;align-items:center;justify-content:center;gap:16px;max-width:360px;margin:24px auto 0}
+.header-rule::before,.header-rule::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,220,100,.6),transparent)}
+.header-rule span{color:rgba(255,220,100,.8);font-size:1.1rem}
+.page-wrap{max-width:900px;margin:0 auto;padding:0 16px 60px}
+.toc-section{background:#fff;border:1px solid var(--border);border-top:3px solid var(--red);box-shadow:0 4px 20px var(--shadow),inset 0 1px 0 rgba(255,255,255,.9);margin:36px 0;padding:34px 44px 36px;position:relative}
+.toc-section::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent)}
+.toc-title{font-family:'Forum',serif;font-size:.82rem;letter-spacing:.25em;text-transform:uppercase;color:var(--red);text-align:center;margin-bottom:22px}
+.toc-list{list-style:none;counter-reset:toc}
+.toc-list li{counter-increment:toc;display:flex;align-items:center;gap:0;padding:8px 0;border-bottom:1px dotted var(--border)}
+.toc-list li:last-child{border-bottom:none}
+.toc-list li::before{content:counter(toc) '.';font-family:'Forum',serif;font-size:.8rem;color:var(--gold);min-width:22px;flex-shrink:0;margin-right:6px}
+.toc-name-group{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.toc-list a{font-family:'IM Fell English',serif;font-size:1.05rem;color:var(--ink-light);text-decoration:none;transition:color .2s}
+.toc-list a:hover{color:var(--red)}
+.toc-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--gold);margin-left:auto;flex-shrink:0;padding-left:16px}
+.story-card{background:#fff;border:1px solid var(--border-light);box-shadow:0 4px 20px var(--shadow);margin:28px 0;position:relative}
+.story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,var(--red) 20%,var(--gold-bright) 50%,var(--red) 80%,transparent 100%)}
+.story-header{padding:28px 44px 20px;text-align:center;border-bottom:1px solid var(--parchment-dark)}
+.story-number{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.story-title{font-family:'Forum',serif;font-size:clamp(1.25rem,3vw,1.8rem);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:6px}
+.story-timing{font-family:'IM Fell English',serif;font-style:italic;font-size:.92rem;color:var(--red)}
+.story-body{padding:24px 44px 32px;font-size:1.05rem;line-height:1.85;color:var(--ink)}
+.story-body p{margin-bottom:1.1em;text-align:justify;hyphens:auto}
+.story-body p:first-child::first-letter{font-family:'Forum',serif;font-size:3.2em;font-weight:400;float:left;line-height:.8;margin:.05em .08em 0 0;color:var(--red)}
+.dialogue{margin:.3em 0 .3em 1.8em;font-style:italic}
+.liturgical{display:block;margin:1em 2em;padding:11px 16px;border-left:2px solid var(--gold-light);font-style:italic;color:var(--ink-light);background:rgba(200,148,0,0.06);font-size:1rem;line-height:1.7}
+.verse-block{display:block;margin:1em 2em;padding:10px 16px;border-left:2px solid var(--red);font-style:italic;color:var(--ink-light);background:rgba(184,28,14,0.04);line-height:1.75}
+.fn-ref{font-size:.65em;vertical-align:super;color:var(--red);font-family:'Forum',serif;cursor:pointer;font-weight:400;position:relative}
+.fn-ref:hover{color:var(--gold)}
+.fn-ref .fn-tooltip{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--ink);color:var(--parchment);font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:normal;line-height:1.55;width:340px;max-width:90vw;padding:11px 14px;border:1px solid var(--gold);box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:100;pointer-events:none;transition:opacity .2s,visibility .2s;text-align:left;border-radius:2px}
+.fn-ref .fn-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--gold)}
+.fn-ref:hover .fn-tooltip,.fn-ref:focus .fn-tooltip{visibility:visible;opacity:1}
+.fn-ref.fn-right .fn-tooltip{left:auto;right:0;transform:none}
+.fn-ref.fn-right .fn-tooltip::after{left:auto;right:12px;transform:none}
+.fn-ref.touch-device .fn-tooltip{display:none!important}
+.fn-sheet-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200}
+.fn-sheet-overlay.active{display:block}
+.fn-sheet{position:fixed;bottom:0;left:0;right:0;background:var(--ink);border-top:2px solid var(--gold-light);padding:20px 22px 32px;z-index:201;max-height:55vh;overflow-y:auto;animation:sheetUp .28s cubic-bezier(.32,.72,0,1);border-radius:12px 12px 0 0}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:none}}
+.fn-sheet-close{display:flex;justify-content:center;margin-bottom:16px}
+.fn-sheet-close::before{content:'';width:40px;height:4px;background:rgba(200,148,0,0.4);border-radius:2px}
+.fn-sheet-num{font-family:'Forum',serif;font-size:.7rem;color:var(--gold-light);letter-spacing:.2em;margin-bottom:8px}
+.fn-sheet-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--parchment);line-height:1.65}
+.ornament-divider{text-align:center;color:var(--gold);font-size:1.3rem;letter-spacing:.5em;margin:8px 0 0;opacity:.5}
+.bio-section{background:linear-gradient(180deg,#a80c08 0%,#7a0806 100%);border-top:4px solid var(--gold-bright);margin-top:56px;padding:52px 20px;color:#fff}
+.bio-inner{max-width:800px;margin:0 auto}
+.bio-label{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,220,100,.8);text-align:center;margin-bottom:6px}
+.bio-title{font-family:'Forum',serif;font-size:clamp(1.1rem,3vw,1.6rem);color:#fff;text-align:center;margin-bottom:26px;line-height:1.3}
+.bio-rule{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:28px}
+.bio-rule::before,.bio-rule::after{content:'';flex:1;max-width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,220,100,.5),transparent)}
+.bio-rule span{color:rgba(255,220,100,.7);font-size:1rem}
+.bio-text{font-size:1rem;line-height:1.85;color:rgba(255,240,210,.9);text-align:justify;hyphens:auto}
+.bio-text p{margin-bottom:1em}
+.bio-fn{font-size:.82rem;color:rgba(255,220,100,.5);margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,220,100,.2);line-height:1.6}
+.bio-fn-ref{font-size:.75em;vertical-align:super;color:rgba(255,220,100,.7);font-family:'Forum',serif}
+.bio-expand-btn{display:flex;align-items:center;gap:10px;background:none;border:1px solid rgba(255,220,100,.35);color:rgba(255,220,100,.8);font-family:'Forum',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:8px 18px;margin:18px auto 0;cursor:pointer;transition:border-color .2s,background .2s}
+.bio-expand-btn:hover{border-color:rgba(255,220,100,.6);background:rgba(255,220,100,.08)}
+.bio-expand-arrow{font-size:1.1rem;line-height:1;display:inline-block;transition:transform .3s}
+.bio-expand-btn[aria-expanded="true"] .bio-expand-arrow{transform:rotate(180deg)}
+.bio-full{margin-top:22px;animation:bioFadeIn .4s ease}
+@keyframes bioFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.copyright{text-align:center;margin-top:36px;font-family:'Forum',serif;font-size:.62rem;letter-spacing:.2em;color:rgba(255,220,100,.3);text-transform:uppercase}
+@media(max-width:640px){
+  .story-header,.story-body{padding-left:20px;padding-right:20px}
+  .toc-section{padding:24px 18px 26px}
+  .toc-subtitle{display:none}
+  .section-nav{font-size:.68rem}
+  .section-nav a{padding:4px 7px}
+}
+
+/* ── Кнопка "К оглавлению" ── */
+.to-toc-btn{
+  position:fixed;bottom:28px;right:24px;z-index:500;
+  display:flex;align-items:center;gap:7px;
+  padding:8px 14px 8px 11px;
+  background:rgba(140,16,8,0.82);
+  color:#fff8f0;
+  border:1px solid rgba(232,184,0,0.45);
+  border-radius:24px;
+  font-family:'Forum',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  box-shadow:0 4px 18px rgba(80,10,0,0.32);
+  opacity:0;pointer-events:none;
+  transition:opacity .35s,transform .35s,background .2s;
+  transform:translateY(10px);
+  cursor:pointer;
+}
+.to-toc-btn.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-toc-btn:hover{background:rgba(140,16,8,0.97)}
+.to-toc-btn svg{flex-shrink:0}
+@media(max-width:640px){.to-toc-btn{bottom:20px;right:16px;padding:7px 12px 7px 10px;font-size:.68rem}}
+.site-header-nav{display:contents}
+
+@media(max-width:520px){
+  .site-header{padding:20px 16px 32px}
+  .section-nav,.lang-switcher{
+    position:static;display:inline-flex;
+    margin:0;padding:0;
+  }
+  .site-header-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    width:100%;margin-bottom:18px;
+  }
+  .header-ornament{margin-bottom:14px;font-size:1.1rem}
+  .fn-ref .fn-tooltip{width:min(300px,88vw)}
+}
+
+
+.toc-audio-btn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--red);background:none;color:var(--red);cursor:pointer;flex-shrink:0;margin-left:6px;margin-right:2px;transition:background .2s,color .2s;font-size:.6rem;line-height:1;padding:0 0 0 2px}
+.toc-audio-btn:hover{background:var(--red);color:#fff}
+.toc-audio-btn.playing{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.story-audio-wrap{margin:12px 44px 0;padding:11px 16px;background:rgba(184,28,14,0.04);border:1px solid rgba(212,160,32,0.35);border-radius:2px;display:flex;flex-direction:column;gap:7px}
+.story-audio-label{font-family:'Cormorant Garamond',serif;font-size:.82rem;font-style:italic;color:var(--gold);letter-spacing:.03em}
+.story-audio-label span{color:var(--ink-light);font-style:normal}
+.story-audio-controls{display:flex;align-items:center;gap:12px}
+.story-audio-playbtn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:none;background:var(--red);color:#fff;cursor:pointer;flex-shrink:0;font-size:.8rem;transition:background .2s,transform .1s;padding:0 0 0 2px}
+.story-audio-playbtn:hover{background:var(--red-light)}
+.story-audio-playbtn:active{transform:scale(.95)}
+.story-audio-playbtn.playing{background:var(--crimson)}
+.story-audio-progress{flex:1;display:flex;flex-direction:column;gap:4px}
+.story-audio-bar{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:rgba(184,28,14,0.15);border-radius:2px;cursor:pointer;outline:none}
+.story-audio-bar::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:var(--red);cursor:pointer}
+.story-audio-bar::-moz-range-thumb{width:11px;height:11px;border-radius:50%;background:var(--red);cursor:pointer;border:none}
+.story-audio-time{font-family:'Cormorant Garamond',serif;font-size:.78rem;color:var(--ink-light)}
+@media(max-width:640px){.story-audio-wrap{margin:12px 20px 0}.toc-audio-btn{width:24px;height:24px;font-size:.65rem}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-nav">
+  <nav class="section-nav">
+    <a href="en.html" onclick="sessionStorage.setItem('manualNav','1')">Great Lent</a>
+    <span>|</span>
+    <a href="pascha_red_en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">From Pascha to Pentecost</a>
+  </nav>
+  
+  <div class="lang-switcher">
+    <a href="pascha_red.html" onclick="sessionStorage.setItem('manualNav','1')">РУС</a>
+    <span>|</span>
+    <a href="pascha_red_en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">ENG</a>
+  </div>
+</div>
+  <div class="header-ornament">✦ ✦ ✦</div>
+  <h1 class="site-title">From Pascha to Pentecost</h1>
+  <p class="site-subtitle">Four stories from the cycle <em>"Memories of Childhood"</em></p>
+  <p class="site-translator">translated by Fr. Joseph Gleason*<br><span style="font-size:.85em;opacity:.8">* stories 1, 4</span></p>
+  <div class="header-rule"><span>☩</span></div>
+</header>
+
+<div class="page-wrap">
+
+<nav class="toc-section" aria-label="Contents" id="toc">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><span class="toc-name-group"><a href="#s1">Pascha</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/Pascha_192.mp3')" title="Listen">▶</button></span><span class="toc-subtitle">Paschal Night</span></li>
+    <li><span class="toc-name-group"><a href="#s2">Radonitsa</a></span><span class="toc-subtitle">Tuesday of Thomas Week</span></li>
+    <li><span class="toc-name-group"><a href="#s3">The Leave-taking of Pascha</a></span><span class="toc-subtitle">Eve of the Ascension</span></li>
+    <li><span class="toc-name-group"><a href="#s4">The Earth Celebrates Her Name Day</a></span><span class="toc-subtitle">Trinity Sunday</span></li>
+  </ol>
+</nav>
+
+<!-- ══ STORY 1 ══ -->
+<article class="story-card" id="s1">
+<div class="story-header">
+  <div class="story-number">Story One</div>
+  <h2 class="story-title">Pascha</h2>
+  <div class="story-timing">Paschal Night</div>
+</div>
+<div class="story-audio-wrap" id="player-s1">
+  <div class="story-audio-label">Audio version · <span>read by Oleg Barinboim</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s1')" id="playbtn-s1" title="Play">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s1" oninput="storySeek('s1',this.value)">
+      <span class="story-audio-time" id="time-s1">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s1" src="audio/Pascha_192.mp3" preload="none"></audio>
+</div>
+<div class="story-body">
+<p>The liturgical hymn of the day was fading over the earth: <em>"Let all mortal flesh keep silence, and with fear and trembling stand…"</em><span class="fn-ref">1<span class="fn-tooltip">This hymn is sung annually in the Orthodox Church on Holy Saturday. This day is one of quiet, solemn anticipation between the sorrow of Good Friday and the joyful celebration of Christ's Resurrection (Pascha) at midnight. The hymn encapsulates this moment of holy stillness, calling all humanity to stand in awe before the mystery of Christ's descent into death and His imminent triumph over it.</span></span></p>
+<p>The evening earth grew quiet. Homes were opening the glass fronts of their icon corners.<span class="fn-ref">2<span class="fn-tooltip">An icon corner is a dedicated space in a traditional Orthodox Christian home, typically on an eastern wall, where icons (sacred images of Christ and the saints) are displayed for prayer. Opening the glass doors on a major feast like Pascha is a symbolic gesture, signifying the opening of the heavenly kingdom and direct, unimpeded access to God.</span></span> I asked my father:</p>
+<p class="dialogue">"What's that for?"</p>
+<p class="dialogue">"As a sign that on <em>Pascha,</em><span class="fn-ref">3<span class="fn-tooltip">Pascha is the Eastern Orthodox term for Easter — the annual celebration of the resurrection of Jesus.</span></span> the doors of paradise are opened!"</p>
+<p>Before the start of the <em>Matins</em><span class="fn-ref">4<span class="fn-tooltip">In general, "Matins" means "morning prayer." However, in the present story, the author is specifically referring to the very special Paschal Matins service, which takes place in Orthodox churches every year at midnight on Pascha (Easter). It lasts a couple hours and is always followed by a full Divine Liturgy. For Orthodox Christians, it is the greatest and most joyous celebration of the entire year.</span></span> service, my father and I wanted to get some sleep, but we couldn't. We lay next to each other on the bed, and he told me about how, as a boy, he had to celebrate Pascha in Moscow.</p>
+<p class="dialogue">"Moscow's Pascha, son, is mighty! Whoever has seen it once will remember it until the grave. At midnight, the first strike of the bell from the <em>Ivan the Great</em> bell tower<span class="fn-ref">5<span class="fn-tooltip">The Ivan the Great bell tower contains a set of bells. Its largest bell, cast in 1817, weighs approximately 65 tons. The figure of "six thousand poods" (about 98 tons) in the story is a traditional exaggeration, used to emphasize the bell's legendary, earth-shaking power in the cultural imagination.</span></span> booms, it's as if the sky with all its stars is falling to the earth! And that bell, son, weighs six thousand <em>poods,</em><span class="fn-ref">6<span class="fn-tooltip">A pood is an obsolete Russian unit of mass equal to approximately 36.1 pounds (16.38 kilograms). "Six thousand poods" equals roughly 216,000 pounds or 98 metric tons — a traditional exaggeration to emphasize the colossal size and earth-shaking power of the great bell.</span></span> and it took twelve men to swing its <em>clapper!</em><span class="fn-ref">7<span class="fn-tooltip">A clapper is a pendulum-like object suspended inside a bell that strikes against the bell's inner wall to produce the sound. The great weight of the massive bell is why the story mentions it took twelve men to set it in motion.</span></span> The first strike was timed to the chiming of the clock on the <em>Spasskaya</em> Tower…"</p>
+<p>Father raised himself up in bed and spoke of Moscow with a tremor in his voice: "Yes… the clock on the <em>Spasskaya</em> Tower… They would strike it — and immediately a rocket would soar into the sky… followed by a gun salute from the old cannons on the <em>Taynitskaya</em> Tower — one hundred and one shots!…"</p>
+<p><em>Ivan the Great</em> spreads out over Moscow like a sea, and the other <em>forty times forty</em><span class="fn-ref">8<span class="fn-tooltip">"Forty times forty" is a traditional Russian expression meaning an innumerably large amount. Moscow was historically famous for its many churches, and "forty times forty" evokes the image of a vast, uncountable sea of churches all ringing their bells at once.</span></span> churches echo it, like rivers in flood! Such power, I tell you, flows over the <em>Primatial City,</em><span class="fn-ref">9<span class="fn-tooltip">"Primatial City" refers to Moscow's historical status as the seat of the Primate — the leading bishop or patriarch. Moscow is home to the main seat of the Russian Orthodox Church, the Dormition Cathedral, where patriarchs were inaugurated and tsars and emperors were crowned.</span></span> that you don't seem to be walking, but are rocking on the waves like a tiny splinter! A mighty night, like the thunder of the Lord! Ah, son, words cannot depict Pascha in Moscow!</p>
+<p>Father fell silent and closed his eyes.</p>
+<p class="dialogue">"Are you falling asleep?"</p>
+<p class="dialogue">"No. I'm looking at Moscow."</p>
+<p class="dialogue">"Where is it for you?"</p>
+<p class="dialogue">"Before my eyes. As if alive…"</p>
+<p class="dialogue">"Tell me something else about Pascha!"</p>
+<p class="dialogue">"I also had the chance to celebrate Easter in a monastery. In its simplicity and holy splendor, it was even better than Moscow's! Just imagine that monastery! All around — untrodden forest, animal trails, and by the monastery walls — a river splashes. The <em>taiga</em><span class="fn-ref">10<span class="fn-tooltip">The taiga is the vast, dense, snowforest biome that stretches across northern Russia, Canada, and Scandinavia. Taiga trees are the hardy, cold-adapted conifers that dominate this landscape, primarily spruces, pines, firs, and larches.</span></span> trees and the church, built from strong, resinous logs, are reflected in it. A great multitude of pilgrims gathered here from the surrounding villages for the <em>Bright Matins.</em><span class="fn-ref">11<span class="fn-tooltip">Bright Matins is the solemn and joyful Orthodox Christian service held at midnight on Easter Sunday morning, as part of the Pascha celebration. It follows a procession around the church and is filled with triumphant hymns proclaiming the Resurrection of Christ.</span></span> There was a rare custom here. After Matins, girls would go down to the river with candles, sing 'Christ is Risen,' bow deeply to the river water, and then stick their candles to a wooden disk and take turns setting them afloat on the river. There was a sign: if the Pascha candle does not go out, the girl will get married, but if it goes out — she will remain a bitter old maid!</p>
+<p class="dialogue">Just imagine, what a marvel it was there!</p>
+<p class="dialogue">In the middle of the night, a hundred lights float on the water, and meanwhile the bells are ringing, and the forest is rustling!"</p>
+<p class="dialogue">"That's enough chatting for you," our mother interrupted us, "you'd better get some sleep, or you'll be standing at <em>Matins</em> like sleepyheads!"</p>
+<p>I was in no mood for sleep. My soul was seized by a premonition of something inexplicably vast, resembling either Moscow, or a hundred candles floating down a forest river.</p>
+<p>I got out of bed, walked from corner to corner, got in mother's way as she was cooking, and kept asking her every minute:</p>
+<p class="dialogue">"Is it time for church soon?"</p>
+<p class="dialogue">"Stop spinning like a wobbly spindle!" she flared up quietly. "If you can't wait, then go, but don't misbehave there!"</p>
+<p>A full two hours until Matins, but the churchyard was already full of kids.</p>
+<p>The night was without a single star, without wind, and somehow frightening in its unusualness and vastness. <em>Kulich</em> cakes<span class="fn-ref">12<span class="fn-tooltip">Kulich is a tall, cylindrical, sweet bread baked especially for Pascha in the Orthodox Christian tradition. The phrase "in white headscarves" is a poetic visual description: the women carrying the kulich to church would have been wearing traditional white headscarves, making the loaves seem to float through the dark streets as their most visible feature.</span></span> in white headscarves floated along the dark street — they alone were visible; the people themselves seemed not to be there.</p>
+<p>In the semi-dark church, a line of eager readers stood by the <em>Holy Shroud,</em><span class="fn-ref">13<span class="fn-tooltip">The Holy Shroud (Plashchanitsa) is a large, embroidered cloth depicting the body of Christ after the Crucifixion, lying in the tomb. In Orthodox services on Good Friday and Holy Saturday, it is venerated as a central focal point, representing the burial of Christ, before being ceremonially taken into the altar to await the Resurrection.</span></span> waiting to read the <em>Acts of the Apostles.</em> I joined them too. They asked me:</p>
+<p class="dialogue">"Do you know how to read?"</p>
+<p class="dialogue">"I do."</p>
+<p class="dialogue">"Well, then you start first!"</p>
+<p>I approached the <em>analogion</em><span class="fn-ref">14<span class="fn-tooltip">An analogion is a standing lectern or slanted desk used in Eastern Orthodox churches to hold icons, gospel books, or other religious texts for veneration or reading during services.</span></span> and began to sound out syllabically: <em>"The former treatise have I made, O Theophilus,"</em><span class="fn-ref">15<span class="fn-tooltip">The boy is attempting to read the opening verse of the book of Acts in the New Testament. The book is addressed to a person named "Theophilus." The boy's struggle with the formal Church Slavonic text and the name "Theophilus" highlights his youthful eagerness to participate in the sacred ritual, contrasting with his still-developing skill.</span></span> — and I simply couldn't pronounce "Theophilus." I got flustered, embarrassedly lowered my head and stopped reading. Someone came over to me and scolded:</p>
+<p class="dialogue">"Why are you pushing in when you can't read?"</p>
+<p class="dialogue">"I wanted to try!"</p>
+<p class="dialogue">"You'd better try the <em>kulich</em>," — and they pushed me aside.</p>
+<p>I couldn't stand still in the church. I went out into the yard and sat on the church steps.</p>
+<p>"Where is <em>Pascha</em> right now?" I wondered. "Is it hovering in the sky, or is it walking outside the city, in the forest, over swamp hummocks, pine needles, snowdrops, along heather and juniper paths, and what form does it take?" I remembered someone's story that on the night of Christ's Bright Resurrection, a ladder descends from heaven to earth, and upon it, the Lord descends to us with the holy apostles, venerable fathers, passion-bearers, and martyrs. The Lord walks the earth, blessing the fields, forests, lakes, rivers, birds, people, animals, and everything created by His holy will, and the saints sing 'Christ is Risen from the dead'… The song of the saints scatters like seeds upon the earth, and from these seeds, the delicate, fragrant lilies of the valley spring up in the forests…</p>
+<p>Time was approaching midnight. The churchyard was buzzing more and more thickly with talk. Someone came out of the <em>church watchman's hut</em><span class="fn-ref">16<span class="fn-tooltip">The church watchman's hut (storozhka in Russian) was a small building located within the churchyard, typically near the gates. Its primary function was to house the watchman — a custodian or guard — responsible for the security of the church property, ringing the bells for services, and performing maintenance tasks.</span></span> with a lantern.</p>
+<p class="dialogue">"He's coming, he's coming!" the kids shouted frantically, clapping their hands.</p>
+<p class="dialogue">"Who's coming?"</p>
+<p class="dialogue">"The bell-ringer, <em>Leksandra!</em> He's about to boom!"</p>
+<p>And he boomed…</p>
+<p>From the first strike of the bell, it was as if a large silver wheel rolled across the earth, and when its hum passed, another rolled, followed by a third, and the night Pascha darkness began to spin in the silver humming of all the town's churches.</p>
+<p>The beggar <em>Yakov</em> noticed me in the darkness.</p>
+<p class="dialogue">"The light-proclaiming peal!" he said and crossed himself several times.</p>
+<p>In the church, they began to serve the <em>Great Midnight Office.</em><span class="fn-ref">17<span class="fn-tooltip">The Great Midnight Office is a solemn service in the Eastern Orthodox Church, traditionally served late on the night of Holy and Great Saturday, immediately before the Paschal procession begins. During this service, the Plashchanitsa is carried in solemn procession around the church and then taken into the altar, symbolizing Christ's descent into hell and His imminent victory over death.</span></span> They sang <em>"By the wave of the sea."</em> The priests in white vestments lifted the <em>Holy Shroud</em> and carried it into the altar, where it would lie on the altar table until the <em>Feast of the Ascension.</em><span class="fn-ref">18<span class="fn-tooltip">The Feast of the Ascension is a major Christian holiday that commemorates the bodily ascent of Jesus Christ into heaven forty days after His Resurrection on Pascha. The Plashchanitsa (the burial shroud) is taken into the altar on Pascha and remains there until this feast day, symbolizing Christ's physical presence with His disciples during the forty days before His Ascension.</span></span> The heavy golden tomb [structure] was moved aside with a rumble to its usual place, and in that rumble there was also something significant, Pascha-like — as if a huge stone was being rolled away from the Lord's tomb.</p>
+<p>I saw my father and mother. I went up to them and said:</p>
+<p class="dialogue">"I will never offend you!" I pressed close to them and exclaimed loudly: "How joyful it is!"</p>
+<p>And the Pascha joy kept expanding, like the Volga in flood, which father had often told me about. The tall banners began to sway like spring trees in a sunny breeze. They began to prepare for the procession around the church. From the altar, they brought out the silver processional cross, the golden Gospel, the huge round bread — the <em>artos;</em> the raised icons seemed to smile, and everyone lit their red Pascha candles.<span class="fn-ref">19<span class="fn-tooltip">Red Pascha candles are special candles used in Eastern Orthodox churches during the Pascha services and throughout the subsequent 40-day season. The color red is deeply symbolic, representing the blood of Christ shed for salvation and the triumphant, joyous flame of His Resurrection.</span></span></p>
+<p>A silence fell. It was transparent and so light — if you blew on it, it would quiver like a spider's web. And within this silence, they began to sing: <em>"Thy Resurrection, O Christ Saviour, the angels sing in heaven."</em> And to the sound of this uplifting song, the procession began to stream forth with lights. Someone stepped on my foot, and dripped wax on my head, but I hardly felt anything and thought: "That's how it's supposed to be." — "Pascha! The Lord's Pascha!" — sunbeams danced in my soul.</p>
+<p>Pressed closely together, in the night darkness, along the streams of the resurrection song, showered with the pealing of bells and warmed by the little flames of the candles, we walked around the church, white-seen from a hundred lights, and stopped in expectation before the tightly closed doors. The bells fell silent. My heart held its breath. My face flushed with heat. The earth had disappeared somewhere — you weren't standing on it, but as if on the blue heavens. And the people? Where were they? Everyone had turned into jubilant Pascha candles!</p>
+<p>And then that vast thing, which I couldn't grasp at first — happened! They began to sing <em>"Christ is Risen from the dead."</em></p>
+<p>They sang "Christ is Risen" three times, and the tall doors swung open before us. We entered the resurrected church — and before our eyes, in the radiance of the chandeliers, the large and small icon lamps, in the glints of silver, gold, precious stones on the icons, in the bright paper flowers on the <em>kulich</em> — the Lord's Pascha flashed into view! The priest, enveloped in incense smoke, with a radiant face, exclaimed brightly and loudly: <em>"Christ is Risen!"</em> — and the people answered him with a roar like heavy, icy snow falling from a height: <em>"Indeed He is Risen!"</em></p>
+<p><em>Grishka</em><span class="fn-ref">20<span class="fn-tooltip">The name Grishka (Гришка) is a familiar, diminutive form of the Russian male name Grigory (Gregory). It is akin to a nickname like "Greg."</span></span> appeared nearby. I took his hands and said:</p>
+<p class="dialogue">"Tomorrow I'll give you a red egg!<span class="fn-ref">21<span class="fn-tooltip">The red egg is a symbol of Pascha in Eastern Orthodoxy, representing Christ's Resurrection (the shell is the tomb, which is cracked open) and the blood He shed for humanity; the exchange of these eggs with the Paschal greeting "Christ is Risen!" is a traditional gesture of joy, love, and faith.</span></span> The very best one! Christ is Risen!"</p>
+<p><em>Fedka</em> was standing not far away too. I promised him a red egg as well. I saw the yardkeeper David, went up to him and said:</p>
+<p class="dialogue">"I will never call you <em>'the sweeper martyr'</em> again.<span class="fn-ref">22<span class="fn-tooltip">"The sweeper martyr" is the narrator's childhood nickname for David, the church groundskeeper — a melodramatic, slightly mocking title invented by the local children, casting the sweeper's mundane and seemingly endless task as a form of comic "martyrdom." The narrator's promise to stop using this nickname is a sign of his personal growth and the sincere, forgiving spirit of the Pascha holiday.</span></span> Christ is Risen!"</p>
+<p>And through the church, the words of the <em>Paschal Canon</em> flew like lightning. Every word a spark of merry, quick fire: <em>"Let the heavens worthily rejoice, let the earth be glad, and let the whole world, visible and invisible, keep festival. For Christ is risen, eternal joy…"</em></p>
+<p>My heart skipped a beat with joy — near the <em>ambo,</em><span class="fn-ref">23<span class="fn-tooltip">The ambo is a raised platform or lectern in the center of an Eastern Orthodox church, traditionally in front of the iconostasis. It is from the ambo that the Scriptures are read, the Gospel is proclaimed, and the priest delivers sermons.</span></span> I saw the girl with the fair braids whom I had noticed during the bringing out of the Shroud! Not acting like myself, I went up to her, and all blushing, lowering my eyes, I whispered:</p>
+<p class="dialogue">"Christ is Risen!"</p>
+<p>She became flustered and dropped her little candle from her hands. It reached for me with a quiet flame. And we exchanged the <em>Pascha</em> greeting<span class="fn-ref">24<span class="fn-tooltip">It is a traditional greeting among Orthodox Christians on Pascha to kiss each other on the cheek three times while saying, "Christ is risen! Indeed He is risen!"</span></span> — including the traditional three kisses on the cheek — and then we became so embarrassed that we stood for a long time with our heads bowed.</p>
+<p>And at that time, from the <em>ambo,</em> the <em>Paschal</em> sermon of John Chrysostom<span class="fn-ref">25<span class="fn-tooltip">The Paschal sermon of John Chrysostom is a famous, deeply beloved homily that is read aloud in every Eastern Orthodox church near the conclusion of the Easter Sunday liturgy; its core message is one of universal forgiveness and joyous inclusion, proclaiming that all — whether devout or lax — should enter into the feast and celebrate the Resurrection of Christ.</span></span> thundered: <em>"If any be pious and God-loving, let him enjoy this good and bright festival… Christ is risen, and life reigns!"</em></p>
+</div>
+</article>
+
+<!-- ══ STORY 2 ══ -->
+<article class="story-card" id="s2">
+<div class="story-header">
+  <div class="story-number">Story Two</div>
+  <h2 class="story-title">Radonitsa</h2>
+  <div class="story-timing">Tuesday of Thomas Week</div>
+</div>
+<div class="story-body">
+<p>There are certain days in the year when the dead come back to life for a time. One such day is <em>Radonitsa.</em><span class="fn-ref">1<span class="fn-tooltip">Radonitsa is a special day of commemoration for the departed in the Orthodox Church, observed on the Tuesday of the second week after Pascha (Thomas Week). The name derives from the word for "joy" (radost'): the memorial services are held in the Paschal spirit — with the singing of "Christ is Risen" — rather than in the mournful tone of ordinary requiems.</span></span> It always falls on the Tuesday of the second week after Pascha. On Radonitsa, the living go to the cemetery to exchange the Paschal greeting with those who are buried there. On this day it is sinful to think about death, for we shall all rise again. On the eve of the day, or early in the morning, the churches serve a memorial Matins service. It does not sadden — it gladdens. Throughout the service they sing "Christ is Risen," and instead of "funeral weeping," the Paschal hymn rings out: <em>"Though Thou didst descend into the grave, O Immortal One…"</em><span class="fn-ref">2<span class="fn-tooltip">This is a troparion sung at the Paschal memorial service. Its meaning: "Though Thou, O Immortal One, didst descend into the grave, yet Thou didst destroy the power of death." The Orthodox Church does not regard death as ultimate — on Radonitsa, even the memorial for the departed is permeated with Paschal joy and the hope of resurrection.</span></span></p>
+<p>The memorial Liturgy is called the "Gladdened Liturgy."<span class="fn-ref">3<span class="fn-tooltip">The Russian term "obradovannaya" (gladdened, joyful) is used for the Paschal memorial Liturgy to distinguish it from ordinary requiem services. The mood is not one of grief but of Easter joy, even in the remembrance of the dead.</span></span> People bring Paschal eggs, <em>kulich</em> bread, and <em>kutya</em><span class="fn-ref">4<span class="fn-tooltip">Kutya is a traditional dish of boiled wheat (or rice) with honey, raisins, and poppy seeds, prepared for memorial meals in the Orthodox Slavic tradition. It is placed on a special table in the church and blessed by the priest at the requiem service.</span></span> to the memorial table in the church. When the memorial service is over, all of this is carried to the cemetery and scattered over the grave-mounds for the breaking of the fast of the departed. Radonitsa — it is the Pascha of the dead!</p>
+<p>What a fine word, "Radonitsa"! You can picture it at once in the image of a red egg lying in green oat-stalks, in a basket of willow twigs.</p>
+<p>And how wonderfully rich our Russian words are! If you listen to them long enough and repeat a single word slowly, meaningfully, you begin to see and hear everything contained within it. The word may be short, but try — listen carefully… Take the word <em>rucheyek</em> — "brooklet." Repeat it quickly, aloud, over and over, and you'll hear at once: a little brook babbling over pebbles!</p>
+<p>Or take another word — <em>znoy</em> — "scorching heat." If you draw out the letter "z" for a long time, that heat begins to drone and buzz, just like the flies you hear only in the noontime rye-fields.</p>
+<p>I said the word <em>vyuga</em> — "blizzard" — and my ears filled at once with that wintry, forest howl: <em>vvv-i-yu…</em></p>
+<p>Once I heard the yardkeeper David say <em>grom</em> — "thunder" — in his deep bass voice, and I immediately heard the crack of thunder rolling beyond the forest-blue.</p>
+<p>On the day of Radonitsa, I turned many such words over in my mind and thought, with a feeling of rapture that had seized me for the first time:</p>
+<p class="dialogue">How good it is to be Russian!</p>
+<p>We went to the cemetery. Every blade of grass, every unfolding leaf on the trees and shrubs, and all living things together with the dead were bathed in sunlight. Memorial services were being served everywhere. From different corners of the great old cemetery, the voices of hymns floated over:</p>
+<span class="liturgical"><em>With the spirits of the righteous who have fallen asleep…<br>
+The Day of Resurrection — let us be radiant, O ye peoples…<br>
+Trampling down death by death…<br>
+Eternal memory…</em></span>
+<p>At many graves, <em>pominki</em><span class="fn-ref">5<span class="fn-tooltip">Pominki (поминки) is a traditional Russian memorial meal, held after a funeral or on days of commemoration, at which family and friends gather to eat, drink, and recall the life of the departed. At the cemetery on Radonitsa, this often took a folk character, with food and drink shared right at the graveside.</span></span> were being held. People drank vodka and ate pies, and spoke of the departed as of living people who had simply moved on to a new place of dwelling.</p>
+<p>Stopping at the graves of their kin, people crossed themselves three times and said: "Christ is Risen!"</p>
+<p>Though on all sides people spoke of death, it was not frightening.</p>
+<p class="dialogue">"Life is endless… We shall all rise again… We shall all meet once more…" — the words of the priest reached me, as he comforted the wealthy merchant-widow Zadonskaya after the memorial service; she had recently buried her only son.</p>
+<p>Among the graves, children ran about shrieking, playing "stick-and-thief."<span class="fn-ref">6<span class="fn-tooltip">Palochka-vorovochka ("stick-and-thief") is a traditional Russian children's game, similar to hide-and-seek, played with a stick. Someone "guards" the stick while the others hide; when the guard turns away, a child tries to sneak up and steal it.</span></span> People shushed them and admonished them: "It's not proper," but they would think for a moment and then be at it again.</p>
+<p>The priest of the Znamenskaya Church, Father Konstantin, passing by the children with the censer, smiled and said to his deacon:</p>
+<p class="dialogue">"Look at them — the little immortals!…"</p>
+<p class="dialogue">"They do make rather a lot of noise…"</p>
+<p class="dialogue">"It isn't seemly… in a cemetery…"</p>
+<p class="dialogue">"Let them make noise…" the priest said again. "We celebrate the slaying of death!"</p>
+<p>On the steps of a sepulchre that resembled a chapel, a lean, bristly-looking old man sat and spoke in an angry voice, without pause or hesitation, to the people gathered around him:</p>
+<p class="dialogue">"The days of commemoration are as follows: the third day, the ninth day, the fortieth day, the half-year, the year, the Parents' Saturdays,<span class="fn-ref">7<span class="fn-tooltip">Parents' Saturdays (Roditel'skie Subboty) are special Saturdays set aside in the Orthodox Church calendar for the commemoration of all the faithful departed. Several occur throughout the year, including the Saturdays before the Sunday of the Last Judgement, before Pentecost, and on certain other occasions.</span></span> and the universal memorial services…"</p>
+<p class="dialogue">"We know that," said someone from the crowd.</p>
+<p class="dialogue">"You may know it, but what each of them signifies, very few can tell. Why is a person commemorated on the third day after death? You don't know. Because, in order to give relief to the soul of the departed from the grief it experiences at parting from the body. For two days the soul, together with its angels, roams the earth, through familiar places, near its loved ones and kin, and is like a bird that has no nest; on the third day it ascends to God."</p>
+<p class="dialogue">"And on the ninth?" asked a woman.</p>
+<p class="dialogue">"On that day the angels show the soul the various dwellings of the saints and the beauty of paradise. And the soul suffers cruelly, because it did not prepare for itself, through good deeds on earth, a dwelling among the righteous…"</p>
+<p>At that moment a drunken craftsman in a green cap and with a grey beard asked the old man with a mournful air:</p>
+<p class="dialogue">"And what about drunkards? What fate awaits them?"</p>
+<p class="dialogue">"Drunkards shall not inherit the Kingdom of God!" the old man cut him off sharply, and I immediately disliked him. Everything about him became hateful to me, even his bristly, spiteful moustache. I wanted to stick my tongue out at the old man, to call him an "old crank," but at that moment the drunken craftsman began to weep:</p>
+<p class="dialogue">"We are unworthy people…" he sobbed. "Scoundrels! And yet for us scoundrels and sinners the Lord wept in the Garden of Gethsemane, and went to the Cross alongside the thieves!…"</p>
+<p>I wanted to go up to the drunkard and say to him in my mother's words: <em>tears and repentance open the gates of paradise…</em></p>
+<p>The old man looked with his crow-like squinting eye at the grieving drunkard, who had leaned against someone's wooden cross, and said, in the manner of a police constable:</p>
+<p class="dialogue">"Do not disturb the public peace! Do not hinder people from listening… sinner!"</p>
+<p class="dialogue">"…During thirty days the soul is led through the various prisons of hell, and after that it is brought before God again and receives its place until the dread Judgement of God…"</p>
+<p>Why does this old man utter such fine and holy words with a dry and spiteful tongue? — I thought. — My mother would say it differently, lightly, and her every word would shine… It turns out that words must be spoken with care… so that they become precious stones…</p>
+<p>Two old women passed by me. One of them, in a shawl with a carpet pattern over her <em>salopа,</em><span class="fn-ref">8<span class="fn-tooltip">A salopa (салоп) is a long, loose outer cloak fashionable in Russia in the 19th century, typically padded or fur-trimmed. It was worn by women of both the middle and lower classes, particularly in cold weather.</span></span> was saying:</p>
+<p class="dialogue">"There is, my dear, in some far-off land… a bird… and she sings so, that just listening to her, one can be cured of any ailment… If only one could hear her!…"</p>
+<p>The time was drawing toward dusk, and Radonitsa was growing quiet. More and more rarely the voices of the hymns could be heard, but how beautiful it was to listen to them in the still-glowing Paschal twilight.</p>
+<span class="liturgical"><em>Christ is Risen from the dead…</em></span>
+</div>
+</article>
+
+<!-- ══ STORY 3 ══ -->
+<article class="story-card" id="s3">
+<div class="story-header">
+  <div class="story-number">Story Three</div>
+  <h2 class="story-title">The Leave-taking of Pascha</h2>
+  <div class="story-timing">Eve of the Ascension</div>
+</div>
+<div class="story-body">
+<p>For forty days, the churches sing "Christ is Risen."</p>
+<p class="dialogue">"On the eve of the Ascension,"<span class="fn-ref">1<span class="fn-tooltip">The Ascension of the Lord is a major feast of the Orthodox Church, celebrated on the fortieth day after Pascha, commemorating Christ's bodily ascent into heaven from the Mount of Olives. On the eve of the Ascension, the "Leave-taking of Pascha" is observed — the last service of the Paschal season, conducted with the full Paschal rite.</span></span> Yakov explained to me, "the Holy Shroud, which has lain on the altar table since the very Bright Matins, will be placed back into the sepulchre, and there it will rest in its tomb-shelter until the next Great Day… In a word, say goodbye to Pascha, little Vasenka!"<span class="fn-ref">2<span class="fn-tooltip">Vasenka is an affectionate diminutive of Vasily (Basil) — the author's own first name. The stories are autobiographical, drawn from childhood memories.</span></span></p>
+<p>I was greatly upset and asked Yakov:</p>
+<p class="dialogue">"Why does everything beautiful come to an end so quickly?"</p>
+<p class="dialogue">"It hasn't all ended yet! Surely your mother told you that it's possible to hear the Paschal Matins one more time… in just a few days!"</p>
+<p>I was overcome with excitement.</p>
+<p class="dialogue">"Paschal Matins? In a few days? Can this really be, when the bird-cherry tree is in bloom? You're making it up, Yakov!"</p>
+<p class="dialogue">"I'm making nothing up! In the Church calendar this day is called the 'Leave-taking of Pascha,' and in popular speech — the farewell to Pascha!"</p>
+<p>When I told this to Grishka, Kotka, and the yardkeeper Davydka, they laughed at me.</p>
+<p class="dialogue">"What a blockhead you are," said the yardkeeper, "every word out of your mouth costs a farthing in losses! Shame on you — even dogs blush at your stupidity!"</p>
+<p>This did not sit well with me, and I called Davydka such a name that he immediately went to complain to my father.</p>
+<p>My hair was pulled, but I consoled myself with the thought that I had suffered for the truth, and recalled the proverb: <em>"Even prison is sweet for the sake of truth!"</em> And my mother said to me reproachfully:</p>
+<p class="dialogue">"Do not speak foul words, my son! Never! Such words will darken you like an Ethiopian, and your guardian angel, who walks behind you, will abandon you forever!"</p>
+<p>Then she turned to my father:</p>
+<p class="dialogue">"A real punishment for children, our street is: a tavern, two alehouses, and a saloon!<span class="fn-ref">3<span class="fn-tooltip">Kazyonka (казёнка) — a state-licensed liquor shop; pivnaya (пивная) — a beer shop or alehouse. In pre-revolutionary Russia, such establishments were common on working-class streets, and their proximity to children was a familiar complaint of pious mothers.</span></span> We ought to move somewhere with more grass and gardens… It was wrong of us to come to the city! We would have been better off staying in the village…"</p>
+<p>Just before the Ascension, I went to church. The last Paschal Matins was served early in the morning, in white vestments, with a Paschal candle, but the church was almost empty. Nobody in the city knows that there is such a day, when the Church bids farewell to Pascha.</p>
+<p>Everything was just as it had been at the Paschal Matins in the night — only the light was that of morning, and there were no <em>kulichi</em> and no noise, and when the priest proclaimed to the people: "Christ is Risen!" — there was no joyful thunder of "Indeed He is Risen!" in response.</p>
+<p>For the last time they sang: <span class="liturgical"><em>"The sacred Pascha is revealed to us today…"</em><span class="fn-ref">4<span class="fn-tooltip">"The sacred Pascha is revealed to us today" is a verse from the Paschal canon, sung for the last time at the Leave-taking of Pascha. The full text continues: "the new and holy Pascha, the mystical Pascha, the all-venerable Pascha."</span></span></span></p>
+<p>After the Paschal Liturgy, the Holy Shroud was carried out of the altar, placed in the golden sepulchre, and covered with a glass lid.</p>
+<p>And for some reason it became hard for me to breathe, just as it had been at the funeral of my little brother Ivanushka.</p>
+<p>I began counting on my fingers how many months remained until the next Pascha, but I could not count them… so very, very many months!</p>
+<p>After the service I walked Yakov to the doss-house,<span class="fn-ref">5<span class="fn-tooltip">A doss-house (nochlezhnyi dom) was a cheap lodging house for the urban poor in pre-revolutionary Russia — itinerant workers, beggars, and the destitute. The fact that Yakov lives in such a place gives him an air of the wandering folk-wise man, a recurring figure in Russian religious literature.</span></span> and along the way he said to me:</p>
+<p class="dialogue">"Will we live to see the next Pascha? You, dear boy, don't count — you'll make it! But as for me — I don't know. Pascha!" — he smiled bitterly — "It's only for the sake of it that one doesn't want to die!… And I'll tell you: if there were no Pascha on earth, man would turn dark with grief! Pascha is necessary to man!"</p>
+<p>We reached the doss-house. We sat down on a bench. Around us gathered posadskie folk,<span class="fn-ref">6<span class="fn-tooltip">Posadskie (посадские) — originally, townspeople of the artisan and merchant class in old Russia. By the late 19th century the term was used more loosely to describe the settled urban working poor, as distinct from peasants newly arrived from the countryside.</span></span> paupers and drifters, tramps, drunkards, and perhaps thieves and killers too. Among them was a woman in rags, with a livid face and trembling hands.</p>
+<p class="dialogue">"In ancient times," Yakov recounted, "after the Liturgy on Holy and Great Saturday, no one went home, but everyone remained in the church until the Bright Matins, listening to the reading of the Acts of the Apostles… When I was in Siberia, I saw how bonfires were lit around churches in memory of the cold night that Christ spent in the courtyard of Pilate… And there is also this: when everyone processes out of the church during the Bright Matins, the holy saints descend from their icons and exchange the Paschal greeting with one another."</p>
+<p>The woman with the livid face laughed hoarsely. Yakov looked at her and said with concern:</p>
+<p class="dialogue">"Your laughter — that is your tears."</p>
+<p>The woman pondered these words, took them in, and began to cry.</p>
+<p>During the conversation there arrived the former psalm-reader<span class="fn-ref">7<span class="fn-tooltip">A psalm-reader (psalomshchik) was a minor cleric in the Russian Orthodox Church whose duty was to chant the psalms and other texts during services. Semigradsky has evidently fallen on hard times and now lives in the doss-house, though he is still hired out on feast days to read in church.</span></span> Semigradsky, whom the merchants would pull out of the doss-house to read the paremias<span class="fn-ref">8<span class="fn-tooltip">Paremias (паремии) are Old Testament readings from the Septuagint, chanted during Vespers services on the eves of major feasts. They require a trained and resonant voice to deliver properly.</span></span> and Epistles in church on great feast days for three roubles, and of whom people said: "What a mighty voice."</p>
+<p>Having heard Yakov out, he cleared his throat and wanted to speak.</p>
+<p class="dialogue">"Yes, we know little about our own Church," he began, "yet we call ourselves Orthodox!… Tell me, you who are sitting here: what is the name of the large round bread that lies at the Royal Doors on the lectern during Bright Week?"<span class="fn-ref">9<span class="fn-tooltip">Bright Week (Svetlaya sedmitsa) is the week immediately following Pascha Sunday. During this week, the artos is carried in procession, displayed before the Royal Doors of the iconostasis, and distributed to the faithful on the Saturday of Bright Week.</span></span></p>
+<p class="dialogue">"The artos!"<span class="fn-ref">10<span class="fn-tooltip">Artos (from Greek: ἄρτος, "bread") is a special leavened bread blessed at the beginning of Pascha and kept in the church throughout Bright Week. It symbolizes Christ Himself, the Bread of Life, present in the midst of His disciples after the Resurrection. On the Saturday of Bright Week it is broken and distributed to the faithful to eat.</span></span> — Yakov and I answered almost simultaneously.</p>
+<p class="dialogue">"Correct! It is also called the 'all-whole prosphora.'<span class="fn-ref">11<span class="fn-tooltip">A prosphora (просфора) is the liturgical bread used in the Orthodox Eucharist. The artos is called "all-whole" (vsetsyelaya) because, unlike the regular prosphora which is cut up, it remains intact throughout Bright Week, symbolising the completeness and wholeness of Christ's risen Body.</span></span> But do you know its significance? You do not! In apostolic times, at the table during the communal meal, a place was set for Christ as a sign of His invisible presence at supper…"</p>
+<p class="dialogue">"And when will they be distributing the artos in church?" asked the woman, and for some reason grew embarrassed.</p>
+<p class="dialogue">"A fine question!" Yakov looked at her with quiet reproach. "The artos was distributed on the Saturday of Bright Week… The Ascension is upon us, my dear, and you ask about the artos!"</p>
+<p class="dialogue">"Give me just a little crumb, if you have any," she asked him, "I'll keep it!"</p>
+<p>Semigradsky warmed to his subject and was glad that people were listening to him.</p>
+<p class="dialogue">"Now, at the All-Night Vigil they sing the hymn <em>'Gladsome Light…'</em><span class="fn-ref">12<span class="fn-tooltip">"Gladsome Light" (Svete Tikhiy) is one of the oldest and most beloved hymns of the Orthodox Church, sung at Vespers as a candle or lamp is brought into the church. The author of the hymn is not known with certainty; one ancient tradition attributes it to Patriarch Sophronius of Jerusalem.</span></span> But no one knows how that hymn came to be…"</p>
+<p>I looked at him and reflected:</p>
+<p class="dialogue">Why do people so despise drunkards? Among them there are many who are good and wise!</p>
+<p class="dialogue">"Once upon a time, Patriarch Sophronius," recounted Semigradsky, as if reading from a book, "stood on a hilltop in Jerusalem. His gaze fell upon the dying Palestinian sun. He imagined how Christ had looked from that same hill, and that the same light had fallen upon His face, and the golden air of Palestine had shimmered in just that way… The material sun reminded the patriarch of the Unwaning Sun — Christ — and this moved him so deeply that he began to sing in holy inspiration:</p>
+<span class="liturgical"><em>O Gladsome Light of the holy glory…</em></span>
+<p>"I will absolutely make friends with him!" — I decided, looking at Semigradsky with wide eyes.</p>
+<p>That day I told all my friends how Patriarch Sophronius, gazing at the setting Palestinian sun, had sung: <em>"O Gladsome Light of the holy glory."</em></p>
+</div>
+</article>
+
+<!-- ══ STORY 4 ══ -->
+<article class="story-card" id="s4">
+<div class="story-header">
+  <div class="story-number">Story Four</div>
+  <h2 class="story-title">The Earth Celebrates Her Name Day</h2>
+  <div class="story-timing">Trinity Sunday</div>
+</div>
+<div class="story-body">
+<p>The birches outside our window rustled in anticipation of the coming holiday, in celebration of the Holy Trinity.<span class="fn-ref">1<span class="fn-tooltip">In the Orthodox Church, the celebration of Trinity Sunday is on the same day as Pentecost, fifty days after Pascha (Orthodox Easter).</span></span> If you sat in their shade, merged with the shimmer of their gleaming leaves, and squeezed your eyes shut, a bright, rippling path would appear to you, like on a river at sunrise, and it seemed as if the Holy Trinity was walking down the path in the form of three angels in white robes.<span class="fn-ref">2<span class="fn-tooltip">The depiction of the Trinity as three angels is a direct allusion to the Hospitality of Abraham, a biblical story found in the 18th chapter of Genesis, a foundational image in Eastern Orthodox theology. This is immortalized in Russia by Andrei Rublev's famous 15th-century icon, The Trinity, and is further reflected in the visions of Russian saints, most notably St. Alexander of Svir.</span></span></p>
+<p>On the eve of the holiday, Mother said, "Tomorrow is the earth's name day!"<span class="fn-ref">3<span class="fn-tooltip">A "name day" is not a birthday, marking the day of one's physical birth. Rather, it's like a spiritual birthday. A Russian person is traditionally named after an Orthodox saint, and the person's "name day" marks the feast day of that particular saint. In traditional Russian Orthodox culture, one's name day was often considered a more important personal holiday than one's birthday.</span></span></p>
+<p class="dialogue">"How is it her name day?"</p>
+<p class="dialogue">"Because, son, <em>Trinity Sunday</em> falls on the feast of St. Simon the Zealot tomorrow, and on St. Simon's day, the earth celebrates her <em>name day.</em> All across <em>Rus',</em><span class="fn-ref">4<span class="fn-tooltip">The author uses the term "Rus'," an archaic and poetic term, instead of "Russia." It refers to the historical and spiritual ideal of "Holy Rus'" — the timeless, sacred homeland of the Orthodox Christian faith and traditional folk culture. It evokes a legendary, national soul, distinct from the modern political state.</span></span> the peasants won't be plowing!"<span class="fn-ref">5<span class="fn-tooltip">According to Russian folk tradition, on the feast of St. Simon the Zealot, the Earth itself is honored as if she were a Russian Orthodox girl celebrating her name day. This is why no one can plow — it is a day of rest and reverence for the Earth.</span></span></p>
+<p>"The earth is celebrating her name day!"</p>
+<p>These extraordinary words were so delightful that my whole soul lit up. I ran out into the street. I met Fedka<span class="fn-ref">6<span class="fn-tooltip">"Fedka" is an affectionate nickname for "Fyodor." The English equivalent would be "Theodore" or "Teddy."</span></span> and Grishka<span class="fn-ref">7<span class="fn-tooltip">"Grishka" is an affectionate nickname for "Grigory." The English equivalent would be "Gregory" or "Greg."</span></span> and asked them:</p>
+<p class="dialogue">"Guys, guess whose name day is tomorrow? If you guess, I'll buy you two <em>kopecks'</em> worth<span class="fn-ref">8<span class="fn-tooltip">Kopecks are Russian coins of little value, similar to pennies in America. One hundred kopecks makes one ruble.</span></span> of boyar's kvass!"<span class="fn-ref">9<span class="fn-tooltip">Kvass is a lightly fermented beverage made from rye bread, common in Russia. A boyar was a high-ranking nobleman in old Russia. So "boyar's kvass" would be a premium type of this beverage.</span></span></p>
+<p>The boys puffed out their cheeks and began to think. I looked at them as if I were <em>General Skobelev</em><span class="fn-ref">10<span class="fn-tooltip">General Skobelev was a famous and highly respected Russian general in the 19th century, known as the "White General" for wearing a white uniform.</span></span> peering down from his white horse (we had a painting like that).</p>
+<p>Father had said more than once that my friends Fedka and Grishka were not just children, but blessings from God, since they honored their parents, didn't sneak sugar without asking, didn't climb into other people's gardens for apples, and could read printed text so deftly, it was like watching birds fly. I was glad that I had posed such a tricky riddle to such smart boys.</p>
+<p>They thought and thought and finally admitted with a sigh:</p>
+<p class="dialogue">"We can't guess. Tell us."</p>
+<p>I maintained a dignified silence, blew my nose, and answered with relish:</p>
+<p class="dialogue">"Tomorrow, the earth is celebrating her name day!"</p>
+<p>They wanted to laugh at me, but then, realizing something, they fell silent and grew thoughtful.</p>
+<p class="dialogue">"That's true," said Fedka, seriously. "On Trinity Sunday, the earth is always dressed up and happy, like a girl on her name day!"</p>
+<p>Then Grishka slyly added:</p>
+<p class="dialogue">"You've got a good head, <em>Vaska,</em><span class="fn-ref">11<span class="fn-tooltip">"Vasenka" is an affectionate nickname for "Vasily." The nickname "Vaska," used here, is a rougher, street-boy form of the same name. The English equivalent of "Vasily" is "Basil." The first name of the author is Vasily, and the story is autobiographical.</span></span> too bad it's on a fool!"</p>
+<p>I couldn't take his namecalling and started crying. My father leaned out the window and shouted:</p>
+<p class="dialogue">"What are you fussing about? You'd be better off going to the woods with the boys for some birch branches!"<span class="fn-ref">12<span class="fn-tooltip">The practice of gathering birch branches is a popular Russian Orthodox tradition in preparation for celebrating Trinity Sunday. Churches and homes are decorated with greenery to symbolize the renewal of life by the Holy Spirit at Pentecost. The birch, Russia's national tree, represents both purity and the joy of spring's transition into summer.</span></span></p>
+<p>The fragrant, ringing word — "woods" — made my heart tremble. I stopped crying. Reconciled, I grabbed Fedka and Grishka by the hands and began begging them to go for birch branches. We each took a loaf of bread from home and walked along the town's main street, singing, joyful and intoxicated with anticipation of our impending adventure in the woods. And we sang the song of the shoemakers who lived in our community:</p>
+<span class="verse-block"><em>My sorrow is not a seedling,<br>
+You can't plant it in rows,<br>
+And my grief is not a splinter,<br>
+You can't burn it at night.</em></span>
+<p>We were stopped by the pot-bellied constable <em>Gavrilych,</em><span class="fn-ref">13<span class="fn-tooltip">Gavrilych is a colloquial form of the patronymic Gavrilovich, meaning "son of Gavril" (Gabriel). In Russian, using a patronymic alone is a common way to refer to an older man, often of a working-class background. It conveys a mix of familiarity and respect.</span></span> who said, "Hey, you kids, keep it down!"</p>
+<p>In the woods, it was so joyous and bright it was almost overwhelming — a feeling so intense it was dizzying, aching, with sensations flooding our vision — a veritable rainbow of colors. We met some woodcutters in the thicket. One of them — with a beard like a woodsprite — looked at us and said, "These kids live and bloom like scarlet flowers, but our heads wither like grass…"</p>
+<p>We were pleased that they thought well of us, and that they had called us scarlet flowers.</p>
+<p>But before making it home with all the thin, rustling birch branches, my joy was dampened.</p>
+<p>Coming out to the forest edge, Grishka suggested we tell our fortunes by the cuckoo — how many more years would we live?<span class="fn-ref">14<span class="fn-tooltip">This refers to a common Russian folk superstition. By counting the number of times a cuckoo bird calls, a person could supposedly predict how many years they had left to live. The bird's call was considered an omen.</span></span></p>
+<p>The cuckoo cuckooed eighty years for Grishka, sixty-five for Fedka, and for me only two years.</p>
+<p>From bitter hurt, I fell on the grass and cried, "I don't want to die in two years!"</p>
+<p>The guys felt sorry for me and tried to persuade me not to believe the cuckoo, since it's a stupid bird that always lies. And only when Fedka suggested "interrogating" the cuckoo a second time did they manage to calm me down.</p>
+<p>I turned my tear-stained face in its direction and through my sobs began to beg the prophetic bird, "Cuckoo, cuckoo, cuckoo for me, how long shall I live in this world?"</p>
+<p>This time it cuckooed fifty years for me. I felt easier at heart, though I secretly wished to live a hundred and twenty years for some reason…</p>
+<p>We returned home under the light of the evening star,<span class="fn-ref">15<span class="fn-tooltip">The "evening star" is a poetic name for the planet Venus.</span></span> under starry skies, through the quiet dew. The whole way we were silent, dipping our hot faces into the downy birch foliage and feeling with one heart: how good it is to be alive, when tomorrow the earth will celebrate her name day!</p>
+<p>I sensed the arrival of the Holy Trinity in the courtyard early in the morning, in the image of the dawn, which filled our small room with a delicate radiance. Mother was dutifully lighting the <em>lampada</em><span class="fn-ref">16<span class="fn-tooltip">A lampada is an oil lamp lit before icons in Orthodox Christian homes and churches.</span></span> before the icons and whispering, "Most Holy Trinity, save and protect us…"</p>
+<p>Our home smelled of pies, and in that smell, one felt the significance of the coming day. I got out of bed and stepped with my warm feet onto the floor's first chilly morning sunbeams.<span class="fn-ref">17<span class="fn-tooltip">These "chilly morning sunbeams" are a reference to sunlight that is visually warm, but that seems to carry the cold sensation of the previous night's frost. The boy steps from his warm bed onto these cool patches of light on the cold floor. The story takes place in a northern part of Russia, where it is not unusual to have chilly mornings in May.</span></span></p>
+<p class="dialogue">"Why are you up so early?" whispered Mother. "You should sleep more."</p>
+<p>I asked her, "What are the pies made of?"</p>
+<p class="dialogue">"Rice."</p>
+<p class="dialogue">"And what else?"</p>
+<p class="dialogue">"Lingonberry jam."<span class="fn-ref">18<span class="fn-tooltip">Lingonberries are tart red berries similar to cranberries, common in Northern European and Russian cuisine.</span></span></p>
+<p class="dialogue">"And what else?"</p>
+<p class="dialogue">"Nothing else."</p>
+<p class="dialogue">"Not enough," I frowned, "but Grishka told me they have six pies and three large loaves of bread today!"</p>
+<p class="dialogue">"Don't try to keep up with him, son… They are wealthy."</p>
+<p class="dialogue">"Give me a piece of pie with jam. I really want some!"</p>
+<p class="dialogue">"Son, are you a Freemason or a Turk?"<span class="fn-ref">19<span class="fn-tooltip">A Freemason or a Turk — in this context, Mother uses these terms to mean a non-Orthodox outsider or heretic who doesn't follow the religious rules (like fasting).</span></span> Mother threw up her hands. "What sort of Orthodox Christian eats pies before liturgy?"<span class="fn-ref">20<span class="fn-tooltip">The liturgy is the Eucharistic service in the Eastern Orthodox Church. Those who partake of the Eucharist are forbidden from eating or drinking anything prior to the service.</span></span></p>
+<p class="dialogue">"<em>Pyotr Leksandrych,</em>" I answered, "he even wolfs down pork during Lent!"</p>
+<p class="dialogue">"He's not Orthodox, son, he's a medic!" said Mother, referring to our neighbor, the paramedic <em>Filippov.</em><span class="fn-ref">21<span class="fn-tooltip">This line reflects a traditionalist worldview where modern, secular professions like a paramedic were associated with a rejection of Orthodox customs. The mother isn't making a doctrinal statement but a social one, classifying the neighbor as an outsider to the community of faith whose actions are therefore not a good example.</span></span> "Don't pay attention to him. It's better to pray to God and go to liturgy."</p>
+<p>Warming the earth on her name day, the sunshine spread out in fragrant, thick waves. It had already become quite warm outside, and everyone said there would be a thunderstorm!</p>
+<p>I waited for it with an anxious but pleasant alertness — the first spring thunder!</p>
+<p>Before I left for liturgy, <em>Lida</em><span class="fn-ref">22<span class="fn-tooltip">"Lida" is a nickname for "Lydia." In Russia, the name carries a soft, melodic quality that fits the character's gentle and beautiful portrayal.</span></span> came to us — the washerwoman's daughter, the most beautiful girl in our community — and, lowering her eyelashes, shyly asked Mother for a silver spoon.</p>
+<p class="dialogue">"What for?"</p>
+<p class="dialogue">"They say there will be a thunderstorm today, so I want to sprinkle myself with rainwater from silver. It makes your complexion good!"<span class="fn-ref">23<span class="fn-tooltip">This reflects an old Russian folk belief. Silver was attributed with purifying properties, and water collected from the first rain of a thunderstorm was considered especially potent and life-giving. Combining them was believed to create an elixir that could bestow purity, health, and beauty.</span></span></p>
+<p>She said this and blushed like a crimson dawn.</p>
+<p>I looked at her as at a golden chalice<span class="fn-ref">24<span class="fn-tooltip">In the Eastern Orthodox liturgy, the golden chalice holds wine that has been consecrated and transformed into the very blood of Christ. It is the most sacred and revered object on the altar. By making this comparison, the boy portrays Lida as someone of ultimate beauty, purity, and sanctity in his eyes.</span></span> during liturgy, and, flushing with a hot blush from admiration and joy, exclaimed:</p>
+<p class="dialogue">"Your face is like an angel's!"</p>
+<p>Everyone laughed. Ashamed, I ran out into the street, hid in the garden shade, and for some reason covered my face with my hands.</p>
+<p>The church crowned the earth's name day with wonderful words, hymns, and long, mysterious prayers, during which we knelt<span class="fn-ref">25<span class="fn-tooltip">In Orthodox Christian practice, all kneeling for prayer is prohibited during the 50 days from Pascha to Pentecost. That's because this period is a continuous celebration of Christ's joyous Resurrection and Ascension. The act of kneeling on Pentecost is therefore highly significant — it's the first time this solemn, penitential posture has been allowed since Easter.</span></span> — and the floor was strewn with flowers and fresh grass.<span class="fn-ref">26<span class="fn-tooltip">This describes a unique custom for the Orthodox feast of Pentecost. The floor of the church is strewn with grass and flowers, and worshippers kneel directly on this greenery. This practice symbolizes the life-giving power of the Holy Spirit, and transforms the entire church into a symbol of the renewed creation.</span></span> I picked blades of grass from the floor, rubbed them between my palms, and, breathing in their bitter scent, remembered the green expanses of the field and the words of the wanderer <em>Yashka,</em><span class="fn-ref">27<span class="fn-tooltip">Yashka is a nickname for Yakov (Jacob). This nickname characterizes the wanderer as a simple, folksy figure from a humble background.</span></span> who had traversed all of Russia on foot:</p>
+<p class="dialogue">"I'll walk through the green meadow, gaze at the blue sky 'till I've had my fill, and return by the crimson dawn."</p>
+<p>After dinner, we went to the cemetery to commemorate our departed kin. On Trinity Sunday, the priests and deacons from the town's seven churches served memorial services at the graves.<span class="fn-ref">28<span class="fn-tooltip">In Orthodox Christian tradition, certain major feast days like Trinity Sunday are common times to hold panikhidas (memorial services) at cemeteries. Praying for the dead on a day celebrating the life-giving Holy Spirit expresses hope for eternal rest and resurrection, uniting the joy of the feast with loving remembrance.</span></span> Near the white cemetery gates, a fair swirled, screeched, whistled, shouted, and raised dust. The legless beggar <em>Yevdokim</em><span class="fn-ref">29<span class="fn-tooltip">The name Yevdokim is a Russian form of the Greek name Eudokimos, which means "well-received" or "in good favor." Its use for the legless beggar creates a poignant contrast between his humble, suffering state and the dignified meaning of his name — a common device in Russian literature to highlight the hidden sanctity of the afflicted.</span></span> sitting in a cart, sang in a high, sobbing voice about the Mother of God walking through flower-strewn fields and gathering flowers, "to adorn the life-giving tomb of Her Beloved Son."</p>
+<p>Around <em>Yevdokim,</em> women stood and listened, grief-stricken. The legless man's wooden bowl was full of copper coins. I looked at them and thought:</p>
+<p class="dialogue">It's good to be a beggar! How many sweets you can buy with that money!</p>
+<p>Father gave me a five-kopeck piece (and this, too, was a holiday). I bought a kopeck's worth of boyar's kvass for myself, a kopeck's worth of hard candies (four pieces), and three kopecks' worth of orange flavored ice cream. It made my teeth ache, and I cried for the whole fair to hear.</p>
+<p>Mother comforted me and said, "You shouldn't touch city sweets, son! They always bring punishment and sin!"<span class="fn-ref">30<span class="fn-tooltip">The mother views mass-produced "city sweets" as worldly, corrupting, modern indulgences. Her belief that they bring about sin and physical punishment reflects a worldview where moral and physical health are closely intertwined.</span></span> She made the sign of the cross over me,<span class="fn-ref">31<span class="fn-tooltip">Her making the sign of the cross is a traditional ritual for healing and invoking God's protection, demonstrating the power of faith in her life.</span></span> and my teeth stopped hurting.</p>
+<p>At the cemetery, Mother scattered seeds on a little grave<span class="fn-ref">32<span class="fn-tooltip">This is a traditional folk practice among some Russian Orthodox Christians. Scattering seeds or grain is an act of almsgiving performed in the name of the deceased. While feeding God's creatures (the birds), the living pray for God's mercy on the departed soul. It also symbolizes the hope of resurrection, as a seed is buried to bring forth new life.</span></span> — for the birds, for the memorial — and then they served a <em>panikhida.</em><span class="fn-ref">33<span class="fn-tooltip">A panikhida is a memorial service for the dead in the Eastern Orthodox Church.</span></span> The Trinity Sunday <em>panikhida</em> sounded bright, and "the life everlasting," of which the priests sang, also seemed bright, all in flowers and birch branches.</p>
+<p>We had hardly reached home when thunder began rumbling across the earth. The rain at first scattered in round little grains, then got going and came down in a rattling downpour. From the merry, heavy rain, the trees rustled with fresh, broad voices, and the air smelled strongly of birches.</p>
+<p>I stood on the porch and sang at the top of my lungs:</p>
+<span class="verse-block"><em>Rain, rain, go away,<br>
+I will go to the Jordan —<br>
+to pray to God, to bow to Christ.</em><span class="fn-ref">34<span class="fn-tooltip">This was a common folk song popular with children in Old Russia.</span></span></span>
+<p>Lida ran out into the middle of the community courtyard, held out a silver spoon to the rain, and sprinkled her dear face with the first storm raindrops.</p>
+<p>With joyful, tear-filled eyes, I looked at her and thought with a sinking heart:</p>
+<p class="dialogue">"When I grow up, I will definitely marry her!"</p>
+<p>And to grow up faster, I stood a long time in the rain and soaked my new holiday suit right through.<span class="fn-ref">35<span class="fn-tooltip">This act reflects the child's tenderly literal and poetic logic: he believes standing in the life-giving rain will make him grow like the natural world around him. Soaking his holiday suit — a symbol of family effort and the solemn occasion — underscores the clash between his innocent yearning for the future and the humble, fleeting world of his childhood.</span></span></p>
+</div>
+</article>
+
+</div><!-- .page-wrap -->
+
+<footer class="bio-section">
+  <div class="bio-inner">
+    <div class="bio-label">About the Author</div>
+    <h2 class="bio-title">Vasily Akimovich Nikiforov-Volgin<br><span style="font-size:0.7em; font-weight:400;">1900 – 1941</span></h2>
+    <div class="bio-rule"><span>☩</span></div>
+    <div class="bio-text">
+      <p>Vasily Akimovich Nikiforov-Volgin, a unique Orthodox Christian writer, was born on December 24, 1900 (January 6, 1901, New Style) in the village of Markushi, Kalyazinsky Uyezd, in the Tver Province, on the Volga River, into a deeply religious peasant family. His father was a cobbler. Soon after his birth, the Nikiforov family moved to Narva (which was then part of the St. Petersburg Governorate).</p>
+    </div>
+
+    <button class="bio-expand-btn" id="bioBtn" onclick="toggleBio()" aria-expanded="false" aria-controls="bioFull">
+      <span id="bioText">Read full biography</span>
+      <span class="bio-expand-arrow">&#8964;</span>
+    </button>
+
+    <div class="bio-full" id="bioFull" hidden>
+      <div class="bio-text">
+        <p>After 1920, according to the Treaty of Tartu, the territory on the right bank of the Narova River (Narva with the Prinarovye region) was transferred to the Republic of Estonia. Consequently, the writer's family became involuntary emigrants, cut off from their dearly beloved Russian homeland. However, in the 1920s and 30s, the old Russian way of life, with its customs and traditions, order and practices, was still preserved there. It was this life that Nikiforov-Volgin described in his sketches and stories.</p>
+        <p>The future writer only managed to complete his studies at the parish school of the St. Vladimir Brotherhood. However, it was a good school. The young man engaged in serious self-education extensively. His passion for books and reading manifested itself in early childhood. Deeply religious from childhood and possessing a high-pitched voice with clear, expressive diction, he became a precentor<span style="font-size:0.7em; vertical-align:super; color:#c4983a;">*</span> at the Holy Transfiguration Cathedral in Narva and remained one until the spring of 1932. This is the source of his excellent knowledge of church life and the clergy's way of life, which is evident in his works.</p>
+        <p>According to the recollections of one of his friends, Vasily loved to take a notebook and pencil and sneak into a secluded corner of the church watchhouse before the service began, listening to worshippers and people who just came in to warm up, and writing down what they were talking about among themselves. Their poignant remarks and folk expressions later found their way into his stories.</p>
+        <p>In 1923, he began his regular literary and journalistic activities. In 1927, he received his first award for writing: at a competition for young authors organized by the oldest Estonian literary association — The Literary Circle in Tallinn — first prize was awarded to V. Nikiforov-Volgin's story, "Bowing to the Ground." He usually signed his publications with the pseudonym Vasily Volgin — in memory of the great Russian river on which his native village was located. Over time, he began signing his name as V. Nikiforov-Volgin, combining his surname with his pseudonym.</p>
+        <p>By the mid-1930s, Nikiforov-Volgin was already known in the literary circles of the Russian Diaspora, corresponding with I. Shmelev, A. Amfiteatrov, B. Zaitsev, and others. In early 1936, he moved to Tallinn, becoming a home tutor and educator. Among his pupils was Alexy (Ridiger), the future Patriarch of Moscow and All Russia, Alexy II.</p>
+        <p>Two collections of his stories were published — "The Earth Celebrates Her Name Day" (1937) and "The Pilgrim's Staff" (1938), which were met with positive reviews in Russian publications abroad.</p>
+        <p>According to the recollections of those who knew him, Vasily Nikiforov was an exceptionally kind, warm-hearted, and responsive person. His sisters told how once, in severe frost, Vasily gave his hat and winter coat to a beggar on the street, justifying himself at home by saying: "I felt sorry for the man — he was freezing, and I'll manage somehow…"</p>
+        <p>Nikiforov-Volgin was a deeply religious man, and this primarily defined his worldview and the character of all his work. Memoir-stories about childhood constituted a significant part of his work. He depicted scenes of church services, church holidays, and a boy's communication with "holy people." Nikiforov-Volgin depicts this world of the church and believers — so familiar to him — accurately, authentically, and with love. He manages to recreate all the minutiae of this world in his works, including everyday details, and at the same time convey its special atmosphere, its spirit, its hidden beauty.</p>
+        <p>Regarding his stories, he wrote in a letter to a friend: "There is no fiction in my story. I had to go through and experience all this. The names of the characters are changed. Some of them are no longer with us."</p>
+        <p>On May 24, 1941, the writer was arrested and transported to the city of Kirov. On December 14, 1941, he was shot for "publishing books, pamphlets, and plays of a slanderous, anti-Soviet nature." He was rehabilitated in 1991.</p>
+      </div>
+      <div class="bio-fn">
+        <p><span style="color:#c4983a;font-family:'Forum',serif;font-size:.72rem;">*</span> "Precentor" is an approximate translation of the Russian term псаломщик (psalomshchik). In 19th and early 20th century Russia, this minor cleric was the musical and administrative mainstay of the parish. He would regulate the singing and reading in the choir, coordinate the order of worship, and also functioned as the parish clerk, maintaining all church records and handling the parish's official correspondence.</p>
+        <p><span style="color:#c4983a;font-family:'Forum',serif;font-size:.72rem;">**</span> For more detailed information about the writer's family and genealogy, please refer to Igor Budkov's article, "The Genealogy of Writer Vasily Nikiforov-Volgin" at <a href="https://pravoslavie.ru/167348.html" target="_blank" rel="noopener" style="color:rgba(232,184,0,.6)">pravoslavie.ru/167348.html</a> (in Russian).</p>
+      </div>
+    </div>
+    <div class="copyright">Vasily Nikiforov-Volgin · From Pascha to Pentecost · Memories of Childhood</div>
+  </div>
+</footer>
+
+<!-- Mobile footnote panel -->
+<div id="fnOverlay" class="fn-sheet-overlay" onclick="closeSheet()">
+  <div class="fn-sheet" onclick="event.stopPropagation()">
+    <div class="fn-sheet-close"></div>
+    <div class="fn-sheet-num" id="fnNum"></div>
+    <div class="fn-sheet-text" id="fnText"></div>
+  </div>
+</div>
+
+<script>
+function toggleBio(){
+  const btn=document.getElementById('bioBtn');
+  const full=document.getElementById('bioFull');
+  const open=btn.getAttribute('aria-expanded')==='true';
+  full.hidden=open;btn.setAttribute('aria-expanded',!open);
+  document.getElementById('bioText').textContent=open?'Read full biography':'Collapse biography';
+}
+const isTouch=()=>('ontouchstart' in window)||(navigator.maxTouchPoints>0);
+function openSheet(num,text){
+  document.getElementById('fnNum').textContent='Note '+num;
+  document.getElementById('fnText').textContent=text;
+  document.getElementById('fnOverlay').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeSheet(){
+  document.getElementById('fnOverlay').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+document.querySelectorAll('.fn-ref').forEach(ref=>{
+  const tip=ref.querySelector('.fn-tooltip');
+  const text=tip?tip.textContent.trim():'';
+  const num=ref.childNodes[0]?ref.childNodes[0].nodeValue.trim():'';
+  ref.setAttribute('tabindex','0');
+  if(isTouch()){
+    ref.classList.add('touch-device');
+    ref.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openSheet(num,text);});
+  } else {
+    ref.addEventListener('mouseenter',()=>{
+      const r=ref.getBoundingClientRect();
+      if(r.left>window.innerWidth*.6)ref.classList.add('fn-right');
+      else ref.classList.remove('fn-right');
+    });
+  }
+  ref.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSheet(num,text);}});
+});
+</script>
+
+<!-- ── Back to Contents button ── -->
+<a class="to-toc-btn" id="toTocBtn" href="#toc" aria-label="Back to Contents">
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5 11V2M2 6l4.5-4.5L11 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Contents
+</a>
+<script>
+// ── Кнопка "К оглавлению" ──
+(function(){
+  var btn = document.getElementById('toTocBtn');
+  var toc = document.getElementById('toc');
+  if (!btn || !toc) return;
+  var tocBottom = 0;
+  function update(){
+    tocBottom = toc.getBoundingClientRect().bottom + window.scrollY + 120;
+    btn.classList.toggle('visible', window.scrollY > tocBottom);
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+</script>
+<script>
+// ── TOC mini-player ──
+let tocAudio = null, tocBtn = null;
+function tocPlay(btn, src) {
+  if (tocAudio && tocBtn && tocBtn !== btn) {
+    tocAudio.pause(); tocAudio.currentTime = 0;
+    tocBtn.textContent = '▶'; tocBtn.classList.remove('playing');
+  }
+  if (!tocAudio || tocBtn !== btn) {
+    tocAudio = new Audio(src); tocBtn = btn;
+    tocAudio.addEventListener('ended', () => { btn.textContent = '▶'; btn.classList.remove('playing'); });
+  }
+  if (tocAudio.paused) {
+    if (currentStory) pauseStory(currentStory);
+    tocAudio.play();
+    btn.textContent = '⏸'; btn.classList.add('playing');
+  } else {
+    tocAudio.pause();
+    btn.textContent = '▶'; btn.classList.remove('playing');
+  }
+}
+
+// ── Story full player ──
+let currentStory = null;
+const storyAudios = {};
+
+function getAud(sid) {
+  if (!storyAudios[sid]) {
+    const el = document.getElementById('aud-' + sid);
+    storyAudios[sid] = el;
+    el.addEventListener('timeupdate', () => updateBar(sid));
+    el.addEventListener('ended', () => {
+      document.getElementById('playbtn-' + sid).textContent = '▶';
+      document.getElementById('playbtn-' + sid).classList.remove('playing');
+      currentStory = null;
+    });
+    el.addEventListener('loadedmetadata', () => updateBar(sid));
+  }
+  return storyAudios[sid];
+}
+
+function pauseStory(sid) {
+  const aud = getAud(sid);
+  aud.pause();
+  const btn = document.getElementById('playbtn-' + sid);
+  if (btn) { btn.textContent = '▶'; btn.classList.remove('playing'); }
+}
+
+function storyPlay(btn, sid) {
+  if (tocAudio && !tocAudio.paused) {
+    tocAudio.pause(); tocAudio.currentTime = 0;
+    if (tocBtn) { tocBtn.textContent = '▶'; tocBtn.classList.remove('playing'); }
+  }
+  if (currentStory && currentStory !== sid) pauseStory(currentStory);
+  const aud = getAud(sid);
+  if (aud.paused) {
+    aud.play();
+    btn.textContent = '⏸'; btn.classList.add('playing');
+    currentStory = sid;
+  } else {
+    aud.pause();
+    btn.textContent = '▶'; btn.classList.remove('playing');
+    currentStory = null;
+  }
+}
+
+function storySeek(sid, val) {
+  const aud = getAud(sid);
+  if (aud.duration) aud.currentTime = aud.duration * val / 100;
+}
+
+function fmt(s) {
+  if (!s || isNaN(s)) return '0:00';
+  const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return m + ':' + String(sec).padStart(2, '0');
+}
+
+function updateBar(sid) {
+  const aud = getAud(sid);
+  const bar = document.getElementById('bar-' + sid);
+  const time = document.getElementById('time-' + sid);
+  if (bar && aud.duration) bar.value = (aud.currentTime / aud.duration) * 100;
+  if (time) time.textContent = fmt(aud.currentTime) + ' / ' + fmt(aud.duration);
+}
+</script>
+</body>
+</html>

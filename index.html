@@ -4,7 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Великий пост в рассказах Василия Никифорова-Волгина</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231e1a14'/%3E%3Crect x='14' y='4' width='4' height='24' rx='1' fill='%23c4983a'/%3E%3Crect x='6' y='10' width='20' height='4' rx='1' fill='%23c4983a'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%23700000'/><text x='16' y='23' font-family='serif' font-size='20' fill='%23c89400' text-anchor='middle'>✦</text></svg>">
+<script>
+function orthodoxEaster(year) {
+  var a = year % 19, b = year % 4, c = year % 7;
+  var d = (19 * a + 15) % 30;
+  var e = (2 * b + 4 * c + 6 * d + 6) % 7;
+  var julianDay = 22 + d + e, julianMonth = 3;
+  if (julianDay > 31) { julianDay -= 31; julianMonth = 4; }
+  var julian = new Date(year, julianMonth - 1, julianDay);
+  return new Date(julian.getTime() + 13 * 86400000);
+}
+(function () {
+  // Если пользователь уже навигировал вручную — не вмешиваемся
+  if (sessionStorage.getItem('manualNav')) return;
+  var today = new Date(); today.setHours(0,0,0,0);
+  var pascha = orthodoxEaster(today.getFullYear()); pascha.setHours(0,0,0,0);
+  var diff = Math.round((today - pascha) / 86400000);
+  if (diff >= 0 && diff <= 49) window.location.replace('pascha_red.html');
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Forum&display=swap" rel="stylesheet">
 <style>
@@ -13,6 +32,11 @@
 body{background-color:#2a2318;background-image:repeating-linear-gradient(0deg,transparent,transparent 24px,rgba(255,255,255,.012) 24px,rgba(255,255,255,.012) 25px),repeating-linear-gradient(90deg,transparent,transparent 24px,rgba(255,255,255,.012) 24px,rgba(255,255,255,.012) 25px);font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);min-height:100vh}
 .site-header{background:var(--ink);background-image:linear-gradient(180deg,#0e0b07 0%,#1e1a14 60%,#2a2318 100%);text-align:center;padding:60px 20px 50px;border-bottom:3px double var(--gold);position:relative;overflow:hidden}
 .site-header::before{content:'';position:absolute;inset:0;background-image:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(196,152,58,.08) 0%,transparent 70%);pointer-events:none}
+.section-nav{position:absolute;top:20px;left:24px;display:flex;align-items:center;gap:0;z-index:10;font-family:'Forum',serif;font-size:.75rem;letter-spacing:.1em}
+.section-nav a{color:rgba(196,152,58,.55);text-decoration:none;padding:4px 10px;border:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
+.section-nav a:hover{color:var(--gold-light)}
+.section-nav a.active{color:var(--parchment);border-color:rgba(196,152,58,.5)}
+.section-nav span{color:rgba(196,152,58,.3);font-size:.7rem;padding:0 2px}
 .lang-switcher{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:4px;z-index:10;font-family:'Forum',serif;font-size:.8rem;letter-spacing:.12em}
 .lang-switcher a{color:rgba(196,152,58,.5);text-decoration:none;padding:4px 8px;border:1px solid transparent;transition:color .2s,border-color .2s}
 .lang-switcher a:hover{color:var(--gold-light)}
@@ -103,22 +127,70 @@ body{background-color:#2a2318;background-image:repeating-linear-gradient(0deg,tr
 .story-audio-bar::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer;border:none}
 .story-audio-time{font-family:'Cormorant Garamond',serif;font-size:.78rem;color:var(--ink-light)}
 @media(max-width:640px){.story-audio-wrap{margin:12px 22px 0}}
+
+/* ── Кнопка "К оглавлению" ── */
+.to-toc-btn{
+  position:fixed;bottom:28px;right:24px;z-index:500;
+  display:flex;align-items:center;gap:7px;
+  padding:8px 14px 8px 11px;
+  background:rgba(139,105,20,0.82);
+  color:#f5efe0;
+  border:1px solid rgba(196,152,58,0.6);
+  border-radius:24px;
+  font-family:'Forum',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  box-shadow:0 4px 18px rgba(30,26,20,0.28);
+  opacity:0;pointer-events:none;
+  transition:opacity .35s,transform .35s,background .2s;
+  transform:translateY(10px);
+  cursor:pointer;
+}
+.to-toc-btn.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-toc-btn:hover{background:rgba(139,105,20,0.97)}
+.to-toc-btn svg{flex-shrink:0}
+@media(max-width:640px){.to-toc-btn{bottom:20px;right:16px;padding:7px 12px 7px 10px;font-size:.68rem}}
+.site-header-nav{display:contents}
+
+@media(max-width:520px){
+  .site-header{padding:20px 16px 32px}
+  .section-nav,.lang-switcher{
+    position:static;display:inline-flex;
+    margin:0;padding:0;
+  }
+  .site-header-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    width:100%;margin-bottom:18px;
+  }
+  .header-ornament{margin-bottom:14px;font-size:1.1rem}
+  .fn-ref .fn-tooltip{width:min(300px,88vw)}
+  .story-audio-wrap{margin:10px 0 0}
+}
+
 </style>
 </head>
 <body>
 <header class="site-header">
-  <div class="lang-switcher">
-    <a href="index.html" class="active">РУС</a>
+  <div class="site-header-nav">
+  <nav class="section-nav">
+    <a href="index.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">Великий пост</a>
     <span>|</span>
-    <a href="en.html">ENG</a>
+    <a href="pascha_red.html" onclick="sessionStorage.setItem('manualNav','1')">От Пасхи до Троицы</a>
+  </nav>
+  
+  <div class="lang-switcher">
+    <a href="index.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">РУС</a>
+    <span>|</span>
+    <a href="en.html" onclick="sessionStorage.setItem('manualNav','1')">ENG</a>
   </div>
+</div>
   <div class="header-ornament">✦ ✦ ✦</div>
   <h1 class="site-title">Великий пост<br>в рассказах<br>Василия Никифорова-Волгина</h1>
-  <p class="site-subtitle">Одиннадцать рассказов из цикла «Воспоминания детства»</p>
+  <p class="site-subtitle">Десять рассказов из цикла «Воспоминания детства»</p>
   <div class="header-rule"><span>☩</span></div>
 </header>
 <div class="page-wrap">
-<nav class="toc-section" aria-label="Содержание">
+<nav class="toc-section" aria-label="Содержание" id="toc">
   <div class="toc-title">Содержание</div>
   <ol class="toc-list">
     <li><span class="toc-name-group"><a href="#s1">Кануны Великого поста</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/1__kanun-velikogo-posta.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Предпостные недели</span></li>
@@ -131,7 +203,6 @@ body{background-color:#2a2318;background-image:repeating-linear-gradient(0deg,tr
     <li><span class="toc-name-group"><a href="#s8">Плащаница</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/8__plaschanica.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Великая пятница</span></li>
     <li><span class="toc-name-group"><a href="#s9">Канун Пасхи</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/9__kanun-pashi.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Великая суббота, утро</span></li>
     <li><span class="toc-name-group"><a href="#s10">Великая суббота</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/10__velikaya-subbota.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Великая суббота, день</span></li>
-    <li><span class="toc-name-group"><a href="#s11">Светлая заутреня</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/11__svetlaya-zautrenya.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Святая Пасха</span></li>
   </ol>
 </nav>
 
@@ -569,56 +640,8 @@ body{background-color:#2a2318;background-image:repeating-linear-gradient(0deg,tr
 <p>— В церкви всё белое! Сняли чёрное, и кругом — одно белое… и вообще Пасха!</p>
 <p>Ещё что-то хотел добавить, но не вышло, и опять побежал в церковь. Там уж пели особую херувимскую песню<span class="fn-ref">11<span class="fn-tooltip">«Херувимская» Великой субботы — «Да молчит всякая плоть человеча» — заменяет обычную Херувимскую песнь. Основана на молитве Литургии апостола Иакова. Призыв к молчанию плоти перед грядущим Царём — один из величественнейших текстов православного богослужения.</span></span>, которая звучала у меня в ушах до наступления сумерек:</p>
 <span class="verse-block">Да молчит всякая плоть человеча<br>и да стоит со страхом и трепетом,<br>и ничтоже земное в себе да помышляет.<br>Царь бо царствующих и Господь господствующих<br>приходит заклатися и датися в снедь верным…</span>
-</div><div class="ornament-divider">✦ ✦ ✦</div></article>
-
-
-<article class="story-card" id="s11">
-<div class="story-header"><div class="story-number">Рассказ одиннадцатый</div><h2 class="story-title">Светлая заутреня</h2><div class="story-timing">Святая Пасха</div></div>
-<div class="story-audio-wrap" id="player-s11">
-  <div class="story-audio-label">Аудиоверсия · <span>читает Екатерина Краснобаева</span></div>
-  <div class="story-audio-controls">
-    <button class="story-audio-playbtn" onclick="storyPlay(this,'s11')" id="playbtn-s11" title="Воспроизвести">▶</button>
-    <div class="story-audio-progress">
-      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s11" oninput="storySeek('s11',this.value)">
-      <span class="story-audio-time" id="time-s11">0:00 / 0:00</span>
-    </div>
-  </div>
-  <audio id="aud-s11" src="audio/11__svetlaya-zautrenya.mp3" preload="none"></audio>
-</div>
-<div class="story-body">
-<p>Над землёй догорала сегодняшняя литургийная песнь: «Да молчит всякая плоть человеча, и да стоит со страхом и трепетом».</p>
-<p>Вечерняя земля затихала. Дома открывали стеклянные дверцы икон. Я спросил отца: «Это для чего?» — «Это знак того, что на Пасху двери райские отверзаются!»</p>
-<p>До начала заутрени<span class="fn-ref">1<span class="fn-tooltip">Пасхальная заутреня — торжественная утреня в полночь с субботы на воскресенье. Начинается в тёмном храме и взрывается светом и ликованием при первом «Христос воскресе».</span></span> мы с отцом хотели выспаться, но не могли. Лежали на постели рядом, и он рассказывал, как ему мальчиком пришлось встречать Пасху в Москве.</p>
-<p class="dialogue">— Московская Пасха, сынок, могучая! Кто раз повидал её, тот до гроба поминать будет. Грохнет это в полночь первый удар колокола с Ивана Великого<span class="fn-ref">2<span class="fn-tooltip">Колокольня Ивана Великого — главная колокольня Московского Кремля (81 м), возведённая в 1508 году. По традиции, первый удар её колокола в пасхальную полночь возвещал всей Москве о Воскресении Христовом.</span></span>, так словно небо со звёздами упадёт на землю! А в колоколе-то, сынок, шесть тысяч пудов<span class="fn-ref">3<span class="fn-tooltip">«Шесть тысяч пудов» — народное преувеличение (реальный вес Успенского колокола ок. 65 тонн). Гиперболизация веса — способ передать ощущение от необъятного, сотрясающего звука.</span></span>, и для раскачивания языка требовалось двенадцать человек! Первый удар подгоняли к бою часов на Спасской башне…</p>
-<p>Отец приподнимается с постели и говорит о Москве с дрожью в голосе: «Да… часы на Спасской башне… Пробьют,— и сразу же взвивается к небу ракета… а за ней пальба из старых орудий на Тайницкой башне — сто один выстрел!..»</p>
-<p>«Морем стелется по Москве Иван Великий, а остальные сорок сороков<span class="fn-ref">4<span class="fn-tooltip">Сорок сороков — старинное народное выражение о московских церквях: «сорок раз по сорок» (то есть бесчисленное множество). По переписи XIX века в Москве насчитывалось около 450 православных церквей.</span></span> вторят ему, как реки в половодье! Такая, скажу тебе, сила плывёт над первопрестольной<span class="fn-ref">5<span class="fn-tooltip">Первопрестольный — Москва, исторически «первый» по чести город России как древняя столица и кафедра Патриархов Московских.</span></span>, что ты словно не ходишь, а на волнах качаешься маленькой щепкой! Могучая ночь, грому Господню подобная! Эх, сынок, не живописать словами пасхальную Москву!»</p>
-<p>Отец умолкает и закрывает глаза. «Ты засыпаешь?» — «Нет. На Москву смотрю». — «А где она у тебя?» — «Перед глазами. Как живая…»</p>
-<p class="dialogue">— Расскажи ещё что-нибудь про Пасху!</p>
-<p class="dialogue">— Довелось мне встречать также Пасху в одном монастыре. Простотой да святолепностью была она ещё лучше московской! Один монастырь-то чего стоит! Кругом — лес нехоженый, тропы звериные, а у монастырских стен — речка плещется. В неё таёжные деревья глядят и церковь, сбитая из крепких смолистых брёвен. К Светлой заутрене собиралось сюда из окрестных деревень великое множество богомольцев. Был здесь редкостный обычай. После заутрени выходили к речке девушки со свечами, пели «Христос Воскресе», кланялись в пояс речной воде, а потом — прилепляли свечи к деревянному кружку и по очереди пускали их по реке.</p>
-<p>«Ты вообрази только, какое там было диво! Среди ночи сотня огней плывёт по воде, а тут ещё колокола трезвонят, и лес шумит!»</p>
-<p>«Хватит вам вечать-то, — перебила нас мать, — выспались бы лучше, а то будете стоять на заутрене соныгами!»</p>
-<p>Мне было не до сна. Душу охватывало предчувствие чего-то необъяснимо огромного, похожего не то на Москву, не то на сотню свечей, плывущих по лесной реке. Встал с постели, ходил из угла в угол, мешал матери стряпать и поминутно её спрашивал: «Скоро ли в церковь?» — «Не вертись, как косое веретено! — тихо вспылила она. — Ежели не терпится, то ступай, да не балуй там!»</p>
-<p>До заутрени целых два часа, а церковная ограда уже полна ребятами. Ночь без единой звезды, без ветра и как бы страшная в своей необычности и огромности. По тёмной улице плыли куличи в белых платках<span class="fn-ref">6<span class="fn-tooltip">Куличи в белых платочках — куличи, укрытые чистыми белыми платками при несении в церковь для освящения. В темноте пасхальной ночи видны только белые платки, словно куличи плывут сами по себе.</span></span> — только они были видны, а людей как бы и нет.</p>
-<p>В полутёмной церкви около Плащаницы стоит очередь охотников почитать Деяния апостолов<span class="fn-ref">7<span class="fn-tooltip">Чтение Деяний апостолов в ночь с Великой субботы на Пасху — традиция, сложившаяся в русских приходах. Книга Деяний читается по очереди желающими мирянами от конца Литургии Великой субботы до начала пасхальной полунощницы.</span></span>. Я тоже присоединился. Меня спросили: «Читать умеешь?» — «Умею». — «Ну, так начинай первым!» Я подошёл к аналою и стал выводить по складам: «Первое убо слово сотворих о Феофиле<span class="fn-ref">8<span class="fn-tooltip">«Первое убо слово сотворих о Феофиле» — первый стих Деяний апостолов (1:1) в церковнославянском переводе. Имя «Феофил» по-гречески означает «любящий Бога». Мальчик не может правильно прочитать это трудное имя — вполне естественно для ребёнка, знакомого со славянским языком лишь по складам.</span></span>», и никак не мог выговорить «Феофила». Растерялся, смущённо опустил голову и перестал читать. Ко мне подошли и сделали замечание: «Куда ж ты лезешь, когда читать не умеешь?» — «Попробовать хотел!..» — «Ты лучше куличи пробуй»,— и оттеснили меня в сторону.</p>
-<p>В церкви не стоялось. Вышел в ограду и сел на ступеньку храма.</p>
-<p>«Где-то сейчас Пасха? — размышлял я. — Витает ли на небе, или ходит за городом, в лесу, по болотным кочкам, сосновым остинкам, подснежникам, вересковыми и можжевельными тропинками, и какой имеет образ?» Вспомнился мне чей-то рассказ, что в ночь на Светлое Христово Воскресение спускается с неба на землю лествица, и по ней сходит к нам Господь со святыми апостолами, преподобными, страстотерпцами и мучениками. Господь обходит землю, благословляет поля, леса, озёра, реки, птиц, человека, зверя и всё сотворённое святой Его волей, а святые поют «Христос воскресе из мертвых…» Песня святых зёрнами рассыпается по земле, и от этих зёрен зарождаются в лесах тонкие душистые ландыши…</p>
-<p>Время близилось к полуночи. Ограда всё гуще и полнее гудит говором. Из церковной сторожки кто-то вышел с фонарём.</p>
-<p class="dialogue">— Идёт, идёт! — неистово закричали ребята, хлопая в ладоши. — Кто идёт? — Звонарь Лександра! Сейчас грохнет!</p>
-<p>И он грохнул…</p>
-<p>От первого удара колокола по земле словно большое серебряное колесо покатилось, а когда прошёл гул его, покатилось другое, а за ним третье, и ночная пасхальная тьма закружилась в серебряном гудении всех городских церквей.</p>
-<p>Меня приметил в темноте нищий Яков: «Светловещанный звон!» — сказал он, и несколько раз перекрестился.</p>
-<p>В церкви начали служить «великую полунощницу»<span class="fn-ref">9<span class="fn-tooltip">Великая полунощница — краткая ночная служба перед Пасхальной заутреней. На ней поётся ирмос «Волною морскою скрывшего», а Плащаница торжественно вносится в алтарь на Престол, где пребывает до отдания Пасхи.</span></span>. Пели «Волною морскою». Священники в белых ризах подняли Плащаницу и унесли в алтарь, где она будет лежать на Престоле до праздника Вознесения. Тяжёлую золотую гробницу с грохотом отодвинули в сторону, на обычное своё место, и в грохоте этом тоже было значительное, пасхальное,— словно отваливали огромный камень от гроба Господня.</p>
-<p>Я увидал отца с матерью. Подошёл к ним и сказал: «Никогда не буду обижать вас!» — прижался к ним и громко воскликнул: «Весело-то как!»</p>
-<p>А радость пасхальная всё ширилась, как Волга в половодье, про которое не раз отец рассказывал. Весенними деревьями на солнечном поветрии заколыхались высокие хоругви. Стали готовиться к крестному ходу<span class="fn-ref">10<span class="fn-tooltip">Крестный ход — торжественное шествие вокруг церкви со свечами, иконами, хоругвями и пением. Пасхальный крестный ход завершается у закрытых церковных дверей, перед которыми возглашается первое «Христос воскресе».</span></span> вокруг церкви. Из алтаря вынесли серебряный запрестольный крест, золотое Евангелие, огромный круглый хлеб — артос<span class="fn-ref">11<span class="fn-tooltip">Артос — большой круглый освящённый хлеб с изображением Воскресения Христова. Освящается в первый день Пасхи и стоит в храме всю Светлую седмицу. В субботу раздробляется и раздаётся верующим.</span></span>, заулыбались поднятые иконы, и у всех зажглись красные пасхальные свечи.</p>
-<p>Наступила тишина. Она была прозрачной, и такой лёгкой, — если дунуть на неё, то заколеблется паутинкой. И среди этой тишины запели: «Воскресение Твое, Христе Спасе, Ангели поют на небеси». И под эту воскрыляющую песню заструился огнями крестный ход. Мне наступили на ногу, капнули воском на голову, но я почти ничего не почувствовал и подумал: «так полагается» — Пасха! Пасха Господня! — бегали по душе солнечные зайчики.</p>
-<p>Тесно прижавшись друг к другу ночными потёмками, по струям воскресной песни, осыпаемые трезвоном и обогреваемые огоньками свечей, мы пошли вокруг белозорной от сотни огней церкви и остановились в ожидании у крепко закрытых дверей. Смолкли колокола. Сердце затаилось. Лицо запылало жаром. Земля куда-то исчезла — стоишь не на ней, а как бы на синих небесах. А люди? Где они? Все превратились в ликующие пасхальные свечи!</p>
-<p>И вот, огромное, чего охватить не мог вначале,— свершилось! Запели «Христос воскресе из мертвых».</p>
-<p>Три раза пропели «Христос воскресе», и перед нами распахнулись створки высокой двери. Мы вошли в воскресший храм,— и перед глазами, в сиянии паникадил, больших и малых лампад, в блёстках серебра, золота и драгоценных каменьев на иконах, в ярких бумажных цветах на куличах,— вспыхнула Пасха Господня! Священник, окутанный кадильным дымом, с заяснившимся лицом, светло и громко воскликнул: «Христос воскресе», и народ ответил ему грохотом спадающего с высоты тяжёлого льдистого снега: «Воистину воскресе».</p>
-<p>Рядом очутился Гришка. Я взял его за руки и сказал: «Завтра я подарю тебе красное яйцо! Самое наилучшее! Христос воскресе!» Неподалёку стоял и Федька. Ему тоже пообещал красное яйцо. Увидел дворника Давыда, подошёл к нему и сказал: «Никогда не буду называть тебя „подметалой-мучеником". Христос воскресе!»</p>
-<p>А по церкви молниями летали слова пасхального канона<span class="fn-ref">12<span class="fn-tooltip">Пасхальный канон — творение преподобного Иоанна Дамаскина (VIII в.), поющееся на Пасхальной заутрене. Каждый ирмос — искра светлого ликования.</span></span>. Что ни слово, то искорка весёлого быстрого огня: «Небеса убо достойно да веселятся, земля же да радуется, да празднует же мир видимый же весь и невидимый, Христос бо возста, веселие вечное…»</p>
-<p>Сердце моё зашлось от радости,— около амвона увидел девочку с белокурыми косами, которую приметил на выносе Плащаницы! Сам не свой подошёл к ней, и весь зардевшись, опустив глаза, прошептал: «Христос воскресе!» Она смутилась, уронила из рук свечечку, тихим пламенем потянулась ко мне, и мы похристосовались<span class="fn-ref">13<span class="fn-tooltip">Похристосоваться — обменяться пасхальным приветствием «Христос воскресе — Воистину воскресе» с троекратным поцелуем. Православный обычай, соблюдаемый в течение всей Светлой недели.</span></span>… а потом до того застыдились, что долго стояли с опущенными головами.</p>
-<p>А в это время с амвона гремело Пасхальное Слово Иоанна Златоуста<span class="fn-ref">14<span class="fn-tooltip">«Слово огласительное» святителя Иоанна Златоуста — торжественная пасхальная проповедь, читаемая в конце утрени во всех православных церквях. Призывает всех войти в радость Воскресения Христова и завершается словами «Христос воскресе, и жизнь жительствует».</span></span>: «Аще кто благочестив и боголюбив, да насладится сего добраго и светлаго торжества… Воскресе Христос, и жизнь жительствует!»</p>
 </div><div class="ornament-divider">☩ ☩ ☩</div></article>
+
 </div><!-- .page-wrap -->
 
 <footer class="bio-section">
@@ -789,6 +812,30 @@ function updateBar(sid) {
   if (bar && aud.duration) bar.value = (aud.currentTime / aud.duration) * 100;
   if (time) time.textContent = fmt(aud.currentTime) + ' / ' + fmt(aud.duration);
 }
+</script>
+
+<!-- ── Кнопка "К оглавлению" ── -->
+<a class="to-toc-btn" id="toTocBtn" href="#toc" aria-label="К оглавлению">
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5 11V2M2 6l4.5-4.5L11 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  К оглавлению
+</a>
+<script>
+// ── Кнопка "К оглавлению" ──
+(function(){
+  var btn = document.getElementById('toTocBtn');
+  var toc = document.getElementById('toc');
+  if (!btn || !toc) return;
+  var tocBottom = 0;
+  function update(){
+    tocBottom = toc.getBoundingClientRect().bottom + window.scrollY + 120;
+    btn.classList.toggle('visible', window.scrollY > tocBottom);
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
 </script>
 </body>
 </html>
