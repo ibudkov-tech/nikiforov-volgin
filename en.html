@@ -1419,10 +1419,12 @@ function openSheet(num, text) {
   document.getElementById('fnSheetText').textContent = text;
   document.getElementById('fnOverlay').classList.add('active');
   document.body.style.overflow = 'hidden';
+  var tb=document.getElementById('toTocBtn');if(tb)tb.style.opacity='0';
 }
 function closeSheet() {
   document.getElementById('fnOverlay').classList.remove('active');
   document.body.style.overflow = '';
+  var tb=document.getElementById('toTocBtn');if(tb)tb.style.opacity='';
 }
 // Close on Escape
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
