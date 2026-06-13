@@ -215,6 +215,7 @@ body{
 
 /* ═══════════ Mobile section-nav (≤700px) ═══════════ */
 .section-nav-trigger { display: none; }
+.section-nav-list { display: contents; }
 
 @media (max-width: 700px) {
   /* Container becomes a column so the dropdown items stack under the trigger */
@@ -228,6 +229,7 @@ body{
   .section-nav > span {
     display: none;
   }
+  .section-nav-list { display: none; }
   /* The trigger button: hamburger + current section name */
   .section-nav-trigger {
     display: inline-flex;
@@ -266,6 +268,16 @@ body{
   }
   /* Expanded list: vertical items under the trigger, styled like a soft sheet */
   .section-nav.is-open {
+    position: relative !important;
+  }
+
+  .section-nav.is-open .section-nav-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: max-content;
     background: rgba(140,16,8,.95);
     border: 1px solid rgba(232,184,0,.45);
     padding: 4px;
@@ -273,11 +285,18 @@ body{
     z-index: 100;
     box-shadow: 0 4px 14px rgba(0,0,0,.18);
   }
-  .section-nav.is-open > a {
+
+  .section-nav.is-open .section-nav-list > a {
     display: block;
     padding: 7px 14px;
     border: none !important;
+
     width: 100%;
+    white-space: nowrap;
+  }
+
+  .section-nav.is-open .section-nav-list > span {
+    display: none;
   }
 }
 </style>
@@ -291,14 +310,14 @@ body{
     <span class="section-nav-bars" aria-hidden="true"><span></span><span></span><span></span></span>
     <span class="section-nav-trigger-label">From Pascha to Pentecost</span>
   </button>
-  <a href="en.html" onclick="sessionStorage.setItem('manualNav','1')">Great Lent</a>
+  <span class="section-nav-list"><a href="en.html" onclick="sessionStorage.setItem('manualNav','1')">Great Lent</a>
     <span>|</span>
     <a href="pascha_red_en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">From Pascha to Pentecost</a>
     <span>|</span>
     <a href="leto_en.html" onclick="sessionStorage.setItem('manualNav','1')">The Year of the Lord</a>
     <span>|</span>
     <a href="#" style="opacity:.3;pointer-events:none">Christmastide</a>
-  </nav>
+  </span></nav>
   
   <div class="lang-switcher">
     <a href="pascha_red.html" onclick="sessionStorage.setItem('manualNav','1')">РУС</a>
