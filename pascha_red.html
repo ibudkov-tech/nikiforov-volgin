@@ -4,25 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>От Пасхи до Троицы — Василий Никифоров-Волгин</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%23700000'/><text x='16' y='23' font-family='serif' font-size='20' fill='%23c89400' text-anchor='middle'>✦</text></svg>">
-<script>
-function orthodoxEaster(year) {
-  var a = year % 19, b = year % 4, c = year % 7;
-  var d = (19 * a + 15) % 30;
-  var e = (2 * b + 4 * c + 6 * d + 6) % 7;
-  var julianDay = 22 + d + e, julianMonth = 3;
-  if (julianDay > 31) { julianDay -= 31; julianMonth = 4; }
-  var julian = new Date(year, julianMonth - 1, julianDay);
-  return new Date(julian.getTime() + 13 * 86400000);
-}
-(function () {
-  if (sessionStorage.getItem('manualNav')) return;
-  var today = new Date(); today.setHours(0,0,0,0);
-  var pascha = orthodoxEaster(today.getFullYear()); pascha.setHours(0,0,0,0);
-  var diff = Math.round((today - pascha) / 86400000);
-  if (diff < 0 || diff > 49) window.location.replace('index.html');
-})();
-</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23700000'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='20' fill='%23c89400' text-anchor='middle'%3E✦%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Forum&display=swap" rel="stylesheet">
 <style>
@@ -229,6 +211,74 @@ body{
   .fn-ref .fn-tooltip{width:min(300px,88vw)}
 }
 .site-author{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1.05rem,2.2vw,1.3rem);color:rgba(255,220,100,1);letter-spacing:.04em;margin-bottom:8px}
+
+/* ═══════════ Mobile section-nav (≤700px) ═══════════ */
+.section-nav-trigger { display: none; }
+
+@media (max-width: 700px) {
+  /* Container becomes a column so the dropdown items stack under the trigger */
+  .section-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  /* Hide the inline desktop links and pipes by default on mobile */
+  .section-nav > a,
+  .section-nav > span {
+    display: none;
+  }
+  /* The trigger button: hamburger + current section name */
+  .section-nav-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--gold-light);
+    font-family: 'Forum', serif;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    padding: 5px 10px;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .section-nav-trigger:hover,
+  .section-nav-trigger[aria-expanded="true"] {
+    color: var(--gold-bright);
+  }
+  .section-nav-trigger .section-nav-bars {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 16px;
+  }
+  .section-nav-trigger .section-nav-bars span {
+    display: block;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 1px;
+  }
+  .section-nav-trigger .section-nav-bars span:nth-child(2) { width: 80%; }
+  .section-nav-trigger[aria-expanded="true"] {
+    border-color: rgba(232,184,0,.45);
+    background: rgba(140,16,8,.95);
+  }
+  /* Expanded list: vertical items under the trigger, styled like a soft sheet */
+  .section-nav.is-open {
+    background: rgba(140,16,8,.95);
+    border: 1px solid rgba(232,184,0,.45);
+    padding: 4px;
+    border-radius: 2px;
+    z-index: 100;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  }
+  .section-nav.is-open > a {
+    display: block;
+    padding: 7px 14px;
+    border: none !important;
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -236,9 +286,17 @@ body{
 <header class="site-header">
   <div class="site-header-nav">
   <nav class="section-nav">
-    <a href="index.html" onclick="sessionStorage.setItem('manualNav','1')">Великий пост</a>
+    <button class="section-nav-trigger" type="button" onclick="toggleSectionNav(this)" aria-expanded="false" aria-controls="section-nav-list" title="Разделы">
+    <span class="section-nav-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="section-nav-trigger-label">От Пасхи до Троицы</span>
+  </button>
+  <a href="index.html" onclick="sessionStorage.setItem('manualNav','1')">Великий пост</a>
     <span>|</span>
     <a href="pascha_red.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">От Пасхи до Троицы</a>
+    <span>|</span>
+    <a href="leto.html" onclick="sessionStorage.setItem('manualNav','1')">Лето Господне</a>
+    <span>|</span>
+    <a href="#" style="opacity:.3;pointer-events:none">Святки</a>
   </nav>
   
   <div class="lang-switcher">
@@ -777,6 +835,24 @@ function updateBar(sid) {
   window.addEventListener('resize', update, {passive:true});
   update();
 })();
+
+
+// ═════════════════════ Mobile section-nav ═════════════════════
+function toggleSectionNav(btn) {
+  var nav = btn.closest('.section-nav');
+  var open = !nav.classList.contains('is-open');
+  nav.classList.toggle('is-open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+// Close the menu on outside click
+document.addEventListener('click', function (e) {
+  var open = document.querySelector('.section-nav.is-open');
+  if (open && !open.contains(e.target)) {
+    open.classList.remove('is-open');
+    var btn = open.querySelector('.section-nav-trigger');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+}, true);
 </script>
 </body>
 </html>

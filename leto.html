@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лето Господне благоприятное — Василий Никифоров-Волгин</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23dceac0'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='20' fill='%234a6a2a' text-anchor='middle'%3E✦%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Forum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky: #f0f5ff;
+  --sky-mid: #deeaf7;
+  --cream: #fdfaf2;
+  --cream-dark: #f0ead8;
+  --ink: #1a2010;
+  --ink-light: #3a4a28;
+  --gold: #7a6010;
+  --gold-light: #b08c28;
+  --green: #4a6a2a;
+  --green-light: #6a8c48;
+  --red: #8c2020;
+  --border: #c0cc98;
+  --border-light: #d8e0b8;
+  --shadow: rgba(30,40,16,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background: var(--sky);
+  background-image:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(255,255,255,0.7) 0%, transparent 60%),
+    repeating-linear-gradient(0deg,transparent,transparent 32px,rgba(160,190,100,0.04) 32px,rgba(160,190,100,0.04) 33px);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  color:var(--ink);
+  min-height:100vh;
+}
+
+/* ── HEADER ── */
+.site-header{
+  background: linear-gradient(180deg, #f8fcf0 0%, #eef5e0 50%, #e4f0d0 100%);
+  text-align:center;
+  padding:52px 20px 44px;
+  border-bottom:2px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.site-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% -10%, rgba(200,230,150,0.3) 0%, transparent 65%);
+  pointer-events:none;
+}
+.site-header::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--green-light),var(--gold-light),var(--green-light),transparent);
+}
+.lang-switcher{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:4px;z-index:10;font-family:'Forum',serif;font-size:.8rem;letter-spacing:.12em}
+.lang-switcher a{color:rgba(74,106,42,0.5);text-decoration:none;padding:4px 8px;border:1px solid transparent;transition:color .2s,border-color .2s}
+.lang-switcher a:hover{color:var(--green)}
+.lang-switcher a.active{color:var(--ink);border-color:rgba(74,106,42,0.4)}
+.lang-switcher span{color:rgba(74,106,42,0.3);font-size:.7rem}
+.section-nav{position:absolute;top:20px;left:24px;display:flex;align-items:center;gap:0;z-index:10;font-family:'Forum',serif;font-size:.75rem;letter-spacing:.1em}
+.section-nav a{color:rgba(74,106,42,0.55);text-decoration:none;padding:4px 10px;border:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
+.section-nav a:hover{color:var(--green)}
+.section-nav a.active{color:var(--ink);border-color:rgba(74,106,42,0.4)}
+.section-nav span{color:rgba(74,106,42,0.25);font-size:.7rem;padding:0 2px}
+.header-ornament{color:var(--green-light);font-size:1.3rem;letter-spacing:.5em;margin-bottom:18px;opacity:0.6}
+.site-title{
+  font-family:'Forum',serif;
+  font-size:clamp(1.8rem,4.5vw,3.2rem);
+  font-weight:400;
+  color:var(--ink);
+  letter-spacing:.08em;
+  line-height:1.15;
+  text-transform:uppercase;
+  max-width:820px;
+  margin:0 auto 12px;
+  text-shadow:0 0 1px rgba(30,40,16,.4),1px 0 0 rgba(30,40,16,.15),-1px 0 0 rgba(30,40,16,.15),0 2px 12px rgba(255,255,255,.8);
+}
+.site-author{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--ink);letter-spacing:.04em;margin-bottom:6px}
+.site-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.2rem);color:var(--green);letter-spacing:.03em;margin-bottom:4px}
+.header-rule{display:flex;align-items:center;justify-content:center;gap:16px;max-width:360px;margin:24px auto 0}
+.header-rule::before,.header-rule::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--green-light),transparent)}
+.header-rule span{color:var(--green-light);font-size:1rem}
+
+/* ── PAGE WRAP ── */
+.page-wrap{max-width:900px;margin:0 auto;padding:0 16px 60px}
+
+/* ── TOC ── */
+.toc-section{
+  background:rgba(255,255,255,0.75);
+  border:1px solid var(--border);
+  border-top:3px solid var(--green);
+  box-shadow:0 4px 20px var(--shadow),inset 0 1px 0 rgba(255,255,255,0.9);
+  margin:36px 0;
+  padding:34px 44px 36px;
+  position:relative;
+  backdrop-filter:blur(4px);
+}
+.toc-section::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-light),transparent)}
+.toc-title{font-family:'Forum',serif;font-size:.82rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:22px}
+.toc-list{list-style:none;counter-reset:toc}
+.toc-list li{counter-increment:toc;display:flex;align-items:center;gap:0;padding:8px 0;border-bottom:1px dotted var(--border)}
+.toc-list li:last-child{border-bottom:none}
+.toc-list li::before{content:counter(toc) '.';font-family:'Forum',serif;font-size:.8rem;color:var(--green);min-width:22px;flex-shrink:0;margin-right:6px}
+.toc-name-group{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.toc-list a{font-family:'IM Fell English',serif;font-size:1.05rem;color:var(--ink-light);text-decoration:none;transition:color .2s}
+.toc-list a:hover{color:var(--red)}
+.toc-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--green-light);margin-left:auto;flex-shrink:0;padding-left:16px}
+.toc-audio-btn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--green-light);background:none;color:var(--green);cursor:pointer;flex-shrink:0;margin-left:0;margin-right:4px;transition:background .2s,color .2s;font-size:.6rem;line-height:1;padding:0 0 0 2px}
+.toc-audio-btn:hover{background:var(--green);color:#fff}
+.toc-audio-btn.playing{background:var(--red);border-color:var(--red);color:#fff}
+
+/* ── STORY CARD ── */
+.story-card{
+  background:rgba(255,255,255,0.85);
+  border:1px solid var(--border-light);
+  box-shadow:0 4px 20px var(--shadow);
+  margin:28px 0;
+  position:relative;
+  backdrop-filter:blur(2px);
+}
+.story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,var(--green) 20%,var(--gold-light) 50%,var(--green) 80%,transparent 100%)}
+.story-header{padding:28px 44px 20px;text-align:center;border-bottom:1px solid var(--border-light)}
+.story-number{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--green-light);margin-bottom:6px}
+.story-title{font-family:'Forum',serif;font-size:clamp(1.25rem,3vw,1.8rem);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:6px}
+.story-timing{font-family:'IM Fell English',serif;font-style:italic;font-size:.92rem;color:var(--green)}
+.story-audio-wrap{margin:12px 44px 0;padding:11px 16px;background:rgba(90,122,58,0.06);border:1px solid rgba(90,122,58,0.2);border-radius:2px;display:flex;flex-direction:column;gap:7px}
+.story-audio-label{font-family:'Cormorant Garamond',serif;font-size:.82rem;font-style:italic;color:var(--green-light);letter-spacing:.03em}
+.story-audio-label span{color:var(--ink-light);font-style:normal}
+.story-audio-controls{display:flex;align-items:center;gap:12px}
+.story-audio-playbtn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:none;background:var(--green);color:#fff;cursor:pointer;flex-shrink:0;font-size:.8rem;transition:background .2s,transform .1s;padding:0 0 0 2px}
+.story-audio-playbtn:hover{background:var(--green-light)}
+.story-audio-playbtn:active{transform:scale(.95)}
+.story-audio-playbtn.playing{background:var(--red)}
+.story-audio-progress{flex:1;display:flex;flex-direction:column;gap:4px}
+.story-audio-bar{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:rgba(90,122,58,0.2);border-radius:2px;cursor:pointer;outline:none}
+.story-audio-bar::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer}
+.story-audio-bar::-moz-range-thumb{width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer;border:none}
+.story-audio-time{font-family:'Cormorant Garamond',serif;font-size:.78rem;color:var(--ink-light)}
+.story-body{padding:24px 44px 32px;font-size:1.05rem;line-height:1.85;color:var(--ink)}
+.story-body p{margin-bottom:1.1em;text-align:justify;hyphens:auto}
+.story-body p:first-child::first-letter{font-family:'Forum',serif;font-size:3.2em;font-weight:400;float:left;line-height:.8;margin:.05em .08em 0 0;color:var(--green)}
+.dialogue{margin:.3em 0 .3em 1.8em;font-style:italic}
+.liturgical{display:block;margin:1em 2em;padding:11px 16px;border-left:2px solid var(--green-light);font-style:italic;color:var(--ink-light);background:rgba(90,122,58,0.05);font-size:1rem;line-height:1.7}
+.verse-block{display:block;margin:1em 2em;padding:10px 16px;border-left:2px solid var(--gold-light);font-style:italic;color:var(--ink-light);background:rgba(176,140,40,0.05);line-height:1.75}
+
+/* ── FOOTNOTES ── */
+.fn-ref{font-size:.65em;vertical-align:super;color:var(--green);font-family:'Forum',serif;cursor:pointer;font-weight:400;position:relative}
+.fn-ref:hover{color:var(--red)}
+.fn-ref .fn-tooltip{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--ink);color:#f0f5e8;font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:normal;line-height:1.55;width:340px;max-width:90vw;padding:11px 14px;border:1px solid var(--green-light);box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:100;pointer-events:none;transition:opacity .2s,visibility .2s;text-align:left;border-radius:2px}
+.fn-ref .fn-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--green-light)}
+.fn-ref:hover .fn-tooltip,.fn-ref:focus .fn-tooltip{visibility:visible;opacity:1}
+.fn-ref.fn-right .fn-tooltip{left:auto;right:0;transform:none}
+.fn-ref.fn-right .fn-tooltip::after{left:auto;right:12px;transform:none}
+.fn-ref.touch-device .fn-tooltip{display:none!important}
+.fn-sheet-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200}
+.fn-sheet-overlay.active{display:block}
+.fn-sheet{position:fixed;bottom:0;left:0;right:0;background:#1a2010;border-top:2px solid var(--green-light);padding:20px 22px 32px;z-index:201;max-height:55vh;overflow-y:auto;animation:sheetUp .28s cubic-bezier(.32,.72,0,1);border-radius:12px 12px 0 0}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:none}}
+.fn-sheet-close{display:flex;justify-content:center;margin-bottom:16px}
+.fn-sheet-close::before{content:'';width:40px;height:4px;background:rgba(90,122,58,0.4);border-radius:2px}
+.fn-sheet-num{font-family:'Forum',serif;font-size:.7rem;color:var(--green-light);letter-spacing:.2em;margin-bottom:8px}
+.fn-sheet-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#e8f0d8;line-height:1.65}
+
+/* ── ORNAMENT ── */
+.ornament-divider{text-align:center;color:var(--green-light);font-size:1.2rem;letter-spacing:.5em;margin:8px 0 0;opacity:0.45}
+
+/* ── BIO ── */
+.bio-section{background:linear-gradient(180deg,#2a3a18 0%,#1a2810 100%);border-top:2px solid var(--green-light);margin-top:56px;padding:52px 20px;color:#e8f0d8}
+.bio-inner{max-width:800px;margin:0 auto}
+.bio-label{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--green-light);text-align:center;margin-bottom:6px}
+.bio-title{font-family:'Forum',serif;font-size:clamp(1.1rem,3vw,1.6rem);color:#e8f0d8;text-align:center;margin-bottom:26px;line-height:1.3}
+.bio-rule{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:28px}
+.bio-rule::before,.bio-rule::after{content:'';flex:1;max-width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--green-light),transparent)}
+.bio-rule span{color:var(--green-light);font-size:1rem}
+.bio-text{font-size:1rem;line-height:1.85;color:#c8d8b0;text-align:justify;hyphens:auto}
+.bio-text p{margin-bottom:1em}
+.bio-fn{font-size:.82rem;color:#7a9060;margin-top:22px;padding-top:14px;border-top:1px solid rgba(90,122,58,0.3);line-height:1.6}
+.bio-fn-ref{font-size:.75em;vertical-align:super;color:var(--green-light);font-family:'Forum',serif}
+.bio-expand-btn{display:flex;align-items:center;gap:10px;background:none;border:1px solid rgba(90,122,58,0.4);color:var(--green-light);font-family:'Forum',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:8px 18px;margin:18px auto 0;cursor:pointer;transition:border-color .2s,background .2s}
+.bio-expand-btn:hover{border-color:var(--green-light);background:rgba(90,122,58,0.1)}
+.bio-expand-arrow{font-size:1.1rem;line-height:1;display:inline-block;transition:transform .3s}
+.bio-expand-btn[aria-expanded="true"] .bio-expand-arrow{transform:rotate(180deg)}
+.bio-full{margin-top:22px;animation:bioFadeIn .4s ease}
+@keyframes bioFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.copyright{text-align:center;margin-top:36px;font-family:'Forum',serif;font-size:.62rem;letter-spacing:.2em;color:rgba(90,122,58,0.35);text-transform:uppercase}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .story-header,.story-body{padding-left:20px;padding-right:20px}
+  .toc-section{padding:24px 18px 26px}
+  .toc-subtitle{display:none}
+  .story-audio-wrap{margin:12px 20px 0}
+  .toc-audio-btn{width:24px;height:24px;font-size:.65rem}
+  .liturgical,.verse-block{margin:.8em .5em}
+  .section-nav{font-size:.68rem}
+  .section-nav a{padding:4px 7px}
+}
+
+.toc-audio-btn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--green);background:none;color:var(--green);cursor:pointer;flex-shrink:0;margin-left:6px;margin-right:2px;transition:background .2s,color .2s;font-size:.6rem;line-height:1;padding:0 0 0 2px}
+.toc-audio-btn:hover{background:var(--green);color:#fff}
+.toc-audio-btn.playing{background:var(--green-light);border-color:var(--green-light);color:#fff}
+.story-audio-wrap{margin:12px 44px 0;padding:11px 16px;background:rgba(74,106,42,0.04);border:1px solid rgba(176,140,40,0.35);border-radius:2px;display:flex;flex-direction:column;gap:7px}
+.story-audio-label{font-family:'Cormorant Garamond',serif;font-size:.82rem;font-style:italic;color:var(--gold);letter-spacing:.03em}
+.story-audio-controls{display:flex;align-items:center;gap:12px}
+.story-audio-playbtn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:none;background:var(--green);color:#fff;cursor:pointer;flex-shrink:0;font-size:.8rem;transition:background .2s,transform .1s;padding:0 0 0 2px}
+.story-audio-playbtn:hover{background:var(--green-light)}
+.story-audio-progress{flex:1;display:flex;flex-direction:column;gap:4px}
+.story-audio-bar{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:rgba(74,106,42,0.15);border-radius:2px;cursor:pointer;outline:none}
+.story-audio-bar::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer}
+.story-audio-bar::-moz-range-thumb{width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer;border:none}
+.story-audio-time{font-family:'Cormorant Garamond',serif;font-size:.78rem;color:var(--ink-light)}
+
+/* ═══════════ Mobile section-nav (≤700px) ═══════════ */
+.section-nav-trigger { display: none; }
+
+@media (max-width: 700px) {
+  /* Container becomes a column so the dropdown items stack under the trigger */
+  .section-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  /* Hide the inline desktop links and pipes by default on mobile */
+  .section-nav > a,
+  .section-nav > span {
+    display: none;
+  }
+  /* The trigger button: hamburger + current section name */
+  .section-nav-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--green);
+    font-family: 'Forum', serif;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    padding: 5px 10px;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .section-nav-trigger:hover,
+  .section-nav-trigger[aria-expanded="true"] {
+    color: var(--green-light);
+  }
+  .section-nav-trigger .section-nav-bars {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 16px;
+  }
+  .section-nav-trigger .section-nav-bars span {
+    display: block;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 1px;
+  }
+  .section-nav-trigger .section-nav-bars span:nth-child(2) { width: 80%; }
+  .section-nav-trigger[aria-expanded="true"] {
+    border-color: rgba(74,106,42,.35);
+    background: rgba(232,240,208,.97);
+  }
+  /* Expanded list: vertical items under the trigger, styled like a soft sheet */
+  .section-nav.is-open {
+    background: rgba(232,240,208,.97);
+    border: 1px solid rgba(74,106,42,.35);
+    padding: 4px;
+    border-radius: 2px;
+    z-index: 100;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  }
+  .section-nav.is-open > a {
+    display: block;
+    padding: 7px 14px;
+    border: none !important;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="section-nav">
+    <button class="section-nav-trigger" type="button" onclick="toggleSectionNav(this)" aria-expanded="false" aria-controls="section-nav-list" title="Разделы">
+    <span class="section-nav-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="section-nav-trigger-label">Лето Господне</span>
+  </button>
+  <a href="index.html" onclick="sessionStorage.setItem('manualNav','1')">Великий пост</a>
+    <span>|</span>
+    <a href="pascha_red.html" onclick="sessionStorage.setItem('manualNav','1')">От Пасхи до Троицы</a>
+    <span>|</span>
+    <a href="leto.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">Лето Господне</a>
+    <span>|</span>
+    <a href="#" style="opacity:.3;pointer-events:none">Святки</a>
+  </nav>
+  <div class="lang-switcher">
+    <a href="leto.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">РУС</a>
+    <span>|</span>
+    <a href="leto_en.html" onclick="sessionStorage.setItem('manualNav','1')">ENG</a>
+  </div>
+  <div class="header-ornament">✦ ✦ ✦</div>
+  <h1 class="site-title">Лето Господне благоприятное</h1>
+  <p class="site-author">Василий Никифоров-Волгин</p>
+  <p class="site-subtitle">Семь рассказов из цикла «Воспоминания детства»</p>
+  <div class="header-rule"><span>☩</span></div>
+</header>
+
+<div class="page-wrap">
+
+<nav class="toc-section" aria-label="Содержание">
+  <div class="toc-title">Содержание</div>
+  <ol class="toc-list">
+    <li><span class="toc-name-group"><a href="#s1">Певчий</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/1-pevchiy.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">На клиросе</span></li>
+    <li><span class="toc-name-group"><a href="#s2">Святое святых</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/2-svyatoe-svyatyh.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">В алтаре</span></li>
+    <li><span class="toc-name-group"><a href="#s3">Тайнодействие</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/3-taynodeystvie.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Проскомидия</span></li>
+    <li><span class="toc-name-group"><a href="#s4">Яблоки</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/4-yabloki.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Преображение Господне</span></li>
+    <li><span class="toc-name-group"><a href="#s5">Крещение человека</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/5-kreschenie-cheloveka.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Таинство Крещения</span></li>
+    <li><span class="toc-name-group"><a href="#s6">Московский миллионщик</a></span><span class="toc-subtitle">На соборной паперти</span></li>
+    <li><span class="toc-name-group"><a href="#s7">Молитва</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/7-molitva.mp3')" title="Слушать">▶</button></span><span class="toc-subtitle">Сельский батюшка</span></li>
+  </ol>
+</nav>
+
+<!-- ══ ПЕВЧИЙ ══ -->
+<article class="story-card" id="s1">
+<div class="story-header">
+  <div class="story-number">Рассказ первый</div>
+  <h2 class="story-title">Певчий</h2>
+</div>
+<div class="story-audio-wrap" id="player-s1">
+  <div class="story-audio-label">Аудиоверсия · <span>читает Екатерина Краснобаева</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s1')" id="playbtn-s1" title="Воспроизвести">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s1" oninput="storySeek('s1',this.value)">
+      <span class="story-audio-time" id="time-s1">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s1" src="audio/1-pevchiy.mp3" preload="none"></audio>
+</div>
+<div class="story-body">
+
+<p>В соборе стоял впереди всех, около амвона. Место это считалось почётным. Здесь стояли городской голова, полицеймейстер, пристав<span class="fn-ref">1<span class="fn-tooltip">До 1917 года в губернских и уездных городах ближайшие к амвону места по неписаному порядку занимали представители властей: глава городской управы, начальник городской полиции (полицеймейстер) и его помощник — становой пристав.</span></span>, миллионщик Севрюгин и дурачок Глебушка. Лохматого, ротастого и корявого Глебушку не раз гнали с неподобающего для него места, но он не слушается, хоть волоком его волочи! Почётные люди на него дулись и толкали локтем. Мне тоже доставалось от церковного сторожа, но я отвечал: не могу уйти! Здесь всё видно!</p>
+
+<p>Во время всенощного бдения или литургии облокотишься на железную амвонную оградку, глядишь восхищёнными вытаращенными глазами на певчих, в таинственный дымящийся алтарь и думаешь: «Нет счастливее людей, как те, кто предстоит на клиросе или в алтаре! Все они приближённые Господа Бога. Вот бы и мне на эти святые места! Стал бы я другим человеком: почитал бы родителей, не воровал бы яблоки с чужих садов, не ел бы тайком лепёшки до обедни, не давал бы людям обидные прозвища, ходил бы тихо и всегда шептал бы молитвы…»</p>
+
+<p>Я не мог понять: почему Господь терпит на клиросе Ефимку Лохматого — пьяницу и сквернослова, баса торговца Гадюкина, который старается людям победнее подсунуть прогорклое масло, чёрствый хлеб и никогда не даёт конфет «на придачу». Сторожа Евстигнея терпит Господь, а он всегда чесноком пахнет и нюхает табак. Лицо у него какое-то дублёное, сизое, как у похоронного факельщика.</p>
+
+<p>В алтаре да на клиросе должны быть люди лицом чистые, тихие и как бы праведные!</p>
+
+<p>Особенно любовался я нарядными голубыми кафтанами певчих. Лучше всего выглядели в них мальчики — совсем как Ангелы Божии!.. Хотя некоторых я тоже выгнал бы с клироса, например Митьку с Борькой. Они, жулики, хорошо в очко играют, и мне от них никогда не выиграть!</p>
+
+<p>Однажды я заявил отцу с матерью:</p>
+
+<p class="dialogue">— Очень мне хочется в алтарь кадило батюшке подавать или на клиросе петь, но как это сделать, не знаю!</p>
+
+<p class="dialogue">— Дело это, сынок, простое, — сказал отец, — сходи седни или завтра к батюшке или к регенту Егору Михайловичу и изъяснись. Авось возьмут, если они про твоё озорство не наслышаны!</p>
+
+<p class="dialogue">— Верно, сынок, — поддакнула мать, — попросись у них хорошенько. Господу хорошо послужить. В алтарь-то, поди, и не примут, а на клирос должны взять. Петь ты любишь, голос у тебя звонкий, с переливцем, яблочный… И нам будет радушно, что ты Господа воспевать будешь. Хорошую думу всеял в тебя Ангел Божий!</p>
+
+<p>В этот же день я пошёл к соборному регенту. Около двери его квартиры меня обуял страх. Больше часа стоял у двери и слушал, как регент играл на фисгармонии и пел: «Плачу и рыдаю, егда помышляю смерть»<span class="fn-ref">2<span class="fn-tooltip">Стихира самогласна 8-го гласа из чина православного погребения, написанная преподобным Иоанном Дамаскиным (VIII в.): «Плачу и рыдаю, егда помышляю смерть, и вижду во гробех лежащую, по образу Божию созданную нашу красоту, безобразну, безславну, не имущую вида…»</span></span>.</p>
+
+<p class="dialogue">— Войдите!</p>
+
+<p>Я открыл дверь и остановился на пороге. Егор Михайлович сидел у фисгармонии в одном исподнем, лохматый, небритый, с недобрым помутневшим взглядом. Седые длинные усы свесились, как у Тараса Бульбы. На столе стояла сороковка<span class="fn-ref">3<span class="fn-tooltip">Сороковка — мерный пузырёк ёмкостью в 1/40 ведра (около 0,31 литра), традиционная упаковка казённой водки до 1914 года.</span></span>, и на серой бумаге лежал солёный съёженный огурец.</p>
+
+<p class="dialogue">— Тебе что, чадо? — спросил меня каким-то густо-клейким голосом.</p>
+
+<p class="dialogue">— Хочу быть певчим! — заминаясь, ответил я, не поднимая глаз.</p>
+
+<p class="dialogue">— Доброе дело, доброе!.. Хвалю. Ну-ка, подойди ко мне поближе… Вот так. Ну, тяни за мною «Царю Небесный, Утешителю…» — он запел, и я стал подтягивать, вначале робко, а потом разошёлся и в конце молитвы так взвизгнул, что регент поморщился.</p>
+
+<p class="dialogue">— Слух неважнецкий, — сказал он, — но голос молодецкий! Приходи на клирос. Авось обломаем. Что смотришь, как баран на градусник? Ступай. Аксиос! Знаешь, что такое аксиос? Не знаешь. Слово сие не русское, а греческое, обозначает: «достоин»<span class="fn-ref">4<span class="fn-tooltip">«Аксиос!» (греч. ἄξιος — «достоин») — троекратное возглашение архиерея и хора при рукоположении нового священнослужителя и облачении его в священные одежды. Регент произносит это слово в шутку — как одобрение «достоинства» мальчика для клироса.</span></span>.</p>
+
+<p>Обожжённый радостью, я спросил о самом главном, о том, что не раз мечталось и во сне снилось:</p>
+
+<p class="dialogue">— И кафтан можно надеть?</p>
+
+<p class="dialogue">— Какой? — не понял регент. — Тришкин?<span class="fn-ref">5<span class="fn-tooltip">«Тришкин кафтан» — басня И. А. Крылова (1815): кафтан, столько раз заштопанный с одного места за счёт другого, что от него ничего не осталось. Имя стало нарицательным для безнадёжной заплаты.</span></span></p>
+
+<p class="dialogue">— Нет… которые певчие носят… эти голубые с золотыми кисточками…</p>
+
+<p>Он махнул рукой и засмеялся:</p>
+
+<p class="dialogue">— Надевай хоть два!</p>
+
+<p>В этот день я ходил по радости и счастью. Всем говорил с упоением:</p>
+
+<p class="dialogue">— Меня взяли в соборные певчие! В кафтане петь буду!</p>
+
+<p>Кому-то сказал, перехватив через край:</p>
+
+<p class="dialogue">— Приходите в Воскресенье меня слушать!</p>
+
+<p>Наступило Воскресенье. Я пришёл в собор за час до обедни. Первым делом прошёл в ризницу облачаться в кафтан. Сторож, заправлявший лампады, спросил меня:</p>
+
+<p class="dialogue">— Ты куда?</p>
+
+<p class="dialogue">— За кафтаном! Меня в певчие выбрали!</p>
+
+<p class="dialogue">— Эк тебе не терпится!</p>
+
+<p>Я нашёл маленький кафтанчик и облачился.</p>
+
+<p>Сторож опять на меня:</p>
+
+<p class="dialogue">— Куда это ты вырядился ни свет ни заря? До обедни-то, почитай, целый час ещё!</p>
+
+<p class="dialogue">— Ничего, я подожду.</p>
+
+<p>Со страхом Божьим поднялся на клирос. В десять часов зазвонили к обедне. Пришёл дьякон отец Михаил. Посмотрел на меня и диву дался.</p>
+
+<p class="dialogue">— Ты что это в кафтане-то?</p>
+
+<p class="dialogue">— Певчий я. На днях выбрали. Егор Михайлович сказал, что голос у меня молодецкий!</p>
+
+<p class="dialogue">— Так, так! Молодецкий, говоришь? Ну что же, «пойте Богу нашему, пойте, пойте Цареви нашему, пойте!»<span class="fn-ref">6<span class="fn-tooltip">Слова из 46-го псалма (стих 7), одного из «царских» псалмов, прославляющих Бога как Царя всей земли.</span></span></p>
+
+<p>Началась литургия. Никогда в жизни она не поднимала меня так высоко, как в этот приснорадостный<span class="fn-ref">7<span class="fn-tooltip">Приснорадостный (ц.-сл.) — всегда, неизменно радостный; от приставки «присно-» («всегда», «вечно»), как в «приснопамятный», «приснодева».</span></span> день. Уже не было мирской гордости — вот-де, достиг! — а тонкая, мягкошелковистая отрада ветерком проходила по телу. Чем шире раскрывались царские врата литургии, тем необычнее становился я. Временами казалось, что я приподнимаюсь от земли, как Серафим Саровский во время молитвы. Пою с хором, тонкой белой ниточкой вплетаюсь в узорчатую ткань песнопений и ничего не вижу, кроме облачно-синего с позолотой дыма. И вдруг, во время сладостного до щекотания в сердце забытья, произошло нечто страшное для меня…</p>
+
+<p>Пели «Верую во единаго Бога Отца Вседержителя…» Пели мощно, ладно, с высоким исповеданием.</p>
+
+<p>Я подпевал и ничего не замечал в потоке громокипящего Символа веры… Когда певчие грянули «чаю Воскресения мертвых, и жизни будущаго века, аминь» — я не сумел вовремя остановиться и на всю церковь с её гулким перекатом визгливо прозвенел позднее всех «а-а-минь»! В глазах моих помутилось. Я съёжился. Кто-то из певчих дал мне затрещину по затылку, где-то фыркнули, регент Егор Михайлович схватил меня за волосы и придушенным шипящим хрипом простонал:</p>
+
+<p class="dialogue">— Снимай кафтан! Убирайся сию минуту с клироса, а то убью!</p>
+
+<p>Со слезами стал снимать кафтан, запутался в нём и не знал, как выбраться. Мне помогли. Дав по затылку несколько щелчков, меня выпроводили с клироса.</p>
+
+<p>Закрыв лицо руками, я шёл по церкви к выходу и всхлипывал. На меня смотрели и улыбались. В ограде ко мне подошла мать и стала утешать:</p>
+
+<p class="dialogue">— Это ничего, это тоже от Господа. Он, Батюшка Царь Небесный, улыбнулся, поди, когда голосок-то твой выше всех взлетел, один-одинёшенек. Ишь, — подумает Он, — как Вася-то ради меня расстарался, но только не рассчитал малость… сорвался… Ну, что же делать, молод ещё, горяч, с кем не бывает… Не кручинься, сынок, ибо всякое хорошее дело со скорби начинается!</p>
+
+<p>Я слушал её и представлял, как тихо улыбается Христос над моей неудачей, и потихоньку успокаивался.</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ СВЯТОЕ СВЯТЫХ ══ -->
+<article class="story-card" id="s2">
+<div class="story-header">
+  <div class="story-number">Рассказ второй</div>
+  <h2 class="story-title">Святое святых</h2>
+</div>
+<div class="story-audio-wrap" id="player-s2">
+  <div class="story-audio-label">Аудиоверсия · <span>читает Екатерина Краснобаева</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s2')" id="playbtn-s2" title="Воспроизвести">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s2" oninput="storySeek('s2',this.value)">
+      <span class="story-audio-time" id="time-s2">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s2" src="audio/2-svyatoe-svyatyh.mp3" preload="none"></audio>
+</div>
+<div class="story-body">
+
+<p>Желание войти во Святое святых церкви не давало мне покоя. В утренние и вечерние молитвы я вплетал затаённую свою думу: «Помоги мне, Господи, служить около Твоего престола! Если поможешь, я буду поступать по Твоим заповедям и никогда не стану огорчать Тебя!»</p>
+
+<p>Бог услышал мою молитву. Однажды пришёл к отцу соборный дьякон, принёс сапоги в починку. Увидев меня, он спросил:</p>
+
+<p class="dialogue">— Что это тебя, отроча, в церкви не видать?</p>
+
+<p>За меня ответил отец:</p>
+
+<p class="dialogue">— Стесняется после своей незадачи на клиросе. А служить-то ему до страсти хочется!</p>
+
+<p>Дьякон погладил меня по голове и сказал:</p>
+
+<p class="dialogue">— Пустяки! Не принимай близко к сердцу. Я раз в большой праздник вместо многолетия вечную память загнул, да не кому другому, а Святейшему Синоду<span class="fn-ref">1<span class="fn-tooltip">Святейший Правительствующий Синод — высший орган управления Русской Православной Церковью с 1721 по 1917 год. Провозгласить «вечную память» (поминовение усопших) вместо «многолетия» (пожелания долгих лет) живому Синоду — комический промах: всё равно что отпеть на торжественном приёме.</span></span>! Не горюй, малец, приходи в субботу ко всенощной в алтарь, кадило будешь подавать. Наденем на тебя стихарь, и будешь ты у нас церковнослужитель! Согласен?</p>
+
+<p>Через смущение и радостные слёзы я прошептал нашу деревенскую благодарность:</p>
+
+<p class="dialogue">— Спаси, Господи!</p>
+
+<p>И вот опять я сам не свой! Перед отходом ко сну стал отбивать частые поклоны, не произносил больше дурных слов, забросил игры и, не зная почему, взял с подоконника дедовские староверческие чётки — лестовку<span class="fn-ref">2<span class="fn-tooltip">Лестовка — старообрядческие чётки в виде кожаной ленты с зубцами-«ступенями» (по числу молитв) и четырьмя «лапостками» на концах. По преданию, образ духовной лествицы, восходящей к небу. У старообрядцев и единоверцев — общеупотребительна; в синодальной Церкви её сменили обычные узелковые чётки.</span></span> — и обмотал ими кисть левой руки, по-монашески.</p>
+
+<p>Увидев у меня лестовку, Гришка стал дразнить:</p>
+
+<p class="dialogue">— Э… монах в коленкоровых штанах!</p>
+
+<p>Я раззадорился и хотел дать ему по спине концом висящей у меня ременной лестовки, но вовремя вспомнил наставление матери: «да не зайдет солнце во гневе вашем»<span class="fn-ref">3<span class="fn-tooltip">Послание апостола Павла к Ефесянам, 4:26 — «Гневаясь, не согрешайте: солнце да не зайдет во гневе вашем».</span></span>.</p>
+
+<p>Наступила суббота. Умытым и причёсанным, в русской белой рубашке, помолившись на иконы, я побежал в собор ко всенощному бдению. Остановился на амвоне и не решился сразу войти в алтарь. Стоял около южных дверей и слушал, как от волнения звенела кровь. Ко мне подошёл сторож Евстигней:</p>
+
+<p class="dialogue">— Чего остановился? Входи. Дьякон сказывал, что пономарём хочешь быть? Давно бы так, а то захотел в певчие!.. С вороньим голосом-то! А здорово ты каркнул тогда за обедней, на клиросе, — напомнил он, подмигнув смеющимся глазом, — всех рассмешил только! Регент Егор Михайлович даже запьянствовал в этот день: всю, говорит, музыку шельмец нарушил. Из-за него, разбойника, и пью! Вот ты какой хват!</p>
+
+<p>Я не слышал, как вошёл в алтарь. Алтарь, где восседает Бог на престоле и, по древним сказаниям, днём и ночью ходят со славословиями Ангелы Божии, и во время литургии взблескивают над Чашей молнии, грешному оку невидимые… Я оцепенел весь от радости — радости, не похожей ни на одну земную. В ней что-то страшное было и вместе с тем светлое.</p>
+
+<p class="dialogue">— Ну, приучайся к делу! — сказал сторож. — Вот это уголь, — показал мне прессованный, хорошо пахнувший кругляк с изображением креста. — Возьми огарок свечи и разгнети его. Это во-первых. Во-вторых, не касайся руками престола — место сие святое! Далее, не переходи никогда места между престолом и Царскими вратами — грех! Не ходи также через горнее место<span class="fn-ref">4<span class="fn-tooltip">Горнее место — пространство в алтаре прямо за престолом, у восточной стены; там находится седалище для архиерея, символизирующее место Христа. По уставу мирянин через него не проходит — обходит престол по сторонам.</span></span>, когда открыты Царские врата… Понял?</p>
+
+<p>От спокойного тона Евстигнея и я стал спокойнее.</p>
+
+<p class="dialogue">— А где же мой стихарь? — спросил я. — Отец дьякон обещал!</p>
+
+<p class="dialogue">— Эк тебя разбирает! Сразу и форму ему подавай! Ну и народ, ну и детушки пошли! Ладно. Будет и стихарь, если выдержишь экзамен на кадиловозжигателя!</p>
+
+<p>В это время ударили в большой колокол. От первого удара — вспомнилось мне — нечистая сила «яже в мире» вздрагивает, от второго бежит, и после третьего над землёю начинают летать Ангелы, и тогда надо перекреститься.<span class="fn-ref">5<span class="fn-tooltip">Народно-церковное поверье о благовесте — мерных ударах в большой колокол перед началом службы. Подобные поверья широко записывались собирателями фольклора (И. П. Калинский, С. В. Максимов) и отражают воззрения на колокольный звон как на «голос ангельский».</span></span></p>
+
+<p>В алтарь пришёл дьякон, улыбнулся мне: ну и хорошо!</p>
+
+<p>За ним отец Василий — маленький, круглый, чернобородый. Я подошёл к нему под благословение. Он слегка постучал по моей голове костяшками пальцев и сказал:</p>
+
+<p class="dialogue">— Служи и не балуй! Всё должно быть благообразно и по чину.</p>
+
+<p>Началось всенощное бдение. Перед этим кадили алтарь, а затем, после дьяконского возгласа, запели «Благослови, душе моя, Господа»<span class="fn-ref">6<span class="fn-tooltip">Предначинательный псалом всенощного бдения — избранные стихи из 103-го псалма («Благослови, душе моя, Господа… Господи Боже мой, возвеличился еси зело…»). Им открывается вечерня.</span></span>. Особенно понравились мне слова: «На горах станут воды, дивны дела Твоя Господи, вся премудростию сотворил еси». Когда запели «Блажен муж, иже не иде на совет нечестивых… Работайте Господеви со страхом, и радуйтеся Ему с трепетом»<span class="fn-ref">7<span class="fn-tooltip">Первая кафизма Псалтири — стихи из 1-го, 2-го и 3-го псалмов («Блажен муж»), поющиеся на воскресной всенощной сразу после предначинательного псалма.</span></span>, я перекрестился и подумал, что эти слова относятся к тем, кто служит у Божьего престола, и опять перекрестился.</p>
+
+<p>Когда читали на клиросе шестопсалмие<span class="fn-ref">8<span class="fn-tooltip">Шестопсалмие — шесть избранных псалмов (3, 37, 62, 87, 102, 142), читаемых в начале утрени посреди храма. Во время чтения гасятся свечи, и церковь стоит в безмолвии — это образ ночи Рождества Христова.</span></span>, батюшка с дьяконом разговаривали. Мне слышно было, как батюшка спросил:</p>
+
+<p class="dialogue">— Ты деньги-то за сорокоуст<span class="fn-ref">9<span class="fn-tooltip">Сорокоуст — церковное поминовение усопшего или молитва о здравии живого в течение сорока дней подряд, в каждой совершаемой литургии. Заказывается родственниками с уплатой пожертвования.</span></span> получил с Капитонихи?</p>
+
+<p class="dialogue">— Нет ещё. Обещалась на днях.</p>
+
+<p class="dialogue">— Смотри, дьякон! Как бы она нас не обжулила. Жог-баба!</p>
+
+<p>Я ничего не понял из этих отрывистых слов, но подумал: разве можно так говорить в алтаре?</p>
+
+<p>После всенощной я обо всём этом рассказал матери.</p>
+
+<p class="dialogue">— Люди они, сынок, люди, — вздохнула она, — и не то, может быть, ещё увидишь и услышишь, но не осуждай. Бойся осудить человека, не разузнав его. От суесловия церковных служителей Тайны Божии не повредятся. Так же сиять они будут и чистотою возвышаться. Повредится ли хлеб, если семена его орошены грешником? Человек ещё не вырос, он дитя неразумное, ходит он путаными дорогами, но придёт время — вырастет! Будь к людям приглядчив. Душу его береги. Сострадай человеку и умей находить в нём пшеницу среди сорной травы.</p>
+
+<p class="dialogue">— Держи карман шире! — проворчал отец, засучивая щетину в дратву. — Как я там к людям ни приглядывался, ни сострадал им, ни уступал, а они всё же ко мне по-волчьи относились. Ты, смиренница, оглянулась бы хоть раз на людей. Кто больше всего страдает? Простые сердцем, тихие, уступчивые, заповеди Господни соблюдающие. Не портила бы ты лучше мальца! Из него умного волчонка воспитать надо, а не Христова крестника!</p>
+
+<p>Мать так и вскинулась на отца:</p>
+
+<p class="dialogue">— Ты бы лучше оглянулся и узнал: кто стоит за твоей спиною?</p>
+
+<p>Отец вздрогнул.</p>
+
+<p class="dialogue">— Кто?</p>
+
+<p class="dialogue">— Да тот, кто искушал Христа в пустыне! Не говори непутёвые слова. Они не твои. Не огорчай Ангела своего. Сам же, когда выпьешь, горькими слезами перед иконами заливаешься. Не вводи ты нас в искушение. А ты, — обратилась она ко мне, — не всякому слуху верь. У отца это бывает. Жизнь у него тяжёлая была, ну и возропщет порою. А сам-то он по-другому думает! Последнее с себя сымет и неимущему отдаст. В словах человека разбираться надо; что от души идёт и что от крови!</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ ТАЙНОДЕЙСТВИЕ ══ -->
+<article class="story-card" id="s3">
+<div class="story-header">
+  <div class="story-number">Рассказ третий</div>
+  <h2 class="story-title">Тайнодействие</h2>
+</div>
+<div class="story-audio-wrap" id="player-s3">
+  <div class="story-audio-label">Аудиоверсия · <span>читает Екатерина Краснобаева</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s3')" id="playbtn-s3" title="Воспроизвести">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s3" oninput="storySeek('s3',this.value)">
+      <span class="story-audio-time" id="time-s3">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s3" src="audio/3-taynodeystvie.mp3" preload="none"></audio>
+</div>
+<div class="story-body">
+
+<p>Впервые услышанное слово «проскомидия»<span class="fn-ref">1<span class="fn-tooltip">Проскомидия (греч. «принесение») — первая часть Божественной литургии: приготовление хлеба и вина для евхаристии. Совершается священником и дьяконом в алтаре, у жертвенника, при затворённых Царских вратах, до начала самой литургии. Из пяти просфор изымаются частицы за святых и за поминаемых живых и усопших.</span></span> почему-то представилось мне в образе безгромных ночных молний, освещающих ржаное поле. Оно прозвучало для меня так же таинственно, как слова: молния, всполох, зорники и слышанное от матери волжское определение зарниц — хлебозарь!<span class="fn-ref">2<span class="fn-tooltip">Хлебозарь (диал., поволжск.) — народное название зарниц, далёких бесшумных вспышек на горизонте в летнюю пору созревания хлебов; по поверью, они «зреют хлеба».</span></span></p>
+
+<p>Божественная проскомидия открылась мне в летнее солнечное Воскресенье в запахе лип, проникавшем в алтарь из причтового сада, и литургийном благовесте.</p>
+
+<p>Перед совершением её священник с дьяконом долго молились перед затворёнными святыми вратами, целовали иконы Спасителя и Божьей Матери, а затем поклонились народу. В церкви почти никого не было, и я не мог понять: кому же кланяются священнослужители? Пузатому старосте, что ли, считающему у выручки медную монету, или Божьей хлебнице-просфорне, вынимающей из мешка просфоры? Об этом я спросил чтеца Никанора Ивановича, и он объяснил мне мудрёными церковными словами:</p>
+
+<p class="dialogue">— Всему миру кланяются! Ибо сказано в чине священныя и божественныя литургии: «Хотяй священник божественное совершити тайнодействие, должен есть примирен быти со всеми».<span class="fn-ref">3<span class="fn-tooltip">Из «Учительного известия» — приложения к Служебнику, в котором изложены правила и наставления для священнослужителей перед совершением литургии. Поклон народу — образ испрашивания прощения у всех перед приступлением к Тайне.</span></span></p>
+
+<p>Духовенство облачалось в ризы. Я не сводил глаз с этого невиданного мною обряда. Батюшка надел на себя длинную, как у Христа, шёлковую одежду — подризник — и произнёс звучащие тихим серебром слова: «Возрадуется душа моя о Господе, облече бо мя в ризу спасения, и одеждою веселия одей мя, яко жениху возложи ми венец, и яко невесту украси мя красотою».<span class="fn-ref">4<span class="fn-tooltip">Стих из книги пророка Исаии (61:10), читаемый священником при облачении в подризник — белую длинную нижнюю ризу. Каждое облачение сопровождается своим стихом из Псалтири или пророков.</span></span></p>
+
+<p>Облачённый в стихарь дьякон, видя моё напряжённое внимание, шёпотом стал пояснять мне:</p>
+
+<p class="dialogue">— Подризник знаменует собою хитон Господа Иисуса Христа.</p>
+
+<p>Священник взял епитрахиль и, назнаменав её крестным осенением, сказал: «Благословен Бог изливаяй благодать Свою яко миро на главы, сходящее на ометы<span class="fn-ref">5<span class="fn-tooltip">Ометы (ц.-сл.) — края, оторочки одежды. Стих из 132-го псалма о благодатном помазании Аарона, благоухание которого «сходит на ометы одежды его».</span></span> одежди его».</p>
+
+<p class="dialogue">— Епитрахиль — знак священства и помазания Божия…</p>
+
+<p>Облекая руки парчовыми нарукавницами, священник произнёс: «Руце Твои сотвористе мя и создасте мя: вразуми мя, и научуся заповедем Твоим», и при опоясании парчовым широким поясом: «Благословен Бог препоясуяй мя силою, и положи непорочен путь мой… на высоких поставляяй мя».</p>
+
+<p class="dialogue">— Пояс знаменует препоясание Господа перед совершением Тайной вечери, — прогудел мне дьякон.</p>
+
+<p>Священник облачился в самую главную ризу — фелонь, произнеся литые, как бы вспыхивающие слова: «Священницы Твои, Господи, облекутся в правду, и преподобнии Твои радостию возрадуются…»<span class="fn-ref">6<span class="fn-tooltip">Стих из 131-го псалма (молитва Давида о храме). Читается священником при возложении фелони — верхней безрукавной ризы, главного облачения иерея.</span></span></p>
+
+<p>Облачившись в полное облачение, он подошёл к глиняному умывальнику и вымыл руки: «Умыю в неповинных руки мои и обыду жертвенник Твой, Господи… возлюбих благолепие дому Твоего и место селения славы Твоея…»</p>
+
+<p>На жертвеннике, к которому подошли священник с дьяконом, стояли залитые солнцем чаша, дискос, звездица, лежало пять больших служебных просфор, серебряное копьецо, парчовые покровы.<span class="fn-ref">7<span class="fn-tooltip">Литургическая утварь проскомидии: <em>дискос</em> — круглое блюдо на ножке, на которое полагается Агнец и частицы; <em>звездица</em> — две накрест соединённые золочёные дуги, ставится над дискосом и символизирует Вифлеемскую звезду; <em>копьецо</em> — небольшой нож в форме копья для разрезания просфор, образ копья, которым прободено ребро Распятого; <em>покровцы</em> — два малых матерчатых платка и больший «воздух», покрывающие Чашу и дискос.</span></span> От солнца жертвенник дымился, и от чаши излучалось острое сияние.</p>
+
+<p>Проскомидия была выткана драгоценными словами: «Воздвигоша реки, Господи, воздвигоша реки гласы своя… Дивны высоты морские, дивен в высоких Господь… Святися и прославися пречестное и великолепое имя Твое…»</p>
+
+<p>Священник с дьяконом молились о памяти и оставлении грехов царям, царицам, патриархам и всем-всем, кто населяет землю, и о тех молились, кого призвал Бог в пренебесное Своё Царство.</p>
+
+<p>Много произносилось имён, и за каждое имя вынималась из просфоры частица и клалась на серебряное блюдце-дискос. Тайна литургии до сего времени была закрыта Царскими вратами и завесой, но теперь она вся предстала предо мною. Я был участником претворения хлеба в Тело Христово и вина в истинную Кровь Христову, когда на клиросе пели: «Тебе поем, Тебе благословим»<span class="fn-ref">8<span class="fn-tooltip">«Тебе поем, Тебе благословим, Тебе благодарим, Господи, и молимтися, Боже наш» — медленное песнопение хора во время самой сокровенной части литургии — анафоры, в которой совершается преложение Святых Даров. Священник в это время тайно читает молитву призывания Святого Духа.</span></span>, а священник с душевным волнением произносил: «И сотвори убо хлеб сей, честное Тело Христа Твоего, а еже в чаши сей, честную Кровь Христа Твоего, аминь, аминь, аминь…»</p>
+
+<p>В этот день я испытывал от пережитого впечатления почти болезненное чувство; щёки мои горели, временами била лихорадка, в ногах была слабость. Не пообедав как следует, я сразу же лёг в постель. Мать заволновалась:</p>
+
+<p class="dialogue">— Не заболел ли ты? Ишь, и голова у тебя горячая, и щёки, как жар, горят!</p>
+
+<p>Я стал рассказывать матери о том, что видел сегодня в алтаре, и, рассказывая, чувствовал, как по лицу моему струилось что-то похожее на искры.</p>
+
+<p class="dialogue">— Великое и непостижимое это дело, совершение Тайн Христовых, — говорила мать, сидя на краю моей постели, — в это время даже Ангелы закрывают крылами свои лица, ибо ужасаются тайны сия! — Она вдруг задумалась и как будто стала испуганной. — Да, живём мы пока под ризою Божьей, Тайн Святых причащаемся, но наступит, сынок, время, когда сокроются от людей Христовы Тайны… Уйдут они в пещеры, в леса тёмные, на высокие горы. Дед твой Евдоким не раз твердил: «Ой, лютые придут времена. Все святости будут поруганы, все исповедники имени Христова смерть лютую и поругания примут… И наступит тогда конец свету!</p>
+
+<p class="dialogue">— А когда это будет?</p>
+
+<p class="dialogue">— В ладони Божьей эти сроки, а когда разогнётся ладонь — об этом не ведают даже Ангелы.</p>
+
+<p>У староверов на Волге поверье ходит, что второе пришествие Спасителя будет ночью, при великой грозе и буре.<span class="fn-ref">9<span class="fn-tooltip">Народно-старообрядческое предание, опирающееся на евангельские образы (Мф 24:27 — «как молния исходит от востока…»), которые в крестьянской традиции буквализовались до картины грозовой ночи. У Никифорова-Волгина, чьи предки были волжскими старообрядцами, это предание занимает особое место.</span></span> Деды наши сурово к этому дню приуготовлялись.</p>
+
+<p class="dialogue">— Как же?</p>
+
+<p class="dialogue">— Наступит, бывало, ночная гроза. Бабушка будит нас. Встаём и в чистые рубахи переодеваемся, а старики в саваны — словно к смертному часу готовимся. Бабушка с молитвою лампады затепляет. Мы садимся под иконы, в молчании и трепете слушаем грозу и крестимся. Во время такой грозы приходили к нам сродственники, соседи, чтобы провести грозные Господни часы вместе. Кланялись они в землю иконам и без единого слова садились на скамью. Дед, помню, зажигал жёлтую свечу, садился за стол и зачинал читать Евангелие, а потом пели мы: «Се жених грядет в полунощи, и блажен раб его же обрящет бдящим…»<span class="fn-ref">10<span class="fn-tooltip">Тропарь, поющийся на утрене Великих понедельника, вторника и среды Страстной седмицы (а также на полунощнице): «Се Жених грядет в полунощи, и блажен раб, егоже обрящет бдяща…» Образ внезапного пришествия Господа в полночь, из притчи о десяти девах (Мф 25). Старообрядцы пели его и во время грозы как песнь ожидания Второго Пришествия.</span></span> Дед твой часто говаривал: мы-то, старики, ещё поживём в мире, но вот детушкам да внукам нашим в большой буре доведётся жить!</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ ЯБЛОКИ ══ -->
+<article class="story-card" id="s4">
+<div class="story-header">
+  <div class="story-number">Рассказ четвёртый</div>
+  <h2 class="story-title">Яблоки</h2>
+</div>
+<div class="story-audio-wrap" id="player-s4">
+  <div class="story-audio-label">Аудиоверсия · <span>читает Екатерина Краснобаева</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s4')" id="playbtn-s4" title="Воспроизвести">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s4" oninput="storySeek('s4',this.value)">
+      <span class="story-audio-time" id="time-s4">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s4" src="audio/4-yabloki.mp3" preload="none"></audio>
+</div>
+<div class="story-body">
+
+<p>Дни лета наливались, как яблоки. К Преображению Господню<span class="fn-ref">1<span class="fn-tooltip">Преображение Господне (народно — Яблочный Спас) — двунадесятый праздник, отмечаемый 6/19 августа. По древнему уставу в этот день в храме освящаются плоды нового урожая — прежде всего яблоки, виноград и колосья. По народному обычаю до освящения яблок не вкушали, особенно те, у кого в роду умер ребёнок: верили, что вкусившие до Спаса лишают своё дитя на том свете «преображенского яблочка».</span></span> они были созревшими и как бы закруглёнными. От земли и солнца шёл прохладный яблочный дух. В канун Преображения отец принёс большой мешок яблок… Чтобы пахло праздником, разложили их по всем столам, подоконникам и полкам. Семь отборных малиновых боровинок<span class="fn-ref">2<span class="fn-tooltip">Боровинка — старинный русский сорт яблок: некрупные, с малиново-красным румянцем и нежной кисло-сладкой мякотью. Созревает к началу августа, к самому Спасу.</span></span> положили под иконы, на белый плат, — завтра понесём их святить в церковь. По деревенской заповеди, грех есть яблоки до освящения.</p>
+
+<p class="dialogue">— Вся земля стоит на благословении Господнем, — объясняла мать, — в Вербную субботу Милосердый Спас благословляет вербу, на Троицу берёзку, на Илью Пророка рожь, на Преображение яблоки и всякий другой плод. Есть особенные, Богом установленные сроки, когда благословляются огурцы, морковь, черника, земляника, малина, голубица, морошка, брусника, грибы, мёд и всякий другой дар Божий… Грех срывать плод до времени. Дай ему, голубчику, войти в силу, напитаться росой, землёй и солнышком, дождаться милосердного благословения на потребу человека!</p>
+
+<p>В канун Преображения почти вся детвора города высыпала на базар, к весёлым яблочным рядам. Большие возы яблок привозили на пыльных телегах из деревень Гдовья, Принаровья, Причудья<span class="fn-ref">3<span class="fn-tooltip">Гдовье — край вокруг города Гдова на восточном берегу Чудского озера. Принаровье — деревни по обоим берегам реки Наровы, от Чудского озера до Финского залива. Причудье — поозёрные деревни вокруг Чудского озера. Это родные места писателя: он вырос в Нарве, на Эстляндско-Псковском пограничье, и яблочные ряды на нарвском базаре наполнялись возами именно из этих деревень.</span></span>. Жарко-румяные, яснозорчатые, осенецветные, багровые, златоискрые, янтарные, сизые, белые, зелёные, с красными опоясками, в веснушках, с розовинкой, золотисто-прозрачные (инда зёрнышки просвечивают), большие, как держава в руке Господа Вседержителя<span class="fn-ref">4<span class="fn-tooltip">Держава — золотой шар с крестом наверху, наряду со скипетром — символ царской власти; на иконах Спаса Вседержителя «в чине» Христос держит её в левой руке как знак владычества над миром.</span></span>, и маленькие, что на рождественскую ёлку вешают, — лежали они горками в сене, на рогожах, в соломе, в корзинах, в коробах, ящиках, в пестрядинных деревенских мешках, в кадушках и в особых липовых мерках.</p>
+
+<p>Торговали весело и шумно, с хохотом и прибаутками. Яблоки заставляли улыбаться, двигаться, громко говорить, слегка озорничать, прыгать на одной ноге, размахивать руками, прицениваться и ничего не покупать. Нельзя было избавиться от неудержимой смешливости. Всё смешило — и бойкий чернобородый зубоскал мужик в розовой рубахе, стоящий на возу, как Пугачёв на Лобном месте, и надсадно выкрикивающий: «а вот я-я-блочки красавчики»; загаристая девка с большим кошелем через плечо, давшая наотмашь «леща» по спине мальчишки, стянувшего яблоко; выпивший дядя, рассыпавший яблоки прямо в базарную лужу. Особенно смешил круглощёкий восьмилетний пузан, одной рукой показывающий на яблоки в телеге и спрашивающий торговца: почём? — а другой рукой залезающий под солому.</p>
+
+<p>Когда карманы его раздулись от наворованных яблок, он сказал торговцу: дороговато! На воришку весело посматривал городовой и грозил полицейским пальцем: «Я тебя! Моли Бога, что я сегодня добрый». Кому-то угодили яблоком в затылок и крикнули: с наступающим праздником! Вихрастый мастеровой угощал девицу «сахарной коробовкою»<span class="fn-ref">5<span class="fn-tooltip">Коробовка — старинный русский сорт яблок: небольшие, душисто-медовые, золотисто-белые. Прозваны так, говорят, оттого что подавались купеческим невестам в коробах со сластями.</span></span>. Сделав губы бантиком, она ответила: «До священья не вкушаю».</p>
+
+<p>Под телегами спали, разиня рот, деревенские ребята — с тятьками и мамками они всю ночь сопровождали яблочные возы в город. Я встретил Урку. Он грыз яблоко, и я сказал ему:</p>
+
+<p class="dialogue">— Разве можно есть неосвящённое? Грех ведь!</p>
+
+<p>Урка тревожными глазами посмотрел на меня и ответил, как серьёзный ихний раввин:</p>
+
+<p class="dialogue">— У нас свой закон!</p>
+
+<p>В чайной с вывеской «Зайди, приятель» сидели мужики, пили чай с ситником и говорили только о яблоках: сколько мер собрали, сколько пообтряс ветер, как их везли по дорогам, сколько взяли барыша и что-де Господь послал урожайный год, хорошую росу, дождь по времени, и теперича, мол, зима не страшит, всего вволю, а поэтому можно ещё сороковочку выпить!</p>
+
+<p>Чтобы угодить мужикам, половой завёл органчик, но ему сказали:</p>
+
+<p class="dialogue">— Поштенный! Нельзя ли повременить? Успенский пост ещё не прошедши!<span class="fn-ref">6<span class="fn-tooltip">Успенский пост — двухнедельный строгий пост с 1 (14) по 14 (27) августа, оканчивающийся праздником Успения Пресвятой Богородицы. Преображение приходится на середину этого поста. По старинному укладу во время поста воздерживались не только от скоромной пищи, но и от музыки, плясок и шумных увеселений.</span></span></p>
+
+<p>А кругом чайной дробный полновесный звук отмериваемых яблок, зазывы торговцев, ржанье лошадей, взвизги, смех, всплески голубиных и воробьиных стай, летающая паутина предосенница, жаркое, но всё же замирающее солнце — оно тоже созрело, как яблоко, и скоро уляжется на покои до новой весны и нового созрева, и это полнозубое, весёлое, морозно-хрустящее слово «яблоки», раскатывающееся по всему базару и улицам!</p>
+
+<p class="dialogue">— Ах, какое хорошее слово «яблоки»! Лучше этого слова не сыщешь по всей поднебесной!</p>
+
+<p>Вечером пошли ко всенощной. В церкви пели яблоками и мёдом пахнущий Преображенский тропарь: «Преобразился еси на горе Христе Боже показавый учеником Твоим славу Твою, якоже можаху да возсияет и нам грешным свет Твой присносущный молитвами Богородицы, Светодавче, слава Тебе».<span class="fn-ref">7<span class="fn-tooltip">Тропарь праздника Преображения, 7-го гласа. Поётся в храме весь предпразднственный и попразднственный период (с 5/18 по 13/26 августа). «Якоже можаху» — «насколько они могли вместить»: апостолы увидели славу преобразившегося Христа в той мере, в какой могла её выдержать человеческая природа.</span></span></p>
+
+<p>Вечером, после ужина, меня заставили читать Евангелие о Преображении Господнем. Я читал по складам: «По прошествии дней шести, взял Иисус Петра, Иакова и Иоанна, брата его, и возвёл их на гору высокую одних, и преобразился пред ними: и просияло лицо Его как солнце, одежды же Его сделались белы как снег».</p>
+
+<p>Ночь была душной, с далёкими всполохами, с августовской, тихо шумящей тьмой.</p>
+
+<p>От духоты в комнате я захотел снять с себя всю одежду, чтобы спать было повольготнее, но мать строго мне внушила:</p>
+
+<p class="dialogue">— Никогда не спи нагишом, ибо сон смерти брат, преддверие и Страшному Суду Господню. Надо быть всегда в готовности, одетым в дорогу…</p>
+
+<p>При слове «дорога» она отвернулась к окну и как будто бы прослезилась.</p>
+
+<p>Утром встали спозарань. На дворе желтела заря — ранница. Она сдувала с крыш последний сон. Зачинающийся день всё шире и шире раскрывал золотые свои врата, и не успел я насмотреться досыта на восходье, так редко мною виденное, как показалось в этих вратах солнце и зашагало по земле поступью Великого Государя, идущего от Светлой заутрени. Долго я думал, отчего солнце слилось у меня с шествием Великого Государя, виденного мной на какой-то картине, и не мог додуматься. Отец, вымытый и причёсанный, в жилетке поверх ситцевой рубахи и лакированных сапогах, ходил по комнате и напевал: «Преобразился еси на горе Христе Боже».</p>
+
+<p class="dialogue">— Преображение… Преображение… — повторял я. Как хорошо и по-песенному ладно подходит это слово к ширящемуся и расцветающему дню.</p>
+
+<p>С белым узелком яблок пошли к обедне. Всюду эти узелки, как куличи на Пасху, заняли места в доме Божьем; и на ступеньках амвона, и на особых длинных столах, на подоконниках и даже на полу под иконами. Румяно и простодушно лежали они перед Богом — вошедшие в силу, напитавшиеся росой, землёй и солнышком, готовые пойти теперь на потребу человека и ждущие только Божьего благословения.</p>
+
+<p>Во время пения «Преобразился еси» на амвон вынесли большую корзину с церковными яблоками. Над ними читали молитву и окропляли их святой водой. Когда подходили ко кресту, то священник каждому давал по освящённому яблоку. В течение целого дня на улицах слышен был сочный яблочный хруст.</p>
+
+<p>Радостно и мирно завершился солнечный, яблочно-круглый день Преображения Господня.</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ КРЕЩЕНИЕ ЧЕЛОВЕКА ══ -->
+<article class="story-card" id="s5">
+<div class="story-header">
+  <div class="story-number">Рассказ пятый</div>
+  <h2 class="story-title">Крещение человека</h2>
+</div>
+<div class="story-audio-wrap" id="player-s5">
+  <div class="story-audio-label">Аудиоверсия · <span>читает Екатерина Краснобаева</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s5')" id="playbtn-s5" title="Воспроизвести">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s5" oninput="storySeek('s5',this.value)">
+      <span class="story-audio-time" id="time-s5">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s5" src="audio/5-kreschenie-cheloveka.mp3" preload="none"></audio>
+</div>
+<div class="story-body">
+
+<p>Перед обедней крестили младенца. Дьякон поручил мне разжечь кадило, а сам он записывал в книгу имена родителей и восприемников<span class="fn-ref">1<span class="fn-tooltip">Восприемники — крёстные родители (от «воспринимать», то есть принимать младенца от купели). Их обязанность — отвечать за крещаемого при чтении Символа веры и быть его духовными родителями на всю жизнь.</span></span> крещаемого. Младенец вопил на всю церковь, и толстая простодушная кума укачивала его и пела, вначале тихо и сквозь зубы, а потом всё громче и смелее:</p>
+
+<span class="verse-block">Баю, баюшки, баю.<br>Я шелками обовью.</span>
+
+<p>Дьякон мохнато посмотрел на куму и сказал:</p>
+
+<p class="dialogue">— Воздержись!</p>
+
+<p>Высокий суховидный кум с тёмными, вспученными тяжёлой работой руками был выпившим. Дьякон сделал ему замечание.</p>
+
+<p class="dialogue">— Мог бы и после крестин!.. Твоё звание?</p>
+
+<p class="dialogue">— Михаил Могилкин, по прозванию «Труба»!</p>
+
+<p class="dialogue">— Я не про это! Чем занимаешься?</p>
+
+<p class="dialogue">— Кочегар на пароходе «Моряк»!</p>
+
+<p class="dialogue">— Как желаете наименовать младенца?</p>
+
+<p class="dialogue">— Гаврилой!</p>
+
+<p class="dialogue">— Гавриилом, — поправил его дьякон и сделал кляксу, которую выругал: — Ах, чтоб тебя, окаянная!..</p>
+
+<p>В это время младенец завопил таким крепким рёвом, что дьякон поднял брови и покачал головой:</p>
+
+<p class="dialogue">— Ваш младенец-то не протодьякон ли случайно?</p>
+
+<p>Михаил Труба не расслышал дьяконской шутки и почтительно ответил:</p>
+
+<p class="dialogue">— Так точно!</p>
+
+<p>Сторож поставил посредине церкви медную купель, похожую на большую Христову чашу, и на особый столик положил серебряный ковчежец-мирницу<span class="fn-ref">2<span class="fn-tooltip">Мирница — серебряный ковчежец, в котором хранится Святое миро — благовонное масло, освящаемое патриархом раз в несколько лет, и обычный елей для помазания при крещении.</span></span>, свечи, требник<span class="fn-ref">3<span class="fn-tooltip">Требник — богослужебная книга, содержащая чинопоследования таинств и треб: крещения, миропомазания, венчания, исповеди, елеосвящения, отпевания, освящения дома и прочего — всего, что совершается «по требе» (по просьбе) верующих.</span></span> и белое, крестами вышитое полотенце-ручник.</p>
+
+<p>Из алтаря вышел священник в епитрахили и стал совершать чин оглашения<span class="fn-ref">4<span class="fn-tooltip">Чин оглашения — приготовительная часть таинства Крещения: молитвы запретительные (заклинания на сатану), троекратное отречение от него, исповедание верности Христу и чтение Символа веры. По древнему обычаю крестящегося обращали лицом на запад (символ царства тьмы — для отречения), затем на восток (символ Христа — для сочетания).</span></span>.</p>
+
+<p>В одной из молитв священник назвал младенца новоизбранным воином Христа Бога и молил Владыку и Господа дать ему Ангела Хранителя. Священник склонился над ребёнком, трижды подул на него и сказал:</p>
+
+<p class="dialogue">— Изжени из него всякого лукавого и нечистого духа, сокрытого и гнездящегося в сердце его.</p>
+
+<p>«Для чего он дует-то?» — подумал я и очень обрадовался, когда вспомнил библейские слова: «Вдунул Бог в лицо Адама дыхание жизни».</p>
+
+<p>Младенец успокоился от горького своего плача, и мне почудилось, что это Ангел его успокоил!</p>
+
+<p>Я не раз видел, как улыбался во сне мой грудной брат, и мать говорила мне:</p>
+
+<p class="dialogue">— Это Ангел в переглядушки с ним играет!</p>
+
+<p>Вспомнилась мне картина у дяди Ивана на Волге, в Калязинском уезде: у забора лежит пьяный человек, а рядом с ним стоит Ангел с опущенной головой и преогорчённо плачет.</p>
+
+<p>И другая картина, на ярмарке виденная: по гнилым жёрдочкам переходит речную быстрину ребёнок, а позади его Ангел Хранитель.</p>
+
+<p>Пословица русская вспомнилась: «Где просто, там Ангелов со ста, а где мудрено, нет ни одного».</p>
+
+<p>Священник попросил восприемников обратиться лицом к западу и трижды спросил их:</p>
+
+<p class="dialogue">— Отрицаешися ли сатаны и всех дел его, и всех аггел его<span class="fn-ref">5<span class="fn-tooltip">Аггелы — особая форма церковнославянского написания слова «ангелы» с двумя «г», употребляемая исключительно по отношению к падшим, то есть к бесам. Сохранилась в чине отречения от сатаны при крещении.</span></span>, и всего служения его, и всея гордыни его?</p>
+
+<p>И восприемники трижды ответили:</p>
+
+<p class="dialogue">— Отрицаюся!</p>
+
+<p>В знак сочетания с Христом им прочитали Символ веры.</p>
+
+<p class="dialogue">— Приготовьтесь к Таинству Крещения! — шепнул дьякон восприемникам.</p>
+
+<p class="dialogue">— Отреши его ветхость и обнови его в жизнь вечную, и исполни его Святого Твоего Духа, — молился священник за младенца.</p>
+
+<p>Крёстная мать положила Гавриила на скамью и стала раскутывать его от одеяла и пелёнок. Я подошёл поближе и не мог не порадоваться тому, как младенец тихо так старался посмотреть не на одно что-либо, а сразу на всё. В это время в церкви стояло солнце. Хотя оно и раньше было, с самого заранья, но я обратил особенное на него внимание только сейчас. Солнце близко подошло к младенцу, склонилось над ним, как священник, и стало гладить его по голове.</p>
+
+<p>В знак духовной радости на чашеобразной купели зажгли три белых свечи, и восприемникам тоже дали по свече. Священник облачился в светлую ризу и руки опоясал серебряными поручами. Подвыпивший Михаил Труба растрогался и всхлипнул.</p>
+
+<p>Священник читал молитву о неизречённом величии Божьем, бесконечной любви Его к роду человеческому и наитии Святого Духа на крещенскую воду.</p>
+
+<p class="dialogue">— Ты убо человеколюбче Царю, освяти воду сию!</p>
+
+<p>Священник трижды благословил золотую от солнца воду, погрузил в неё пальцы, сложенные для благословения, и три раза подышал на неё при словах:</p>
+
+<p class="dialogue">— Да сокрушатся под знамением образа креста Твоего все сопротивныя силы!</p>
+
+<p>Из серебряной «мирницы» священник взял тонкий помазок, обмакнул его в священный елей<span class="fn-ref">6<span class="fn-tooltip">На этом месте автор, передавая детское восприятие, соединяет в одно два разных священнодействия: помазание <em>елеем радования</em> совершается перед погружением в купель (обычным благословенным растительным маслом), а помазание <em>святым миром</em> — после, в таинстве Миропомазания, как «печать дара Духа Святаго».</span></span> — миро и начертал на воде незримый троекратный крест:</p>
+
+<p class="dialogue">— Благословен Бог, просвещаяй и освящаяй всякого человека, грядущаго в мир!..</p>
+
+<p>Священник склонился над голеньким ребёнком и крестовидно стал помазывать тело его:</p>
+
+<p class="dialogue">— Помазуется раб Божий Гавриил елеем радования, во имя Отца и Сына и Святаго Духа.</p>
+
+<p>Когда «мирили» ноги младенца, освещённые в это время солнцем, то произносили:</p>
+
+<p class="dialogue">— Во еже ходити ему по стопам заповедей Твоих!</p>
+
+<p>Мне почему-то вспомнилось миропомазание царей<span class="fn-ref">7<span class="fn-tooltip">При венчании на царство государь — единственный из мирян — принимал не только таинство Миропомазания (полученное при крещении, как и все), но и особое царское помазание у престола Успенского собора Кремля. Этот образ и стоит в детской голове рассказчика — отсюда восторженный шёпот сторожу.</span></span>, о котором в книжке читал, и не мог сдержаться, чтобы не шепнуть церковному сторожу:</p>
+
+<p class="dialogue">— Видишь ли, как царя помазуют… Гаврюшку-то!</p>
+
+<p>Голенького помазанника батюшка взял на руки и погрузил в купель:</p>
+
+<p class="dialogue">— Крещается раб Божий Гавриил!..</p>
+
+<p>Омытого водою радования и света, облачали его в белые ризки<span class="fn-ref">8<span class="fn-tooltip">Ризки — белые крестильные одежды (рубашечка, чепчик, поясок) и большое белое полотенце-крыжмо, в которое восприемница принимает младенца из купели. По обычаю эти ризки — дар крёстной матери и хранятся в семье на всю жизнь.</span></span>, крестик на него повесили на голубой ленточке и пели радостными голосами:</p>
+
+<p class="dialogue">— Ризу мне подаждь светлу, одеяйся светом, яко ризою!</p>
+
+<p>Читал Евангелие о прощальном заповедании Христа идти в мир и крестить всех людей во имя Его, произносилась ектения о милости, жизни, мире, здравии и спасении новопросвещённого младенца Гавриила. Читались чудесные, вспыхивающие огнями слова о небесном осиянии крещаемого и сподоблении его жизни вечной.</p>
+
+<p class="dialogue">— Как пророк Самуил благословил царя Давида на царство, так благослови и главу раба Твоего Гавриила! — читалось ему на прощание.</p>
+
+<p>А потом постригали его<span class="fn-ref">9<span class="fn-tooltip">Пострижение волос — последнее священнодействие чина крещения: священник крестообразно выстригает с темени крещаемого четыре прядки волос — это первая его жертва Богу и знак отдания себя в Его руки. Прядки залепляют в воск и опускают в купель или сохраняют как святыню.</span></span> и этим самым отдавали в руки Божии.</p>
+
+<p>В церкви погасили свечи, и бережно закутанного Гаврюшу понесли в жизнь.</p>
+
+<p>Дьякон посмотрел ему вослед и сказал:</p>
+
+<p class="dialogue">— Что-то даст ему Господь? Будет ли он великим светильником Церкви, полководцем, мыслителем, купцом али… Но не будем предугадывать пути Господни!.. Мне почему-то сдаётся, будет он протодьяконом Исаакиевского собора!.. Слышал, какой голосище-то у него?<span class="fn-ref">10<span class="fn-tooltip">Исаакиевский собор в Санкт-Петербурге — один из крупнейших соборов России, главный кафедральный собор столицы империи. Протодьяконы Исаакия славились на всю страну могучими басами; назначение туда было пределом мечтаний для всякого голосистого служителя.</span></span></p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ МОСКОВСКИЙ МИЛЛИОНЩИК ══ -->
+<article class="story-card" id="s6">
+<div class="story-header">
+  <div class="story-number">Рассказ шестой</div>
+  <h2 class="story-title">Московский миллионщик</h2>
+</div>
+<div class="story-body">
+
+<p>По воскресным и праздничным дням стояли на паперти собора в чаянии милости два старика нищих. Один — высокий, бородатый, слепой, в замызганном коротком полушубке, в пыльных исхоженных сапогах. Другой — низкорослый, седой, губастый, с колючими весёлыми усами и всегда в подпитии. Первого величали по-почётному Денисом Петровичем, а второго забавным прозвищем — дедушка Гуляй.</p>
+
+<p>Отец, указав как-то на них, горько сказал мне:</p>
+
+<p class="dialogue">— Да, жизнь трясёт людьми, как вениками! Истинно сказано в акафисте: «красота и здравие увядают, друзья и искренние смертью отъемлются, богатство мимо течёт…»<span class="fn-ref">1<span class="fn-tooltip">Парафраз начала кондака 7-го из «Акафиста о упокоении усопших» (или сходного — «Слава Богу за всё»): «Богатство мимотекущее, и слава мирская преходящая, и красота земная увядает…» Эти образы — общее место покаянных и заупокойных текстов.</span></span> Вот стоит на паперти и руку Христа ради тянет Денис Петрович Овсянников. Лет тридцать тому назад на всю Москву и окрест страшенным был богачом! Старостой в Успенский собор<span class="fn-ref">2<span class="fn-tooltip">Староста (церковный) — выборный из мирян, отвечающий за хозяйство храма и казну. Староста Успенского собора Московского Кремля — должность исключительной чести: коронационный собор был сердцем дореволюционной Москвы. Избирались лишь из именитейших купеческих фамилий.</span></span> выбирали, с губернаторами и архиереями чаи пил, на лучших рысаках катался, но… не удержал голубчик волговую свою силу. Все миллионы на дым пустил. Во весь неуёмный лих размытарил их по московским кабакам да притонам…</p>
+
+<p class="dialogue">— А кто такой дедушка Гуляй?</p>
+
+<p class="dialogue">— Богоносная душа! Главный приказчик<span class="fn-ref">3<span class="fn-tooltip">Приказчик — в купеческом деле наёмный управляющий, ближайший помощник хозяина, ведший торговлю и счёты. «Главный приказчик» крупного дома — фактически правая рука миллионщика, доверенное лицо.</span></span> Дениса Петровича. Когда разорился и спился господин его, то он не оставил оставленного, а пошёл вместе с ним странствовать, крест его облегчать, слепоту его пестовать. Есть ещё, сынок, братолюбцы на земле!</p>
+
+<p>Однажды Денис Петрович в ожидании обедни сидел в соборной ограде и незрячими глазами своими тянулся к солнцу, ловя тепло его. Дедушки Гуляя не было. Бывший московский миллионщик был тих и как-то благовиден озарённым лицом своим, разветренными снеговыми волосами, смиренными руками, положенными на колени, и жалостной слепотой своей.</p>
+
+<p>Я сказал ему:</p>
+
+<p class="dialogue">— Здравствуй, Денис Петрович.</p>
+
+<p>И он ответил тихим приветным голосом:</p>
+
+<p class="dialogue">— Христос спасет…</p>
+
+<p>Не знаю почему, я сразу же спросил его:</p>
+
+<p class="dialogue">— А тебе не жалко, что ты всего богатства лишился?</p>
+
+<p>Денис Петрович улыбнулся и ответил мне, как большому, мудрёными древними словами:</p>
+
+<p class="dialogue">— Всему свое время, и время всякой вещи под небом. Время сберегать и время бросать. Лучше горсть с покоем, нежели пригоршни с трудом и томлением духа!<span class="fn-ref">4<span class="fn-tooltip">Книга Екклесиаста — стихи 3:1, 3:6 («Всему свое время, и время всякой вещи под небом… время сберегать, и время бросать») и 4:6 («Лучше горсть с покоем, нежели пригоршни с трудом и томлением духа»). Слепой нищий цитирует их по памяти, и мальчику кажется, что они звучат «мудрёными древними словами».</span></span></p>
+
+<p>Он не оглянулся даже на звук моего голоса, и мне показалось, что ответил он греющему его солнцу.</p>
+
+<p>В это время пришёл дедушка Гуляй. Он принёс старику хлеб и две копчёных рыбки.</p>
+
+<p class="dialogue">— Кушай, хозяин! — сказал он весёлым, каким-то гулевым голосом, садясь рядом. — Обедня сегодня долгая. Подкрепись! Только поп да петух не евши поют, а нам невмоготу…</p>
+
+<p>Дедушка помог хозяину вычистить рыбу, положил ему на ладонь, сбегал в церковную сторожку за кипятком.</p>
+
+<p class="dialogue">— Городской голова сегодня именинник, — докладывал он, поднося чашку к губам Дениса Петровича, — двугривенный нам, раз! Марья Павловна Перчаткина панихиду служит по мужу, четвертак. Два! Заводчица Наталья Ларивоновна именинница — пятиалтынный, три!<span class="fn-ref">5<span class="fn-tooltip">Дореформенные народные названия монет: <em>двугривенный</em> — 20 копеек («два гривенника» по 10 коп.); <em>четвертак</em> — 25 копеек (четверть рубля); <em>пятиалтынный</em> — 15 копеек (5 алтынов, алтын — 3 копейки). Все три названия пережили монетную реформу 1839 года и доходили до начала XX века.</span></span> Есть и прочие, которые по копейке…</p>
+
+<p class="dialogue">— Слава тебе, Христе, Свете истинный! — восславлял Денис Петрович, разжёвывая хлеб. — Даст Господь день, даст и пищу.</p>
+
+<p>Дедушка Гуляй обратил на меня внимание. Он весело подмигнул мне глазом, тоже каким-то гулевым, словно сказать хотел: «Не унывай, братишка!» От него пахнуло яблочно-хлебным духом водки и румяной деревенской обрадованностью.</p>
+
+<p class="dialogue">— Вот и хорошо!</p>
+
+<p>А что хорошо, так и не пояснил, только улыбкой засветился и весёлые усы свои разгладил.</p>
+
+<p class="dialogue">— Мальчонка тут один меня вопрошал, — отозвался Денис Петрович, крестясь после еды, — жалко ли мне сгинувшего богатства? Удивил даже… такой выросток быстрословый!.. Голос этакой думчивый… Мужиковатый, со вздохом… Тута ли он?</p>
+
+<p class="dialogue">— Тут, Денис Петрович, рядком сидит!</p>
+
+<p class="dialogue">— Так, так… тут сидит… Ну, и Господь с ним, пусть сидит… Это хорошо, что отрок к нам подсел… Хороший знак, добрый! Это значит, что души наши не затемнились ещё… А вот ежели дитя али животная бежит от человека, тогда — каюк… Беззвёздная, значит, душа у того несчастного!</p>
+
+<p>От этих слов дедушка Гуляй весёлым стал и хотел обнять меня, но вместо этого дальше от меня отстранился и руками замахал.</p>
+
+<p class="dialogue">— Близко не сиди с нами, сынок! Блошками тебя наградим. Хоть и весёлые эти блошки, но зело ехидные!</p>
+
+<p class="dialogue">— У нас тоже блохи водятся, — похвастал я.</p>
+
+<p>Так состоялось наше знакомство.</p>
+
+<p>В одно из Воскресений я встретил на паперти одного лишь Гуляя. Хозяина с ним не было. Я спросил его:</p>
+
+<p class="dialogue">— А где же Денис Петрович?</p>
+
+<p class="dialogue">— На одре болезни. Отцветает мой хозяин, к земле клонится. На родину просится!</p>
+
+<p class="dialogue">— На какую родину? В Москву?</p>
+
+<p class="dialogue">— Нет, — вздохом ответил дедушка, — в пренебесное отечество, на пажити Господни!</p>
+
+<p>Вспомнились мне смиренные руки его и почему-то пыльные, разношенные сапоги его, и стало жалко бывшего миллионера. Слова матери вспомнились: «Кто болящего навестит, тому Матерь Божья улыбнётся!»</p>
+
+<p class="dialogue">— Можно его навестить? — спросил я Гуляя.</p>
+
+<p>Незнамо отчего, на глазах дедушки затеплились слёзы, заулыбался он от неведомой радости разными светами, как драгоценный камень.</p>
+
+<p class="dialogue">— Спаси тя Христос! Возрадованная душа у тебя… Навести его, сынок, обрадуй! Ты ведь вроде пасхального канона<span class="fn-ref">6<span class="fn-tooltip">Пасхальный канон преп. Иоанна Дамаскина («Воскресения день, просветимся, людие…») — праздничнейшее песнопение года, поющееся торжественнее всех других. «Быть как пасхальный канон» — высшая мера радости и утешения.</span></span> для него будешь! Очень ему нагрустно! Смертный час к нему приближается!</p>
+
+<p>Я дождался, пока Гуляй собрал от богомольцев монетки, и мы пошли. Жили они на окраине города около мусорных ям, в драном заплатанном доме, около которого никогда не высыхала грязь и всегда бродили свиньи.</p>
+
+<p>Жилище помещалось на верхнем чердачном этаже. Оно было тёмным, затхлым, с одним окном, выходящим на широкую толевую крышу. На пороге Гуляй сказал:</p>
+
+<p class="dialogue">— Господь милости послал!</p>
+
+<p>Денис Петрович лежал на деревянной койке. Он долго держал мою руку в своей.</p>
+
+<p class="dialogue">— Сколь велико милосердие Божие! — говорил он, — молился я ночью и спрашивал Господа: прощены ли беззакония мои? Знать, прощены, если Он отрока ко мне послал! Гуляй! Слышишь ли ты, Гуляй! — пробовал он крикнуть. — Это ведь Господь… знак Его… Не пропащие мы с тобою, дедушка Гуляй, коли детская душа к нам потянулась! Что же ты молчишь, Гуляй?</p>
+
+<p class="dialogue">— Я плачу!</p>
+
+<p class="dialogue">— Не плачь! Сходил бы лучше в лавочку и принёс бы отроку гостинцев, да за кипятком в чайную сбегал бы… За все тридцать лет шатания нашего первый гость у нас!.. Да ка-а-кой ещё! Ненарадованный!</p>
+
+<p>Мне было неловко от их восхищения. Я смотрел «в землю» и теребил поясок от рубашки. Дедушка Гуляй сбегал за гостинцами и кипятком. Стол придвинули к постели болящего. Мне дали жестяную кружку с чаем и наложили стог леденцов и пряников. Я всё время молчал, и дедушка Гуляй почему-то решил, что скучно мне. Он стал развлекать меня; строил скоморошьи рожи, подражал паровозу, лаял по-собачьи, пел частушки. Одна из них мне запомнилась:</p>
+
+<span class="verse-block">Потеряла я колечко,<br>Потеряла я любовь,<br>Как поэтому колечку,<br>Буду плакать день и ночь.</span>
+
+<p>Пропел даже целую былину про Соловья Будимировича<span class="fn-ref">7<span class="fn-tooltip">Соловей Будимирович — герой одной из лучших былин Киевского цикла: молодой купец-богатырь, приплывающий по морю на тридцати кораблях свататься к племяннице князя Владимира — Запаве Путятичне (у Никифорова-Волгина её зовут Ульяной Васильевной — по поздней народной версии). Эту былину особенно любили сказители за её праздничную, «весёлую» интонацию.</span></span>, и надолго остался в памяти былинный «зачин»:</p>
+
+<span class="verse-block">Высота ли — высота поднебесная!<br>Глубота — глубота океан-море!<br>Широко раздолье — по всей земле!<br>Глубоки-тёмны омуты днепровские!</span>
+
+<p>Пел и лицом играл так, что видел я, как выбегали-выгребали тридцать кораблей, и как хорошо корабли изукрашены, хорошо корабли изнаряжены, и как на беседочке сидельной сидит купав молодец, молодой Соловей, сын Будимирович, со своей государыней Ульяной Васильевной…</p>
+
+<p>Когда нечего было рассказывать и петь, то дедушка Гуляй вынул из-под койки зелёный солдатский сундучок, многообещающе подмигнул мне гулевым глазом и поднял крышку. Внутренняя сторона её была заклеена ярмарочной картиной<span class="fn-ref">8<span class="fn-tooltip">Имеется в виду лубок — дешёвая раскрашенная картинка-гравюра, какие продавались на ярмарках и обклеивали внутренности сундуков, печные заслонки, стены крестьянских изб. Сюжет «Эй, ямщик Гаврилка, где моя бутылка» — характерный пьяно-весёлый лубочный мотив XIX века.</span></span>: «Эй, ямщик Гаврилка, где моя бутылка». На ней изображён усатый барин в кибитке, а на облучке пьяный Гаврилка, правящий тройкой коней, пышущих огнём и дымом.</p>
+
+<p>В сундуке много было всяких вещей. Дедушка показал мне двадцатипятирублёвую бумажку с обожжёнными краями.</p>
+
+<p class="dialogue">— Это они, — кивнул на мертвенно лежащего Дениса Петровича, — сигару когда-то прикуривали… А это мои манжетки и манишка… Будучи главным приказчиком, я носил их… Щёголем был!.. Пачка счетов хозяина моего… Гляди, какие большие тыщи сжигал он в «Яре» и «Славянском базаре»<span class="fn-ref">9<span class="fn-tooltip">«Яр» (Петровский парк) и «Славянский базар» (Никольская улица) — знаменитейшие московские рестораны второй половины XIX — начала XX века, ставшие синонимом купеческого разгулья, ужинов в отдельных кабинетах с цыганами и шампанским. В литературе мемуары о московском кутеже без них не обходятся.</span></span>… А это вот визитная карточка: «Коммерции советник<span class="fn-ref">10<span class="fn-tooltip">Коммерции советник — почётное гражданское звание Российской империи (введено в 1800 г.), жаловавшееся именитым купцам 1-й гильдии за многолетнюю беспорочную торговую деятельность; давало личное почётное гражданство. Соответствовало по табели о рангах VIII классу — на одной ступени с надворным советником.</span></span> Денис Петрович Овсянников»… Гляди, с золотыми обрезами!.. — Долго смотрел на эту карточку и сказал: — Время пролетело, слава прожита! — что-то ещё хотел он показать, но на него прикрикнул Денис Петрович.</p>
+
+<p class="dialogue">— Опять за свою переборку? Закрой сундук, старый дурак! Никакого вскреса от тебя не вижу. Днём и ночью только и ворошишь своё барахло.</p>
+
+<p class="dialogue">— Эх, хозяин, хозяин, — жалостливо прошептал дедушка Гуляй, — вся Москва наша в этом сундучке… Вспомнить хочется…</p>
+
+<p>Гуляй поднялся с пола, утёр рукавом слезу, подбоченился, щёлкнул пальцами, по-молодецки ухнул и неожиданно пустился в пляс, запев песню с деревенским завизгом:</p>
+
+<span class="verse-block">Ох, пойду я да в зелёный тот лесок,<br>Вырву, выломлю кленовый там листок,<br>Напишу я на нём грамотку,<br>Пошлю её к отцу старому.</span>
+
+<p>И вдруг в середину песни ворвался такой страшный взрыд, которого я никогда ещё не слышал:</p>
+
+<p class="dialogue">— Помираю!</p>
+
+<p>На койке метался Денис Петрович. Дедушка Гуляй почему-то не бросился к нему на помощь, а продолжал стоять в позе плясуна, только рот его раскрылся и красное лицо словно инеем покрылось…</p>
+
+<p class="dialogue">— Священника… — подземным, уходящим в глубину голосом охнул Денис Петрович, разрывая руками рубашку на груди, — показался медный крестьянский крест.</p>
+
+<p>Дедушка Гуляй упал на пол. Он ползком задвигался к постели умирающего. Я побежал за священником. Когда мы пришли, то бывший московский миллионер уже отходил, не дождавшись причастия. Дедушка Гуляй вынимал из сундука смертную одежду<span class="fn-ref">11<span class="fn-tooltip">По старинному укладу простые люди задолго до кончины готовили себе смертный наряд — рубаху, саван, поясок — и хранили его в сундуке вместе с самым дорогим. Этот обычай был особенно прочен в купеческой и крестьянской среде.</span></span>.</p>
+
+<p>Священник запел канон «на исход души»: «Яко по суху пешешествовав Израиль по бездне стопами…»<span class="fn-ref">12<span class="fn-tooltip">«Канон на исход души» (или «при разлучении души от тела») — особое последование, читаемое священником у одра умирающего; призван облегчить переход души. Цитируемая строка — ирмос первой песни канона, отсылающий к переходу Израиля через Красное море как образу перехода в иную жизнь.</span></span> Читались смертные слова: «нощь смертная мя постиже неготоваго…»</p>
+
+<p>Я смотрел на глиняную кружку, из которой Денис Петрович прихлёбывал чай.</p>
+
+<p>Священник сложил крестом руки умирающего и перекрестил его. По завечеревшей крыше ходили воробьи. Один из них заглянул в окно и чирикнул.</p>
+
+<p>… Похоронили Дениса Петровича на кладбище бедняков и бездомников, под еловым крестом. Руками дедушки Гуляя была прибита к кресту оправленная в стекло визитная карточка с золотым обрезом: «Коммерции советник Денис Петрович Овсянников».</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ МОЛИТВА ══ -->
+<article class="story-card" id="s7">
+<div class="story-header">
+  <div class="story-number">Рассказ седьмой</div>
+  <h2 class="story-title">Молитва</h2>
+</div>
+<div class="story-audio-wrap" id="player-s7">
+  <div class="story-audio-label">Аудиоверсия · <span>читает Екатерина Краснобаева</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s7')" id="playbtn-s7" title="Воспроизвести">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s7" oninput="storySeek('s7',this.value)">
+      <span class="story-audio-time" id="time-s7">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s7" src="audio/7-molitva.mp3" preload="none"></audio>
+</div>
+<div class="story-body">
+
+<p>Село Струги, где проживает отец Анатолий, тихое, бедное, бревенчатое и славится лишь на всю округу густыми сиреневыми садами. Очень давно какой-то прохожий заверил баб, что древо-сирень от всякого мора охраняет, — ну и приветили это древо у себя, и дали развернуться ему от края до края.</p>
+
+<p>В сиреневую пору села не видно. Если смотреть на него издали, то увидишь одно густое лиловое облако, лежащее на земле.</p>
+
+<p>В эту пору я ночевал у отца Анатолия. Наши научники и грамотеи считают его «горе-священником», так как и умом он скуден, и образования маленького, и ликом своим неказист, и проповеди у него нескладные, что мужицкая речь.</p>
+
+<p class="dialogue">— Но зато в Бога так верит, — говорили в ответ полюбившие его, — что чудеса творить может!</p>
+
+<p>Меня уверяли чуть ли не клятвою: когда отец Анатолий молится, то лампады и свечи сами собою загораются!</p>
+
+<p>Окна батюшкиной горницы были открыты в сад, на белую ночь, всю в сирени, зорях и соловьях. Отец Анатолий сидел на подоконнике и несколько раз оборачивался в мою сторону, видимо, ждал, когда я засну. Я притворился спящим.</p>
+
+<p>Отец Анатолий снял с себя затрапезный<span class="fn-ref">1<span class="fn-tooltip">Затрапезный (от «затрапез» — дешёвой пестрядной ткани купца И. Затрапезнова, основателя ярославской мануфактуры начала XVIII в.) — будничный, ветхий, плохонький; в широком смысле — то, что носят дома, не на люди.</span></span> заплатанный подрясник и облёкся в белый, из-под которого видны были дёгтярные мужицкие сапоги. Он к чему-то готовился. Расчёсывая гребнем рыжевато-пыльную бороду и такие же волосы, рука его вздрагивала. Мне показалось, что по его грубому крестьянскому лицу прошла судорога и между густыми бровями залегло раздумье.</p>
+
+<p>Оглянувшись ещё раз на меня, он встал на табуретку, зажёг огарок свечи и большой для его маленького роста сумрачной земледельческой рукою стал затеплять перед иконами все лампады.</p>
+
+<p>Тёмный передний угол осветился семью огнями.</p>
+
+<p>Встав перед иконами, отец Анатолий несколько минут смотрел на эти огни, словно любуясь ими. От его созерцательного любования в горнице и в сиреневом саду стало как будто бы тише, хотя и пели соловьи.</p>
+
+<p>И вдруг тишина эта неожиданно вздрогнула от глухого вскрика и тяжёлого падения на колени отца Анатолия.</p>
+
+<p>Он приник головою к полу и минут десять лежал без движения. Меня охватило беспокойство. Наконец он поднимает лицо к Нерукотворному Спасу<span class="fn-ref">2<span class="fn-tooltip">Образ Спаса Нерукотворного (Убрус) — древнейший иконографический тип Христа: лик, чудесно отпечатавшийся на полотне, которое Он, по преданию, приложил к лицу, исцеляя эдесского царя Авгаря. На Руси такой образ — обычно тёмного, иногда почти чёрного письма — был одним из самых чтимых, особенно у духовенства, и почти всегда располагался в центре домашнего «красного угла».</span></span> — большому чёрному образу посредине — и начинает разговаривать с Ним. Вначале тихо, но потом всё громче и горячее:</p>
+
+<p class="dialogue">— Опять обращаюсь к Твоей милости и до седьмидесяти седьмин<span class="fn-ref">3<span class="fn-tooltip">Отсылка к словам Христа в Мф 18:22: на вопрос Петра, прощать ли согрешающему «до семи раз», Господь отвечает: «не говорю тебе: до семи, но до седмижды семидесяти раз» (то есть бесконечно). Отец Анатолий, по-своему пересказывая, превращает «прощения» в «обращения молитвой» — «семьдесят раз по семи» докучать Богу, пока не услышит.</span></span> буду обращаться к Тебе, пока не услышишь меня, грешного священника Твоего!..</p>
+
+<p class="dialogue">Подними с одра болезни младенца Егорку!.. Ему, Господи, семь годков всего… Пожить ему хочется… Только и бредит лугами зелёными, да как он грибы пойдёт собирать, и как раков ловить… Утешь его, мальчонку-то! Возьми его за рученьку! Обними его, Господи, Господи, Господи!.. Один он у родителей-то… Убиваются они, ибо кормилец и отрада их помирает!..</p>
+
+<p class="dialogue">Господи! Как мне легко помыслить о Воскресении Твоём, так и Тебе исцелить младенца! Надоел я Тебе, Господи, мольбами своими, но не могу отступить от Тебя, ибо велико страдание младенца!</p>
+
+<p>Отец Анатолий опять приник лбом к полу и уже всхлипом и стоном выговаривал слова:</p>
+
+<p class="dialogue">— Помоги… исцели… Егорку-то!.. Младенца Георгия!..</p>
+
+<p>Он протянул вперёд руку, словно касался края ризы стоящего перед ним Бога.</p>
+
+<p>Это было страшно. В бедной вдовьей избе, среди суровой мужицкой обстановки, позолоченной лишь лампадными огнями, священник, похожий на мужика, разговаривает с Богом и, может быть, видит неизречённое Его сияние…</p>
+
+<p>Так молиться может только боговидец. Отец Анатолий положил три земных поклона и как бы успокоился.</p>
+
+<p>Несколько минут стоял молча, изможденный и бледный, с каплями пота на сияющем лбу.</p>
+
+<p>Губы его дрогнули. Он опять заговорил с Богом, но уже тише, но с тем же упованием и твёрдостью.</p>
+
+<p class="dialogue">— Аз недостойный и грешный священник Твой, молил Тебя неоднократно спасти от зловредного винопития раба Твоего Корнилия… и паки молю: спаси его! Погибает он! Жена его плачет, дети плачут… Скоро в кусочки они пойдут<span class="fn-ref">4<span class="fn-tooltip">«Пойти в кусочки» — старинное выражение: пойти по миру, побираться куском хлеба. Семья пропащего пьяницы, оставшаяся без кормильца, обречена на нищенство.</span></span>… Не допусти, Господи! Подкрепи его… Корнилия-то!</p>
+
+<p class="dialogue">Прости такожде<span class="fn-ref">5<span class="fn-tooltip">Такожде (ц.-сл.) — также, таким же образом. Отец Анатолий пересыпает свою «крестьянскую» молитву славянскими оборотами, и сам тут же спохватывается, что огрубел у него язык от мирских забот.</span></span> раба Твоего Павлушку… то есть Павла. Павла, Господи! Я всё это Тебе по-деревенски изъясняю… Огрубел язык мой… Так вот, этот Павлушка… по темноте своей… по пьяному делу песни нехорошие про святых угодников пел… проходя с гармошкой мимо церкви, плевался на неё… Ты прости его, Господи, и озари душу его!.. Он покается!</p>
+
+<p class="dialogue">И ещё, Господи, малая докука к Тебе… Награди здоровьем и детьми хорошими Ефима Петровича Абрамова… Он ведь за свой счёт подсвечники в церкви посеребрил и обещает даже ризу мне новую купить, а то моя-то совсем обветшала… в заплатках вся… Благослови его, Милосердный… Он добрый!</p>
+
+<p class="dialogue">О чём же ещё я хотел молить Тебя? Да. Вот, урожай пошли нам хороший… и чтобы, это, травы были… и всякая овощь, и плод… А Дарья-то Иванникова поправилась, Господи! Благодарю Тебя и воспеваю пречестное имя Твоё!.. Три зимы она лежала в расслаблении и скорби, а теперь ходит и радуется!</p>
+
+<p class="dialogue">Вот и всё пока… Да!.. ещё вот, спаси и помилуй гостя моего здесь лежащего раба Твоего Василия… Ему тоже помоги… Он душою мается…</p>
+
+<p class="dialogue">И ещё спаси и сохрани… раба Твоего… как это его по имени-то?</p>
+
+<p>Отец Анатолий замялся и стал припоминать имя, постукивая по лбу согнутым пальцем.</p>
+
+<p class="dialogue">— Ну как же это его? Вот память-то моя стариковская!.. Да, вот этого… что у Святой горы<span class="fn-ref">6<span class="fn-tooltip">Святая гора — Пюхтица (по-эстонски Pühtitsa, «святое место») в Эстляндии: место явления Богоматери крестьянам и древнего почитания, где в 1891 году был основан Успенский Пюхтицкий женский монастырь. Села с пчельниками вокруг Святой горы и составляли приход о. Анатолия. У Никифорова-Волгина, нарвского жителя, география рассказа выстроена очень точно.</span></span> проживает… и пчельник ещё у него… валенки мне подарил… Добрый он… Его все знают… Борода до пояса… у него… Ну как же это его величают? На языке имя-то!..</p>
+
+<p>Отец Анатолий постоял перед Господом в задумчивости и кротко сказал Ему:</p>
+
+<p class="dialogue">— Ты его знаешь, Господи! Ты всех знаешь… Прости меня, Милосердный, за беспокойство… Тяжко, поди, Тебе, Господи, смотреть на нас, грешных и недостойных?</p>
+
+<p>Отец Анатолий погасил лампады, оставив лишь гореть одну, перед Нерукотворным Спасом.</p>
+
+<p>Проходя к своему соломенному ложу, он остановился около меня и вздохнул:</p>
+
+<p class="dialogue">— Спит человек!.. А спать-то пошёл, видимо, не помолившись… Эх, молодость! Ну что тут поделаешь?.. Надо перекрестить его… Огради его, Господи, силою Честнаго и Животворящего Твоего Креста и спаси его от всякого зла…</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+
+</div><!-- .page-wrap -->
+
+<footer class="bio-section">
+  <div class="bio-inner">
+    <div class="bio-label">Об авторе</div>
+    <h2 class="bio-title">Василий Акимович Никифоров-Волгин<br><span style="font-size:.7em;font-weight:400">1900 – 1941</span></h2>
+    <div class="bio-rule"><span>☩</span></div>
+    <div class="bio-text">
+      <p>Самобытный православный писатель, Василий Акимович Никифоров-Волгин родился 24 декабря 1900 года (6 января 1901 по новому стилю) в деревне Маркуши Калязинского уезда Тверской губернии на Волге в очень религиозной семье сапожника из крестьян. Вскоре после его рождения Никифоровы переехали в Нарву (которая на тот момент входила в Санкт-Петербургскую губернию).</p>
+    </div>
+    <button class="bio-expand-btn" id="bioBtn" onclick="toggleBio()" aria-expanded="false" aria-controls="bioFull">
+      <span id="bioText">Читать полную биографию</span>
+      <span class="bio-expand-arrow">&#8964;</span>
+    </button>
+    <div id="bioFull" hidden>
+      <div class="bio-text">
+        <p>После 1920 года по Тартускому мирному договору к Эстонской Республике отошла часть Псковской губернии, территория на правобережье реки Наровы (Нарва с Принаровьем), поэтому семья писателя стала невольными эмигрантами, оторванными от горячо любимой Родины. Но в 1920-е и 30-е гг. здесь ещё сохранялась старая русская жизнь, с её бытом и нравами, порядком и обычаями. Эту жизнь и описал Никифоров-Волгин в своих очерках и рассказах.</p>
+        <p>Семья писателя была большой и жила довольно бедно. Кроме Василия в семье были дети: Иван (1902–1903), Зинаида (1903), Иван (1906–1912), Пелагея (1909), Антонина (1912), Мария (1916), Сергей (1920).<span class="bio-fn-ref">*</span></p>
+        <p>Будущий писатель смог закончить только церковно-приходское училище при Свято-Владимирском братстве. Юноша много и серьёзно занимался самообразованием. Страсть к книгам проявилась у него ещё с детства. Вася рано начал писать, хотя и скрывал это от окружающих.</p>
+        <p>С детских лет глубоко верующий и обладавший высоким голосом с отчётливой выразительной дикцией, он стал псаломщиком в Нарвском Спасо-Преображенском соборе и оставался им до весны 1932 года. Отсюда и идёт то прекрасное знание церковной жизни, быта духовенства, которое видно в его произведениях. По воспоминаниям одного из друзей, В. Никифоров любил до начала богослужения забираться с блокнотом и карандашом в руках в укромный уголок церковной сторожки, слушать и записывать, о чём говорили между собой богомольцы и просто приходившие сюда погреться люди. Острые словечки, чисто народные обороты речи позже оказывались в его рассказах.</p>
+        <p>С 1923 года начинается регулярная литературная и журналистская деятельность В. Никифорова. Свои публикации он, как правило, подписывал псевдонимом Василий Волгин — в память о великой русской реке, на которой находилось его родное село. Со временем он чаще всего стал подписываться В. Никифоров-Волгин, соединив свою фамилию со псевдонимом.</p>
+        <p>В 1927 году пришло первое признание: на конкурсе молодых авторов, устроенном Литературным кружком в Таллине, первая премия была присуждена рассказу В. Никифорова-Волгина «Земной поклон». К середине 30-х годов он был уже известен в литературных кругах Русского Зарубежья, переписывался с И. Шмелёвым, А. Амфитеатровым, Б. Зайцевым и другими; в 1935 году получил премию на конкурсе популярного парижского журнала «Иллюстрированная Россия».</p>
+        <p>В начале 1936 года Никифоров-Волгин перебрался в Таллин, стал домашним учителем и воспитателем внука генерала-эмигранта Ю. Штубендорфа. Среди его учеников был Алексий (Ридигер) — будущий Патриарх Московский и всея Руси Алексий II. Вышли из печати два сборника его рассказов — «Земля-Именинница» (1937) и «Дорожный Посох» (1938), встреченные положительными рецензиями в зарубежных русских изданиях.</p>
+        <p>По воспоминаниям знавших его людей, Василий Никифоров был на редкость добрым, сердечным, отзывчивым человеком. Сёстры его рассказывали, как однажды в суровый мороз Василий отдал на улице нищему свою шапку и зимнее пальто, в оправдание же дома сказал: «Жаль человека — он мёрз, а я уж как-нибудь проживу…»</p>
+        <p>Никифоров-Волгин был глубоко верующим человеком, и это прежде всего определяет его мировосприятие и характер всего его творчества. Рассказы-воспоминания о детстве составили значительную часть его наследия: он рисовал картины богослужений, церковных праздников, общения мальчика со «святыми людьми». Этот мир Никифоров-Волгин изображает точно, достоверно, с любовью, умея воссоздать все мелочи и вместе с тем передать особую атмосферу, дух, скрытую красоту. «И только храм остаётся для нас единственным уголком Святой Руси, где чувствуешь себя пригретым и обласканным», — писал он.</p>
+        <p>По поводу своих рассказов в письме к другу он писал: «В рассказе моём нет вымысла. Через всё это пришлось пройти и пережить. Имена действующих лиц изменены. Некоторых из них уже нет».</p>
+        <p>24 мая 1941 года писатель был арестован, этапирован в г. Киров и 14 декабря 1941 года расстрелян за «издание книг, брошюр и пьес клеветнического, антисоветского содержания». Реабилитирован в 1991 году.</p>
+      </div>
+      <div class="bio-fn">
+        <p><span class="fn-num">*</span> Подробнее о семье и генеалогии писателя: Игорь Будков, «Генеалогия писателя Василия Никифорова-Волгина» — <a href="https://pravoslavie.ru/167348.html" target="_blank" rel="noopener" style="color:var(--green-light)">pravoslavie.ru/167348.html</a></p>
+      </div>
+    </div>
+    <div class="copyright">Василий Никифоров-Волгин · Лето Господне благоприятное · Воспоминания детства</div>
+  </div>
+</footer>
+
+<!-- Мобильная панель сносок -->
+<div id="fnOverlay" class="fn-sheet-overlay" onclick="closeSheet()">
+  <div class="fn-sheet" onclick="event.stopPropagation()">
+    <div class="fn-sheet-close"></div>
+    <div class="fn-sheet-num" id="fnNum"></div>
+    <div class="fn-sheet-text" id="fnText"></div>
+  </div>
+</div>
+
+<script>
+function toggleBio(){
+  const btn=document.getElementById('bioBtn');
+  const full=document.getElementById('bioFull');
+  const open=btn.getAttribute('aria-expanded')==='true';
+  full.hidden=open;btn.setAttribute('aria-expanded',!open);
+  document.getElementById('bioText').textContent=open?'Читать полную биографию':'Свернуть биографию';
+}
+const isTouch=()=>('ontouchstart' in window)||(navigator.maxTouchPoints>0);
+function openSheet(num,text){
+  document.getElementById('fnNum').textContent='Примечание '+num;
+  document.getElementById('fnText').textContent=text;
+  document.getElementById('fnOverlay').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeSheet(){
+  document.getElementById('fnOverlay').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+document.querySelectorAll('.fn-ref').forEach(ref=>{
+  const tip=ref.querySelector('.fn-tooltip');
+  const text=tip?tip.textContent.trim():'';
+  const num=ref.childNodes[0]?ref.childNodes[0].nodeValue.trim():'';
+  ref.setAttribute('tabindex','0');
+  if(isTouch()){
+    ref.classList.add('touch-device');
+    ref.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openSheet(num,text);});
+  } else {
+    ref.addEventListener('mouseenter',()=>{
+      const r=ref.getBoundingClientRect();
+      if(r.left>window.innerWidth*.6)ref.classList.add('fn-right');
+      else ref.classList.remove('fn-right');
+    });
+  }
+  ref.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSheet(num,text);}});
+});
+
+// ═════════════════════ Audio playback ═════════════════════
+let tocAudio = null, tocBtn = null;
+
+function tocPlay(btn, src) {
+  if (tocAudio && tocBtn && tocBtn !== btn) {
+    tocAudio.pause(); tocAudio.currentTime = 0;
+    tocBtn.textContent = '▶'; tocBtn.classList.remove('playing');
+  }
+  if (!tocAudio || tocBtn !== btn) {
+    tocAudio = new Audio(src); tocBtn = btn;
+    tocAudio.addEventListener('ended', () => { btn.textContent = '▶'; btn.classList.remove('playing'); });
+  }
+  if (tocAudio.paused) {
+    if (currentStory) pauseStory(currentStory);
+    tocAudio.play();
+    btn.textContent = '⏸'; btn.classList.add('playing');
+  } else {
+    tocAudio.pause();
+    btn.textContent = '▶'; btn.classList.remove('playing');
+  }
+}
+
+// ── Story full player ──
+let currentStory = null;
+const storyAudios = {};
+
+function getAud(sid) {
+  if (!storyAudios[sid]) {
+    const el = document.getElementById('aud-' + sid);
+    storyAudios[sid] = el;
+    el.addEventListener('timeupdate', () => updateBar(sid));
+    el.addEventListener('ended', () => {
+      document.getElementById('playbtn-' + sid).textContent = '▶';
+      document.getElementById('playbtn-' + sid).classList.remove('playing');
+      currentStory = null;
+    });
+    el.addEventListener('loadedmetadata', () => updateBar(sid));
+  }
+  return storyAudios[sid];
+}
+
+function pauseStory(sid) {
+  const aud = getAud(sid);
+  aud.pause();
+  const btn = document.getElementById('playbtn-' + sid);
+  if (btn) { btn.textContent = '▶'; btn.classList.remove('playing'); }
+}
+
+function storyPlay(btn, sid) {
+  if (tocAudio && !tocAudio.paused) {
+    tocAudio.pause(); tocAudio.currentTime = 0;
+    if (tocBtn) { tocBtn.textContent = '▶'; tocBtn.classList.remove('playing'); }
+  }
+  if (currentStory && currentStory !== sid) pauseStory(currentStory);
+  const aud = getAud(sid);
+  if (aud.paused) {
+    aud.play();
+    btn.textContent = '⏸'; btn.classList.add('playing');
+    currentStory = sid;
+  } else {
+    aud.pause();
+    btn.textContent = '▶'; btn.classList.remove('playing');
+    currentStory = null;
+  }
+}
+
+function storySeek(sid, val) {
+  const aud = getAud(sid);
+  if (aud.duration) aud.currentTime = aud.duration * val / 100;
+}
+
+function updateBar(sid) {
+  const aud = getAud(sid);
+  const bar = document.getElementById('bar-' + sid);
+  const time = document.getElementById('time-' + sid);
+  if (bar && aud.duration) bar.value = (aud.currentTime / aud.duration) * 100;
+  if (time) time.textContent = fmt(aud.currentTime) + ' / ' + fmt(aud.duration);
+}
+
+function fmt(s) {
+  if (!s || isNaN(s)) return '0:00';
+  const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return m + ':' + String(sec).padStart(2, '0');
+}
+
+
+// ═════════════════════ Mobile section-nav ═════════════════════
+function toggleSectionNav(btn) {
+  var nav = btn.closest('.section-nav');
+  var open = !nav.classList.contains('is-open');
+  nav.classList.toggle('is-open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+// Close the menu on outside click
+document.addEventListener('click', function (e) {
+  var open = document.querySelector('.section-nav.is-open');
+  if (open && !open.contains(e.target)) {
+    open.classList.remove('is-open');
+    var btn = open.querySelector('.section-nav-trigger');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+}, true);
+</script>
+</body>
+</html>

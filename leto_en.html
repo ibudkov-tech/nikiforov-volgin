@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Year of the Lord — Vasily Nikiforov-Volgin</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23dceac0'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='20' fill='%234a6a2a' text-anchor='middle'%3E✦%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Forum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky: #f0f5ff;
+  --sky-mid: #deeaf7;
+  --cream: #fdfaf2;
+  --cream-dark: #f0ead8;
+  --ink: #1a2010;
+  --ink-light: #3a4a28;
+  --gold: #7a6010;
+  --gold-light: #b08c28;
+  --green: #4a6a2a;
+  --green-light: #6a8c48;
+  --red: #8c2020;
+  --border: #c0cc98;
+  --border-light: #d8e0b8;
+  --shadow: rgba(30,40,16,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background: var(--sky);
+  background-image:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(255,255,255,0.7) 0%, transparent 60%),
+    repeating-linear-gradient(0deg,transparent,transparent 32px,rgba(160,190,100,0.04) 32px,rgba(160,190,100,0.04) 33px);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  color:var(--ink);
+  min-height:100vh;
+}
+
+/* ── HEADER ── */
+.site-header{
+  background: linear-gradient(180deg, #f8fcf0 0%, #eef5e0 50%, #e4f0d0 100%);
+  text-align:center;
+  padding:52px 20px 44px;
+  border-bottom:2px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.site-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% -10%, rgba(200,230,150,0.3) 0%, transparent 65%);
+  pointer-events:none;
+}
+.site-header::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--green-light),var(--gold-light),var(--green-light),transparent);
+}
+.lang-switcher{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:4px;z-index:10;font-family:'Forum',serif;font-size:.8rem;letter-spacing:.12em}
+.lang-switcher a{color:rgba(74,106,42,0.5);text-decoration:none;padding:4px 8px;border:1px solid transparent;transition:color .2s,border-color .2s}
+.lang-switcher a:hover{color:var(--green)}
+.lang-switcher a.active{color:var(--ink);border-color:rgba(74,106,42,0.4)}
+.lang-switcher span{color:rgba(74,106,42,0.3);font-size:.7rem}
+.section-nav{position:absolute;top:20px;left:24px;display:flex;align-items:center;gap:0;z-index:10;font-family:'Forum',serif;font-size:.75rem;letter-spacing:.1em}
+.section-nav a{color:rgba(74,106,42,0.55);text-decoration:none;padding:4px 10px;border:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
+.section-nav a:hover{color:var(--green)}
+.section-nav a.active{color:var(--ink);border-color:rgba(74,106,42,0.4)}
+.section-nav span{color:rgba(74,106,42,0.25);font-size:.7rem;padding:0 2px}
+.header-ornament{color:var(--green-light);font-size:1.3rem;letter-spacing:.5em;margin-bottom:18px;opacity:0.6}
+.site-title{
+  font-family:'Forum',serif;
+  font-size:clamp(1.8rem,4.5vw,3.2rem);
+  font-weight:400;
+  color:var(--ink);
+  letter-spacing:.08em;
+  line-height:1.15;
+  text-transform:uppercase;
+  max-width:820px;
+  margin:0 auto 12px;
+  text-shadow:0 0 1px rgba(30,40,16,.4),1px 0 0 rgba(30,40,16,.15),-1px 0 0 rgba(30,40,16,.15),0 2px 12px rgba(255,255,255,.8);
+}
+.site-author{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--ink);letter-spacing:.04em;margin-bottom:6px}
+.site-translator{font-family:'Cormorant Garamond',serif;font-size:clamp(.75rem,1.5vw,.88rem);color:var(--green-light);letter-spacing:.04em;margin-top:6px;line-height:1.6}
+.site-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.2rem);color:var(--green);letter-spacing:.03em;margin-bottom:4px}
+.header-rule{display:flex;align-items:center;justify-content:center;gap:16px;max-width:360px;margin:24px auto 0}
+.header-rule::before,.header-rule::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--green-light),transparent)}
+.header-rule span{color:var(--green-light);font-size:1rem}
+
+/* ── PAGE WRAP ── */
+.page-wrap{max-width:900px;margin:0 auto;padding:0 16px 60px}
+
+/* ── TOC ── */
+.toc-section{
+  background:rgba(255,255,255,0.75);
+  border:1px solid var(--border);
+  border-top:3px solid var(--green);
+  box-shadow:0 4px 20px var(--shadow),inset 0 1px 0 rgba(255,255,255,0.9);
+  margin:36px 0;
+  padding:34px 44px 36px;
+  position:relative;
+  backdrop-filter:blur(4px);
+}
+.toc-section::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-light),transparent)}
+.toc-title{font-family:'Forum',serif;font-size:.82rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:22px}
+.toc-list{list-style:none;counter-reset:toc}
+.toc-list li{counter-increment:toc;display:flex;align-items:center;gap:0;padding:8px 0;border-bottom:1px dotted var(--border)}
+.toc-list li:last-child{border-bottom:none}
+.toc-list li::before{content:counter(toc) '.';font-family:'Forum',serif;font-size:.8rem;color:var(--green);min-width:22px;flex-shrink:0;margin-right:6px}
+.toc-name-group{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.toc-list a{font-family:'IM Fell English',serif;font-size:1.05rem;color:var(--ink-light);text-decoration:none;transition:color .2s}
+.toc-list a:hover{color:var(--red)}
+.toc-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--green-light);margin-left:auto;flex-shrink:0;padding-left:16px}
+.toc-audio-btn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--green-light);background:none;color:var(--green);cursor:pointer;flex-shrink:0;margin-left:0;margin-right:4px;transition:background .2s,color .2s;font-size:.6rem;line-height:1;padding:0 0 0 2px}
+.toc-audio-btn:hover{background:var(--green);color:#fff}
+.toc-audio-btn.playing{background:var(--red);border-color:var(--red);color:#fff}
+
+/* ── STORY CARD ── */
+.story-card{
+  background:rgba(255,255,255,0.85);
+  border:1px solid var(--border-light);
+  box-shadow:0 4px 20px var(--shadow);
+  margin:28px 0;
+  position:relative;
+  backdrop-filter:blur(2px);
+}
+.story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,var(--green) 20%,var(--gold-light) 50%,var(--green) 80%,transparent 100%)}
+.story-header{padding:28px 44px 20px;text-align:center;border-bottom:1px solid var(--border-light)}
+.story-number{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--green-light);margin-bottom:6px}
+.story-title{font-family:'Forum',serif;font-size:clamp(1.25rem,3vw,1.8rem);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:6px}
+.story-timing{font-family:'IM Fell English',serif;font-style:italic;font-size:.92rem;color:var(--green)}
+.story-audio-wrap{margin:12px 44px 0;padding:11px 16px;background:rgba(90,122,58,0.06);border:1px solid rgba(90,122,58,0.2);border-radius:2px;display:flex;flex-direction:column;gap:7px}
+.story-audio-label{font-family:'Cormorant Garamond',serif;font-size:.82rem;font-style:italic;color:var(--green-light);letter-spacing:.03em}
+.story-audio-label span{color:var(--ink-light);font-style:normal}
+.story-audio-controls{display:flex;align-items:center;gap:12px}
+.story-audio-playbtn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:none;background:var(--green);color:#fff;cursor:pointer;flex-shrink:0;font-size:.8rem;transition:background .2s,transform .1s;padding:0 0 0 2px}
+.story-audio-playbtn:hover{background:var(--green-light)}
+.story-audio-playbtn:active{transform:scale(.95)}
+.story-audio-playbtn.playing{background:var(--red)}
+.story-audio-progress{flex:1;display:flex;flex-direction:column;gap:4px}
+.story-audio-bar{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:rgba(90,122,58,0.2);border-radius:2px;cursor:pointer;outline:none}
+.story-audio-bar::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer}
+.story-audio-bar::-moz-range-thumb{width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer;border:none}
+.story-audio-time{font-family:'Cormorant Garamond',serif;font-size:.78rem;color:var(--ink-light)}
+.story-body{padding:24px 44px 32px;font-size:1.05rem;line-height:1.85;color:var(--ink)}
+.story-body p{margin-bottom:1.1em;text-align:justify;hyphens:auto}
+.story-body p:first-child::first-letter{font-family:'Forum',serif;font-size:3.2em;font-weight:400;float:left;line-height:.8;margin:.05em .08em 0 0;color:var(--green)}
+.dialogue{margin:.3em 0 .3em 1.8em;font-style:italic}
+.liturgical{display:block;margin:1em 2em;padding:11px 16px;border-left:2px solid var(--green-light);font-style:italic;color:var(--ink-light);background:rgba(90,122,58,0.05);font-size:1rem;line-height:1.7}
+.verse-block{display:block;margin:1em 2em;padding:10px 16px;border-left:2px solid var(--gold-light);font-style:italic;color:var(--ink-light);background:rgba(176,140,40,0.05);line-height:1.75}
+
+/* ── FOOTNOTES ── */
+.fn-ref{font-size:.65em;vertical-align:super;color:var(--green);font-family:'Forum',serif;cursor:pointer;font-weight:400;position:relative}
+.fn-ref:hover{color:var(--red)}
+.fn-ref .fn-tooltip{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--ink);color:#f0f5e8;font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:normal;line-height:1.55;width:340px;max-width:90vw;padding:11px 14px;border:1px solid var(--green-light);box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:100;pointer-events:none;transition:opacity .2s,visibility .2s;text-align:left;border-radius:2px}
+.fn-ref .fn-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--green-light)}
+.fn-ref:hover .fn-tooltip,.fn-ref:focus .fn-tooltip{visibility:visible;opacity:1}
+.fn-ref.fn-right .fn-tooltip{left:auto;right:0;transform:none}
+.fn-ref.fn-right .fn-tooltip::after{left:auto;right:12px;transform:none}
+.fn-ref.touch-device .fn-tooltip{display:none!important}
+.fn-sheet-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200}
+.fn-sheet-overlay.active{display:block}
+.fn-sheet{position:fixed;bottom:0;left:0;right:0;background:#1a2010;border-top:2px solid var(--green-light);padding:20px 22px 32px;z-index:201;max-height:55vh;overflow-y:auto;animation:sheetUp .28s cubic-bezier(.32,.72,0,1);border-radius:12px 12px 0 0}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:none}}
+.fn-sheet-close{display:flex;justify-content:center;margin-bottom:16px}
+.fn-sheet-close::before{content:'';width:40px;height:4px;background:rgba(90,122,58,0.4);border-radius:2px}
+.fn-sheet-num{font-family:'Forum',serif;font-size:.7rem;color:var(--green-light);letter-spacing:.2em;margin-bottom:8px}
+.fn-sheet-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#e8f0d8;line-height:1.65}
+
+/* ── ORNAMENT ── */
+.ornament-divider{text-align:center;color:var(--green-light);font-size:1.2rem;letter-spacing:.5em;margin:8px 0 0;opacity:0.45}
+
+/* ── BIO ── */
+.bio-section{background:linear-gradient(180deg,#2a3a18 0%,#1a2810 100%);border-top:2px solid var(--green-light);margin-top:56px;padding:52px 20px;color:#e8f0d8}
+.bio-inner{max-width:800px;margin:0 auto}
+.bio-label{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--green-light);text-align:center;margin-bottom:6px}
+.bio-title{font-family:'Forum',serif;font-size:clamp(1.1rem,3vw,1.6rem);color:#e8f0d8;text-align:center;margin-bottom:26px;line-height:1.3}
+.bio-rule{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:28px}
+.bio-rule::before,.bio-rule::after{content:'';flex:1;max-width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--green-light),transparent)}
+.bio-rule span{color:var(--green-light);font-size:1rem}
+.bio-text{font-size:1rem;line-height:1.85;color:#c8d8b0;text-align:justify;hyphens:auto}
+.bio-text p{margin-bottom:1em}
+.bio-fn{font-size:.82rem;color:#7a9060;margin-top:22px;padding-top:14px;border-top:1px solid rgba(90,122,58,0.3);line-height:1.6}
+.bio-fn-ref{font-size:.75em;vertical-align:super;color:var(--green-light);font-family:'Forum',serif}
+.bio-expand-btn{display:flex;align-items:center;gap:10px;background:none;border:1px solid rgba(90,122,58,0.4);color:var(--green-light);font-family:'Forum',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:8px 18px;margin:18px auto 0;cursor:pointer;transition:border-color .2s,background .2s}
+.bio-expand-btn:hover{border-color:var(--green-light);background:rgba(90,122,58,0.1)}
+.bio-expand-arrow{font-size:1.1rem;line-height:1;display:inline-block;transition:transform .3s}
+.bio-expand-btn[aria-expanded="true"] .bio-expand-arrow{transform:rotate(180deg)}
+.bio-full{margin-top:22px;animation:bioFadeIn .4s ease}
+@keyframes bioFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.copyright{text-align:center;margin-top:36px;font-family:'Forum',serif;font-size:.62rem;letter-spacing:.2em;color:rgba(90,122,58,0.35);text-transform:uppercase}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .story-header,.story-body{padding-left:20px;padding-right:20px}
+  .toc-section{padding:24px 18px 26px}
+  .toc-subtitle{display:none}
+  .story-audio-wrap{margin:12px 20px 0}
+  .toc-audio-btn{width:24px;height:24px;font-size:.65rem}
+  .liturgical,.verse-block{margin:.8em .5em}
+  .section-nav{font-size:.68rem}
+  .section-nav a{padding:4px 7px}
+}
+
+/* ═══════════ Mobile section-nav (≤700px) ═══════════ */
+.section-nav-trigger { display: none; }
+
+@media (max-width: 700px) {
+  /* Container becomes a column so the dropdown items stack under the trigger */
+  .section-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  /* Hide the inline desktop links and pipes by default on mobile */
+  .section-nav > a,
+  .section-nav > span {
+    display: none;
+  }
+  /* The trigger button: hamburger + current section name */
+  .section-nav-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--green);
+    font-family: 'Forum', serif;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    padding: 5px 10px;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .section-nav-trigger:hover,
+  .section-nav-trigger[aria-expanded="true"] {
+    color: var(--green-light);
+  }
+  .section-nav-trigger .section-nav-bars {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 16px;
+  }
+  .section-nav-trigger .section-nav-bars span {
+    display: block;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 1px;
+  }
+  .section-nav-trigger .section-nav-bars span:nth-child(2) { width: 80%; }
+  .section-nav-trigger[aria-expanded="true"] {
+    border-color: rgba(74,106,42,.35);
+    background: rgba(232,240,208,.97);
+  }
+  /* Expanded list: vertical items under the trigger, styled like a soft sheet */
+  .section-nav.is-open {
+    background: rgba(232,240,208,.97);
+    border: 1px solid rgba(74,106,42,.35);
+    padding: 4px;
+    border-radius: 2px;
+    z-index: 100;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  }
+  .section-nav.is-open > a {
+    display: block;
+    padding: 7px 14px;
+    border: none !important;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="section-nav">
+    <button class="section-nav-trigger" type="button" onclick="toggleSectionNav(this)" aria-expanded="false" aria-controls="section-nav-list" title="Разделы">
+    <span class="section-nav-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="section-nav-trigger-label">The Year of the Lord</span>
+  </button>
+  <a href="en.html" onclick="sessionStorage.setItem('manualNav','1')">Great Lent</a>
+    <span>|</span>
+    <a href="pascha_red_en.html" onclick="sessionStorage.setItem('manualNav','1')">From Pascha to Pentecost</a>
+    <span>|</span>
+    <a href="leto_en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">The Year of the Lord</a>
+    <span>|</span>
+    <a href="#" style="opacity:.3;pointer-events:none">Christmastide</a>
+  </nav>
+  <div class="lang-switcher">
+    <a href="leto.html" onclick="sessionStorage.setItem('manualNav','1')">РУС</a>
+    <span>|</span>
+    <a href="leto_en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">ENG</a>
+  </div>
+  <div class="header-ornament">✦ ✦ ✦</div>
+  <h1 class="site-title">The Year of the Lord</h1>
+  <p class="site-author">Vasily Nikiforov-Volgin</p>
+  <p class="site-subtitle">Seven stories from the cycle <em>"Memories of Childhood"</em></p>
+  <p class="site-translator">translated by Fr. Joseph Gleason*<br>* stories 1, 2, 3, 7</p>
+  <div class="header-rule"><span>☩</span></div>
+</header>
+
+<div class="page-wrap">
+
+<nav class="toc-section" aria-label="Contents">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><span class="toc-name-group"><a href="#s1">The Choir Singer</a></span><span class="toc-subtitle">At the kliros</span></li>
+    <li><span class="toc-name-group"><a href="#s2">Near the Holy Altar</a></span><span class="toc-subtitle">In the sanctuary</span></li>
+    <li><span class="toc-name-group"><a href="#s3">The Sacred Mystery</a></span><span class="toc-subtitle">The Proskomedia</span></li>
+    <li><span class="toc-name-group"><a href="#s4">Apples</a></span><span class="toc-subtitle">The Transfiguration of the Lord</span></li>
+    <li><span class="toc-name-group"><a href="#s5">The Baptism of a Man</a></span><span class="toc-subtitle">The Mystery of Baptism</span></li>
+    <li><span class="toc-name-group"><a href="#s6">The Moscow Millionaire</a></span><span class="toc-subtitle">On the cathedral porch</span></li>
+    <li><span class="toc-name-group"><a href="#s7">Prayer</a></span><span class="toc-subtitle">A village priest</span></li>
+  </ol>
+</nav>
+
+<!-- ══ THE CHOIR SINGER ══ -->
+<article class="story-card" id="s1">
+<div class="story-header">
+  <div class="story-number">Story One</div>
+  <h2 class="story-title">The Choir Singer</h2>
+</div>
+<div class="story-body">
+
+<p>In the cathedral I always stood at the very front, beside the <em>ambo</em>.<span class="fn-ref">1<span class="fn-tooltip"><em>Ambo</em> — a raised platform in an Orthodox church, projecting from the sanctuary into the nave, from which the Epistle and Gospel are read and sermons delivered.</span></span> It was considered an place of honor. The town mayor stood there, the chief of police, the precinct officer, the millionaire <em>Sevryugin</em>, and the village fool <em>Glebushka</em>. More than once the shaggy, big-mouthed, gnarled <em>Glebushka</em> had been driven away from a place so unsuitable for him, but he would not budge — you could drag him out by force and it would make no difference! The respectable citizens fumed at him and nudged him with their elbows. I too had my share of trouble from the church warden, but I answered: I cannot leave! Everything can be seen from here!</p>
+
+<p>During the All-Night Vigil<span class="fn-ref">2<span class="fn-tooltip"><em>All-Night Vigil</em> — a long Orthodox service held on Saturday evenings and the eves of great feasts, combining Vespers, Matins, and the First Hour. It can last several hours.</span></span> or the Divine Liturgy I would lean on the iron rail of the <em>ambo</em>, gazing with wide, enraptured eyes at the singers in the choir, at the mysterious, smoke-wreathed altar, and think to myself:</p>
+
+<p class="dialogue">"There are no happier people on earth than those who stand at the <em>kliros</em><span class="fn-ref">3<span class="fn-tooltip"><em>Kliros</em> — the area in an Orthodox church where the choir sings, situated on one or both sides of the altar, near the iconostasis.</span></span> or in the altar! They are all near to God. How I wish I could be in those holy places! I would become a different person: I would honor my parents, I would not steal apples from other people's gardens, I would not secretly eat pancakes before the Liturgy,<span class="fn-ref">4<span class="fn-tooltip"><em>Eating before the Liturgy</em> — On Sunday mornings and on major feast days, Orthodox Christians fast (abstain from all food and drink) from midnight until they receive Holy Communion during the Divine Liturgy. Eating secretly beforehand was therefore considered a significant transgression.</span></span> I would not give people hurtful nicknames, I would walk quietly and always whisper prayers..."</p>
+
+<p>I could not understand why God endured certain people standing in the <em>kliros</em>, such as the disheveled <em>Yefimka</em> — a drunkard and foul-mouthed wretch — and the bass-voiced merchant <em>Gadyukin</em>, who made a practice of palming off rancid butter and stale bread on poorer customers and never threw in sweets for good measure. And God endured the church warden <em>Yevstignei</em> too, though he always reeked of garlic and took snuff. His face was somehow weather-beaten and ashen, like an undertaker's torchbearer.</p>
+
+<p>In the altar and at the <em>kliros</em> there ought to be people who are pure of face, quiet, and with a righteous appearance!</p>
+
+<p>Most of all I admired the choir singers' fine blue <em>kaftans</em>.<span class="fn-ref">5<span class="fn-tooltip"><em>Kaftan</em> — a long-skirted traditional Russian outer garment, here used as the liturgical vestment of the cathedral choir: blue with golden tassels.</span></span> The boys looked best in them — just like God's own angels! Though I would have driven some of them off the <em>kliros</em> too, <em>Mitka</em> and <em>Borka</em> for instance. Those little crooks are very good at cards, and I can never beat them! One day I announced to my father and mother:</p>
+
+<p class="dialogue">"I very much want to hand the priest the censer in the altar, or to sing at the <em>kliros</em> — but I don't know how to go about it!"</p>
+
+<p class="dialogue">"That's a simple enough matter, son," said my father. "Go today or tomorrow to the priest or to the choirmaster <em>Yegor Mikhailovich</em> and explain yourself. Perhaps they'll take you, if word of your mischief hasn't reached them!"</p>
+
+<p class="dialogue">"Quite right, son," my mother agreed. "Ask them nicely. It is a good thing to serve the Lord. They may not take you into the altar, but they surely must accept you at the <em>kliros</em>. You love to sing, and your voice is sweet and crisp, like an apple. It will gladden our hearts that you will be singing praises to the Lord. A good angel has sown a fine thought in you!"</p>
+
+<p>That very day I went to the cathedral choirmaster. Outside the door of his apartment, fear seized me. I stood at the door for more than an hour, listening to the choirmaster playing the harmonium<span class="fn-ref">6<span class="fn-tooltip"><em>Harmonium</em> — a small reed organ, common in Russian homes and churches in the 19th and early 20th centuries.</span></span> and singing: <em>"I weep and I lament when I contemplate death..."</em><span class="fn-ref">7<span class="fn-tooltip"><em>"I weep and I lament when I contemplate death"</em> — the opening of a well-known Orthodox funeral <em>kontakion</em> (a short liturgical hymn), sung at memorial services.</span></span></p>
+
+<p class="dialogue">"Come in!"</p>
+
+<p>I opened the door and stopped on the threshold. <em>Yegor Mikhailovich</em> sat at the harmonium in his underclothes, disheveled and unshaven, with a sullen, bleary look. His long grey moustache drooped like the one worn by the famous warrior, <em>Taras Bulba</em>.<span class="fn-ref">8<span class="fn-tooltip"><em>Taras Bulba</em> — the heroic Zaporozhian Cossack protagonist of Nikolai Gogol's eponymous 1835 novella, famous for his imposing moustache. The reference would be immediately recognizable to any Russian reader.</span></span> On the table stood a bottle of vodka,<span class="fn-ref">9<span class="fn-tooltip"><em>Sorokovka</em> — literally "a forty," a colloquial term for a bottle of vodka of forty <em>zolotniks</em> (about 0.5 litres), a standard size in pre-revolutionary Russia.</span></span> and on a sheet of grey paper lay a wrinkled pickled cucumber.</p>
+
+<p class="dialogue">"What is it, child?" he asked me in a voice that was somehow thick and sticky.</p>
+
+<p class="dialogue">"I want to sing in the choir!" I answered, faltering, not raising my eyes.</p>
+
+<p class="dialogue">"A fine thing, a fine thing indeed... I commend you. Come closer now... That's right. Now, repeat after me: <em>O Heavenly King, Comforter, the Spirit of Truth…</em>" He sang, and I began to join in, timidly at first, but then I warmed up, and at the end of the prayer I squealed so shrilly that the choirmaster winced.</p>
+
+<p class="dialogue">"Your ear is nothing to boast of," he said, "but your voice is fine and bold! Come join the choir. We'll knock you into shape. What are you staring at, like a sheep at a thermometer?<span class="fn-ref">10<span class="fn-tooltip"><em>Like a sheep staring at a thermometer</em> — a Russian proverbial expression for a blank, uncomprehending stare. A sheep would have no idea what a thermometer is or does, so the image is one of pure, mindless bewilderment. The choirmaster is teasing the boy for gawking foolishly instead of speaking. There are similar English expressions such as "like a cow staring at a new gate" (British English) or "like a deer in the headlights" (American English).</span></span> Off you go. <em>Axios!</em><span class="fn-ref">11<span class="fn-tooltip"><em>Axios</em> — Greek for "he is worthy," the exclamation proclaimed by the congregation during an Orthodox Christian ordination service to affirm the worthiness of the newly ordained. The choirmaster uses the word here playfully.</span></span> Do you know what <em>axios</em> means? No, you don't. It's not a Russian word, it's Greek, and it means: <em>'he is worthy.'</em>"</p>
+
+<p>Scorched with joy, I asked the most important thing, the thing I had dreamed of again and again, even in my sleep:</p>
+
+<p class="dialogue">"And may I wear a <em>kaftan?</em>"</p>
+
+<p class="dialogue">"Which one?" the choirmaster did not understand. "Trishka's?"<span class="fn-ref">12<span class="fn-tooltip"><em>"Trishka's kaftan"</em> — a reference to the Russian fable "Trishka's Kaftan" (1815) by Ivan Krylov, about a man who keeps patching his torn coat, making it shorter and shorter. It became a proverbial phrase for a makeshift or patched-up solution, and a "Trishkin kaftan" is a byword for a ragged, threadbare garment.</span></span></p>
+
+<p class="dialogue">"No... the ones the choir members wear... those blue ones with the golden tassels..."</p>
+
+<p>He waved his hand and laughed:</p>
+
+<p class="dialogue">"Put on two if you like!"</p>
+
+<p>That day I walked about in a state of joy and bliss. I told everyone exultantly:</p>
+
+<p class="dialogue">"I've been taken into the cathedral choir! I shall sing in a <em>kaftan!</em>"</p>
+
+<p>To someone I said, getting quite carried away:</p>
+
+<p class="dialogue">"Come on Sunday to listen to me!"</p>
+
+<p>Sunday came. I arrived at the cathedral an hour before the Liturgy. My first act was to go to the vestry to put on the <em>kaftan</em>. The warden who was tending the icon lamps asked me:</p>
+
+<p class="dialogue">"Where are you off to?"</p>
+
+<p class="dialogue">"For the <em>kaftan!</em> I've been chosen to sing in the choir!"</p>
+
+<p class="dialogue">"You can't wait, can you?"</p>
+
+<p>I found a small <em>kaftan</em> and put it on. The warden came at me again.</p>
+
+<p class="dialogue">"Why have you got yourself all dressed up at the crack of dawn? There's still a good hour till the Liturgy!"</p>
+
+<p class="dialogue">"No matter. I'll wait."</p>
+
+<p>With godly fear I mounted the <em>kliros</em>. At ten o'clock the bells rang for the Liturgy. The deacon, Father Mikhail, arrived. He looked at me and was astonished.</p>
+
+<p class="dialogue">"What are you doing in a <em>kaftan?</em>"</p>
+
+<p class="dialogue">"I'm in the choir now. I was chosen recently. <em>Yegor Mikhailovich</em> said my voice was bold and fine!"</p>
+
+<p class="dialogue">"Is that so, is that so! Bold and fine, you say? Well then — <em>'Sing praises to our God, sing praises, sing praises to our King, sing praises!</em>'"<span class="fn-ref">13<span class="fn-tooltip"><em>"Sing praises to our God, sing praises..."</em> — Psalm 47 (46 in the Septuagint), frequently chanted in Orthodox Christian liturgical services.</span></span></p>
+
+<p>The Liturgy began. Never in my life had it lifted me so high as on that ever-joyful day. There was no longer any worldly pride — look at me, I've made it! — but a thin, silken softness passed through my body like a breeze. The wider the <em>royal doors</em><span class="fn-ref">14<span class="fn-tooltip"><em>Royal doors</em> — the central gates of the iconostasis (the icon screen separating the nave from the altar) in an Orthodox church. They are opened at key moments of the Liturgy, symbolizing access to the Kingdom of God.</span></span> of the Liturgy opened, the more extraordinary I felt. At moments it seemed that I was rising from the ground, like St. Seraphim of Sarov during prayer.<span class="fn-ref">15<span class="fn-tooltip"><em>St. Seraphim of Sarov</em> (1754–1833) — one of the most venerated Orthodox saints of Russia, a monk and mystic renowned for his humility and spiritual gifts. Accounts of his life include descriptions of him being seen to levitate during prayer.</span></span> I sang with the choir, weaving myself in as a fine white thread into the intricate fabric of the chants, and I saw nothing save the cloud-blue gilded smoke. And then, in the midst of the sweet, heart-tickling reverie, something terrible happened...</p>
+
+<p>They were singing the Creed: <em>"I believe in one God, the Father Almighty..."</em> They sang it powerfully, harmoniously, with solemn confession of faith.</p>
+
+<p>I was singing along and noticing nothing, swept up in the thunderous torrent of the Nicene Creed... When the choir burst into <em>"I look for the resurrection of the dead, and the life of the age to come. Amen."</em> — I could not stop myself in time, and across the whole church, with its great hollow echo, I shrilled my belated <em>"A-a-men!"</em> long after everyone else. My vision went dark.\ I shrank into myself. One of the choir members gave me a cuff on the back of the head; somewhere there was a snicker; and the choirmaster <em>Yegor Mikhailovich</em> grabbed me by the hair and groaned in a strangled, hissing rasp:</p>
+
+<p class="dialogue">"Take off the kaftan! Get off the chanters' stand this instant, or I'll kill you!"</p>
+
+<p>In tears I began to take the <em>kaftan</em> off, got tangled up in it and did not know how to get free. Someone helped me. After several flicks on the back of my head, I was shown off the <em>kliros</em>.</p>
+
+<p>Covering my face with my hands, I walked through the church toward the exit, sobbing. People looked at me and smiled. Outside the church fence my mother came up to me and began to console me:</p>
+
+<p class="dialogue">"It's alright. This too is from the Lord. He, the dear Heavenly King, smiled, I dare say, when your little voice soared above all the others, all alone. He probably thought: <em>'Look at Vasya, how he tried so hard for My sake, only he miscalculated a little... overreached... slipped up... Well, what can you do, he is young, full of fire, it happens to everyone...'</em> Do not grieve, my son, for every good undertaking begins with a little sorrow!"</p>
+
+<p>I listened to her and imagined Christ smiling quietly at my failure, and little by little I grew calm.</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ NEAR THE HOLY ALTAR ══ -->
+<article class="story-card" id="s2">
+<div class="story-header">
+  <div class="story-number">Story Two</div>
+  <h2 class="story-title">Near the Holy Altar</h2>
+</div>
+<div class="story-body">
+
+<p>My longing to enter the holy altar of the church gave me no rest.</p>
+
+<p>Into my morning and evening prayers I wove my secret, hidden thought:</p>
+
+<p class="dialogue">"Help me, O Lord, to serve at Thy altar! If Thou wilt help me, I shall walk according to Thy commandments and never grieve Thee!"</p>
+
+<p>God heard my prayer. One day the cathedral deacon came to see my father, bringing a pair of boots to be mended. Catching sight of me, he asked:</p>
+
+<p class="dialogue">"Why is it, young lad, that one never sees you in church?"</p>
+
+<p>My father answered for me:</p>
+
+<p class="dialogue">"He is embarrassed after that mishap of his in the choir. But he is desperately keen to serve!"</p>
+
+<p>The deacon patted me on the head and said:</p>
+
+<p class="dialogue">"Nonsense! Don't take it to heart. Why, once on a great feast day I sang the <em>"Memory Eternal"</em><span class="fn-ref">1<span class="fn-tooltip"><em>Memory Eternal</em> — a funeral chant sung at the end of an Orthodox memorial service <em>(panikhida),</em> calling for God's eternal remembrance of the departed. Singing it in place of <em>"God Grant You Many Years"</em> would be a startling blunder, as it is exclusively a prayer for the dead.</span></span> instead of <em>"God Grant You Many Years"</em>,<span class="fn-ref">2<span class="fn-tooltip"><em>God Grant You Many Years</em> — a festive acclamation sung in the Orthodox Church to wish long life to a person or institution. It is sung at joyful occasions, such as feasts, name-days, and consecrations.</span></span> and not just for anybody, but for the Holy Synod!<span class="fn-ref">3<span class="fn-tooltip"><em>Holy Synod</em> — the governing body of the Russian Orthodox Church from 1721 to 1917, which Emperor Peter the First established to replace the Patriarchate. Accidentally singing <em>"Memory Eternal"</em> for the Synod — the supreme church authority — was a memorably embarrassing mistake.</span></span> Don't be downcast, lad. Come on Saturday to the All-Night Vigil<span class="fn-ref">4<span class="fn-tooltip"><em>All-Night Vigil —</em> the principal Orthodox service celebrated on the evening before Sundays and major feast days. Although its name reflects the ancient practice of praying through the night, in modern parish life it usually lasts only two or three hours. It prepares the faithful for the <em>Divine Liturgy</em> the following morning.</span></span>, to the altar — you can hand the priest the censer. We'll put a <em>sticharion</em><span class="fn-ref">5<span class="fn-tooltip"><em>Sticharion</em> — a long liturgical vestment, usually white or gold, worn by servers, subdeacons, and deacons during Orthodox services. For a boy, wearing one was the mark of being formally received as an altar server.</span></span> on you, and you shall be our <em>altar server!</em> Agreed?"</p>
+
+<p>Through embarrassment and joyful tears I whispered our village's special way of saying thanks:</p>
+
+<p class="dialogue">"May God save you!"<span class="fn-ref">6<span class="fn-tooltip"><em>"May God save you!"</em> <em>(Spasi Gospodi)</em> — a traditional Russian expression of gratitude, invoking God's blessing on the benefactor. More heartfelt and less formal than the standard <em>spasibo</em> ("thank you"). It is similar to the way, in English, that people used to say, <em>"God be with ye"</em>, which over hundreds of years was shortened into the simple word, <em>"Goodbye"</em>.</span></span></p>
+
+<p>And once again I was beside myself! Before going to sleep I made many prostrations during prayer, I stopped using bad words, gave up my games, and, not quite knowing why, took from the windowsill my grandfather's <em>Old Believer</em> prayer rope — the <em>lestovka</em><span class="fn-ref">7<span class="fn-tooltip"><em>Lestovka</em> — a leather prayer rope used by the <em>Old Believers</em>, a branch of Russian Orthodoxy that separated from the main church in the 17th century after refusing to accept the liturgical reforms of Patriarch Nikon. The <em>lestovka</em> has a distinctive ladder-like form (the word means "ladder") and is still used by <em>Old Believer</em> communities today. The boy's grandfather evidently belonged to this tradition.</span></span> — and wound it around my left wrist, in the monastic fashion.</p>
+
+<p>When <em>Grishka</em> saw the <em>lestovka</em> on me, he began to tease me:</p>
+
+<p class="dialogue">"Eh... a monk in calico trousers!"</p>
+
+<p>I flared up and was about to whip him across the back with the end of the leather <em>lestovka</em> hanging from my wrist, but in time I remembered my mother's instruction: <em>"let not the sun go down upon your wrath."</em><span class="fn-ref">8<span class="fn-tooltip"><em>"Let not the sun go down upon your wrath"</em> — Ephesians 4:26. A widely quoted verse in Russian religious life.</span></span></p>
+
+<p>Saturday came. Washed and combed, in my white Russian shirt, having said my prayers before the icons, I ran to the cathedral for the All-Night Vigil. I stopped at the <em>ambo</em><span class="fn-ref">9<span class="fn-tooltip"><em>Ambo</em> — a raised platform in an Orthodox church, projecting from the sanctuary into the nave, from which the Epistle and Gospel are read and sermons delivered.</span></span> and could not bring myself to enter the altar straightaway. I stood by the south doors<span class="fn-ref">10<span class="fn-tooltip"><em>South doors</em> — one of the two side doors (north and south) in the <em>iconostasis</em> of an Orthodox church. Unlike the central <em>royal doors,</em> these are used by both servers and clergy for practical movement during the service.</span></span> and listened to the blood ringing in my ears from the excitement. The warden <em>Yevstignei</em> came up to me:</p>
+
+<p class="dialogue">"What are you stopping for? Go in. The deacon said you want to be an <em>altar server</em>?<span class="fn-ref">11<span class="fn-tooltip"><em>Server / ponomarʹ</em> — in the Russian Orthodox tradition, a <em>ponomarʹ</em> (from the Greek <em>paramonarios</em>) was a junior altar server, responsible for lighting candles and charcoal, preparing the censer, and assisting the priest and deacon. The role was typically the first step for boys who served in the altar.</span></span> High time too — better than trying to sing in the choir!… With that crow's voice of yours! You gave a fine croak back then at the Liturgy, in the choir," he reminded me, winking with a laughing eye, "All you did was make everyone laugh! The choirmaster <em>Yegor Mikhailovich</em> even got drunk that day. 'That scoundrel,' says he, 'ruined all the music.' 'Because of that rogue,' says he, 'I am drinking!' A fine one you are!"</p>
+
+<p>I do not know how I entered the altar. The altar, where God sits enthroned, and where, according to ancient accounts, angels walk day and night singing praises, and where during the Liturgy lightning flashes over the Chalice, invisible to sinful eyes... I was transfixed with joy — a joy unlike any earthly joy. There was something awesome in it, and at the same time luminous.</p>
+
+<p class="dialogue">"Now get used to the work!" said the warden. "This is the charcoal" — he showed me a pressed, sweet-smelling disc<span class="fn-ref">12<span class="fn-tooltip"><em>Pressed charcoal disc</em> — special liturgical charcoal made in the shape of a round disc, often stamped with a cross. It is placed in the censer and lit, in order to burn the incense, producing the fragrant smoke used during services.</span></span> with the image of a cross — "Take a candle-stub and light it. That's the first thing. Second: do not touch the altar table with your hands — that place is holy! Further: never cross between the altar table and the <em>royal doors</em><span class="fn-ref">13<span class="fn-tooltip"><em>Royal doors</em> — the central gates of the iconostasis (the icon screen separating the nave from the altar) in an Orthodox church. They are opened at key moments of the Liturgy, symbolizing access to the Kingdom of God.</span></span> — it is a sin! And do not walk through the area behind the altar<span class="fn-ref">14<span class="fn-tooltip"><em>The area behind the altar</em> — known as "the high place" <em>(gornee mesto)</em>, the elevated seat or area at the far east end of the altar, behind the <em>throne</em>, symbolizing the seat of God. Walking through it unnecessarily, especially when the royal doors are open and the congregation can see in, is considered irreverent.</span></span> when the royal doors are open... Understood?"</p>
+
+<p><em>Yevstignei's</em> calm tone made me calmer too.</p>
+
+<p class="dialogue">"And where is my <em>sticharion</em>?" I asked. "The father deacon promised!"</p>
+
+<p class="dialogue">"Good gracious, you're in a hurry! Give him his uniform straight away! The young people of today... All right. You shall have your sticharion, if you pass the examination of the censer-lighter!"</p>
+
+<p>At that moment the great bell struck. From the first stroke, I recalled, the unclean spirit "which is in the world" gives a start; from the second it flees; and after the third, angels begin to fly above the earth, and then one must make the sign of the cross.</p>
+
+<p>The deacon came into the altar and smiled at me: "Good lad!"</p>
+
+<p>After him came Father Vasily — small, round, black-bearded. I went up to him to receive his blessing. He gave me a light knock on the head with his knuckles and said:</p>
+
+<p class="dialogue">"Serve, and no mischief! All must be done decently and in order."</p>
+
+<p>The All-Night Vigil began. They censed the altar, and then, after the deacon's exclamation, the choir sang <em>"Bless the Lord, O my soul."</em><span class="fn-ref">15<span class="fn-tooltip"><em>"Bless the Lord, O my soul"</em> — the opening of Psalm 104 (103 in the <em>Septuagint</em>), a long creation hymn sung at the start of <em>Vespers</em> in the Orthodox <em>All-Night Vigil.</em> Its vivid imagery of mountains, seas, and creatures was particularly striking to the boy.</span></span> I was particularly taken by the words: "Let the waters stand upon the mountains — wondrous are Thy works, O Lord, in wisdom hast Thou made them all." When they sang "Blessed is the man who has not walked in the counsel of the ungodly... Serve the Lord with fear and rejoice in Him with trembling," I crossed myself and thought that these words applied to those who serve at God's altar, and I crossed myself again.</p>
+
+<p>While the Six Psalms<span class="fn-ref">16<span class="fn-tooltip"><em>Six Psalms</em> — six selected psalms (3, 37, 62, 87, 102, 142) read aloud in the darkened church at the beginning of <em>Matins</em>, the second part of the <em>All-Night Vigil</em>. It is a solemn, uninterrupted reading during which the clergy are expected to stand quietly in prayer.</span></span> were being read by the choir, the priest and the deacon were talking. I could hear the priest ask:</p>
+
+<p class="dialogue">"Did you collect the money for the forty-day memorial<span class="fn-ref">17<span class="fn-tooltip"><em>Forty-day memorial</em> — in the Russian Orthodox Church, a <em>sorokoust</em> is a cycle of forty consecutive Liturgies offered for the repose of a departed soul, or for the health of a living person. Families pay the church a set fee to have the name commemorated at every service for forty days. The priest's casual inquiry about the money during the solemn <em>Six Psalms</em> is what disturbs the boy.</span></span> from <em>Kapitonikhа</em>?"</p>
+
+<p class="dialogue">"Not yet. She promised to bring it one of these days."</p>
+
+<p class="dialogue">"Mind she doesn't swindle us, deacon. A sharp one, that woman!"</p>
+
+<p>I understood nothing from these clipped words, but I thought: <em>Can one really talk like that in the altar?</em></p>
+
+<p>After the Vigil I told my mother everything.</p>
+
+<p class="dialogue">"They are people, my son, people," she sighed. "And perhaps you will see and hear still worse things — but do not judge. Fear to judge a man before you know him fully. The idle words of churchmen will not damage the Mysteries of God. They will shine just the same, and rise in their purity. Can bread be spoiled if the seeds that grew it were watered by a sinner? Man has not yet grown up; he is an unreasoning child, wandering on tangled roads — but the time will come, and he will grow! Be attentive to people. Guard his soul. Have compassion for a man, and know how to find the wheat in him among the weeds."</p>
+
+<p class="dialogue">"Keep dreaming!" grumbled my father, twisting bristle into a cobbler's waxed thread.<span class="fn-ref">18<span class="fn-tooltip"><em>Cobbler's waxed thread</em> — a strong waxed linen or hemp thread used by shoemakers to stitch leather. This detail reminds the reader of the father's trade: he is a cobbler, and this scene takes place in his workshop.</span></span> "No matter how I watched people, felt compassion for them, and gave way to them, they still treated me badly, as if they were wolves. You, my humble one, might just for once take a look at the people around you. Who suffers most of all? Simple-hearted, meek, yielding folk, those who keep the Lord's commandments. Better you don't ruin the lad! He needs to be raised into a clever little wolf, not a godson of Christ!"</p>
+
+<p>My mother turned sharply on my father.</p>
+
+<p class="dialogue">"You would do better to look around and see who is standing behind your back!"</p>
+
+<p>My father shuddered.</p>
+
+<p class="dialogue">"Who?"</p>
+
+<p class="dialogue">"Why, the one who tempted Christ in the wilderness! Do not speak reckless words. They are not your own. Do not grieve your guardian angel. You yourself, when you have had a drink, weep bitter tears before the icons. Do not lead us into temptation. And you," — she turned to me — "do not believe every rumour. Your father has his moments like this. His life has been hard, and he will grumble now and then. But inside he thinks differently! He would take the last thing off his own back and give it to the destitute. One must learn to tell the differences among things that a man says — what comes from the soul, and what comes from the blood!"</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ THE SACRED MYSTERY ══ -->
+<article class="story-card" id="s3">
+<div class="story-header">
+  <div class="story-number">Story Three</div>
+  <h2 class="story-title">The Sacred Mystery</h2>
+</div>
+<div class="story-body">
+
+<p>For some reason, the word <em>"Proskomedia," </em><span class="fn-ref">1<span class="fn-tooltip"><em>Proskomedia</em> is the preparatory rite performed before the Divine Liturgy in the Eastern Orthodox Church, during which the priest solemnly prepares the Eucharistic gifts. Using a lance, he cuts a cube of bread (the "Lamb") from a <em>prosphora</em> loaf and places it on the <em>diskos (paten)</em>, along with smaller particles commemorating the Virgin Mary, saints, and the living and departed faithful. The arrangement of these particles symbolically represents the entire Church gathered around Christ. This ritual, rich in prayer and symbolic action, readies the bread and wine that will be consecrated as the Body and Blood of Christ during the Liturgy.</span></span> which I was hearing for the first time, appeared to me in the form of silent nighttime lightning illuminating a rye field. It sounded just as mysterious to me as the words <em>lightning</em>, <em>flash</em>, <em>northern lights</em>, and the Volga definition of heat lightning I had heard from my mother — <em>bread-glow! </em><span class="fn-ref">2<span class="fn-tooltip"><em>"Bread-glow"</em> is a literal translation of <em>"Khlebozar</em>" – a poetic, regional Russian word from the Volga area, a compound of <em>khleb</em> ("bread") and <em>zar</em> ("glow" or "radiance," as in <em>zarya</em>, "dawn"). <em>Khlebozar</em> is a folk name for the silent heat lightning that illuminates ripening rye fields on summer nights. In the context of the story, it reflects the mother's vernacular and the narrator's association of the mystical word <em>"Proskomedia"</em> with the awe-inspiring, silent illumination of nature, linking the divine with the agricultural world.</span></span></p>
+
+<p>The Divine Proskomedia was revealed to me on a sunny summer Sunday, in the fragrance of linden trees wafting into the altar from the clergy's garden, and in the liturgical chimes.</p>
+
+<p>Before its commencement, the priest and deacon prayed for a long time before the closed Royal Doors<span class="fn-ref">3<span class="fn-tooltip"><em>Royal Doors</em> are the central, double doors in the <em>iconostasis</em> — the icon-covered screen that separates the sanctuary from the nave in an Eastern Orthodox church. They represent the gate of Heaven and are used exclusively by the clergy at specific, solemn moments during the Divine Liturgy, such as during the <em>Great Entrance</em> with the Eucharistic gifts, and at the reading of the Gospel. The doors are typically adorned with icons of the <em>Annunciation</em> and the four Evangelists, symbolizing the beginning of salvation and the proclamation of the Good News.</span></span>, kissed the icons<span class="fn-ref">4<span class="fn-tooltip"><em>Icons</em> are sacred images of Christ, the Virgin Mary, saints, and biblical events that are central to the worship and theology of the Eastern Orthodox Church. They are not simply religious art or decorations; they are considered to be theological statements in color and form, and a tangible means of honoring the holy people they depict.</span></span> of the Savior and the Mother of God, and then bowed to the people. There was almost no one in the church, and I couldn't understand: to whom were the clergy bowing? To the pot-bellied church warden, perhaps, counting copper coins from the collection, or to God's bread-baker, the <em>prosphora</em> baker, taking <em>prosphoras </em><span class="fn-ref">5<span class="fn-tooltip"><em>Prosphora</em> is the special leavened bread used in the Eastern Orthodox Eucharist. Traditionally, a <em>prosphora</em> loaf is imprinted with a seal bearing a cross and the Greek letters IC XC NIKA, meaning "Jesus Christ Conquers." During the <em>Proskomedia</em> service, the priest cuts a cubed portion (the Lamb) from the center of one <em>prosphora</em> to be consecrated as the Body of Christ. Smaller particles are also removed from other <em>prosphoras</em> to commemorate the Virgin Mary, saints, and the living and departed faithful. The word itself comes from the Greek for "offering."</span></span> out of a sack? I asked this of the reader, Nikanor Ivanovich, and he explained to me in intricate church words:</p>
+
+<p class="dialogue">"They bow to the whole world! For it is said in the order of the Sacred and Divine Liturgy<span class="fn-ref">6<span class="fn-tooltip">The <em>Divine Liturgy</em> is the primary and most important worship service in the Eastern Orthodox Church. It is a Eucharistic service, during which the bread and wine are consecrated and become the true Body and Blood of Jesus Christ, which the faithful then receive in Holy Communion. The service is highly structured and symbolic, recounting the entire story of salvation — from the life and teachings of Christ to His sacrifice, resurrection, and ascension. Its central purpose is the sanctification of the faithful through participation in this sacred mystery.</span></span>: 'He who wishes to perform the divine sacred rite must be reconciled with all.'"</p>
+
+<p>The clergy were vesting.<span class="fn-ref">7<span class="fn-tooltip"><em>Vesting</em> is a solemn ritual in which clergy put on their <em>vestments</em> (liturgical garments) before a service. In the Eastern Orthodox Church, this is not merely a matter of dressing but a deeply prayerful act, with each garment having a specific spiritual meaning and accompanied by a prescribed prayer. As described in the story, the priest recites psalms and prayers as he puts on each item, symbolically clothing himself in the virtues of God and preparing spiritually to celebrate the <em>Divine Liturgy</em>.</span></span> I couldn't take my eyes off this ritual, which I had never seen before. The priest put on a long silk garment, like that of Christ—the <em>sticharion </em><span class="fn-ref">8<span class="fn-tooltip">A <em>sticharion</em> is a long robe worn by all major clergy in the Eastern Orthodox Church, including deacons, priests, and bishops. Symbolically, it represents the garment of salvation and the purity of a baptized Christian, recalling the white robe received at baptism. It is the liturgical equivalent of the Western <em>alb</em>.</span></span>—and uttered words that rang like quiet silver:</p>
+
+<span class="liturgical"><em>"My soul shall rejoice in the Lord, for He has clothed me in the garment of salvation, and with the robe of gladness He has covered me; He has placed a crown upon me as on a bridegroom, and He has adorned me as a bride with beauty."</em></span>
+
+<p>The deacon, vested in his <em>sticharion</em> and seeing my intense attention, began to explain to me in a whisper:</p>
+
+<p class="dialogue">"The <em>sticharion</em> symbolizes the tunic of our Lord Jesus Christ."</p>
+
+<p>The priest took the <em>epitrachelion </em><span class="fn-ref">9<span class="fn-tooltip">The <em>epitrachelion</em> is the primary clerical <em>stole</em> worn by an Eastern Orthodox priest or bishop. It is a long, narrow strip of fabric, often richly embroidered, that is worn around the neck with the two ends sewn together down the front. It is the most essential vestment for any priestly function, as it symbolizes the pouring forth of divine grace and the authority of the priesthood. Without it, a priest cannot perform the sacraments.</span></span>, and making the sign of the cross with it, said:</p>
+
+<span class="liturgical"><em>"Blessed is God, who pours out His grace upon His priests; it is like myrrh upon the head… and goes down to the fringes of his clothing."</em></span>
+
+<p class="dialogue">"The <em>epitrachelion</em> is the sign of priesthood and the anointing of God…"</p>
+
+<p>As he clothed his hands with brocade <em>cuffs </em><span class="fn-ref">10<span class="fn-tooltip">These <em>cuffs</em>, sometimes called <em>epimanikia</em>, are liturgical cuffs worn over the sleeves of the <em>sticharion</em> by clergy in the Eastern Orthodox Church. Made of stiffened fabric, often brocade or velvet, and adorned with a cross, they are fastened around the wrists by long cords. Their practical purpose is to secure the sleeves of the inner garments, ensuring freedom of movement during the service. Symbolically, they represent the bonds of Christ at His crucifixion and the spiritual strength given by God for the clergy to perform their sacred duties.</span></span>, the priest proclaimed:</p>
+
+<span class="liturgical"><em>"Thy hands have made me and fashioned me; O give me understanding, and I shall learn Thy commandments."</em></span>
+
+<p>And while girding himself with a wide brocade <em>belt </em><span class="fn-ref">11<span class="fn-tooltip">The <em>belt</em> (known in Greek as the <em>zone</em> or in Slavic tradition as the <em>poyas</em>) is a wide, often richly decorated sash worn by an Orthodox priest over his <em>sticharion</em> (robe) and <em>epitrachelion</em> (stole). As described in the story, it is tied around the waist.</span></span>:</p>
+
+<span class="liturgical"><em>"Blessed is God, who girds me with strength, and makes my way blameless… He sets me upon high places."</em></span>
+
+<p class="dialogue">"The belt symbolizes the girding of the Lord before the performance of the <em>Mystical Supper</em>," the deacon murmured to me.<span class="fn-ref">12<span class="fn-tooltip"><em>Mystical Supper</em> is an Eastern Orthodox name for the <em>Last Supper</em> — the final meal Jesus Christ shared with His disciples before His Crucifixion, as described in the Gospels. The term "Mystical" emphasizes that this event was much more than a final meal; it was the moment Christ instituted the core <em>mystery (sacrament)</em> of the Christian faith: the Eucharist. By transforming bread and wine into His true Body and Blood, He established a perpetual means for believers to commune with Him.</span></span></p>
+
+<p>The priest vested in the most important robe—the <em>phelonion </em><span class="fn-ref">13<span class="fn-tooltip">A <em>phelonion</em> is a large, ornate liturgical vestment worn over all other garments by an Orthodox priest during the Divine Liturgy and other services. It is a cape-like garment, often bell-shaped and without sleeves, that is put on over the head and covers the priest's back and shoulders, falling down to the ankles. Symbolically, it represents the garment of righteousness and the purple robe of mockery placed on Christ by the soldiers. As the outermost vestment, it signifies the overarching grace and joy of the Lord that covers all. It is the Eastern equivalent of the Western <em>chasuble</em>.</span></span>—uttering words that shone like molten silver:</p>
+
+<span class="liturgical"><em>"Thy priests, O Lord, shall be clothed with righteousness, and Thy saints shall shout for joy…"</em></span>
+
+<p>Having fully vested, he approached a clay washbasin and washed his hands:</p>
+
+<span class="liturgical"><em>"I will wash my hands in innocence, O Lord, and so will I go round about Thine altar… I have loved the beauty of Thy house, and the dwelling-place of Thy glory…"</em></span>
+
+<p>On the <em>table of oblation </em><span class="fn-ref">14<span class="fn-tooltip">The <em>table of oblation</em> is a small, table-like altar located to the left of the main altar in the sanctuary of an Eastern Orthodox church. It is here that the first part of the Divine Liturgy, the <em>Proskomedia</em> (or "Preparation of the Gifts"), is performed. On this table, the priest prepares the bread and wine that will later be consecrated, using the sacred vessels described in the story.</span></span>, to which the priest and deacon now approached, stood a <em>chalice </em><span class="fn-ref">15<span class="fn-tooltip">The <em>chalice</em> is the sacred cup containing wine that is consecrated as the Blood of Christ. In the Eastern Orthodox Church, it is typically made of precious metal (such as gold or silver), often ornate, and is one of the most important vessels on the altar.</span></span>, a <em>diskos </em><span class="fn-ref">16<span class="fn-tooltip">The sacred <em>diskos</em> (from the Greek for "disk" or "platter") is the plate used in the Eastern Orthodox liturgy. During the <em>Proskomedia</em> service, the priest places the central portion of the bread (the "Lamb") on the <em>diskos</em>, and arranges around it smaller particles in remembrance of the Virgin Mary, the saints, and the living and departed faithful. This arrangement symbolizes Christ as the King in the midst of His entire Church. The <em>diskos</em> is often made of precious metal, with a foot and a stand, and in the story, it is the "silver platter" upon which the particles of bread are placed.</span></span>, and a <em>star </em><span class="fn-ref">17<span class="fn-tooltip">The <em>star</em> is a liturgical object used in the Eastern Orthodox Church during the <em>Proskomedia</em> service. It is made of two metal bands, usually silver or gold, bent into an arch and fastened at the center to form a cross, creating a star-like shape. It is placed over the <em>diskos (paten)</em> to hold the veils away from the arranged particles of bread, preventing them from being disturbed. Symbolically, it represents the Star of Bethlehem that announced the Nativity of Christ, and it guards the "Lamb" (the bread to be consecrated) just as the star stood over the manger.</span></span>, all flooded with sunlight; five large <em>service prosphoras </em><span class="fn-ref">18<span class="fn-tooltip">The <em>service prosphoras</em> the five specific loaves of leavened bread used in the Eastern Orthodox <em>Proskomedia</em> service. Each has a distinct purpose. The first and largest is the <strong>Lamb prosphora</strong>, from which the priest cuts the central portion (the "Lamb") to be consecrated as the Body of Christ. The second is the <strong>Theotokos prosphora</strong>, in honor of the Virgin Mary. The third is the <strong>Nine-Order prosphora</strong>, in honor of saints, prophets, and other holy figures. The fourth is the <strong>Living prosphora</strong>, for the health and salvation of the living faithful. The fifth is the <strong>Departed prosphora</strong>, for the remembrance and forgiveness of the departed. Particles are removed from each of these <em>prosphoras</em> and placed on the <em>diskos (paten)</em>, symbolizing the entire Church – with Christ at the center – gathered for the Eucharist.</span></span> lay there, along with a small silver <em>spear </em><span class="fn-ref">19<span class="fn-tooltip">The <em>spear</em> is a small, knife-like liturgical object with a sharp, spear-shaped tip, typically made of precious metal. It is used by the priest during the <em>Proskomedia</em> service to cut the bread <em>(prosphora)</em> from which the central portion (the "Lamb") is taken. Its shape is not that of a kitchen knife but is specifically designed to symbolize the spear used by a Roman soldier to pierce the side of Jesus Christ on the Cross (John 19:34).</span></span> and <em>brocade covers</em>.<span class="fn-ref">20<span class="fn-tooltip">The <em>brocade covers</em> are a set of three ornate veils used in the Eastern Orthodox liturgy to cover the sacred vessels. They include a small square veil for the <em>diskos</em>, a similar veil for the chalice, and a large veil that covers both.</span></span> The table of oblation seemed to smoke from the sunlight, and a sharp radiance emanated from the chalice.</p>
+
+<p>The <em>Proskomedia</em> was woven with precious words.</p>
+
+<span class="liturgical"><em>"The rivers are risen, O Lord, the rivers have lifted up their voices… wonderful are the heights of the sea; wonderful is the Lord on high…"</em><br><em>"hallowed and glorified is Thy most honorable and majestic name…"</em></span>
+
+<p>The priest and deacon prayed for the remembrance and forgiveness of the sins of kings, queens, patriarchs, and all — all who inhabit the earth, and they prayed for those whom God had called to His heavenly kingdom.</p>
+
+<p>Many names were uttered, and for each name, a particle was taken from the prosphora and placed on the silver <em>diskos</em>. The mystery of the Liturgy had until now been concealed by the Royal Doors and the <em>curtain </em><span class="fn-ref">21<span class="fn-tooltip">The <em>curtain</em> and the <em>Royal Doors</em> normally separate the altar (sanctuary) from the main section of the church. For the majority of the service, the laity would be on the outside, their view of the most sacred rites blocked. The profound shift in the story is that the boy has been granted the rare privilege of entering the altar area itself. Therefore, the mystery is no longer "veiled" from him, not because the curtain is open, but because his physical position inside the sanctuary allows him to see everything directly, enabling him to witness the sacred ceremonies.</span></span>, but now it was fully revealed before me. I was a participant at the transformation of bread into the Body of Christ and wine into the true Blood of Christ, when the choir sang, <em>"We praise Thee, we bless Thee,"</em> and the priest, with deep emotion, proclaimed:</p>
+
+<span class="liturgical"><em>"And make this Bread the precious Body of Thy Christ, and that which is in this Cup, the precious Blood of Thy Christ, changing them by Thy Holy Spirit. Amen, amen, amen."</em></span>
+
+<p>That day, I experienced an almost painful feeling from the impressions I had lived through; my cheeks burned, at times I was feverish, and there was weakness in my legs. Without eating a proper lunch, I went straight to bed. My mother grew worried.</p>
+
+<p class="dialogue">"Have you fallen ill? Look, your head is hot, and your cheeks are burning like fire!"</p>
+
+<p>I began to tell my mother about what I had seen that day in the altar, and as I spoke, I felt something like sparks streaming down my face.</p>
+
+<p class="dialogue">"The performance of the Mysteries of Christ is a great and unfathomable thing," my mother said, sitting on the edge of my bed. "At that time, even the angels cover their faces with their wings, for they are awestruck by this mystery!"<span class="fn-ref">22<span class="fn-tooltip">This is a reference to the <em>Seraphim</em> in the Book of Isaiah, who cover their faces in the presence of God's overwhelming holiness (Isaiah 6:2-3). The mother uses this powerful image to convey that the Eucharist is not a mere ritual but a direct encounter with the infinite, uncontainable God. The <em>mystery</em> is the moment of consecration, when the bread and wine become the true Body and Blood of Christ. By saying that even the angels, pure spiritual beings, are awestruck and veil themselves, she emphasizes the inexpressible holiness, grandeur, and humility required to approach this divine reality, which mirrors the child's own overwhelming, almost feverish, experience of awe.</span></span></p>
+
+<p>She suddenly grew thoughtful and seemed to become frightened.</p>
+
+<p class="dialogue">"Yes, for now we live under the protection of God, and we partake of the <em>Holy Mysteries </em><span class="fn-ref">23<span class="fn-tooltip">In regard to the Eucharist, the Body and Blood of Christ are called <em>Holy Mysteries</em> because, in Eastern Orthodox theology, a "mystery" (from the Greek <em>mysterion</em>) is not a puzzle to be solved, but rather a divine reality that transcends full human comprehension. The term emphasizes that God's grace works in a hidden, spiritual, and miraculous way that cannot be fully explained by logic or science. The faithful participate in them through ritual and faith, knowing they are encountering the direct, grace-filled action of God, which remains holy and unfathomable.</span></span>, but the time will come, my son, when Christ's Mysteries will be hidden from people… They will withdraw into caves, into dark forests, onto high mountains. Your grandfather Evdokim often said: 'Oh, fierce times will come. All that is holy will be desecrated, all confessors of the name of Christ will suffer a cruel death and mockery… And then the end of the world will come!'"<span class="fn-ref">24<span class="fn-tooltip">This passage is a reference to <em>eschatological persecution</em> — belief in a future time of great tribulation for the Christian faith before the end of the world. The mother is prophesying a period of violent anti-religious persecution. The "withdrawal" of Christ's Mysteries into caves and forests evokes the image of the faithful clergy and laity being driven underground, forced to celebrate the liturgy in secret to avoid arrest and execution. Her words seem to predict the state-sponsored atheism, the destruction of churches, the desecration of holy objects, and the mass martyrdom of clergy and believers that characterized the Soviet campaign against religion. It connects the personal, mystical awe of the liturgy with the historical reality of impending suffering for that same faith.</span></span></p>
+
+<p class="dialogue">"And when will that be?"</p>
+
+<p class="dialogue">"Those times are in the palm of God's hand, and when that palm opens — not even the angels know. Among the Old Believers<span class="fn-ref">25<span class="fn-tooltip"><em>Old Believers</em> (or <em>Old Ritualists</em>) are a traditionalist Eastern Orthodox group that separated from the main Russian Orthodox Church in the 17th century. The schism occurred when Patriarch Nikon introduced reforms to align Russian liturgical practices with contemporary Greek models. The <em>Old Believers</em> rejected these changes, considering them a corruption of the true faith. They preserved the older rituals, including the use of two fingers for the sign of the cross instead of three. They were fiercely persecuted for centuries by both the Church and the Tsarist state, which forced many communities into remote areas like the forests of the North, the Volga region (as mentioned in the story), and Siberia. Their mention here reinforces the theme of persecution and the hiding of sacred mysteries, as the mother has just predicted.</span></span> on the Volga, there is a belief that the Savior's Second Coming will be at night, during a great thunderstorm and tempest. Our forefathers prepared sternly for that Day."</p>
+
+<p class="dialogue">"How?"</p>
+
+<p class="dialogue">"A nighttime thunderstorm would come. Grandmother would wake us. We would get up and change into clean shirts, and the old folks into shrouds — as if preparing for the hour of death. Grandmother would light the lamp with a prayer. We would sit beneath the icons, listening to the thunderstorm in silence and trembling, and cross ourselves. During such a storm, relatives and neighbors would come to us, to spend the fearsome hours of the Lord together. They would bow to the ground before the icons, and without a single word, sit down on the bench. Grandfather, I remember, would light a yellow candle, sit at the table, and begin to read the Gospel, and then we would sing <em>'Behold, the Bridegroom comes at midnight, and blessed is that servant whom He shall find watching…'</em><span class="fn-ref">26<span class="fn-tooltip">This is a reference to the <em>Parable of the Ten Virgins</em> from the Gospel of Matthew (25:1-13), a key text about the Second Coming of Christ. In the parable, the "Bridegroom" is Christ, and His coming at an unexpected hour (midnight) calls for constant spiritual readiness and vigilance.</span></span> Your grandfather often said, 'We old folks will still live a while in peace, but our children and grandchildren will have to live through a great storm!'"</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ APPLES ══ -->
+<article class="story-card" id="s4">
+<div class="story-header">
+  <div class="story-number">Story Four</div>
+  <h2 class="story-title">Apples</h2>
+</div>
+<div class="story-body">
+
+<p>The days of summer were filling out like apples. By the feast of the Transfiguration of the Lord<span class="fn-ref">1<span class="fn-tooltip">The Transfiguration of the Lord (Russian: Preobrazheniye Gospodne) is celebrated on 6 August Old Style (19 August, New Style). In Russian folk tradition it is known as the "Apple Feast of the Saviour" (Yablochny Spas): the first fruits of the year, above all apples, are brought to church to be blessed, and eating apples before the blessing was held to be a sin.</span></span> they had ripened and grown, as it were, rounded. A cool apple scent rose from the earth and the sun. On the eve of the Transfiguration, Father brought home a great sack of apples... So that the house would smell of the feast, we laid them out on all the tables, windowsills and shelves. Seven choice crimson Borovinkas<span class="fn-ref">2<span class="fn-tooltip">Borovinka — an old Russian apple variety with red-streaked, raspberry-tinged fruit.</span></span> we set beneath the icons, on a white cloth — tomorrow we would carry them to church to be blessed. By village commandment, it is a sin to eat apples before they have been blessed.</p>
+
+<p class="dialogue">"The whole earth stands upon the blessing of the Lord," Mother explained. "On Willow Saturday<span class="fn-ref">3<span class="fn-tooltip">Willow Saturday (Verbnaya subbota) — the eve of Palm Sunday. In Russia, where palms do not grow, pussy-willow branches are blessed in place of palm fronds.</span></span> the Merciful Saviour blesses the willow; on Trinity Day, the birch; on the day of Elijah the Prophet,<span class="fn-ref">4<span class="fn-tooltip">The day of the Prophet Elijah (Ilyin den), 20 July O.S. / 2 August N.S., a folk landmark of late summer and the grain harvest.</span></span> the rye; on the Transfiguration, apples and every other fruit. There are special seasons, appointed by God, when cucumbers receive their blessing, and carrots, bilberries, wild strawberries, raspberries, bog bilberries, cloudberries, lingonberries, mushrooms, honey and every other gift of God... It is a sin to pluck a fruit before its time. Let it, the dear thing, come into its strength, drink its fill of dew, of earth and sunshine, and wait for the merciful blessing that gives it over to the use of man!"</p>
+
+<p>On the eve of the Transfiguration nearly all the children of the town poured out to the market, to the merry apple rows. Great loads of apples came in on dusty carts from the villages of the Gdov country, the Narova lands and the Peipus shore.<span class="fn-ref">5<span class="fn-tooltip">The Gdov country (Gdovye), the Narova lands (Prinarovye) and the Peipus shore (Prichudye) — country districts along the Narova River and Lake Peipus, around the town of Narva on the Russian–Estonian borderland, where the author grew up.</span></span> Hot-rosy, dawn-bright, autumn-blossomed, deep crimson, gold-sparked, amber, dove-blue, white, green, girdled with red, freckled, rose-flushed, golden-transparent (the very pips showing through), some big as the orb in the hand of the Lord Almighty<span class="fn-ref">6<span class="fn-tooltip">The orb (derzhava) — the golden globe surmounted by a cross, part of the royal regalia, shown in some Russian icons in the hand of Christ the Almighty (Pantocrator).</span></span> and some small as the ones they hang on a Christmas tree — they lay in little hills in hay, on bast matting, in straw, in baskets, in hampers, in boxes, in motley homespun village sacks, in tubs and in special lime-wood measures.</p>
+
+<p>The trading was merry and loud, with laughter and banter. Apples made people smile, bustle about, talk at the top of their voices, play the rascal a little, hop on one foot, wave their arms, haggle over prices and buy nothing. There was no escaping the irrepressible laughter. Everything was funny: the brisk, black-bearded wag of a peasant in a pink shirt who stood on his cart like Pugachov on the Place of Skulls,<span class="fn-ref">7<span class="fn-tooltip">Yemelyan Pugachov (1742–1775), leader of the great Cossack and peasant revolt, was executed in Moscow. The Lobnoye Mesto ("Place of Skulls") is the round stone platform on Red Square from which royal decrees were proclaimed; the comparison is comically grand.</span></span> bawling himself hoarse: "He-e-ere's apples, my beau-u-uties!"; the sunburnt lass with a big basket slung across her shoulder, who fetched a backhanded wallop across the spine of a boy who had filched an apple; the tipsy fellow who spilled his apples straight into a market puddle. Funniest of all was a round-cheeked, pot-bellied boy of eight who with one hand pointed at the apples in a cart and asked the trader the price, while with the other he burrowed under the straw.</p>
+
+<p>When his pockets were bulging with stolen apples, he told the trader: "A bit dear!" The town constable<span class="fn-ref">8<span class="fn-tooltip">Gorodovoy — a rank-and-file town policeman in pre-revolutionary Russia.</span></span> watched the little thief with amusement and wagged a policeman's finger at him: "I'll give it to you! Thank God I'm in a kind mood today." Somebody got an apple in the back of the head, with the shout: "A happy feast to you!" A shock-headed workman was treating a young lady to a "sugar Korobovka."<span class="fn-ref">9<span class="fn-tooltip">Korobovka — an old apple variety with small, sweet, honey-flavoured fruit.</span></span> Pursing her lips into a little bow, she replied: "I do not partake before the blessing."</p>
+
+<p>Under the carts, mouths agape, slept village children — all night long, with their dads and mams, they had ridden beside the apple wagons into town. I ran into Urka. He was crunching an apple, and I said to him:</p>
+
+<p class="dialogue">"How can you eat an unblessed one? It's a sin!"</p>
+
+<p>Urka looked at me with troubled eyes and answered, like a grave rabbi of their people:</p>
+
+<p class="dialogue">"We have our own Law!"<span class="fn-ref">10<span class="fn-tooltip">The narrator's friend Urka is Jewish. The blessing of apples at the Transfiguration is an Orthodox custom; the boy answers that his people live by their own — Mosaic — Law.</span></span></p>
+
+<p>In a tea-house under the sign "Step In, Friend" peasants sat drinking tea with fine wheat bread<span class="fn-ref">11<span class="fn-tooltip">Sitnik — fine wheat bread baked from sifted flour, a customary treat taken with tea.</span></span> and talking of nothing but apples: how many measures they had gathered, how many the wind had shaken down, how the apples had fared on the roads, how much profit they had made, and how the Lord had sent a fruitful year, good dew, rain in due season — so that now, they said, winter held no terrors, there was plenty of everything, and on that account a man might well allow himself another little forty!<span class="fn-ref">12<span class="fn-tooltip">Sorokovochka ("a little forty") — a small bottle of vodka holding one-fortieth of a vedro (bucket), about 0.31 litres.</span></span></p>
+
+<p>To please the peasants the waiter started up the mechanical organ, but they said to him:</p>
+
+<p class="dialogue">"My good man! Couldn't you hold off a while? The Dormition Fast<span class="fn-ref">13<span class="fn-tooltip">The Dormition Fast (Uspensky post), 1–14 August O.S. — the strict two-week fast before the feast of the Dormition of the Mother of God, during which music and entertainments were considered improper.</span></span> is not yet out!"</p>
+
+<p>And all around the tea-house — the rapid, full-weighted patter of apples being measured out, the cries of the traders, the neighing of horses, squeals, laughter, the fluttering bursts of pigeon and sparrow flocks, the drifting gossamer of the coming autumn, the hot yet already failing sun — it too had ripened like an apple and would soon lie down to rest until a new spring and a new ripening — and that full-toothed, merry, frost-crisp word "apples," rolling all over the market and the streets!</p>
+
+<p class="dialogue">"Ah, what a good word — 'apples'! You will not find a better word under all the heavens!"</p>
+
+<p>In the evening we went to the All-Night Vigil.<span class="fn-ref">14<span class="fn-tooltip">The All-Night Vigil (vsenoshchnaya) — the solemn evening service held on the eve of Sundays and great feasts.</span></span> In church they sang the Transfiguration troparion,<span class="fn-ref">15<span class="fn-tooltip">Troparion — the principal short hymn of a feast, sung in Church Slavonic.</span></span> smelling of apples and honey: "Thou wast transfigured on the mount, O Christ God, showing to Thy disciples Thy glory as far as they could bear it; let Thine everlasting light shine also upon us sinners, through the prayers of the Theotokos. O Giver of Light, glory to Thee!"</p>
+
+<p>In the evening, after supper, I was made to read the Gospel of the Transfiguration of the Lord. I read it out syllable by syllable: "And after six days Jesus taketh Peter, James, and John his brother, and bringeth them up into an high mountain apart, and was transfigured before them: and His face did shine as the sun, and His raiment became white as snow."<span class="fn-ref">16<span class="fn-tooltip">Matthew 17:1–2. The boy's quotation has "white as snow" (cf. Mark 9:3) where Matthew reads "white as the light."</span></span></p>
+
+<p>The night was sultry, with far-off flickers of summer lightning, with the softly murmuring darkness of August.</p>
+
+<p>The room was so close that I wanted to take off all my clothes and sleep unencumbered, but Mother admonished me sternly:</p>
+
+<p class="dialogue">"Never sleep naked, for sleep is the brother of death, the forecourt of the Dread Judgement of the Lord. One must always be in readiness, dressed for the road..."</p>
+
+<p>At the word "road" she turned away to the window and seemed to brush away a tear.</p>
+
+<p>In the morning we rose at first light. Out of doors the early dawn was turning yellow, blowing the last sleep off the rooftops. The new day opened its golden gates wider and wider, and before I had gazed my fill at the sunrise — a sight I so rarely saw — the sun appeared in those gates and strode out across the earth with the gait of the Great Sovereign coming from the Bright Matins.<span class="fn-ref">17<span class="fn-tooltip">"Great Sovereign" (Velikiy Gosudar) — the ceremonial title of the Muscovite tsars. The Bright Matins is the midnight Easter (Paschal) service; the boy pictures the sun as the tsar walking forth in state from that service.</span></span> For a long time I wondered why the sun had merged in my mind with the procession of the Great Sovereign I had seen in some picture or other, and I could not puzzle it out. Father, washed and combed, in a waistcoat over his cotton-print shirt and in patent-leather boots, paced about the room humming: "Thou wast transfigured on the mount, O Christ God."</p>
+
+<p class="dialogue">"Transfiguration... Transfiguration..." I kept repeating. How well, how songfully that word suited the widening, blossoming day.<span class="fn-ref">18<span class="fn-tooltip">In Russian the word Preobrazheniye ("Transfiguration") is long, melodious and solemn — hence the boy's delight in its "song-like" sound.</span></span></p>
+
+<p>With a white bundle of apples we set off for the morning Liturgy.<span class="fn-ref">19<span class="fn-tooltip">Obednya — the everyday Russian name for the morning Divine Liturgy.</span></span> Everywhere those little bundles, like kulich loaves at Pascha,<span class="fn-ref">20<span class="fn-tooltip">Kulich — the tall, cylindrical Russian Easter bread brought to church to be blessed at Pascha (Easter).</span></span> took up their places in the house of God: on the steps of the ambo,<span class="fn-ref">21<span class="fn-tooltip">Ambo — the raised projection of the sanctuary platform before the Royal Doors of an Orthodox church, from which the Gospel is read.</span></span> on special long tables, on the windowsills and even on the floor beneath the icons. Rosy and simple-hearted they lay before God — come into their strength, filled with dew, with earth and sunshine, ready now to go to the use of man and waiting only for God's blessing.</p>
+
+<p>During the singing of "Thou wast transfigured" a great basket of the church's own apples was carried out onto the ambo. A prayer was read over them and they were sprinkled with holy water. As people came up to kiss the cross, the priest gave each one a blessed apple. All day long the juicy crunch of apples could be heard in the streets.</p>
+
+<p>Joyfully and peacefully the sunny, apple-round day of the Transfiguration of the Lord drew to its close.</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ THE BAPTISM OF A MAN ══ -->
+<article class="story-card" id="s5">
+<div class="story-header">
+  <div class="story-number">Story Five</div>
+  <h2 class="story-title">The Baptism of a Man</h2>
+</div>
+<div class="story-body">
+
+<p>Before the Liturgy<span class="fn-ref">1<span class="fn-tooltip">Obednya — the everyday Russian name for the morning Divine Liturgy.</span></span> they were baptizing an infant. The deacon set me to getting the censer alight, while he himself entered in the register the names of the parents and godparents<span class="fn-ref">2<span class="fn-tooltip">Vospriyemniki, literally "receivers" — the Slavonic term for the godparents, who receive the child from the font.</span></span> of the child to be baptized. The infant howled for the whole church to hear, and the stout, simple-hearted kuma<span class="fn-ref">3<span class="fn-tooltip">Kum and kuma — the godfather and godmother, in their relation to the child's family and to one another; warm, half-familial terms.</span></span> rocked him and sang — at first softly, through her teeth, then ever louder and bolder:</p>
+
+<span class="verse-block"><em>Hushaby, hushaby, my own,</em><br><em>In silks I'll wind you round...</em><span class="fn-ref">4<span class="fn-tooltip">The opening of the most familiar of all Russian lullabies, "Bayu-bayushki-bayu."</span></span></span>
+
+<p>The deacon gave the kuma a shaggy look and said:</p>
+
+<p class="dialogue">"Restrain yourself!"</p>
+
+<p>The tall, dried-up kum, with dark hands swollen by heavy labour, had had a drop. The deacon reproved him:</p>
+
+<p class="dialogue">"You might at least have waited till after the christening!.. Your station?"</p>
+
+<p class="dialogue">"Mikhail Mogilkin, nicknamed 'the Funnel'!"<span class="fn-ref">5<span class="fn-tooltip">A comic name: the surname Mogilkin comes from mogilka, "a little grave," while the nickname Truba ("Funnel," "Trumpet") suits both a steamship stoker and, as the ending shows, the family voice.</span></span></p>
+
+<p class="dialogue">"That's not what I mean! What do you do?"</p>
+
+<p class="dialogue">"Stoker on the steamer Moryak!"</p>
+
+<p class="dialogue">"What name do you wish to give the infant?"</p>
+
+<p class="dialogue">"Gavrila!"</p>
+
+<p class="dialogue">"Gavriil," the deacon corrected him — and made a blot, which he cursed roundly: "Ah, plague take you, accursed thing!.."</p>
+
+<p>At that moment the infant set up such a mighty roar that the deacon raised his eyebrows and shook his head:</p>
+
+<p class="dialogue">"Your infant wouldn't happen to be a protodeacon,<span class="fn-ref">6<span class="fn-tooltip">Protodeacon — the senior deacon of a cathedral, prized in Russia above all for a thunderous bass voice.</span></span> by any chance?"</p>
+
+<p>Mikhail the Funnel missed the deacon's joke and answered respectfully:</p>
+
+<p class="dialogue">"Just so, sir!"</p>
+
+<p>The watchman set up in the middle of the church a brass font that looked like a great chalice of Christ, and on a special little table laid out a silver chrism-casket,<span class="fn-ref">7<span class="fn-tooltip">Mirnitsa — a chrismatory: a small casket holding the vessels of blessed oil and of chrism (miro).</span></span> candles, the Book of Needs<span class="fn-ref">8<span class="fn-tooltip">Trebnik — the Book of Needs (Euchologion), containing the occasional services: baptisms, weddings, funerals and the like.</span></span> and a white towel embroidered with crosses.</p>
+
+<p>Out of the sanctuary came the priest in his epitrachelion<span class="fn-ref">9<span class="fn-tooltip">Epitrachelion — the priest's stole, without which no sacrament may be performed.</span></span> and began to perform the Order of the Catechumens.<span class="fn-ref">10<span class="fn-tooltip">The Order of the Catechumens — the prayers, exorcisms and renunciations that precede the baptism proper.</span></span></p>
+
+<p>In one of the prayers the priest called the infant a newly chosen warrior of Christ God, and besought the Master and Lord to give him a Guardian Angel. The priest bent over the child, blew upon him three times and said:</p>
+
+<p class="dialogue">"Drive out of him every evil and unclean spirit hidden and nesting in his heart."</p>
+
+<p class="dialogue">"What is he blowing for?" I wondered — and was overjoyed when I remembered the words of the Bible: "God breathed into the face of Adam the breath of life."<span class="fn-ref">11<span class="fn-tooltip">Genesis 2:7.</span></span></p>
+
+<p>The infant grew quiet after his bitter weeping, and it seemed to me that it was his Angel who had quieted him!</p>
+
+<p>More than once I had seen my baby brother smile in his sleep, and Mother would say to me:</p>
+
+<p class="dialogue">"That's his Angel playing peek-a-boo with him!"</p>
+
+<p>I remembered a picture at Uncle Ivan's on the Volga, in the Kalyazin district:<span class="fn-ref">12<span class="fn-tooltip">Kalyazin district (uyezd) of Tver province, on the upper Volga.</span></span> a drunken man lying by a fence, and beside him an Angel standing with bowed head, weeping in sore grief.</p>
+
+<p>And another picture, seen at a fair: a child crossing the swift water of a river on rotten poles, and behind him his Guardian Angel.</p>
+
+<p>A Russian proverb came to mind: "Where life is simple, the Angels come by the hundred; where it is clever — there is not a single one."<span class="fn-ref">13<span class="fn-tooltip">A Russian proverb: "Gde prosto, tam angelov so sta; a gde mudreno — net ni odnogo."</span></span></p>
+
+<p>The priest asked the godparents to turn and face the west, and thrice he asked them:</p>
+
+<p class="dialogue">"Dost thou renounce Satan, and all his works, and all his angels,<span class="fn-ref">14<span class="fn-tooltip">"All his angels": in the Church Slavonic of the rite the word is spelled aggely, with a double "g" — a spelling reserved for the fallen angels, the demons.</span></span> and all his service, and all his pride?"</p>
+
+<p>And thrice the godparents answered:</p>
+
+<p class="dialogue">"I do renounce him!"</p>
+
+<p>In token of their joining to Christ, the Creed was read over them.</p>
+
+<p class="dialogue">"Prepare for the Mystery of Baptism!" the deacon whispered to the godparents.</p>
+
+<p class="dialogue">"Put off from him his oldness and renew him unto life eternal, and fill him with Thy Holy Spirit," the priest prayed for the infant.</p>
+
+<p>The godmother laid Gavriil on a bench and began to unwrap him from his blanket and swaddling-clothes. I came up closer, and could not help rejoicing at how quietly the infant kept trying to look not at any one thing, but at everything at once. At that time the sun was standing in the church. It had been there before, from earliest morning, but only now did I take particular notice of it. The sun came up close to the infant, bent over him like a priest, and began to stroke his head.</p>
+
+<p>In token of spiritual joy three white candles were lit on the chalice-shaped font, and the godparents too were given a candle each. The priest vested himself in bright vestments and girded his wrists with silver cuffs.<span class="fn-ref">15<span class="fn-tooltip">The riza is the priest's outer vestment (phelonion), the poruchi his embroidered cuffs; bright — white or gold — vestments are worn at a baptism, as at Pascha.</span></span> The tipsy Mikhail the Funnel was moved, and gave a sob.</p>
+
+<p>The priest read the prayer on the unutterable majesty of God, on His boundless love for the human race, and on the descent of the Holy Spirit upon the baptismal water.</p>
+
+<p class="dialogue">"Do Thou therefore, O King who lovest mankind, sanctify this water!"</p>
+
+<p>The priest thrice blessed the water, golden with sunlight, dipped into it his fingers folded for blessing, and three times breathed upon it at the words:</p>
+
+<p class="dialogue">"May all adverse powers be crushed beneath the sign of the image of Thy Cross!"</p>
+
+<p>From the silver chrism-casket the priest took a slender brush, dipped it in the holy oil<span class="fn-ref">16<span class="fn-tooltip">Strictly, the anointing before immersion is with blessed oil (yelei), the "oil of gladness"; the fragrant chrism (miro) is used in the chrismation that follows baptism. The author, recalling a child's impressions, lets the two run together.</span></span> and traced upon the water an unseen threefold cross:</p>
+
+<p class="dialogue">"Blessed is God, who enlighteneth and sanctifieth every man that cometh into the world!.."</p>
+
+<p>The priest bent over the naked little child and began to anoint his body crosswise:</p>
+
+<p class="dialogue">"The servant of God Gavriil is anointed with the oil of gladness, in the name of the Father and of the Son and of the Holy Spirit."</p>
+
+<p>And when they anointed the infant's feet, lit just then by the sun, the words were:</p>
+
+<p class="dialogue">"That he may walk in the steps of Thy commandments!"</p>
+
+<p>For some reason I remembered the anointing of the tsars, which I had read about in a book, and I could not keep from whispering to the church watchman:</p>
+
+<p class="dialogue">"Do you see how they're anointing the tsar... our Gavryushka!"<span class="fn-ref">17<span class="fn-tooltip">At their coronation the Russian tsars were anointed with chrism — the only laymen to receive a second anointing in their lifetime; hence the boy's delighted whisper.</span></span></p>
+
+<p>The naked little anointed one the priest took up in his arms and immersed in the font:</p>
+
+<p class="dialogue">"Baptized is the servant of God Gavriil!.."</p>
+
+<p>Washed in the water of gladness and light, he was clothed in his little white baptismal robe,<span class="fn-ref">18<span class="fn-tooltip">Rizki — the white baptismal garments, traditionally the godmother's gift to the child.</span></span> a small cross was hung about him on a pale-blue ribbon, and joyful voices sang:</p>
+
+<p class="dialogue">"Grant unto me a robe of light, O Thou who clothest Thyself with light as with a garment!"</p>
+
+<p>The Gospel was read, of Christ's farewell commandment to go out into the world and baptize all people in His name; the litany was intoned for the mercy, life, peace, health and salvation of the newly illumined infant Gavriil. Wonderful words were read, flashing out like fires, of the heavenly radiance shed upon the baptized and of his being counted worthy of life eternal.</p>
+
+<p class="dialogue">"As the prophet Samuel blessed David the king unto his kingdom, so bless also the head of Thy servant Gavriil!" was read over him in farewell.<span class="fn-ref">19<span class="fn-tooltip">From the prayer at the cutting of the hair; in 1 Samuel 16 the prophet Samuel anoints the young David as king.</span></span></p>
+
+<p>And then his hair was cut, and by that very act he was given over into the hands of God.<span class="fn-ref">20<span class="fn-tooltip">The priest cuts the newly baptized child's hair crosswise — his first offering, the token of his dedication to God.</span></span></p>
+
+<p>The candles in the church were put out, and Gavryusha, carefully bundled up, was carried off into life.</p>
+
+<p>The deacon looked after him and said:</p>
+
+<p class="dialogue">"What, I wonder, will the Lord grant him? Will he be a great luminary of the Church, a general, a thinker, a merchant, or... But let us not run ahead of the ways of the Lord!.. Something tells me he will be protodeacon of St Isaac's Cathedral!..<span class="fn-ref">21<span class="fn-tooltip">St Isaac's Cathedral in St Petersburg, the great cathedral of the imperial capital, famous for the mighty voices of its protodeacons.</span></span> Did you hear what a voice the fellow has?"</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ THE MOSCOW MILLIONAIRE ══ -->
+<article class="story-card" id="s6">
+<div class="story-header">
+  <div class="story-number">Story Six</div>
+  <h2 class="story-title">The Moscow Millionaire</h2>
+</div>
+<div class="story-body">
+
+<p>On Sundays and feast-days two old beggars stood on the porch of the cathedral in hope of alms. One was tall, bearded, blind, in a grimy short sheepskin coat and dusty, road-worn boots. The other was short, grey, thick-lipped, with bristly merry whiskers, and always a little drunk. The first was addressed honourably as Denis Petrovich; the second went by the droll nickname of Grandpa Gulyai.<span class="fn-ref">1<span class="fn-tooltip">Gulyai — roughly "Go-a-roving!" or "Make-merry": a nickname from gulyat', to stroll, to carouse. The "roving-merry" (gulevoy) voice and eye that recur below play on his name.</span></span></p>
+
+<p>Father, pointing them out to me once, said bitterly:</p>
+
+<p class="dialogue">"Yes, life shakes people out like old besoms! Truly it is said in the akathist:<span class="fn-ref">2<span class="fn-tooltip">Akathist — an extended hymn of praise and supplication, sung standing. The words the father quotes echo the funeral verses on the vanity of all earthly things: beauty and health wither, friends are taken away by death, riches flow past and are gone.</span></span> 'beauty and health wither away, friends and dear ones are taken from us by death, riches flow past...' There on the porch stands Denis Petrovich Ovsyannikov, holding out his hand for Christ's sake. Thirty years back he was a fearsome rich man over all Moscow and beyond! They chose him church warden of the Dormition Cathedral;<span class="fn-ref">3<span class="fn-tooltip">The starosta — the lay warden of a church, an office of high honour; the Dormition (Uspensky) Cathedral is the coronation cathedral of the Moscow Kremlin, so the post marked the very summit of merchant Moscow.</span></span> he drank his tea with governors and bishops, drove out behind the finest trotters — but... the poor dear could not hold his Volga-wide strength in check. He sent all his millions up in smoke. In one unbridled wild fling he squandered them through the taverns and dens of Moscow..."</p>
+
+<p class="dialogue">"And who is Grandpa Gulyai?"</p>
+
+<p class="dialogue">"A God-bearing soul! He was Denis Petrovich's chief steward.<span class="fn-ref">4<span class="fn-tooltip">Prikazchik — a merchant's senior salaried manager and right hand.</span></span> When his master was ruined and drank himself down, he did not forsake the forsaken one, but went off to wander with him, to lighten his cross, to nurse his blindness. There are still lovers of their brethren on this earth, sonny!"</p>
+
+<p>One day Denis Petrovich, waiting for the Liturgy, sat in the cathedral close, his sightless eyes reaching towards the sun, catching its warmth. Grandpa Gulyai was not there. The former Moscow millionaire was quiet, and somehow comely to look upon — his lit-up face, his wind-blown snowy hair, his humble hands laid on his knees, and his piteous blindness.</p>
+
+<p>I said to him:</p>
+
+<p class="dialogue">"Good day, Denis Petrovich."</p>
+
+<p>And he answered in a quiet, welcoming voice:</p>
+
+<p class="dialogue">"Christ save you..."</p>
+
+<p>I do not know why, but I asked him straight away:</p>
+
+<p class="dialogue">"And aren't you sorry you lost all your riches?"</p>
+
+<p>Denis Petrovich smiled and answered me, as one answers a grown man, in strange ancient words:</p>
+
+<p class="dialogue">"To every thing there is a season, and a time to every purpose under the heaven. A time to keep, and a time to cast away. Better is a handful with quietness, than both the hands full with travail and vexation of spirit!"<span class="fn-ref">5<span class="fn-tooltip">Ecclesiastes 3:1, 6 and 4:6.</span></span></p>
+
+<p>He did not even turn at the sound of my voice, and it seemed to me that he had answered the sun that was warming him.</p>
+
+<p>Just then Grandpa Gulyai arrived. He had brought the old man bread and two little smoked fish.</p>
+
+<p class="dialogue">"Eat, master!" he said in a gay, somehow roving-merry voice, sitting down beside him. "The Liturgy today is a long one. Strengthen yourself! Only the priest and the cock sing unfed, and the likes of us can't manage it..."</p>
+
+<p>The old fellow helped his master clean the fish, laid it on his palm, and ran to the church watchman's lodge for boiling water.</p>
+
+<p class="dialogue">"The town mayor has his name day today," he reported, lifting the cup to Denis Petrovich's lips. "Twenty kopecks for us — that's one!<span class="fn-ref">6<span class="fn-tooltip">The old coin names: a dvugrivenny is twenty kopecks, a chetvertak twenty-five, a pyatialtynny fifteen (an altyn being three kopecks).</span></span> Marya Pavlovna Perchatkina is having a pannikhida<span class="fn-ref">7<span class="fn-tooltip">Pannikhida — the memorial service for the departed.</span></span> served for her husband — a quarter-rouble. Two! The factory-mistress Natalya Larivonovna has her name day — fifteen kopecks, three! And there are others besides, at a kopeck apiece..."</p>
+
+<p class="dialogue">"Glory to Thee, O Christ, the true Light!" Denis Petrovich gave praise, chewing his bread. "If the Lord grants the day, He will grant the food."</p>
+
+<p>Grandpa Gulyai took notice of me. He winked at me gaily with an eye that had the same roving-merry light in it, as if he meant to say: "Don't lose heart, little brother!" There came from him an apple-and-bread whiff of vodka, and a ruddy village gladness.</p>
+
+<p class="dialogue">"Well now, that's good!"</p>
+
+<p>What was good, he never explained; he only shone with a smile and smoothed his merry whiskers.</p>
+
+<p class="dialogue">"A little lad here was questioning me," Denis Petrovich spoke up, crossing himself after the food, "whether I am sorry for my perished riches. Fairly astonished me... such a quick-worded young shoot!.. A thoughtful sort of voice... Peasant-like, with a sigh in it... Is he here?"</p>
+
+<p class="dialogue">"He's here, Denis Petrovich, sitting right alongside!"</p>
+
+<p class="dialogue">"So, so... sitting here... Well, the Lord be with him, let him sit... It is a good thing that the boy sat down with us... A good sign, a kind one! It means our souls have not yet gone dark... But if a child or a dumb beast runs from a man — then it's all over with him... A starless soul that poor wretch has, that's what it means!"</p>
+
+<p>At these words Grandpa Gulyai turned merry and made to embrace me — but instead drew further away from me and waved his arms.</p>
+
+<p class="dialogue">"Don't sit close to us, sonny! We'll make you a present of our little fleas. Merry little fleas they are, but exceeding spiteful!"</p>
+
+<p class="dialogue">"We have fleas at home too," I boasted.</p>
+
+<p>So our acquaintance was made.</p>
+
+<p>One Sunday I found Gulyai alone on the porch. His master was not with him. I asked him:</p>
+
+<p class="dialogue">"And where is Denis Petrovich?"</p>
+
+<p class="dialogue">"On the bed of sickness. My master is fading, bending to the earth. He is asking to go home!"</p>
+
+<p class="dialogue">"Home where? To Moscow?"</p>
+
+<p class="dialogue">"No," the old man answered with a sigh, "to the fatherland above the heavens, to the pastures of the Lord!"</p>
+
+<p>I remembered his humble hands, and for some reason his dusty, worn-down boots, and I felt pity for the former millionaire. My mother's words came back to me: "Whoever visits the sick, on him the Mother of God will smile!"</p>
+
+<p class="dialogue">"May I visit him?" I asked Gulyai.</p>
+
+<p>For no knowing why, tears warmed in the old man's eyes, and he began to smile with an unaccountable joy, in many lights at once, like a precious stone.</p>
+
+<p class="dialogue">"Christ save you! A gladdened soul you have... Visit him, sonny, give him joy! Why, you'll be like a Paschal canon to him! He is sore downhearted! His death-hour is drawing near him!"</p>
+
+<p>I waited while Gulyai gathered his coppers from the worshippers, and we set off. They lived on the edge of the town, by the refuse pits, in a ragged, patched-up house where the mud never dried and pigs were always wandering.</p>
+
+<p>Their lodging was up under the roof, in the attic storey. It was dark and musty, with a single window giving onto a wide tar-paper roof. On the threshold Gulyai called out:</p>
+
+<p class="dialogue">"The Lord has sent us a mercy!"</p>
+
+<p>Denis Petrovich lay on a wooden cot. He held my hand in his a long time.</p>
+
+<p class="dialogue">"How great is the mercy of God!" he said. "I prayed in the night and asked the Lord: are my iniquities forgiven? Forgiven they must be, if He has sent a boy to me! Gulyai! Do you hear, Gulyai!" he tried to shout. "This is the Lord... His sign... We are not lost men, you and I, Grandpa Gulyai, if a child's soul has reached out to us! Why are you silent, Gulyai?"</p>
+
+<p class="dialogue">"I am weeping!"</p>
+
+<p class="dialogue">"Don't weep! Better run to the shop and bring the boy some treats, and fetch boiling water from the tea-house... In all our thirty years of wandering, our first guest!.. And wha-a-t a guest! One we can never joy enough in!"</p>
+
+<p>Their delight made me bashful. I looked "into the ground" and kept plucking at the cord belt of my shirt. Grandpa Gulyai ran out for the treats and the boiling water. The table was pushed up to the sick man's bed. I was given a tin mug of tea, with a haystack of fruit-drops and gingerbreads heaped beside it. I was silent the whole time, and Grandpa Gulyai somehow decided I was bored. He set about entertaining me: pulled mountebank faces, did a steam-engine, barked like a dog, sang chastushki.<span class="fn-ref">8<span class="fn-tooltip">Chastushka — a four-line rhymed folk ditty, often sung to dancing.</span></span> One of them stayed with me:</p>
+
+<span class="verse-block"><em>I have lost my little ring,</em><br><em>I have lost my love,</em><br><em>And all over that little ring</em><br><em>I shall cry by day and night.</em></span>
+
+<p>He even sang a whole bylina, about Solovey Budimirovich,<span class="fn-ref">9<span class="fn-tooltip">Bylina — the Russian oral epic. Solovey ("Nightingale") Budimirovich, the seafaring wooer of the Kiev cycle, arrives over the sea with his thirty ships; the zachin is the epic's formulaic opening flourish.</span></span> and its epic opening stayed long in my memory:</p>
+
+<span class="verse-block"><em>O the height, the height under heaven!</em><br><em>O the depth, the depth of the ocean-sea!</em><br><em>Wide and free the spread of the whole broad earth!</em><br><em>Deep and dark the whirlpools of the Dnieper!</em></span>
+
+<p>He sang, and played it all with his face, so that I saw the thirty ships come running out over the sea, and how finely the ships were adorned, how finely the ships were fitted out, and how on the seat of honour sat the comely young hero, young Solovey, son of Budimir, with his lady Ulyana Vasilyevna...</p>
+
+<p>When there was nothing left to tell or sing, Grandpa Gulyai pulled out from under the cot a green soldier's trunk, gave me a promising wink of his roving-merry eye, and raised the lid. Pasted to its inner side was a fairground print:<span class="fn-ref">10<span class="fn-tooltip">A lubok — the cheap, gaudy popular print sold at fairs.</span></span> "Hey, Gavrilka my driver, where's my bottle gone?" It showed a whiskered gentleman in a hooded sledge, and on the box a drunken Gavrilka driving a troika of horses breathing fire and smoke.</p>
+
+<p>There were all manner of things in the trunk. The old man showed me a twenty-five-rouble note with scorched edges.</p>
+
+<p class="dialogue">"That was himself," he nodded at Denis Petrovich lying death-still, "lighting a cigar with it once upon a time... And these are my cuffs and my shirt-front... I wore them when I was chief steward... A dandy I was!.. A bundle of my master's bills... Look what great thousands he burned at the Yar and the Slavyansky Bazar...<span class="fn-ref">11<span class="fn-tooltip">The Yar and the Slavyansky Bazar — celebrated Moscow restaurants, proverbial scenes of merchant carousing and of fortunes burned in a night.</span></span> And here's a visiting card: 'Counsellor of Commerce<span class="fn-ref">12<span class="fn-tooltip">Counsellor of Commerce (kommertsii sovetnik) — an honorary civil title conferred upon eminent merchants.</span></span> Denis Petrovich Ovsyannikov'... Look — with gilt edges!.." He gazed long at that card and said: "The time has flown by, the glory is lived out!" He wanted to show something more, but Denis Petrovich shouted at him:</p>
+
+<p class="dialogue">"At your sorting again? Shut the trunk, you old fool! I get no rest from you. Day and night, nothing but rummaging in your rubbish."</p>
+
+<p class="dialogue">"Eh, master, master," Grandpa Gulyai whispered pityingly, "all our Moscow is in this little trunk... A man wants to remember..."</p>
+
+<p>Gulyai got up from the floor, wiped away a tear with his sleeve, set his arms akimbo, snapped his fingers, gave a gallant whoop — and suddenly broke into a dance, striking up a song with a village skirl in it:</p>
+
+<span class="verse-block"><em>Oh, I'll go away to that green little wood,</em><br><em>I'll tear me, I'll break me a maple leaf there,</em><br><em>And on it I'll write a little letter,</em><br><em>And send it away to my old father.</em></span>
+
+<p>And suddenly into the middle of the song burst such a terrible sob as I had never yet heard:</p>
+
+<p class="dialogue">"I am dying!"</p>
+
+<p>On the cot Denis Petrovich was tossing. Grandpa Gulyai for some reason did not rush to help him, but went on standing in his dancer's pose; only his mouth fell open, and his red face seemed to film over with hoar-frost...</p>
+
+<p class="dialogue">"A priest..." Denis Petrovich groaned, in a voice from underground, going down into the deep, tearing the shirt open on his chest with his hands — and a copper peasant's cross showed there.</p>
+
+<p>Grandpa Gulyai dropped to the floor. He moved crawling towards the dying man's bed. I ran for the priest. When we came, the former Moscow millionaire was already passing, without having lived to receive communion. Grandpa Gulyai was taking the grave-clothes<span class="fn-ref">13<span class="fn-tooltip">By old custom plain folk kept their grave-clothes ready, laid away in the trunk against the hour of death.</span></span> out of the trunk.</p>
+
+<p>The priest began the Canon at the Departure of the Soul: "Israel, passing on foot through the deep as on dry land..."<span class="fn-ref">14<span class="fn-tooltip">The Canon at the Departure of the Soul, read over the dying. Its opening words — "Israel, passing on foot through the deep as on dry land..." — are the familiar irmos of the first ode; "the night of death hath overtaken me unready" comes from the same canon.</span></span> The words of death were read: "the night of death hath overtaken me unready..."</p>
+
+<p>I kept looking at the clay mug from which Denis Petrovich had sipped his tea.</p>
+
+<p>The priest folded the dying man's hands crosswise and made the sign of the cross over him. Over the evening-darkened roof sparrows were walking. One of them peeped in at the window and chirped.</p>
+
+<p>...They buried Denis Petrovich in the cemetery of the poor and the homeless, under a fir-wood cross. By the hands of Grandpa Gulyai there was nailed to the cross, set under glass, the visiting card with the gilt edges: "Counsellor of Commerce Denis Petrovich Ovsyannikov."</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ PRAYER ══ -->
+<article class="story-card" id="s7">
+<div class="story-header">
+  <div class="story-number">Story Seven</div>
+  <h2 class="story-title">Prayer</h2>
+</div>
+<div class="story-body">
+
+<p>The village of <em>Strugi,</em> where Father Anatoly lives, is a quiet, poor, log-built place, only famous throughout the district for its dense lilac gardens. A long time ago, some passing traveler assured the village women that the lilac tree protects against all pestilence, so they welcomed this tree among themselves and let it spread from one end of the village to the other.</p>
+
+<p>During the lilac season, the village is not visible. If you look at it from afar, you see just one dense lilac-colored cloud lying on the earth.</p>
+
+<p>It was during this season that I spent the night at Father Anatoly's. Our scholars and <em>literati</em> consider him a "poor excuse for a priest," as his mind is meager, his education small, his appearance plain, and his sermons clumsy, like peasant speech.</p>
+
+<p class="dialogue">"But he believes in God so strongly," those who had grown fond of him would reply, "that he can work miracles!"</p>
+
+<p>They assured me, almost with an oath: "When Father Anatoly prays, the icon lamps and candles light by themselves!"</p>
+
+<p>The windows of the father's chamber were open onto the garden, bathing the room in the white night—a vision awash in lilac blossoms, the soft glow of northern twilight, and the melodies of nightingales.<span class="fn-ref">1<span class="fn-tooltip">A "white night" is the luminous, twilight-drenched heart of a northern summer, where the sun barely brushes the horizon and darkness never comes. The northern parts of Russia, such as St. Petersburg, experience white nights every summer, usually from May until the end of June.</span></span> Father Anatoly was sitting on the windowsill and several times turned in my direction—evidently waiting for me to fall asleep. I pretended to be asleep.</p>
+
+<p>Father Anatoly removed his worn, patched cassock and put on a white one, beneath which one could see peasant tarred boots.<span class="fn-ref">2<span class="fn-tooltip">This refers to a type of peasant footwear made of thick leather and waterproofed with birch tar, giving it a distinctive dark, pungent-smelling, and durable finish.</span></span> He was preparing for something. Combing his reddish, dusty beard and the same kind of hair with a comb, his hand trembled. It seemed to me that a spasm passed over his rough peasant face and a thoughtful expression settled between his thick eyebrows.</p>
+
+<p>Glancing at me once more, he stood on a stool, lit a candle stub, and with his large, somber, earth-tilling hand—large for his small stature—began to light all the icon lamps before the icons.</p>
+
+<p>The dark corner of the room lit up with seven flames. Standing before the icons, Father Anatoly looked at these flames for several minutes, as if admiring them. From his contemplative admiration, the room and the lilac garden seemed to grow quieter, even though the nightingales were singing.</p>
+
+<p>And suddenly this silence shuddered unexpectedly from a muffled cry and the heavy sound of Father Anatoly falling to his knees.</p>
+
+<p>He pressed his head to the floor and lay motionless for about ten minutes. I was seized with unease. Finally, he raised his face to the <em>Icon of the Savior Not Made by Hands</em> — a large black icon in the center — and began to speak with Him.<span class="fn-ref">3<span class="fn-tooltip">The <em>Icon of the Savior Not Made by Hands</em> is a highly revered image in the Orthodox Church. Tradition holds that King Abgar of Edessa, ill, sent for Christ, who pressed His face to a cloth, imprinting it miraculously. This image is seen as Christ's direct, tangible gift and revelation, making it a focal point for the most fervent and direct prayers.</span></span> At first quietly, but then louder and more fervently:</p>
+
+<p class="dialogue">"I turn again to Your mercy, and up to seventy times seven<span class="fn-ref">4<span class="fn-tooltip">The phrase "unto seventy times seven" is a direct biblical reference from the Gospel of Matthew (18:22), where Jesus instructs Peter to forgive not merely seven times, but "seventy times seven." It signifies a limitless, infinite amount. Here, Father Anatoly applies this same concept of boundless persistence to his own prayers for divine mercy.</span></span> I will turn to You, until You hear me… Your sinful priest!…"<span class="fn-ref">5<span class="fn-tooltip">In the Orthodox Christian tradition, the priest is not a remote, holy intermediary, but a fellow sinner and "servant of the servants of God." By calling himself "Your sinful priest," Father Anatoly emphasizes his profound humility, his shared human brokenness with his flock, and his total dependence on God's grace, even as he intercedes for others.</span></span></p>
+
+<p class="dialogue">"Raise <em>Yegorka</em><span class="fn-ref">6<span class="fn-tooltip"><em>"Yegorka"</em> is the affectionate, diminutive form of the Russian name <em>"Yegor,"</em> which itself is the common, vernacular form of the formal, saint's name <em>"Georgiy"</em> (George). Its use here conveys deep familial tenderness and a sense of the boy's youthful vulnerability.</span></span> from his sickbed!… Lord, he is only seven years old… He wants to live… He keeps raving about green meadows, and how he will go to gather mushrooms and catch crayfish… Comfort him, the little boy! Take him by his little hand! Embrace him, Lord, Lord, Lord!… He is his parents' only child… They are grieving themselves to death, for their breadwinner<span class="fn-ref">7<span class="fn-tooltip">The term "breadwinner" here reflects a 19^th^ century worldview where even a young child was a vital part of the family's economic and emotional unit. While not a literal wage-earner, a seven-year-old boy would soon begin contributing essential labor to the household farm. His loss, therefore, means the loss of a future worker, the family's legacy, and their primary source of joy — their entire "future sustenance" in every sense.</span></span> and joy is dying!..."</p>
+
+<p class="dialogue">"Lord! As it is easy for me to contemplate Your resurrection, so it is for You to heal the child! I have wearied You, Lord, with my entreaties, but I cannot retreat from You, for great is the suffering of the child!"</p>
+
+<p>Father Anatoly again pressed his forehead to the floor and now, with sobs and moans, uttered the words:</p>
+
+<p class="dialogue">"Help… heal… <em>Yegorka!</em>.. The child George!..."</p>
+
+<p>He stretched his hand forward, as if touching the hem of the robe of God standing before him.</p>
+
+<p>It was frightening. In a poor widow's hut, amidst severe peasant surroundings, gilded only by the light of the icon lamps, a priest who looked like a peasant was conversing with God, and perhaps, beholding His ineffable radiance…</p>
+
+<p>Only a <em>God-seer</em> can pray like that.<span class="fn-ref">8<span class="fn-tooltip">A <em>"God-seer"</em> is a profound term in Orthodox spirituality for a saint or holy person who has attained, through divine grace, a direct and transformative vision of God. By using it, the narrator suggests that Father Anatoly's raw, peasant faith has, in that moment of prayer, transcended its humble form to touch the divine.</span></span> Father Anatoly made three full prostrations<span class="fn-ref">9<span class="fn-tooltip">A prostration is a full, reverent bow where the worshipper kneels and touches their forehead to the ground. In Orthodox practice, it is a profound physical act of prayer, signifying total humility, repentance, and submission before God.</span></span> and seemed to calm down. For several minutes he stood in silence, exhausted and pale, with beads of sweat on his shining forehead.</p>
+
+<p>His lips trembled. He began to speak to God again, but now more quietly, yet with the same hope and firmness.</p>
+
+<p class="dialogue">"I, Your unworthy and sinful priest, have entreated You repeatedly to save Your servant <em>Kornily</em> from pernicious drunkenness… and I entreat You again: save him! He is perishing! His wife weeps, his children weep… Soon they will be in rags… Do not allow it, Lord! Strengthen him… <em>Kornily</em>!"</p>
+
+<p class="dialogue">"Forgive also Your servant <em>Pavlushka</em>… that is, <em>Pavla</em>… <em>Pavel,</em> Lord! I explain all this to You in my village way… My tongue has grown coarse… So, this <em>Pavlushka</em>… in his ignorance… in a drunken state sang improper songs about the holy saints… with his accordion, passing by the church, he spat on it… Forgive him, Lord, and illumine his soul!… He will repent!"</p>
+
+<p class="dialogue">"And also, Lord, a small bother for You… Grant health and good children to <em>Yefim Petrovich Abramov</em>… After all, he silvered<span class="fn-ref">10<span class="fn-tooltip">To "silver the candlesticks" means to have them plated with a thin layer of silver, a valuable and costly process. In the context of the parish, this was a significant act of piety and financial sacrifice by a donor, demonstrating both devotion and a degree of local wealth used for beautifying the church.</span></span> the candlesticks in the church at his own expense and even promises to buy me a new vestment<span class="fn-ref">11<span class="fn-tooltip">A <em>vestment</em> is the ceremonial, ornate robe worn by a priest during Orthodox church services.</span></span>, for mine is completely worn out… all in patches… Bless him, O Merciful One… He is kind!"</p>
+
+<p class="dialogue">"What else did I want to entreat You about? Ah, yes. Grant us a good harvest… and that there be grain… and vegetables, and fruit… And <em>Daria Ivanikova</em> has recovered, Lord! I thank You and praise Your most honorable name!.. For three winters she lay in paralysis and sorrow, but now she walks and rejoices!"</p>
+
+<p class="dialogue">"That's all for now… Yes!.. Oh yes, also save and have mercy on my guest, lying here, Your servant <em>Vasily</em>… Help him too… His soul is troubled..."</p>
+
+<p class="dialogue">"And also save and preserve… Your servant… what's his name again?"</p>
+
+<p>Father Anatoly hesitated and began to recall the name, tapping his forehead with a bent finger.</p>
+
+<p class="dialogue">"Well, what is his name? Oh, this memory of mine, an old man's memory!.. Yes, this one… who lives near the <em>Holy Mountain</em>…<span class="fn-ref">12<span class="fn-tooltip">In the context of Orthodox Christianity, even though <em>"The Holy Mountain"</em> is usually a reference to <em>Mount Athos</em> in Greece, that is not the reference in this case. In the present story, the phrase refers to a holy monastery located on a hill not far from the village. The name signifies a place of singular holiness in the character's worldview. <em>For more information, see the following article (in Russian):</em> <a href="https://dzen.ru/a/Z8wOzuZlbH3A9OXu?share_to=link" target="_blank" rel="noopener" style="color:var(--green-light)">https://dzen.ru/a/Z8wOzuZlbH3A9OXu?share_to=link</a></span></span> And he also has an apiary… he gave me felt boots… He is kind… Everyone knows him… Beard down to his waist… he has one… Well, what do they call him? The name is on the tip of my tongue!…"</p>
+
+<p>Father Anatoly stood before the Lord in thought and said to Him meekly:</p>
+
+<p class="dialogue">"You know him, Lord! You know everyone… Forgive me, O Merciful One, for the disturbance… It must be hard for You, Lord, to look upon us, sinful and unworthy."</p>
+
+<p>Father Anatoly extinguished the icon lamps, leaving only one burning, before the <em>Icon of the Savior Not Made by Hands</em>.</p>
+
+<p>Passing to his straw bed, he stopped near me and sighed:</p>
+
+<p class="dialogue">"The man is asleep!… And he went to sleep, it seems, without praying… Ah, youth! Well, what can you do?… I must cross him… Protect him, Lord, by the power of Your honorable and life-giving cross and save him from every evil…"</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+</div><!-- .page-wrap -->
+
+<footer class="bio-section">
+  <div class="bio-inner">
+    <div class="bio-label">About the Author</div>
+    <h2 class="bio-title">Vasily Akimovich Nikiforov-Volgin<br><span style="font-size:0.7em; font-weight:400;">1900 – 1941</span></h2>
+    <div class="bio-rule"><span>☩</span></div>
+    <div class="bio-text">
+      <p>Vasily Akimovich Nikiforov-Volgin, a unique Orthodox Christian writer, was born on December 24, 1900 (January 6, 1901, New Style) in the village of Markushi, Kalyazinsky Uyezd, in the Tver Province, on the Volga River, into a deeply religious peasant family. His father was a cobbler. Soon after his birth, the Nikiforov family moved to Narva (which was then part of the St. Petersburg Governorate).</p>
+    </div>
+
+    <button class="bio-expand-btn" id="bioBtn" onclick="toggleBio()" aria-expanded="false" aria-controls="bioFull">
+      <span id="bioText">Read full biography</span>
+      <span class="bio-expand-arrow">&#8964;</span>
+    </button>
+
+    <div class="bio-full" id="bioFull" hidden>
+      <div class="bio-text">
+        <p>After 1920, according to the Treaty of Tartu, the territory on the right bank of the Narova River (Narva with the Prinarovye region) was transferred to the Republic of Estonia. Consequently, the writer's family became involuntary emigrants, cut off from their dearly beloved Russian homeland. However, in the 1920s and 30s, the old Russian way of life, with its customs and traditions, order and practices, was still preserved there. It was this life that Nikiforov-Volgin described in his sketches and stories.</p>
+        <p>The future writer only managed to complete his studies at the parish school of the St. Vladimir Brotherhood. However, it was a good school. The young man engaged in serious self-education extensively. His passion for books and reading manifested itself in early childhood. Deeply religious from childhood and possessing a high-pitched voice with clear, expressive diction, he became a precentor<span style="font-size:0.7em; vertical-align:super; color:var(--gold-light);">*</span> at the Holy Transfiguration Cathedral in Narva and remained one until the spring of 1932. This is the source of his excellent knowledge of church life and the clergy's way of life, which is evident in his works.</p>
+        <p>According to the recollections of one of his friends, Vasily loved to take a notebook and pencil and sneak into a secluded corner of the church watchhouse before the service began, listening to worshippers and people who just came in to warm up, and writing down what they were talking about among themselves. Their poignant remarks and folk expressions later found their way into his stories.</p>
+        <p>In 1923, he began his regular literary and journalistic activities. In 1927, he received his first award for writing: at a competition for young authors organized by the oldest Estonian literary association — The Literary Circle in Tallinn — first prize was awarded to V. Nikiforov-Volgin's story, "Bowing to the Ground." He usually signed his publications with the pseudonym Vasily Volgin — in memory of the great Russian river on which his native village was located. Over time, he began signing his name as V. Nikiforov-Volgin, combining his surname with his pseudonym.</p>
+        <p>By the mid-1930s, Nikiforov-Volgin was already known in the literary circles of the Russian Diaspora, corresponding with I. Shmelev, A. Amfiteatrov, B. Zaitsev, and others. In early 1936, he moved to Tallinn, becoming a home tutor and educator. Among his pupils was Alexy (Ridiger), the future Patriarch of Moscow and All Russia, Alexy II.</p>
+        <p>Two collections of his stories were published — "The Earth Celebrates Her Name Day" (1937) and "The Pilgrim's Staff" (1938), which were met with positive reviews in Russian publications abroad.</p>
+        <p>According to the recollections of those who knew him, Vasily Nikiforov was an exceptionally kind, warm-hearted, and responsive person. His sisters told how once, in severe frost, Vasily gave his hat and winter coat to a beggar on the street, justifying himself at home by saying: "I felt sorry for the man — he was freezing, and I'll manage somehow…"</p>
+        <p>Nikiforov-Volgin was a deeply religious man, and this primarily defined his worldview and the character of all his work. Memoir-stories about childhood constituted a significant part of his work. He depicted scenes of church services, church holidays, and a boy's communication with "holy people." Nikiforov-Volgin depicts this world of the church and believers — so familiar to him — accurately, authentically, and with love. He manages to recreate all the minutiae of this world in his works, including everyday details, and at the same time convey its special atmosphere, its spirit, its hidden beauty.</p>
+        <p>Regarding his stories, he wrote in a letter to a friend: "There is no fiction in my story. I had to go through and experience all this. The names of the characters are changed. Some of them are no longer with us."</p>
+        <p>On May 24, 1941, the writer was arrested and transported to the city of Kirov. On December 14, 1941, he was shot for "publishing books, pamphlets, and plays of a slanderous, anti-Soviet nature." He was rehabilitated in 1991.</p>
+      </div>
+      <div class="bio-fn">
+        <p><span style="color:var(--gold-light);font-family:'Forum',serif;font-size:.72rem;">*</span> "Precentor" is an approximate translation of the Russian term псаломщик (psalomshchik). In 19th and early 20th century Russia, this minor cleric was the musical and administrative mainstay of the parish. He would regulate the singing and reading in the choir, coordinate the order of worship, and also functioned as the parish clerk, maintaining all church records and handling the parish's official correspondence.</p>
+        <p><span style="color:var(--gold-light);font-family:'Forum',serif;font-size:.72rem;">**</span> For more detailed information about the writer's family and genealogy, please refer to Igor Budkov's article, "The Genealogy of Writer Vasily Nikiforov-Volgin" at <a href="https://pravoslavie.ru/167348.html" target="_blank" rel="noopener" style="color:var(--green-light)">pravoslavie.ru/167348.html</a> (in Russian).</p>
+      </div>
+    </div>
+    <div class="copyright">Vasily Nikiforov-Volgin · The Year of the Lord · Memories of Childhood</div>
+  </div>
+</footer>
+
+<!-- Мобильная панель сносок -->
+<div id="fnOverlay" class="fn-sheet-overlay" onclick="closeSheet()">
+  <div class="fn-sheet" onclick="event.stopPropagation()">
+    <div class="fn-sheet-close"></div>
+    <div class="fn-sheet-num" id="fnNum"></div>
+    <div class="fn-sheet-text" id="fnText"></div>
+  </div>
+</div>
+
+<script>
+function toggleBio(){
+  const btn=document.getElementById('bioBtn');
+  const full=document.getElementById('bioFull');
+  const open=btn.getAttribute('aria-expanded')==='true';
+  full.hidden=open;btn.setAttribute('aria-expanded',!open);
+  document.getElementById('bioText').textContent=open?'Читать полную биографию':'Свернуть биографию';
+}
+const isTouch=()=>('ontouchstart' in window)||(navigator.maxTouchPoints>0);
+function openSheet(num,text){
+  document.getElementById('fnNum').textContent='Примечание '+num;
+  document.getElementById('fnText').textContent=text;
+  document.getElementById('fnOverlay').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeSheet(){
+  document.getElementById('fnOverlay').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+document.querySelectorAll('.fn-ref').forEach(ref=>{
+  const tip=ref.querySelector('.fn-tooltip');
+  const text=tip?tip.textContent.trim():'';
+  const num=ref.childNodes[0]?ref.childNodes[0].nodeValue.trim():'';
+  ref.setAttribute('tabindex','0');
+  if(isTouch()){
+    ref.classList.add('touch-device');
+    ref.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openSheet(num,text);});
+  } else {
+    ref.addEventListener('mouseenter',()=>{
+      const r=ref.getBoundingClientRect();
+      if(r.left>window.innerWidth*.6)ref.classList.add('fn-right');
+      else ref.classList.remove('fn-right');
+    });
+  }
+  ref.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSheet(num,text);}});
+});
+
+
+// ═════════════════════ Mobile section-nav ═════════════════════
+function toggleSectionNav(btn) {
+  var nav = btn.closest('.section-nav');
+  var open = !nav.classList.contains('is-open');
+  nav.classList.toggle('is-open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+// Close the menu on outside click
+document.addEventListener('click', function (e) {
+  var open = document.querySelector('.section-nav.is-open');
+  if (open && !open.contains(e.target)) {
+    open.classList.remove('is-open');
+    var btn = open.querySelector('.section-nav-trigger');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+}, true);
+</script>
+</body>
+</html>
