@@ -602,30 +602,9 @@ function orthodoxEaster(year) {
 
 @media(max-width:600px){
   .site-header{
-    padding:16px 16px 28px;
-    display:flex;flex-direction:column;align-items:center;
+    padding:56px 16px 28px;
     overflow:visible;
   }
-  .site-header-nav{
-    display:flex!important;justify-content:space-between;align-items:center;
-    width:100%;margin-bottom:16px;
-    position:static!important;
-    box-sizing:border-box;
-    overflow:visible;
-  }
-  .section-nav{
-    position:static!important;
-    font-size:.62rem;letter-spacing:.04em;
-    flex-shrink:1;min-width:0;
-  }
-  .section-nav a{padding:3px 5px;white-space:nowrap}
-  .lang-switcher{
-    position:static!important;
-    font-size:.68rem;letter-spacing:.08em;
-    flex-shrink:0;
-    margin-left:6px;
-  }
-  .lang-switcher a{padding:3px 5px}
   .header-ornament{font-size:1rem;letter-spacing:.3em;margin-bottom:12px}
   .fn-ref .fn-tooltip{width:min(300px,88vw)}
 }
@@ -670,6 +649,11 @@ function orthodoxEaster(year) {
     padding: 5px 10px;
     transition: color .2s, border-color .2s, background .2s;
   }
+  .section-nav-trigger-label {
+    font-size: 1.08rem;
+    letter-spacing: .02em;
+    color: var(--parchment);
+  }
   .section-nav-trigger:hover,
   .section-nav-trigger[aria-expanded="true"] {
     color: var(--gold-light);
@@ -688,21 +672,14 @@ function orthodoxEaster(year) {
   }
   .section-nav-trigger .section-nav-bars span:nth-child(2) { width: 80%; }
   .section-nav-trigger[aria-expanded="true"] {
-    border-color: rgba(196,152,58,.35);
-    background: rgba(20,16,10,.92);
+
+    border-color: transparent;
+
+    background: transparent;
+
   }
   /* Expanded list: vertical items under the trigger, styled like a soft sheet */
   .section-nav.is-open {
-    position: relative !important;
-  }
-
-  .section-nav.is-open .section-nav-list {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    min-width: max-content;
     background: rgba(20,16,10,.92);
     border: 1px solid rgba(196,152,58,.35);
     padding: 4px;
@@ -710,16 +687,17 @@ function orthodoxEaster(year) {
     z-index: 100;
     box-shadow: 0 4px 14px rgba(0,0,0,.18);
   }
-
+  .section-nav.is-open .section-nav-list {
+    display: flex;
+    flex-direction: column;
+  }
   .section-nav.is-open .section-nav-list > a {
     display: block;
     padding: 7px 14px;
     border: none !important;
-
     width: 100%;
     white-space: nowrap;
   }
-
   .section-nav.is-open .section-nav-list > span {
     display: none;
   }

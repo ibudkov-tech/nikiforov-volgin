@@ -229,6 +229,13 @@ body{
     padding: 5px 10px;
     transition: color .2s, border-color .2s, background .2s;
   }
+  .section-nav-trigger-label {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #0d1a04;
+  }
   .section-nav-trigger:hover,
   .section-nav-trigger[aria-expanded="true"] {
     color: var(--green-light);
@@ -247,8 +254,11 @@ body{
   }
   .section-nav-trigger .section-nav-bars span:nth-child(2) { width: 80%; }
   .section-nav-trigger[aria-expanded="true"] {
-    border-color: rgba(74,106,42,.35);
-    background: rgba(232,240,208,.97);
+
+    border-color: transparent;
+
+    background: transparent;
+
   }
   /* Expanded list: vertical items under the trigger, styled like a soft sheet */
   .section-nav.is-open {
@@ -266,6 +276,27 @@ body{
     width: 100%;
   }
 }
+.to-toc-btn{
+  position:fixed;bottom:28px;right:24px;z-index:500;
+  display:flex;align-items:center;gap:7px;
+  padding:8px 14px 8px 11px;
+  background:rgba(74,106,42,0.85);
+  color:#f3f7e7;
+  border:1px solid rgba(74,106,42,0.6);
+  border-radius:24px;
+  font-family:'Forum',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  box-shadow:0 4px 18px rgba(30,40,20,0.28);
+  opacity:0;pointer-events:none;
+  transition:opacity .35s,transform .35s,background .2s;
+  transform:translateY(10px);
+  cursor:pointer;
+}
+.to-toc-btn.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-toc-btn:hover{background:rgba(74,106,42,0.97)}
+.to-toc-btn svg{flex-shrink:0}
+@media(max-width:640px){.to-toc-btn{bottom:20px;right:16px;padding:7px 12px 7px 10px;font-size:.68rem}}
 </style>
 </head>
 <body>
@@ -299,7 +330,7 @@ body{
 
 <div class="page-wrap">
 
-<nav class="toc-section" aria-label="Contents">
+<nav class="toc-section" id="toc" aria-label="Contents">
   <div class="toc-title">Contents</div>
   <ol class="toc-list">
     <li><span class="toc-name-group"><a href="#s1">The Choir Singer</a></span><span class="toc-subtitle">At the kliros</span></li>
@@ -1051,7 +1082,30 @@ body{
   </div>
 </div>
 
+
+<!-- ── Back to Contents button ── -->
+<a class="to-toc-btn" id="toTocBtn" href="#toc" aria-label="Back to Contents">
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5 11V2M2 6l4.5-4.5L11 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Contents
+</a>
 <script>
+// ── Кнопка "К оглавлению" ──
+(function(){
+  var btn = document.getElementById('toTocBtn');
+  var toc = document.getElementById('toc');
+  if (!btn || !toc) return;
+  var tocBottom = 0;
+  function update(){
+    tocBottom = toc.getBoundingClientRect().bottom + window.scrollY + 120;
+    btn.classList.toggle('visible', window.scrollY > tocBottom);
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+
 function toggleBio(){
   const btn=document.getElementById('bioBtn');
   const full=document.getElementById('bioFull');
@@ -1065,10 +1119,12 @@ function openSheet(num,text){
   document.getElementById('fnText').textContent=text;
   document.getElementById('fnOverlay').classList.add('active');
   document.body.style.overflow='hidden';
+  var tb=document.getElementById('toTocBtn');if(tb)tb.style.opacity='0';
 }
 function closeSheet(){
   document.getElementById('fnOverlay').classList.remove('active');
   document.body.style.overflow='';
+  var tb=document.getElementById('toTocBtn');if(tb)tb.style.opacity='';
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
 document.querySelectorAll('.fn-ref').forEach(ref=>{
