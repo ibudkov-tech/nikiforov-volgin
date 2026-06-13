@@ -4,6 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Великий пост в рассказах Василия Никифорова-Волгина</title>
+<script>
+function orthodoxEaster(year) {
+  var a = year % 19, b = year % 4, c = year % 7;
+  var d = (19 * a + 15) % 30;
+  var e = (2 * b + 4 * c + 6 * d + 6) % 7;
+  var julianDay = 22 + d + e, julianMonth = 3;
+  if (julianDay > 31) { julianDay -= 31; julianMonth = 4; }
+  var julian = new Date(year, julianMonth - 1, julianDay);
+  return new Date(julian.getTime() + 13 * 86400000);
+}
+(function () {
+  // Если пользователь уже навигировал вручную — не вмешиваемся
+  if (sessionStorage.getItem('manualNav')) return;
+  var today = new Date(); today.setHours(0,0,0,0);
+  var pascha = orthodoxEaster(today.getFullYear()); pascha.setHours(0,0,0,0);
+  var diff = Math.round((today - pascha) / 86400000);
+  if (diff >= 0 && diff <= 49) { window.location.replace('pascha_red.html'); return; }
+  // День после Троицы (Пасха+50) … 30 ноября → Лето Господне
+  var dec1UTC = Date.UTC(today.getFullYear(), 11, 1);
+  var todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+  if (diff >= 50 && todayUTC < dec1UTC) window.location.replace('leto.html');
+})();
+</script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231a1410'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='20' fill='%23c89400' text-anchor='middle'%3E✦%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Forum&display=swap" rel="stylesheet">
