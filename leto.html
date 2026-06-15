@@ -104,7 +104,7 @@ body{
 .toc-list li:last-child{border-bottom:none}
 .toc-list li::before{content:counter(toc) '.';font-family:'Forum',serif;font-size:.8rem;color:var(--green);min-width:22px;flex-shrink:0;margin-right:6px}
 .toc-name-group{display:flex;align-items:center;gap:7px;flex-shrink:0}
-.toc-list a{font-family:'IM Fell English',serif;font-size:1.05rem;color:var(--ink-light);text-decoration:none;transition:color .2s}
+.toc-list a{font-family:'IM Fell English',serif;font-size:1.26rem;color:var(--ink-light);text-decoration:none;transition:color .2s}
 .toc-list a:hover{color:var(--red)}
 .toc-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--green-light);margin-left:auto;flex-shrink:0;padding-left:16px}
 .toc-audio-btn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--green-light);background:none;color:var(--green);cursor:pointer;flex-shrink:0;margin-left:0;margin-right:4px;transition:background .2s,color .2s;font-size:.6rem;line-height:1;padding:0 0 0 2px}
@@ -211,6 +211,7 @@ body{
 .story-audio-bar::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer}
 .story-audio-bar::-moz-range-thumb{width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer;border:none}
 .story-audio-time{font-family:'Cormorant Garamond',serif;font-size:.78rem;color:var(--ink-light)}
+@media(max-width:640px){.story-audio-wrap{margin:12px 20px 0}}
 
 /* ═══════════ Mobile section-nav (≤700px) ═══════════ */
 .section-nav-trigger { display: none; }
