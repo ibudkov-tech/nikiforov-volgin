@@ -79,7 +79,7 @@ body{
 .toc-list li:last-child{border-bottom:none}
 .toc-list li::before{content:counter(toc) '.';font-family:'Forum',serif;font-size:.8rem;color:var(--gold);min-width:22px;flex-shrink:0;margin-right:6px}
 .toc-name-group{display:flex;align-items:center;gap:7px;flex-shrink:0}
-.toc-list a{font-family:'IM Fell English',serif;font-size:1.05rem;color:var(--ink-light);text-decoration:none;transition:color .2s}
+.toc-list a{font-family:'IM Fell English',serif;font-size:1.155rem;color:var(--ink-light);text-decoration:none;transition:color .2s}
 .toc-list a:hover{color:var(--red)}
 .toc-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--gold);margin-left:auto;flex-shrink:0;padding-left:16px}
 .story-card{background:#fff;border:1px solid var(--border-light);box-shadow:0 4px 20px var(--shadow);margin:28px 0;position:relative}
@@ -88,7 +88,7 @@ body{
 .story-number{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
 .story-title{font-family:'Forum',serif;font-size:clamp(1.25rem,3vw,1.8rem);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:6px}
 .story-timing{font-family:'IM Fell English',serif;font-style:italic;font-size:.92rem;color:var(--red)}
-.story-body{padding:24px 44px 32px;font-size:1.05rem;line-height:1.85;color:var(--ink)}
+.story-body{padding:24px 44px 32px;font-size:1.155rem;line-height:1.85;color:var(--ink)}
 .story-body p{margin-bottom:1.1em;text-align:justify;hyphens:auto}
 .story-body p:first-child::first-letter{font-family:'Forum',serif;font-size:3.2em;font-weight:400;float:left;line-height:.8;margin:.05em .08em 0 0;color:var(--red)}
 .dialogue{margin:.3em 0 .3em 1.8em;font-style:italic}
@@ -96,7 +96,7 @@ body{
 .verse-block{display:block;margin:1em 2em;padding:10px 16px;border-left:2px solid var(--red);font-style:italic;color:var(--ink-light);background:rgba(184,28,14,0.04);line-height:1.75}
 .fn-ref{font-size:.65em;vertical-align:super;color:var(--red);font-family:'Forum',serif;cursor:pointer;font-weight:400;position:relative}
 .fn-ref:hover{color:var(--gold)}
-.fn-ref .fn-tooltip{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--ink);color:var(--parchment);font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:normal;line-height:1.55;width:340px;max-width:90vw;padding:11px 14px;border:1px solid var(--gold);box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:100;pointer-events:none;transition:opacity .2s,visibility .2s;text-align:left;border-radius:2px}
+.fn-ref .fn-tooltip{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--ink);color:var(--parchment);font-family:'Cormorant Garamond',serif;font-size:1.155rem;font-style:normal;line-height:1.55;width:340px;max-width:90vw;padding:11px 14px;border:1px solid var(--gold);box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:100;pointer-events:none;transition:opacity .2s,visibility .2s;text-align:left;border-radius:2px}
 .fn-ref .fn-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--gold)}
 .fn-ref:hover .fn-tooltip,.fn-ref:focus .fn-tooltip{visibility:visible;opacity:1}
 .fn-ref.fn-right .fn-tooltip{left:auto;right:0;transform:none}
@@ -109,7 +109,7 @@ body{
 .fn-sheet-close{display:flex;justify-content:center;margin-bottom:16px}
 .fn-sheet-close::before{content:'';width:40px;height:4px;background:rgba(200,148,0,0.4);border-radius:2px}
 .fn-sheet-num{font-family:'Forum',serif;font-size:.7rem;color:var(--gold-light);letter-spacing:.2em;margin-bottom:8px}
-.fn-sheet-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--parchment);line-height:1.65}
+.fn-sheet-text{font-family:'Cormorant Garamond',serif;font-size:1.155rem;color:var(--parchment);line-height:1.65}
 .ornament-divider{text-align:center;color:var(--gold);font-size:1.3rem;letter-spacing:.5em;margin:8px 0 0;opacity:.5}
 .bio-section{background:linear-gradient(180deg,#a80c08 0%,#7a0806 100%);border-top:4px solid var(--gold-bright);margin-top:56px;padding:52px 20px;color:#fff}
 .bio-inner{max-width:800px;margin:0 auto}
@@ -320,7 +320,7 @@ body{
     <li><span class="toc-name-group"><a href="#s1">Pascha</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/Pascha_192.mp3')" title="Listen">▶</button></span><span class="toc-subtitle">Paschal Night</span></li>
     <li><span class="toc-name-group"><a href="#s2">Radonitsa</a></span><span class="toc-subtitle">Tuesday of Thomas Week</span></li>
     <li><span class="toc-name-group"><a href="#s3">The Leave-taking of Pascha</a></span><span class="toc-subtitle">Eve of the Ascension</span></li>
-    <li><span class="toc-name-group"><a href="#s4">The Earth Celebrates Her Name Day</a></span><span class="toc-subtitle">Trinity Sunday</span></li>
+    <li><span class="toc-name-group"><a href="#s4">The Earth Celebrates Her Name Day</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/The_Earth_Celebrates_Her_Name_Day.mp3')" title="Listen">▶</button></span><span class="toc-subtitle">Trinity Sunday</span></li>
   </ol>
 </nav>
 
@@ -520,6 +520,17 @@ Eternal memory…</em></span>
   <div class="story-number">Story Four</div>
   <h2 class="story-title">The Earth Celebrates Her Name Day</h2>
   <div class="story-timing">Trinity Sunday</div>
+</div>
+<div class="story-audio-wrap" id="player-s4">
+  <div class="story-audio-label">Audio version · <span>read by Oleg Barinboim</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s4')" id="playbtn-s4" title="Play">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s4" oninput="storySeek('s4',this.value)">
+      <span class="story-audio-time" id="time-s4">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s4" src="audio/The_Earth_Celebrates_Her_Name_Day.mp3" preload="none"></audio>
 </div>
 <div class="story-body">
 <p>The birches outside our window rustled in anticipation of the coming holiday, in celebration of the Holy Trinity.<span class="fn-ref">1<span class="fn-tooltip">In the Orthodox Church, the celebration of Trinity Sunday is on the same day as Pentecost, fifty days after Pascha (Orthodox Easter).</span></span> If you sat in their shade, merged with the shimmer of their gleaming leaves, and squeezed your eyes shut, a bright, rippling path would appear to you, like on a river at sunrise, and it seemed as if the Holy Trinity was walking down the path in the form of three angels in white robes.<span class="fn-ref">2<span class="fn-tooltip">The depiction of the Trinity as three angels is a direct allusion to the Hospitality of Abraham, a biblical story found in the 18th chapter of Genesis, a foundational image in Eastern Orthodox theology. This is immortalized in Russia by Andrei Rublev's famous 15th-century icon, The Trinity, and is further reflected in the visions of Russian saints, most notably St. Alexander of Svir.</span></span></p>
