@@ -20,11 +20,15 @@ function orthodoxEaster(year) {
   var today = new Date(); today.setHours(0,0,0,0);
   var pascha = orthodoxEaster(today.getFullYear()); pascha.setHours(0,0,0,0);
   var diff = Math.round((today - pascha) / 86400000);
+  // Великий пост: от Чистого понедельника (Пасха-48) до кануна Пасхи — остаёмся на этой странице
+  if (diff >= -48 && diff <= -1) return;
   if (diff >= 0 && diff <= 49) { window.location.replace('pascha_red.html'); return; }
   // День после Троицы (Пасха+50) … 30 ноября → Лето Господне
   var dec1UTC = Date.UTC(today.getFullYear(), 11, 1);
   var todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
-  if (diff >= 50 && todayUTC < dec1UTC) window.location.replace('leto.html');
+  if (diff >= 50 && todayUTC < dec1UTC) { window.location.replace('leto.html'); return; }
+  // Всё остальное: 1 декабря … канун Чистого понедельника следующего цикла → Зима и Святки
+  window.location.replace('zima.html');
 })();
 </script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231a1410'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='20' fill='%23c89400' text-anchor='middle'%3E✦%3C/text%3E%3C/svg%3E">
@@ -271,7 +275,7 @@ body{background-color:#2a2318;background-image:repeating-linear-gradient(0deg,tr
     <span>|</span>
     <a href="leto.html" onclick="sessionStorage.setItem('manualNav','1')">Лето Господне</a>
     <span>|</span>
-    <a href="#" style="opacity:.3;pointer-events:none">Святки</a>
+    <a href="zima.html" onclick="sessionStorage.setItem('manualNav','1')">Зима и Святки</a>
   </span></nav>
   
   <div class="lang-switcher">

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winter and Christmastide — Vasily Nikiforov-Volgin</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23213a5c'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='18' fill='%23d4b868' text-anchor='middle'%3E%E2%9D%86%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Forum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky: #eef3fa;
+  --sky-mid: #dde8f5;
+  --cream: #fdfaf5;
+  --cream-dark: #e7edf5;
+  --ink: #16223a;
+  --ink-light: #2e3f5c;
+  --gold: #8a6010;
+  --gold-light: #c8a850;
+  --frost: #2c4a72;
+  --frost-light: #5c86b8;
+  --red: #8c2020;
+  --border: #c4d4e4;
+  --border-light: #dce6f2;
+  --shadow: rgba(20,35,60,0.14);
+  /* header (тёмная синяя ночь) */
+  --hdr-grad: linear-gradient(180deg,#213a5c 0%,#284a72 55%,#2f5c8a 100%);
+  --hdr-border: rgba(160,200,230,0.3);
+  --hdr-ink: #f6f4ea;
+  --hdr-accent-light: #8fc0e8;
+  --hdr-accent-soft: #d4b868;
+  --hdr-gold-light: #d4b868;
+  --hdr-nav-dim: rgba(230,240,250,0.8);
+  --hdr-nav-faint: rgba(230,240,250,0.4);
+  --hdr-nav-border: rgba(180,215,240,0.6);
+  --hdr-title-shadow: 0 0 8px rgba(0,10,25,.35),0 0 22px rgba(140,190,235,.3);
+  --hdr-mobile-bg: rgba(33,58,92,.97);
+  --hdr-mobile-border: rgba(180,215,240,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background: var(--sky);
+  background-image:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(255,255,255,0.7) 0%, transparent 60%),
+    repeating-linear-gradient(0deg,transparent,transparent 32px,rgba(90,130,180,0.04) 32px,rgba(90,130,180,0.04) 33px);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  color:var(--ink);
+  min-height:100vh;
+}
+
+/* ── HEADER (Синяя ночь со звёздами) ── */
+.site-header{
+  background: var(--hdr-grad);
+  text-align:center;
+  padding:52px 20px 44px;
+  border-bottom:2px solid var(--hdr-border);
+  position:relative;
+  overflow:hidden;
+}
+.site-header::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(1px 1px at 20% 25%,#fff,transparent),radial-gradient(1px 1px at 70% 15%,#fff,transparent),radial-gradient(1.5px 1.5px at 85% 35%,#fff,transparent),radial-gradient(1px 1px at 40% 55%,#fff,transparent),radial-gradient(1px 1px at 55% 20%,#fff,transparent),radial-gradient(1.5px 1.5px at 10% 60%,#fff,transparent),radial-gradient(1px 1px at 92% 65%,#fff,transparent),radial-gradient(1px 1px at 30% 80%,#fff,transparent),radial-gradient(1.5px 1.5px at 65% 75%,#fff,transparent);
+  background-repeat:no-repeat;opacity:.55;
+}
+.site-header::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--hdr-accent-light),var(--hdr-gold-light),var(--hdr-accent-light),transparent);
+}
+.lang-switcher{position:absolute;top:20px;right:24px;display:flex;align-items:center;gap:4px;z-index:10;font-family:'Forum',serif;font-size:.8rem;letter-spacing:.12em}
+.lang-switcher a{color:var(--hdr-nav-dim);text-decoration:none;padding:4px 8px;border:1px solid transparent;transition:color .2s,border-color .2s}
+.lang-switcher a:hover{color:var(--hdr-accent-light)}
+.lang-switcher a.active{color:var(--hdr-ink);border-color:var(--hdr-nav-border)}
+.lang-switcher span{color:var(--hdr-nav-faint);font-size:.7rem}
+.section-nav{position:absolute;top:20px;left:24px;display:flex;align-items:center;gap:0;z-index:10;font-family:'Forum',serif;font-size:.75rem;letter-spacing:.1em}
+.section-nav a{color:var(--hdr-nav-dim);text-decoration:none;padding:4px 10px;border:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
+.section-nav a:hover{color:var(--hdr-accent-light)}
+.section-nav a.active{color:var(--hdr-ink);border-color:var(--hdr-nav-border)}
+.section-nav span{color:var(--hdr-nav-faint);font-size:.7rem;padding:0 2px}
+.header-ornament{color:var(--hdr-accent-light);font-size:1.3rem;letter-spacing:.5em;margin-bottom:18px;opacity:0.75}
+.site-title{
+  font-family:'Forum',serif;
+  font-size:clamp(1.8rem,4.5vw,3.2rem);
+  font-weight:400;
+  color:var(--hdr-ink);
+  letter-spacing:.08em;
+  line-height:1.15;
+  text-transform:uppercase;
+  max-width:820px;
+  margin:0 auto 12px;
+  text-shadow:var(--hdr-title-shadow);
+}
+.site-author{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--hdr-ink);letter-spacing:.04em;margin-bottom:6px}
+.site-subtitle{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.2rem);color:var(--hdr-accent-soft);letter-spacing:.03em;margin-bottom:4px}
+.site-translator{font-family:'Cormorant Garamond',serif;font-size:clamp(.75rem,1.5vw,.88rem);color:var(--hdr-nav-dim);letter-spacing:.04em;margin-top:6px;line-height:1.6}
+.header-rule{display:flex;align-items:center;justify-content:center;gap:16px;max-width:360px;margin:24px auto 0}
+.header-rule::before,.header-rule::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--hdr-accent-light),transparent)}
+.header-rule span{color:var(--hdr-accent-light);font-size:1rem}
+
+/* ── PAGE WRAP ── */
+.page-wrap{max-width:900px;margin:0 auto;padding:0 16px 60px}
+
+/* ── TOC ── */
+.toc-section{
+  background:rgba(255,255,255,0.75);
+  border:1px solid var(--border);
+  border-top:3px solid var(--frost);
+  box-shadow:0 4px 20px var(--shadow),inset 0 1px 0 rgba(255,255,255,0.9);
+  margin:36px 0;
+  padding:34px 44px 36px;
+  position:relative;
+  backdrop-filter:blur(4px);
+}
+.toc-section::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--frost-light),transparent)}
+.toc-title{font-family:'Forum',serif;font-size:.82rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--frost);text-align:center;margin-bottom:22px}
+.toc-list{list-style:none;counter-reset:toc}
+.toc-list li{counter-increment:toc;display:flex;align-items:center;gap:0;padding:8px 0;border-bottom:1px dotted var(--border)}
+.toc-list li:last-child{border-bottom:none}
+.toc-list li::before{content:counter(toc) '.';font-family:'Forum',serif;font-size:.8rem;color:var(--frost);min-width:22px;flex-shrink:0;margin-right:6px}
+.toc-name-group{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.toc-list a{font-family:'IM Fell English',serif;font-size:1.155rem;color:var(--ink-light);text-decoration:none;transition:color .2s}
+.toc-list a:hover{color:var(--red)}
+.toc-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--frost-light);margin-left:auto;flex-shrink:0;padding-left:16px}
+
+/* ── STORY CARD ── */
+.story-card{
+  background:rgba(255,255,255,0.85);
+  border:1px solid var(--border-light);
+  box-shadow:0 4px 20px var(--shadow);
+  margin:28px 0;
+  position:relative;
+  backdrop-filter:blur(2px);
+}
+.story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,var(--frost) 20%,var(--gold-light) 50%,var(--frost) 80%,transparent 100%)}
+.story-header{padding:28px 44px 20px;text-align:center;border-bottom:1px solid var(--border-light)}
+.story-number{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--frost-light);margin-bottom:6px}
+.story-title{font-family:'Forum',serif;font-size:clamp(1.25rem,3vw,1.8rem);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:6px}
+.story-timing{font-family:'IM Fell English',serif;font-style:italic;font-size:.92rem;color:var(--frost)}
+.story-body{padding:24px 44px 32px;font-size:1.155rem;line-height:1.85;color:var(--ink)}
+.story-body p{margin-bottom:1.1em;text-align:justify;hyphens:auto}
+.story-body p:first-child::first-letter{font-family:'Forum',serif;font-size:3.2em;font-weight:400;float:left;line-height:.8;margin:.05em .08em 0 0;color:var(--frost)}
+.dialogue{margin:.3em 0 .3em 1.8em;font-style:italic}
+.liturgical{display:block;margin:1em 2em;padding:11px 16px;border-left:2px solid var(--frost-light);font-style:italic;color:var(--ink-light);background:rgba(44,74,114,0.05);font-size:1rem;line-height:1.7}
+.verse-block{display:block;margin:1em 2em;padding:10px 16px;border-left:2px solid var(--gold-light);font-style:italic;color:var(--ink-light);background:rgba(176,140,40,0.05);line-height:1.75}
+
+/* ── FOOTNOTES ── */
+.fn-ref{font-size:.65em;vertical-align:super;color:var(--frost);font-family:'Forum',serif;cursor:pointer;font-weight:400;position:relative}
+.fn-ref:hover{color:var(--red)}
+.fn-ref .fn-tooltip{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--ink);color:#e8f0fa;font-family:'Cormorant Garamond',serif;font-size:1.155rem;font-style:normal;line-height:1.55;width:340px;max-width:90vw;padding:11px 14px;border:1px solid var(--frost-light);box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:100;pointer-events:none;transition:opacity .2s,visibility .2s;text-align:left;border-radius:2px}
+.fn-ref .fn-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--frost-light)}
+.fn-ref:hover .fn-tooltip,.fn-ref:focus .fn-tooltip{visibility:visible;opacity:1}
+.fn-ref.fn-right .fn-tooltip{left:auto;right:0;transform:none}
+.fn-ref.fn-right .fn-tooltip::after{left:auto;right:12px;transform:none}
+.fn-ref.touch-device .fn-tooltip{display:none!important}
+.fn-sheet-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200}
+.fn-sheet-overlay.active{display:block}
+.fn-sheet{position:fixed;bottom:0;left:0;right:0;background:#16223a;border-top:2px solid var(--frost-light);padding:20px 22px 32px;z-index:201;max-height:55vh;overflow-y:auto;animation:sheetUp .28s cubic-bezier(.32,.72,0,1);border-radius:12px 12px 0 0}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:none}}
+.fn-sheet-close{display:flex;justify-content:center;margin-bottom:16px}
+.fn-sheet-close::before{content:'';width:40px;height:4px;background:rgba(92,134,184,0.4);border-radius:2px}
+.fn-sheet-num{font-family:'Forum',serif;font-size:.7rem;color:var(--frost-light);letter-spacing:.2em;margin-bottom:8px}
+.fn-sheet-text{font-family:'Cormorant Garamond',serif;font-size:1.155rem;color:#e8f0fa;line-height:1.65}
+
+/* ── ORNAMENT ── */
+.ornament-divider{text-align:center;color:var(--frost-light);font-size:1.2rem;letter-spacing:.5em;margin:8px 0 0;opacity:0.45}
+
+/* ── BIO ── */
+.bio-section{background:linear-gradient(180deg,#1c2e4a 0%,#101c30 100%);border-top:2px solid var(--frost-light);margin-top:56px;padding:52px 20px;color:#e0e8f4}
+.bio-inner{max-width:800px;margin:0 auto}
+.bio-label{font-family:'Forum',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--frost-light);text-align:center;margin-bottom:6px}
+.bio-title{font-family:'Forum',serif;font-size:clamp(1.1rem,3vw,1.6rem);color:#e8effa;text-align:center;margin-bottom:26px;line-height:1.3}
+.bio-rule{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:28px}
+.bio-rule::before,.bio-rule::after{content:'';flex:1;max-width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--frost-light),transparent)}
+.bio-rule span{color:var(--frost-light);font-size:1rem}
+.bio-text{font-size:1rem;line-height:1.85;color:#c4d0e2;text-align:justify;hyphens:auto}
+.bio-text p{margin-bottom:1em}
+.bio-fn{font-size:.82rem;color:#7a90b0;margin-top:22px;padding-top:14px;border-top:1px solid rgba(92,134,184,0.3);line-height:1.6}
+.bio-fn-ref{font-size:.75em;vertical-align:super;color:var(--frost-light);font-family:'Forum',serif}
+.bio-expand-btn{display:flex;align-items:center;gap:10px;background:none;border:1px solid rgba(92,134,184,0.4);color:var(--frost-light);font-family:'Forum',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:8px 18px;margin:18px auto 0;cursor:pointer;transition:border-color .2s,background .2s}
+.bio-expand-btn:hover{border-color:var(--frost-light);background:rgba(92,134,184,0.1)}
+.bio-expand-arrow{font-size:1.1rem;line-height:1;display:inline-block;transition:transform .3s}
+.bio-expand-btn[aria-expanded="true"] .bio-expand-arrow{transform:rotate(180deg)}
+.bio-full{margin-top:22px;animation:bioFadeIn .4s ease}
+@keyframes bioFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.copyright{text-align:center;margin-top:36px;font-family:'Forum',serif;font-size:.62rem;letter-spacing:.2em;color:rgba(92,134,184,0.4);text-transform:uppercase}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .story-header,.story-body{padding-left:20px;padding-right:20px}
+  .toc-section{padding:24px 18px 26px}
+  .toc-subtitle{display:none}
+  .liturgical,.verse-block{margin:.8em .5em}
+  .section-nav{font-size:.68rem}
+  .section-nav a{padding:4px 7px}
+}
+
+/* ═══════════ Mobile section-nav (≤700px) ═══════════ */
+.section-nav-trigger { display: none; }
+
+@media (max-width: 700px) {
+  .section-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .section-nav > a,
+  .section-nav > span {
+    display: none;
+  }
+  .section-nav-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--hdr-accent-light);
+    font-family: 'Forum', serif;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    padding: 5px 10px;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .section-nav .section-nav-trigger-label {
+    font-family: 'Forum', serif;
+    font-size: .8rem;
+    letter-spacing: .12em;
+    color: var(--hdr-ink);
+  }
+  .section-nav-trigger:hover,
+  .section-nav-trigger[aria-expanded="true"] {
+    color: var(--hdr-accent-light);
+  }
+  .section-nav-trigger .section-nav-bars {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 16px;
+  }
+  .section-nav-trigger .section-nav-bars span {
+    display: block;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 1px;
+  }
+  .section-nav-trigger .section-nav-bars span:nth-child(2) { width: 80%; }
+  .section-nav-trigger[aria-expanded="true"] {
+    border-color: transparent;
+    background: transparent;
+  }
+  .section-nav.is-open {
+    background: var(--hdr-mobile-bg);
+    border: 1px solid var(--hdr-mobile-border);
+    padding: 4px;
+    border-radius: 2px;
+    z-index: 100;
+    box-shadow: 0 4px 14px rgba(0,0,0,.3);
+  }
+  .section-nav.is-open > a {
+    display: block;
+    padding: 7px 14px;
+    border: none !important;
+    width: 100%;
+  }
+}
+.to-toc-btn{
+  position:fixed;bottom:28px;right:24px;z-index:500;
+  display:flex;align-items:center;gap:7px;
+  padding:8px 14px 8px 11px;
+  background:rgba(44,74,114,0.85);
+  color:#f0f5fc;
+  border:1px solid rgba(44,74,114,0.6);
+  border-radius:24px;
+  font-family:'Forum',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  box-shadow:0 4px 18px rgba(10,20,35,0.28);
+  opacity:0;pointer-events:none;
+  transition:opacity .35s,transform .35s,background .2s;
+  transform:translateY(10px);
+  cursor:pointer;
+}
+.to-toc-btn.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-toc-btn:hover{background:rgba(44,74,114,0.97)}
+.to-toc-btn svg{flex-shrink:0}
+@media(max-width:640px){.to-toc-btn{bottom:20px;right:16px;padding:7px 12px 7px 10px;font-size:.68rem}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="section-nav">
+    <button class="section-nav-trigger" type="button" onclick="toggleSectionNav(this)" aria-expanded="false" aria-controls="section-nav-list" title="Sections">
+    <span class="section-nav-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="section-nav-trigger-label">Winter and Christmastide</span>
+  </button>
+  <a href="en.html" onclick="sessionStorage.setItem('manualNav','1')">Great Lent</a>
+    <span>|</span>
+    <a href="pascha_red_en.html" onclick="sessionStorage.setItem('manualNav','1')">From Pascha to Pentecost</a>
+    <span>|</span>
+    <a href="leto_en.html" onclick="sessionStorage.setItem('manualNav','1')">The Year of the Lord</a>
+    <span>|</span>
+    <a href="zima_en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">Winter and Christmastide</a>
+  </nav>
+  <div class="lang-switcher">
+    <a href="zima.html" onclick="sessionStorage.setItem('manualNav','1')">РУС</a>
+    <span>|</span>
+    <a href="zima_en.html" class="active" onclick="sessionStorage.setItem('manualNav','1')">ENG</a>
+  </div>
+  <div class="header-ornament">✦ ✦ ✦</div>
+  <h1 class="site-title">Winter and<br>Christmastide</h1>
+  <p class="site-author">Vasily Nikiforov-Volgin</p>
+  <p class="site-subtitle">Stories from the cycle <em>"Memories of Childhood"</em></p>
+  <p class="site-translator">translated by Fr. Joseph Gleason</p>
+  <div class="header-rule"><span>☩</span></div>
+</header>
+
+<div class="page-wrap">
+
+<nav class="toc-section" id="toc" aria-label="Contents">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><span class="toc-name-group"><a href="#s1">The Morning Prayer of the Saints</a></span><span class="toc-subtitle">Three saints in the blizzard-swept field</span></li>
+    <li><span class="toc-name-group"><a href="#s2">The Silver Blizzard</a></span><span class="toc-subtitle">Christmas Eve</span></li>
+    <li><span class="toc-name-group"><a href="#s3">Theophany</a></span><span class="toc-subtitle">The Great Blessing of the Waters</span></li>
+  </ol>
+</nav>
+
+<!-- ══ THE MORNING PRAYER OF THE SAINTS ══ -->
+<article class="story-card" id="s1">
+<div class="story-header">
+  <div class="story-number">Story One</div>
+  <h2 class="story-title">The Morning Prayer of the Saints</h2>
+</div>
+<div class="story-body">
+
+<p>White with snow<span class="fn-ref">1<span class="fn-tooltip">In this story, the color white predominates, symbolizing the holiness of the three saints and the purity of the natural world. The narrative emphasizes that everything, including the saints themselves, is "covered with snow," with specific attention paid to the white elements of their humble attire: St. Nicholas's "frost-hardened sheepskin coat," St. Sergius's "skufia, white with snow" (a skufia being a clerical cap), and St. Seraphim's "white quilted… jacket," while "their white beards flutter in the wind." This whiteness, blanketing the Russian landscape, connects directly to the story's central theme: that Holy Russia, though presently "darkened with sins" and "stained with the blood" of the revolution, is ultimately "just a child...the Lord's gentle thought," who will eventually repent and be saved.</span></span>, St. Nicholas the Wonderworker, St. Sergius of Radonezh, and St. Seraphim of Sarov walk together through the spacious evening fields.<span class="fn-ref">2<span class="fn-tooltip">Three of the saints most beloved throughout all Russia are St. Nicholas the Wonderworker, St. Sergius of Radonezh, and St. Seraphim of Sarov.</span></span></p>
+
+<p>The blizzard spreads across the ground, the snowdrift-covered field rings from the frost.<span class="fn-ref">3<span class="fn-tooltip">The "field rings from the frost" — This is a poetic description reflecting the extremely cold weather conditions sometimes experienced in northern Russia. The snow becomes hard and granular, and when walked upon or swept by the wind, it produces a sharp, crystalline, almost metallic sound, as if the frozen field itself is ringing.</span></span> The snowstorm is blowing up. The frost freezes the lonely snowy land.</p>
+
+<p>St. Nicholas the Wonderworker is in a frost-hardened sheepskin coat, in large felt boots<span class="fn-ref">4<span class="fn-tooltip">These felt boots are traditional Russian boots (valenki) made entirely of matted wool felt. They are solid, seamless, and excel at keeping feet warm in dry, extreme cold, but offer no water resistance. In this context, the "large felt boots full of holes" worn by St. Nicholas are a powerful symbol of humble, peasant poverty and a life of endless journeying on foot, identifying him completely with the common people.</span></span> full of holes. A knapsack is on his shoulders, a staff is in his hands.</p>
+
+<p>St. Sergius of Radonezh is in a monastic cassock. A skufia<span class="fn-ref">5<span class="fn-tooltip">A skufia is a soft, brimless cap worn by Eastern Orthodox clergy and monastics. Theologically, it symbolizes humility before God, serves as a "helmet of salvation" (Ephesians 6:17) protecting the mind from sin, and signifies the wearer's spiritual vigilance and identity. St. Sergius wearing his skufia, even white with snow, is a subtle but powerful detail that underscores his identity as a humble monk, constantly in prayer and submission to God, even while walking through a freezing blizzard.</span></span>, white with snow, is on his head, and bast shoes<span class="fn-ref">6<span class="fn-tooltip">Bast shoes (lapti) were the most common type of footwear worn by the Russian peasantry for centuries. Woven from pliable strips of bark (usually from linden trees), they were inexpensive but not durable, symbolizing poverty, humility, and a deep connection to the Russian soil. Their mention for St. Sergius emphasizes his profound identification with the common people.</span></span> are on his feet.</p>
+
+<p>St. Seraphim of Sarov is in a white quilted svitka<span class="fn-ref">7<span class="fn-tooltip">A svitka was a traditional, long, coarse cloth coat, typically made of wool or heavy felt, worn by peasants in Russia. It was a simple, practical garment for harsh weather, and its mention here connects St. Seraphim to the common people.</span></span> jacket. He walks hunched over<span class="fn-ref">8<span class="fn-tooltip">This is a significant biographical detail, not just a general sign of age. During his earthly life, St. Seraphim was severely beaten by robbers, leaving him permanently hunched over and in need of a staff for the rest of his life. The author, Nikiforov-Volgin, includes this specific physical trait to ground the saint's appearance in his real, earthly suffering and to highlight his Christ-like endurance of violence for the sake of prayer and peace.</span></span>, in Russian boots<span class="fn-ref">9<span class="fn-tooltip">In this context, Russian boots are a reference to traditional Russian knee-high leather boots (sapogi). They were a sturdier, more durable form of footwear than bast shoes, often associated with a higher social status than peasants, such as townspeople, soldiers, or merchants. For St. Seraphim, who was a monk and hermit, they signify practicality and resilience against the harsh elements, while still being distinctly Russian, grounding him in the national context of the story. Their solid form contrasts with the simple bast shoes worn by St. Sergius and the holey felt boots worn by St. Nicholas, subtly highlighting the different backgrounds and paths of the three saints.</span></span>, leaning on a stick.</p>
+
+<p>Their white beards flutter in the wind. The snow blinds their eyes. The holy elders<span class="fn-ref">10<span class="fn-tooltip">In the Russian Orthodox tradition, a holy elder (often translated from the word starets) is a revered saint known for having profound wisdom, an ascetic life, and a role as a spiritual guide. The three figures here — St. Nicholas, St. Sergius of Radonezh, and St. Seraphim of Sarov — are among the most beloved holy elders in Russian history, celebrated as intercessors and protectors of the Russian land and its people.</span></span> are cold in the lonely frosty darkness.</p>
+
+<p class="dialogue">"Oh, frost, you sinner, you old joker!" St. Nicholas the Wonderworker says cheerfully, and to warm up, strikes his peasant mittens<span class="fn-ref">11<span class="fn-tooltip">The peasant mittens and sheepskin coat are significant details. They are not merely practical winter gear but essential markers of St. Nicholas's iconic role as a "folk saint," intimately connected to and sharing the life of the common people. His attire visually identifies him with the peasantry, underscoring his humility and his particular ministry to the poor and suffering. Along with his felt boots full of holes, these garments complete the picture of a saint who walks the same difficult, "sorrowful roads" as the Russian people he so loves.</span></span> against his sheepskin coat, chilled by the frost, while he himself hurries with a brisk old man's gait, his felt boots just shuffling along.</p>
+
+<p class="dialogue">"This frost has pleased us old men, there's no denying it… It's so restless! Please make it calm, O Lord, it's so restless!" laughs Seraphim. He runs, skipping, not lagging behind the brisk Nicholas. Only his boots thump loudly on the ringing frosty path.</p>
+
+<p class="dialogue">"This is nothing yet!" Sergius smiles quietly. "But the year 1347<span class="fn-ref">12<span class="fn-tooltip">The 14th century marked the beginning of the Little Ice Age in Europe and Russia, a period characterized by volatile and significantly colder weather. This era saw numerous documented cold, wet summers that led to widespread crop failures and famines which occurred during St. Sergius's own lifetime. Thus, the remark about the frosty year of 1347 attributes to the saint a memory of the kind of harsh, cold years that were indeed a defining feature of his century.</span></span>, now that was frosty. Brutal…"</p>
+
+<p class="dialogue">"It's a windy blizzard! Just so long as we don't get lost in the field," says Seraphim.</p>
+
+<p class="dialogue">"We won't get lost, fathers!" Nicholas answers kindly. "I know all the Russian roads.<span class="fn-ref">13<span class="fn-tooltip">St. Nicholas is the patron saint of travelers in Eastern Orthodox tradition. When he says, "I know all the Russian roads", this reflects his deep connection to the people, portraying him as a perpetual wanderer who shares their journeys and hardships. This folk belief transforms him from a distant heavenly figure into an intimate companion of the nation, embodying both divine protection and earthy solidarity.</span></span> Soon we will reach the Kitezh forest<span class="fn-ref">14<span class="fn-tooltip">"Kitezh forest" — This references the legendary invisible city of Kitezh, a central myth in Russian spirituality. According to tradition, during the 13th-century Mongol invasion, the holy city of Kitezh was miraculously hidden by God beneath Lake Svetloyar and its surrounding forests to protect it from destruction. It became a powerful symbol of "Holy Russia" — the belief that the nation's true, spiritual essence remains preserved and uncorrupted by historical tragedy. The saints' destination in this forest signifies their prayer for this eternal, ideal Russia, hidden beneath the surface of a land afflicted by revolution and bloodshed. When trouble had threatened the legendary city of Kitezh, it was hidden and preserved. Similarly, now that an atheistic government was threatening Holy Russia, it was being preserved in a little Orthodox church, hidden away in the Kitezh forest.</span></span>, and there is a little church where God will bless us to serve matins.<span class="fn-ref">15<span class="fn-tooltip">Matins is a name for the morning prayer service in the Eastern Orthodox Church. In Russia, this service is often performed when it is dark, either in the early morning before dawn, or on the evening of the previous day.</span></span> Quicken your step, fathers!…"</p>
+
+<p class="dialogue">"You're a brisk miracle-worker!" says Sergius, smiling quietly and holding him by the sleeve. "And diligent! You may be from a foreign land<span class="fn-ref">16<span class="fn-tooltip">St. Nicholas was a 4th-century Greek bishop of Myra, located in Lycia, Asia Minor (modern-day Turkey). He is therefore a saint "from a foreign land," not a native Russian. His worldwide veneration, combined with the historical transfer of his relics to the Italian city of Bari in 1087, made him a familiar and international figure within the Christian world long before his particular devotion flourished in Russia.</span></span>, but you love the Russian land above all.<span class="fn-ref">17<span class="fn-tooltip">The belief that St. Nicholas loves Russia "above all" stems from his profound popularity in Russian folk tradition. Centuries after his repose, he became the saint most frequently invoked for aid in daily life. The widespread belief in his miraculous interventions for Russians — from peasants to princes — cemented his role as a fervent and accessible intercessor. This long history of answered prayers created a deep national devotion, establishing him as a spiritual protector of the Russian land, despite his foreign origins.</span></span> Nicholas, why do you so love our people, who are darkened by sins? Why do you walk their sorrowful roads and pray for them unceasingly?"</p>
+
+<p class="dialogue">"Why do I love Holy Russia?" replies Nicholas, looking into Sergius's eyes. "She is a child — Rus'!… A quiet, fragrant flower… a gentle thought of God<span class="fn-ref">18<span class="fn-tooltip">The original Russian phrase describing Russia is «Кроткая дума Господня» (Krotkaya duma Gospodnya). Translated here as "a gentle thought of God," the word «кроткая» carries a deeper meaning of "meek," "humble," or "mild." This is a central theological concept, referring to the strength of peaceful humility before God. Thus, the phrase signifies that Russia's true, God-given essence is one of meekness — a stark contrast to the violent "years of blood" which represent a sinful deviation from this nature. The prophecy of salvation is a promise of return to this foundational identity as God's "gentle thought".</span></span>… His beloved child… Unreasonable, but beloved. And who will not love a child? Who will not be touched by little flowers? Rus' is a gentle thought of God."<span class="fn-ref">19<span class="fn-tooltip">The term "Rus'", an archaic and poetic term, is used here instead of "Russia." The term "Rus'" refers to the historical and spiritual ideal of "Holy Rus'" or "Holy Russia" — the timeless, sacred homeland of the Orthodox Christian faith and traditional folk culture. It evokes a legendary, national soul, distinct from the modern political state. It is a spiritual ideal, referring to the belief that the Russian land and its people have a unique, God-bearing vocation focused on humility, faith, and piety, despite their sins and sufferings.</span></span></p>
+
+<p class="dialogue">"You spoke well, Nicholas, about Rus'," whispered Seraphim quietly. "I want to get on my knees, my joys!<span class="fn-ref">20<span class="fn-tooltip">The phrase "my joy" is an authentic signature saying historically associated with the real St. Seraphim of Sarov. During his life, he famously greeted everyone with the words "Christ is Risen, my joy!" regardless of the time of year, reflecting his core belief that a Christian's life should be permeated with the joy of the Resurrection. By having the literary St. Seraphim use this term for his fellow saints, the author emphasizes that their arduous journey through the bitterly cold night is, in essence, a pilgrimage illuminated by divine joy. St. Seraphim is seeing the world and others through the lens of God's grace and love.</span></span> I want to kneel before Rus' and pray, as before a holy icon!"</p>
+
+<p class="dialogue">"But, holy fathers,"<span class="fn-ref">21<span class="fn-tooltip">According to Eastern Orthodox tradition, the term "holy fathers" is a formal and reverential form of address with two key meanings. It is used for esteemed clergy (like bishops or priests) and, more broadly, for saints recognized as spiritual ancestors and teachers of the Christian faith. By using this term, St. Sergius is not merely being polite; he is acknowledging the shared, holy authority of St. Nicholas and St. Seraphim. This reflects a core Orthodox emphasis on spiritual community, where saints are honored as members of a single, celestial family and as trustworthy guides for the living.</span></span> Sergius asked timidly, "what about the years of blood in 1917, 1918, and 1919? Why did the Russian people stain themselves with blood?"<span class="fn-ref">22<span class="fn-tooltip">The years 1917, 1918, and 1919 are identified here as the "years of blood" because they mark the core period of the Russian Revolution and the ensuing Civil War. This span encompasses the Bolshevik seizure of power and the eruption of a full-scale civil war. For the story's saints, these years represent the profound national trauma where the Russian people "stained themselves with blood" through fratricidal conflict and revolutionary terror, requiring divine forgiveness and repentance.</span></span></p>
+
+<p class="dialogue">"They will repent!" St. Nicholas the Wonderworker answered with conviction.</p>
+
+<p class="dialogue">"They will be saved!" Seraphim said firmly.<span class="fn-ref">23<span class="fn-tooltip">"They will be saved!" — For the author and his original Russian audience, living through the cruel aftermath of the Bolshevik revolution, this statement from St. Seraphim of Sarov would have carried immense prophetic weight, transforming the dialogue from simple hope into a specific divine promise. Long before this story was written, St. Seraphim of Sarov (1754-1833) famously prophesied that Russia would endure a "terrible storm" of godless persecution — a prophecy fulfilled by the Bolshevik Revolution and the horrific bloodshed that came as a result. However, St. Seraphim also foretold that this suffering would not be the end. He promised a glorious resurrection of faith, declaring that a great repentance would occur and that God would lead Russia by the path of sorrows to great glory. Therefore, in the story, when St. Nicholas states, "They will repent!" it is the necessary human response to the tragedy. But when St. Seraphim firmly adds, "They will be saved!" it is the definitive prophetic answer from above. It is the assurance that God's mercy transcends the worst human sin, and that the nation's story, in the eyes of faith, does not end in the bloodstained years of the revolution, but in a triumphant, God-given redemption.</span></span></p>
+
+<p class="dialogue">"Let us pray!" whispered Sergius. They reached a small, snow-covered forest church. In the darkness, they lit candles before the icons and began to serve matins – the morning prayer service.</p>
+
+<p>Outside the church walls, the snowy Kitezh forest roared. The blizzard sang. The hierarchs<span class="fn-ref">24<span class="fn-tooltip">The term "hierarchs" specifically means "saintly bishops". While only St. Nicholas held the formal rank of bishop, the author applies this title to all three saints at the story's climax. This elevates them from individuals to a collective, supreme spiritual authority who, in the sanctuary of the forest church, represent the enduring, true leadership of Holy Rus' beyond the chaos of earthly history.</span></span> of the Russian land prayed in the abandoned forest church for Rus' — the love of the Savior, the gentle thought of God.</p>
+
+<p>And after matins, the three intercessors went out onto the porch of the church, and blessed the snowy land, the blizzard, and the night, unto the four corners of the earth.</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ THE SILVER BLIZZARD ══ -->
+<article class="story-card" id="s2">
+<div class="story-header">
+  <div class="story-number">Story Two</div>
+  <h2 class="story-title">The Silver Blizzard<span class="fn-ref" style="font-size:.5em">1<span class="fn-tooltip">"The Silver Blizzard" is a poetic masterpiece that captures the essence of a Russian Christmas. Through the use of rich sensory imagery, a charming child's narrative voice, and profound religious feeling, Nikiforov-Volgin creates a world where the divine touches the everyday. The story isn't just about the holiday; it's about the consciousness of a child for whom the boundary between the spiritual and the physical is wonderfully blurred, making the entire world — from the frost on the window to a star in the sky — a part of the Christmas miracle.</span></span></h2>
+</div>
+<div class="story-body">
+
+<p>There was nearly a month left until Christmas, but it was already upon you — blowing in with snowy dust, clinging to frosty windowpanes in the mornings, jingling with sleigh runners along the blue roads, singing, "Christ is born! Glorify Him!"<span class="fn-ref">2<span class="fn-tooltip">"Christ is born! Glorify Him!" is a hymn that is sung in Eastern Orthodox churches during the weeks up until Christmas. As a result, this phrase also reflects a traditional Orthodox Christmas greeting. One person says, "Christ is Born!" and the customary response is "Glorify Him!" This exchange is an Orthodox Christian's concise and joyful declaration of belief in the Incarnation.</span></span> at the All-Night Vigil<span class="fn-ref">3<span class="fn-tooltip">The All-Night Vigil is a liturgical service in the Eastern Orthodox Church, celebrated on the eve of Sundays and major feast days like Christmas. While its name recalls ancient monastic traditions of all-night prayer, the service in a typical parish context usually lasts between two and three hours. It is a composite service that combines elements of Vespers, Matins, and the First Hour, and is designed to be a spiritual "vigil" or watch, preparing the faithful for the celebration of the Divine Liturgy the following morning.</span></span> in church, and visiting your dreams at night as a merry silver blizzard.<span class="fn-ref">4<span class="fn-tooltip">The "silver blizzard" is the story's central metaphor. It operates on three levels: literally, it is the sparkling snowstorm of a Russian winter; emotionally, it represents the child's exhilarating anticipation of Christmas; and spiritually, it symbolizes the divine grace and transformative presence of the Christmas miracle, permeating and sanctifying the entire world.</span></span></p>
+
+<p>During these days, you didn't want to think about anything earthly, especially school. My family noticed my pre-holiday mood and sternly declared:</p>
+
+<p class="dialogue">"If you bring home bad grades from school, you can forget about the Christmas tree and new boots!"</p>
+
+<p>"No matter," I thought, "we'll see… If they give me a three in conduct, as they threatened, I'll bring it up to a five… In arithmetic, they're sure to give me a two, but that's no trouble either.<span class="fn-ref">5<span class="fn-tooltip">The narrator is referring to the standard grading scale in Russian schools, which uses numbers from 2 to 5. In American terms, a "5" is an "A" (excellent), a "4" is a "B" (good), a "3" is a "C" (satisfactory), and a "2" is a failing "F". His plan is to improve his poor grades ("2"s and "3"s) into perfect "5"s.</span></span> Mikhál Vasílyich's twos always look like little swan necks, without a circle around them — I'll change that into a five too…"<span class="fn-ref">6<span class="fn-tooltip">The detail about the "two" resembling a "swan's neck" describes the teacher's distinctive handwriting. Unlike a printed "2" that might have a closed loop, this teacher writes it with an open, curved line. The narrator believes this flaw will make it easy to change the "2" into a "5" by adding a few strategic pen strokes.</span></span></p>
+
+<p>Once I had figured all this out, I told my parents:</p>
+
+<p class="dialogue">"My report card will be first-class!"</p>
+
+<p>Grishka<span class="fn-ref">7<span class="fn-tooltip">"Grishka" is an affectionate nickname for "Grigory". The English equivalent would be "Gregory" or "Greg".</span></span> and I were walking home from school. I asked him:</p>
+
+<p class="dialogue">"Do you smell Christmas in the air?"</p>
+
+<p class="dialogue">"Not yet, but I will soon!"</p>
+
+<p class="dialogue">"When?"</p>
+
+<p class="dialogue">"When my mum buys a goose and starts roasting it, then I'll smell it!"</p>
+
+<p>I didn't like Grishka's answer. I sulked and grew silent.</p>
+
+<p class="dialogue">"Why're you pouting?" Grishka asked.</p>
+
+<p>I glared at him with angry eyes and snapped in irritation:</p>
+
+<p class="dialogue">"Since when does Christmas smell like roast goose, you blockhead?"</p>
+
+<p class="dialogue">"What else would it smell like?"</p>
+
+<p>I had no answer for that. I blushed and grew even angrier.</p>
+
+<p>Christmas was drawing nearer and nearer. Shop and bakery windows were already filled with edible Christmas tree ornaments, including gingerbread skates<span class="fn-ref">8<span class="fn-tooltip">"Gingerbread skates" were a traditional Russian holiday decoration. They were edible ornaments made of gingerbread (pryanik), molded into the shape of ice skates, and hung on the Christmas tree. Along with other shapes made from gingerbread, they combined the festive spirit with the winter season's imagery, making the tree a focal point of both celebration and treats.</span></span> and fish with white icing<span class="fn-ref">9<span class="fn-tooltip">"Fish with white icing" were another type of decorative gingerbread cookie, common in Russia. The fish shape holds symbolic meaning in Christianity, often representing Jesus Christ. The white icing edging gave them a festive, wintry appearance, and like the gingerbread skates, they were meant to be both a decoration and a sweet treat for the holiday.</span></span>, as well as gold and silver candies that make your teeth ache — but you'd eat them anyway because they were Christmas candies!</p>
+
+<p>A week before Christmas, they let us out for vacation.</p>
+
+<p>Just before school let out, I prayed to God that He wouldn't allow me to get a two in arithmetic or a three in conduct, so I wouldn't anger my parents and miss out on the holiday and the promised new boots with red loops. God heard my prayer, and on my report card "of progress and conduct" I got a three in arithmetic and a five-minus in conduct.</p>
+
+<p>Christmas was standing by the window, tracing frost flowers on the panes, waiting for the floors to be washed, the rugs laid out, and the icon lamps<span class="fn-ref">10<span class="fn-tooltip">An icon lamp (also called a vigil lamp) is a small oil lamp placed in front of icons in Eastern Orthodox homes and churches. Its continuous light symbolizes the constant presence of God, prayer, and the light of faith. Lighting these lamps is a central part of preparing for a major feast like Christmas, signifying the sanctification of the home to welcome the holy day.</span></span> to be lit, just waiting to finally be let in…</p>
+
+<p>Christmas Eve arrived! It was blizzardy and white, whiter than any other day. Our porch was buried in snow, and as I shoveled it, I thought: extraordinary snow… almost holy! The wind rustling in the birch trees — also extraordinary! The coachmen's sleigh bells weren't the same, and the people among the snowflakes weren't the same… Along the snowdrifted road, a boy in felt boots<span class="fn-ref">11<span class="fn-tooltip">Felt boots (valenki) are traditional Russian winter footwear made entirely of pressed wool felt. They are not knitted or sewn from woven fabric, but are created by matting and compressing wool fibers into a solid, seamless boot shape. While exceptionally warm in dry, cold snow due to the insulating properties of felt, they are not waterproof. In the story, the boy in felt boots pulling a sled with a Christmas tree is a classic image of a Russian winter.</span></span> was pulling a Christmas tree on a sled and smiling strangely about something.</p>
+
+<p>I stood for a long time in the blizzard, listening as the most wonderful, most fragrant word in the world — "Christmas" — swept through my soul like a cheerful wind. It smelled of the snowstorm and prickly fir needles.</p>
+
+<p>Not knowing what to do with myself from the whiteness and the unusualness of the day, I dashed into the cathedral and listened as the prophecies about Christ's birth in Bethlehem were read in the middle of the church; I walked through the market where they were selling Christmas trees, stuck my foot out at a passing boy, and we both tumbled into a snowdrift; I punched the frozen-over sheepskin coat of a peasant, for which he called me a "good-for-nothing"<span class="fn-ref">12<span class="fn-tooltip">The Russian original uses the nonsense scolding word «шулды-булды» (shuldy-buldy), most likely a local colloquial insult without a fixed literal meaning.</span></span>; I climbed over the fence into the city garden (even though the gate was open). In the garden, there was no one — just the blizzard and the whistling in the trees. For some unknown reason, I took a running start and plunged into a deep snowdrift, pressing my lips to the snow. Exhausted from running about in the blizzard, hoary and frozen, I came home and saw a small Christmas tree beneath the icons… I sat down beside it and began to sing, at first mumbling, then louder and louder: "Today the Virgin gives birth to the Transcendent One"<span class="fn-ref">13<span class="fn-tooltip">This line is the beginning of the primary hymn for Christmas in the Eastern Orthodox Church. It is sung repeatedly during the Christmas liturgy and throughout the subsequent season. The phrase "the Transcendent One" is a theological affirmation that the child born is the eternal, uncreated God, who transcends His own creation. This hymn, along with the child's earnest but mistaken substitution of "wolves" for "wise men," underscores the story's theme of divine mystery encountered through the combination of solemn liturgy and a child's innocent faith.</span></span> and instead of "Magi journey with a star," I sang: "Wolves journey with a star."<span class="fn-ref">14<span class="fn-tooltip">The child's mistake is a play on similar-sounding Russian words: volsví (Magi) and vólki (wolves). This innocent error highlights his youthful imagination and foreshadows the story's concluding dream, where this simple linguistic mix-up transforms into a wondrous vision.</span></span></p>
+
+<p>After listening to my singing, my father said:</p>
+
+<p class="dialogue">"Are you out of your mind? Who ever heard of wolves journeying with a star?"</p>
+
+<p>Mother was singeing calf's feet for aspic.<span class="fn-ref">15<span class="fn-tooltip">Aspic is a savory gelatin dish, where cooked meat, broth, and vegetables set into a firm, sliceable form. The gelatin needed to set the aspic comes from boiling connective tissues rich in collagen, such as calf's feet. The mother is singeing the calf's feet (using an open flame to burn off any remaining hair and to sterilize the skin) before boiling them. This process was a crucial first step in ensuring the broth would be clear and the resulting aspic would be pure and firm.</span></span> I was very hungry, but you can't eat until the first star appears.<span class="fn-ref">16<span class="fn-tooltip">This refers to a traditional pious practice in some Orthodox Christian households on Christmas Eve. It is a day of strict fasting, culminating in the Christmas Eve meal. The custom is to abstain from food until after the first star appears in the evening sky, symbolizing the Star of Bethlehem that announced the birth of Jesus and guided the Magi. This act of anticipation and discipline heightens the joy and solemnity of the Christmas celebration that follows.</span></span> Father, having finished his work, began reading the Gospel aloud. I listened to his drawn-out reading and thought about Christ lying in the manger. I figured it must have been snowing then, and that little Jesus was very cold!</p>
+
+<p>I felt so sorry for Him that I began to cry.</p>
+
+<p class="dialogue">"What're you whining about?" they asked me with concern.</p>
+
+<p class="dialogue">"Nothing. My fingers are frostbitten."</p>
+
+<p class="dialogue">"Serves you right, you disobedient boy! You shouldn't go flying about in such cold!"</p>
+
+<p>And then, at last, the evening of Christmas Eve arrived. Crossing ourselves before the icons, dressed in brand new clothes, we went to the All-Night Vigil at the Church of the Holy Transfiguration. The blizzard had subsided, and many stars had appeared in the sky. For a long time, I searched among them for the Christmas star, and to my great joy, I found it!<span class="fn-ref">17<span class="fn-tooltip">The "Christmas star" the narrator seeks is the Star of Bethlehem, which announced the birth of Jesus and guided the Magi (Wise Men). According to an Eastern Orthodox custom, its first appearance in the evening sky marks the end of the strict Christmas Eve fast and the beginning of the festive celebration. The narrator's earnest search for it is an act of faith and anticipation. His later argument with his friend Grishka, who identifies the star as the common star Vega, highlights a central theme of the story: the contrast between the scientific worldview of adults and the child's capacity for wonder and symbolic belief.</span></span> It shone brighter than all the others and glimmered with blue light.</p>
+
+<p>So there we were in church. Fir branches underfoot<span class="fn-ref">18<span class="fn-tooltip">The practice of spreading fir branches on the church floor is a traditional Russian Orthodox custom for major winter feasts like Christmas. It serves to create a fragrant, natural carpet, with the evergreens symbolizing eternal life. The scent and texture engage the senses, enhancing the feeling of joyful celebration and marking the space as uniquely holy for the feast.</span></span>, and all around, wherever you looked — radiance streamed from everywhere. Even the pot-bellied church warden, whom everyone usually considered stingy, was shining like a saint. In the choir loft, the merchant Silanty<span class="fn-ref">19<span class="fn-tooltip">The name Silanty is an old-fashioned Russian diminutive of the name "Silantius" (or "Silas"), which itself derives from the Latin "Silvanus", meaning "of the forest."</span></span> was reading the Great Compline.<span class="fn-ref">20<span class="fn-tooltip">Great Compline is a solemn evening service in the Eastern Orthodox Church, longer and more penitential than daily Compline. It is composed primarily of psalms and hymns and is often served on the eves of major feast days, such as Christmas. Its incorporation into the All-Night Vigil on Christmas Eve sets a tone of profound expectation, preparing the faithful through prayer and scripture for the joyful celebration of Christ's Nativity that follows at the Divine Liturgy.</span></span> Silanty's voice was hoarse and lisping — at any other time everyone grumbled about his mumbling reading — but today, on account of the great feast, they listened to him attentively and even crossed themselves. In the thick crowd, I spotted Grishka. I squeezed through to him and whispered in his ear:</p>
+
+<p class="dialogue">"I saw the Christmas star in the sky… A big, blue one!"</p>
+
+<p>Grishka glanced sideways at me and muttered:</p>
+
+<p class="dialogue">"That star's ordinary! It's called Vega. You can always see it!"<span class="fn-ref">21<span class="fn-tooltip">This remark highlights a central tension in the story between scientific fact and religious wonder. Grishka is correct from an astronomical perspective: Vega is one of the brightest stars in the night sky and is visible year-round. However, he misses the symbolic point entirely. For the narrator, the "Christmas star" is not merely a celestial body but a sign of the Nativity, a moment of divine miracle and personal faith. This exchange echoes their earlier argument about the "smell" of Christmas, again contrasting Grishka's literal, worldly understanding with the narrator's poetic and spiritual perception.</span></span></p>
+
+<p>I got angry at Grishka and shoved him in the side. Some man gave me a flick on the back of the head for misbehaving, and Grishka hissed:</p>
+
+<p class="dialogue">"You'll get it from me after the service!"</p>
+
+<p>Silanty read for a long, long time… Suddenly he paused briefly and looked around sternly. Everyone felt that something special and important was about to happen. The silence in the church grew even quieter. Silanty raised his voice and distinctly, loudly, with an unexpected clarity for him, exclaimed:</p>
+
+<p class="dialogue">"God is with us! Understand, all ye nations, and submit yourselves, for God is with us!"<span class="fn-ref">22<span class="fn-tooltip">This exclamation, sung with great power in the Eastern Orthodox Church during the Christmas service (in the Royal Hours or the Vigil), is taken from the prophecy of Isaiah (8:9-10, LXX). In the context of the story, the transformation of the reader Silanty's voice when he proclaims this shows the immense spiritual power of the phrase. It is the theological core of the Nativity: the all-powerful, transcendent God has now entered human history as a vulnerable child, Emmanuel, which literally means "God is with us."</span></span></p>
+
+<p>The choir, with all the best voices in town, picked up his scattered words brightly and resoundingly:</p>
+
+<p class="dialogue">"God is with us! Understand, all ye nations, and submit yourselves, for God is with us!"</p>
+
+<p>The priest in white vestments opened the Royal Doors, and in the altar it was white, so white from the silver brocade on the altar table and the prothesis.<span class="fn-ref">23<span class="fn-tooltip">This passage describes a moment when the sanctuary, the most sacred part of an Orthodox church, is revealed during the Christmas service. Vestments: The liturgical garments worn by the clergy. The color white is used for the feasts of Christ, symbolizing divine light and purity. Royal Doors: The central doors in the icon screen (iconostasis) that separates the nave from the altar. They are opened at key moments in the liturgy, symbolizing the opening of Heaven to humanity through Christ. Altar Table (Holy Table): The table in the center of the altar area upon which the Eucharist is celebrated. It is considered the Throne of God. Prothesis (Table of Preparation): A smaller table to the left of the altar table where the bread and wine are prepared before the Eucharist. Silver Brocade: A heavy, ornate fabric woven with silver threads, used to cover the altar and prothesis for major feasts like Christmas, creating a scene of brilliant, heavenly splendor.</span></span></p>
+
+<p class="liturgical">"Hearken, ye ends of the earth, for God is with us," the choir thundered with all the best voices in town. "Ye mighty, submit yourselves, for God is with us… Ye who dwell in the land and shadow of death, a light will shine upon you, for God is with us. For unto us a Child is born, a Son is given unto us — for God is with us… And of His peace there shall be no end — for God is with us!"</p>
+
+<p>When they finished singing this lofty hymn, they closed the Royal Doors, and Silanty began reading again. Now he read briskly and clearly, as if the song that had just faded had silvered his dull voice.</p>
+
+<p>After the exclamation made by the priest, a tuning fork<span class="fn-ref">24<span class="fn-tooltip">The tuning fork in the choir loft is a small metal instrument that, when struck, produces a precise musical pitch. In Orthodox church practice, where choirs sing a cappella (without instrumental accompaniment), it is used before a hymn to give the choir the correct starting note. Its mention here, chiming "thinly-thinly," highlights a moment of sacred order and anticipation, as the choir prepares to launch into the joyful Christmas hymn with perfect harmony.</span></span> chimed thinly-thinly in the choir loft, and the choir began singing "Thy Nativity, O Christ our God" with smiling voices.<span class="fn-ref">25<span class="fn-tooltip">"Thy Nativity, O Christ our God" is the primary and most beloved Christmas troparion (a short hymn encapsulating the feast's meaning) in the Eastern Orthodox Church. It is sung repeatedly throughout the Christmas season. The hymn proclaims the core theological meaning of the feast: that the birth of Christ has shed the "light of knowledge" (the truth of God) upon the world, ending the worship of created things (idols) and leading humanity to worship the one true Creator. Its joyful, triumphant melody and profound lyrics make it the musical heart of the Christmas celebration.</span></span></p>
+
+<p>After the Christmas service, at home, they "kindled" the Christmas tree (as mother put it) from the icon lamp flame. Our tree was decorated with candies, apples, and pink ring-shaped rolls. That evening, my Jewish friend Urka<span class="fn-ref">26<span class="fn-tooltip">"Urka" is a russified abbreviation of the Hebrew name Uriah, which means, "The Lord is my light." In the Old Testament, this was the name of Bathsheba's husband.</span></span>, who was my age, came to visit. He politely wished us a happy holiday, looked for a long time with his Old Testament eyes at the kindled tree, and said words that we all liked:</p>
+
+<p class="dialogue">"Christ was a good man!"</p>
+
+<p>Urka and I sat down under the tree on a striped rug and, using a prayer book, tracing the lines with our fingers, began to sing together "Thy Nativity, O Christ our God."</p>
+
+<p>On that illumined evening, I again dreamed of the silver blizzard, and as if through its swirling masses, wolves were walking on their hind legs, and each of them had a star, and they were all singing "Thy Nativity, O Christ our God."</p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+<!-- ══ THEOPHANY ══ -->
+<article class="story-card" id="s3">
+<div class="story-header">
+  <div class="story-number">Story Three</div>
+  <h2 class="story-title">Theophany</h2>
+</div>
+<div class="story-body">
+
+<p>On the eve of Theophany<span class="fn-ref">1<span class="fn-tooltip">In Eastern Orthodox Christianity, Theophany is the feast commemorating the baptism of Jesus Christ in the Jordan River. It celebrates the revelation of the Holy Trinity (God the Father's voice, the Son being baptized, and the Holy Spirit appearing as a dove). In Russian, the word for "Theophany" is identical to the word for "baptism".</span></span>, I got into a fight with Grishka.<span class="fn-ref">2<span class="fn-tooltip">Grishka is a familiar, diminutive form of the Russian male name Grigory (Gregory). The "-ka" suffix makes it informal, often used among friends, for children, or sometimes condescendingly. Its use in the story reflects the boys' youth and familiar relationship.</span></span> I started telling him what I'd heard from my grandfather: that at midnight tonight, an angel would descend from heaven, sanctify the water in the river, and the water itself would begin to sing: "When Thou, O Lord, wast baptized in the Jordan..."<span class="fn-ref">3<span class="fn-tooltip">"When Thou, O Lord, wast baptized in the Jordan..." — This is the opening line of the Troparion of Theophany, a primary hymn for the feast. The hymn celebrates the revelation of the Holy Trinity at Christ's baptism.</span></span> Grishka didn't believe me and called me a "tale spinner". I couldn't stand that name and shoved Grishka into a snowdrift. He responded by hitting me on the back of the head and covering me with snow. I came home in tears.</p>
+
+<p>They asked me: "What are you sniveling about?"</p>
+
+<p class="dialogue">"Gri-i-ishka doesn't believe the water will si-i-ing tonight!"</p>
+
+<p>They couldn't make sense of my words.</p>
+
+<p class="dialogue">"You sinner, you sinner," they said reproachfully, "you can't even get through Theophany without a fight!"</p>
+
+<p class="dialogue">"But I was standing up for God's cause," I justified myself.</p>
+
+<p>Today is the Great Blessing of the Waters.<span class="fn-ref">4<span class="fn-tooltip">The Great Blessing of the Waters is a central rite of the Orthodox Christian feast of Theophany (Epiphany). It commemorates the baptism of Jesus Christ in the Jordan River. During the service, a priest immerses a cross three times into a body of water (often a large container of water inside the church) while praying for the Holy Spirit to sanctify it. The water, now called "Agiasma" ("holy water"), is imbued with God's grace. As described in the story, the faithful are sprinkled with this water and take it home for spiritual protection, blessing, and healing throughout the year.</span></span> We were getting ready for church. Mother took the vessel containing the remnants of last year's holy water from the icon shelf and poured it into the stove, onto the ashes, for it is a sin to pour it out in a place where it might be trampled.<span class="fn-ref">5<span class="fn-tooltip">This illustrates the Orthodox Christian reverence for sanctified objects. Holy water (Agiasma) is not poured into a common drain or a place where it could be disrespected. Returning it to the earth via fire (the stove) or by pouring it into a flowing stream are considered proper, reverent methods of disposal.</span></span> Father asked me:</p>
+
+<p class="dialogue">"Do you know what Epiphany water is called in the ancient church? The Holy Agiasma!"<span class="fn-ref">6<span class="fn-tooltip">"Agiasma" (Greek: ἁγίασμα, "sanctified thing") is an Eastern Orthodox name for holy water. Agiasma is specifically the water sanctified during the Great Blessing of the Waters on the Feast of Theophany. It is considered a sacred substance, imbued with God's grace, and is used for blessing and spiritual protection.</span></span></p>
+
+<p>I repeated this word, which flared up like fire, and for some reason, it called to mind the recent night fire across the river and the glow over the snow-covered town. I couldn't explain to myself why the word "agiasma" merged with that fire. Was it because it, too, was fearsome?</p>
+
+<p>Snow was falling in large flakes upon the earth, blue from the Theophany frost. Mother said:</p>
+
+<p class="dialogue">"If the Lord sends snow tomorrow as well, it will be a fruitful year."<span class="fn-ref">7<span class="fn-tooltip">This reflects a traditional folk belief connecting weather on Theophany with the year's agricultural prosperity. A heavy snow cover was seen as a blessing, protecting winter crops from frost and ensuring ample moisture for the spring, thus promising a bountiful harvest.</span></span></p>
+
+<p>We arrived at the church all covered in snow and with cheeks red from the frost. The frozen windows gave off a peculiar, snowy light — exactly like the light that filters between the blocks of ice recently brought from the river to our yard.<span class="fn-ref">8<span class="fn-tooltip">Before modern mechanical refrigeration, it was common to cut large blocks of ice from frozen rivers and lakes in winter. These blocks were stored in insulated cellars or icehouses, often buried in sawdust, where they would slowly melt, providing a source of cold to preserve food and chill drinks throughout the spring and summer.</span></span></p>
+
+<p>In the middle of the church stood a large tub of water, and next to it a brocade-covered table holding the silver water-blessing bowl with three white candles at its edges. In the choir, they were reading the prophecies.<span class="fn-ref">9<span class="fn-tooltip">This describes the Orthodox service for Theophany, where passages known as prophecies are read from the Old Testament. These readings foretell Christ's baptism and redemptive work. The narrator poetically contrasts the gentle, life-giving sound of the prophecies of mercy ("like abundant forest springs") with the powerful, urgent call to repentance ("like an alarm bell of brass"). The quoted text is from Isaiah 1:16-17 and 55:1.</span></span> The words murmured like abundant forest springs, and in those places where the prophets address the people, they sounded like an alarm bell of brass: "Wash yourselves, make yourselves clean; put away the evil of your doings from before mine eyes; cease to do evil... you who are thirsty, come to the living waters..."</p>
+
+<p>There were thirteen readings from the Old Testament. And in all of them, the word "water" flowed and thundered. I imagined Old Testament prophets in wide garments, overshadowed by lightning, standing alone among stones and high mountains, with an amber biblical sky above them, and the wind blowing through their grey hair...</p>
+
+<p>During the singing of "The Voice of the Lord is upon the waters," the priest and the deacon came out from the altar to the people. The three candles on the water-blessing bowl were lit.</p>
+
+<p class="dialogue">"See, even in church they sing that God's voice is upon the waters, but Grishka doesn't believe... He'll have a hard time in the next world!"</p>
+
+<p>I looked around for Grishka to tell him this, but he was nowhere to be seen.</p>
+
+<p>The priest read the prayer: "Great art Thou, O Lord, and marvelous are Thy works... The sun sings to Thee, the moon glorifies Thee, the stars attend Thee... The light obeys Thee..."<span class="fn-ref">10<span class="fn-tooltip">This is the prayer of the great blessing of water, traditionally attributed to St. Sophronius, Patriarch of Jerusalem (7th c.): "Great art Thou, O Lord, and marvelous are Thy works, and no word will suffice to hymn Thy wonders..."</span></span></p>
+
+<p>After the prayer, the priest immersed the golden cross into the water three times, and at that moment, they began to sing the snow-and-wind-breathing Theophany troparion: "When Thou, O Lord, wast baptized in the Jordan, the worship of the Trinity was made manifest..." and everyone was sprinkled with the sanctified water.</p>
+
+<p>From the icy drops that fell on my face, it seemed to me that a great, unhoped-for happiness was now coming, and everything would be good, like on one's Name Day when your father "silvers" you with a ten-kopeck piece and mother gives you a five-kopeck piece and some gingerbread to boot.<span class="fn-ref">11<span class="fn-tooltip">In the Orthodox Christian tradition, a person's "Name Day" is the feast day of the saint they are named after, celebrated like a birthday. A kopeck is a unit of Russian currency (100 kopecks = 1 ruble). This passage describes a cherished childhood tradition: on his Name Day, the boy receives small, treasured gifts of money — a ten-kopeck piece from his father and a five-kopeck piece with gingerbread from his mother.</span></span> The liturgy ended in the center of the church before a lit lamp, and the priest said to the people:</p>
+
+<p class="dialogue">"This light signifies the Savior, who appeared in the world to enlighten all under heaven!"</p>
+
+<p>People approached the tub to get holy water. The water rang, and it reminded me of spring.</p>
+
+<p>Just like at Christmas, we kept a "fast until the stars appear".<span class="fn-ref">12<span class="fn-tooltip">This refers to a strict pious tradition observed on the eves of major feasts like Christmas and Theophany. It involves a complete abstention from food and drink throughout the entire day until the first star becomes visible in the evening sky, symbolizing the Star of Bethlehem and marking the end of the fast and the beginning of the festive meal. Until the 4th century, Christmas and Theophany were celebrated together on the same day, so the fast before Theophany is essentially the last day of that ancient fast that came prior to the combined Theophany/Nativity feast day.</span></span> Having waited for evening to fall, we sat down for the meal — the supper. We ate baked potatoes with salt, sour cabbage which still had bits of frost in it (it was kept in the cold cellar), cucumbers smelling of dill, and sweet kasha<span class="fn-ref">13<span class="fn-tooltip">In this context, "kasha" refers to a porridge or dish made from grains, most commonly buckwheat in Russia. "Sweet kasha" is a festive version prepared for a holiday meal like the one after the Theophany fast. As described, it was sweetened with honey, making it a special treat.</span></span> seasoned with honey. During supper, the bell-ringing for the Jordan All-Night Vigil began.<span class="fn-ref">14<span class="fn-tooltip">The Jordan all-night vigil is a special, lengthy, Orthodox church service held on the eve of Theophany. It consists of prayers, hymns, and scripture readings dedicated to the baptism of Jesus in the Jordan River. The name "Jordan" connects the service to the feast's central theme, and "all-night" signifies its traditional, extensive duration, though in practice it may not last the entire night.</span></span> It started in the same way as the Christmas service — with Great Compline.<span class="fn-ref">15<span class="fn-tooltip">Great Compline is a solemn Orthodox Christian evening service. It is composed of psalms, hymns, and prayers asking for God's protection through the night. It is used on the eves of major feasts, such as Theophany and Christmas, as part of the All-Night Vigil.</span></span> They sang the song: "Let all creation rejoice today, for Christ has appeared in the Jordan," and they read the Gospel about the descent of the Spirit of God upon the earth.</p>
+
+<p>After the All-Night Vigil, we made the sign of the cross with charcoal on the doors, doorframes, and window frames — as a sign of protecting the house from the devil's wiles.<span class="fn-ref">16<span class="fn-tooltip">This describes an Orthodox Christian custom sometimes practiced on the Eve of Theophany. After the blessing of the holy water, believers use charcoal to inscribe a cross above doorways and on window frames. This act is a prayerful ritual of consecration, to sanctify the home and spiritually guard it for the coming year.</span></span> Mother said that on this evening, in the village, they collect snow from the fields and throw it into the well, to make it sweet and abundant<span class="fn-ref">17<span class="fn-tooltip">In pre-revolutionary Russian villages, throwing snow into a well was a traditional folk practice on the Eve of Theophany. It was believed that snow, having fallen on a holy day, carried a special blessing. Adding it to the well was a symbolic act intended to transfer this sanctity to the water source, ensuring it would be both plentiful and taste pure or "sweet" throughout the year.</span></span>, and the girls "glorify the stars."<span class="fn-ref">18<span class="fn-tooltip">To "glorify the stars" was a folk custom where young women, carrying a pie as an offering, would go outdoors on Theophany Eve and sing traditional verses to the stars. In these songs, they addressed the stars as beautiful, powerful beings, asking them to act as celestial matchmakers and send suitors for the "baptized world," that is, for the young Christian women of the village.</span></span> They come out of the house into the yard. The eldest among them carries a pie, as an offering<span class="fn-ref">19<span class="fn-tooltip">This folk ritual, while using the language of an "offering to the stars", is not a form of sacrificial worship, due to God alone. Instead, it is best understood as a form of folk poetry and symbolic custom. The pie is a prop in a traditional marriage divination or blessing ceremony. The girls are using a vivid, inherited, folk tradition to express their hopes for marriage, personifying the stars as celestial matchmakers in a way that reflects pre-Christian Slavic traditions syncretized with the Christian feast.</span></span> to the stars, and they recite rapidly, in a sing-song voice:</p>
+
+<p class="dialogue">"O stars, stars, little stars! You are all children of one mother, fair-complexioned and comely. Send matchmakers throughout the baptized world, arrange a wedding for the baptized world, for the guest-filled feast, for the dear, lovely maiden."</p>
+
+<p>I listened and thought: how wonderful it would be to run through the snow to the river now and listen for the midnight water to sing...</p>
+
+<p>Mother is making the dough for the pie, having poured a spoonful of holy water into it<span class="fn-ref">20<span class="fn-tooltip">Adding a spoonful of holy water to the recipe is done to sanctify the food, asking God's blessing upon it and upon those who will partake of it. It is a tangible way of incorporating the grace of the feast into daily life.</span></span>, and father is reading the Bible. Outside the window, the wind howls in the birch trees and the Theophany frost roams, crunching under felt boots. Tomorrow, on the tear-off calendar, the red number 6 will appear<span class="fn-ref">21<span class="fn-tooltip">The narrator is noting that the next day, January 6th on the Julian calendar (which corresponds to January 19th on the modern Gregorian calendar), is the feast of Theophany.</span></span>, and beneath it will be written the word that resonates with the frosty water: "Theophany." Tomorrow we go to the Jordan!<span class="fn-ref">22<span class="fn-tooltip">The Jordan here refers to the specially prepared ice-hole, cut in the shape of a cross in a frozen river or pond, where the Great Blessing of the Waters is performed on Theophany — in memory of Christ's baptism in the Jordan River.</span></span></p>
+
+</div>
+<div class="ornament-divider">☩ ☩ ☩</div>
+</article>
+
+</div><!-- .page-wrap -->
+
+<footer class="bio-section">
+  <div class="bio-inner">
+    <div class="bio-label">About the Author</div>
+    <h2 class="bio-title">Vasily Akimovich Nikiforov-Volgin<br><span style="font-size:0.7em; font-weight:400;">1900 – 1941</span></h2>
+    <div class="bio-rule"><span>☩</span></div>
+    <div class="bio-text">
+      <p>Vasily Akimovich Nikiforov-Volgin, a unique Orthodox Christian writer, was born on December 24, 1900 (January 6, 1901, New Style) in the village of Markushi, Kalyazinsky Uyezd, in the Tver Province, on the Volga River, into a deeply religious peasant family. His father was a cobbler. Soon after his birth, the Nikiforov family moved to Narva (which was then part of the St. Petersburg Governorate).</p>
+    </div>
+    <button class="bio-expand-btn" id="bioBtn" onclick="toggleBio()" aria-expanded="false" aria-controls="bioFull">
+      <span id="bioText">Read full biography</span>
+      <span class="bio-expand-arrow">&#8964;</span>
+    </button>
+    <div id="bioFull" hidden>
+      <div class="bio-text">
+        <p>After 1920, according to the Treaty of Tartu, the territory on the right bank of the Narova River (Narva with the Prinarovye region) was transferred to the Republic of Estonia. Consequently, the writer's family became involuntary emigrants, cut off from their dearly beloved Russian homeland. However, in the 1920s and 30s, the old Russian way of life, with its customs and traditions, order and practices, was still preserved there. It was this life that Nikiforov-Volgin described in his sketches and stories.</p>
+        <p>The future writer only managed to complete his studies at the parish school of the St. Vladimir Brotherhood. However, it was a good school. The young man engaged in serious self-education extensively. His passion for books and reading manifested itself in early childhood. Deeply religious from childhood and possessing a high-pitched voice with clear, expressive diction, he became a precentor<span style="font-size:0.7em; vertical-align:super; color:var(--gold-light);">*</span> at the Holy Transfiguration Cathedral in Narva and remained one until the spring of 1932. This is the source of his excellent knowledge of church life and the clergy's way of life, which is evident in his works.</p>
+        <p>According to the recollections of one of his friends, Vasily loved to take a notebook and pencil and sneak into a secluded corner of the church watchhouse before the service began, listening to worshippers and people who just came in to warm up, and writing down what they were talking about among themselves. Their poignant remarks and folk expressions later found their way into his stories.</p>
+        <p>In 1923, he began his regular literary and journalistic activities. In 1927, he received his first award for writing: at a competition for young authors organized by the oldest Estonian literary association — The Literary Circle in Tallinn — first prize was awarded to V. Nikiforov-Volgin's story, "Bowing to the Ground." He usually signed his publications with the pseudonym Vasily Volgin — in memory of the great Russian river on which his native village was located. Over time, he began signing his name as V. Nikiforov-Volgin, combining his surname with his pseudonym.</p>
+        <p>By the mid-1930s, Nikiforov-Volgin was already known in the literary circles of the Russian Diaspora, corresponding with I. Shmelev, A. Amfiteatrov, B. Zaitsev, and others. In early 1936, he moved to Tallinn, becoming a home tutor and educator. Among his pupils was Alexy (Ridiger), the future Patriarch of Moscow and All Russia, Alexy II.</p>
+        <p>Two collections of his stories were published — "The Earth Celebrates Her Name Day" (1937) and "The Pilgrim's Staff" (1938), which were met with positive reviews in Russian publications abroad.</p>
+        <p>According to the recollections of those who knew him, Vasily Nikiforov was an exceptionally kind, warm-hearted, and responsive person. His sisters told how once, in severe frost, Vasily gave his hat and winter coat to a beggar on the street, justifying himself at home by saying: "I felt sorry for the man — he was freezing, and I'll manage somehow…"</p>
+        <p>Nikiforov-Volgin was a deeply religious man, and this primarily defined his worldview and the character of all his work. Memoir-stories about childhood constituted a significant part of his work. He depicted scenes of church services, church holidays, and a boy's communication with "holy people." Nikiforov-Volgin depicts this world of the church and believers — so familiar to him — accurately, authentically, and with love. He manages to recreate all the minutiae of this world in his works, including everyday details, and at the same time convey its special atmosphere, its spirit, its hidden beauty.</p>
+        <p>Regarding his stories, he wrote in a letter to a friend: "There is no fiction in my story. I had to go through and experience all this. The names of the characters are changed. Some of them are no longer with us."</p>
+        <p>On May 24, 1941, the writer was arrested and transported to the city of Kirov. On December 14, 1941, he was shot for "publishing books, pamphlets, and plays of a slanderous, anti-Soviet nature." He was rehabilitated in 1991.</p>
+      </div>
+      <div class="bio-fn">
+        <p><span style="color:var(--gold-light);font-family:'Forum',serif;font-size:.72rem;">*</span> "Precentor" is an approximate translation of the Russian term псаломщик (psalomshchik). In 19th and early 20th century Russia, this minor cleric was the musical and administrative mainstay of the parish. He would regulate the singing and reading in the choir, coordinate the order of worship, and also functioned as the parish clerk, maintaining all church records and handling the parish's official correspondence.</p>
+        <p><span style="color:var(--gold-light);font-family:'Forum',serif;font-size:.72rem;">**</span> For more detailed information about the writer's family and genealogy, please refer to Igor Budkov's article, "The Genealogy of Writer Vasily Nikiforov-Volgin" at <a href="https://pravoslavie.ru/167348.html" target="_blank" rel="noopener" style="color:var(--frost-light)">pravoslavie.ru/167348.html</a> (in Russian).</p>
+      </div>
+    </div>
+    <div class="copyright">Vasily Nikiforov-Volgin · Winter and Christmastide · Memories of Childhood</div>
+  </div>
+</footer>
+
+<!-- Мобильная панель сносок -->
+<div id="fnOverlay" class="fn-sheet-overlay" onclick="closeSheet()">
+  <div class="fn-sheet" onclick="event.stopPropagation()">
+    <div class="fn-sheet-close"></div>
+    <div class="fn-sheet-num" id="fnNum"></div>
+    <div class="fn-sheet-text" id="fnText"></div>
+  </div>
+</div>
+
+<!-- ── Кнопка «К оглавлению» ── -->
+<a class="to-toc-btn" id="toTocBtn" href="#toc" aria-label="Go to Contents">
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5 11V2M2 6l4.5-4.5L11 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Contents
+</a>
+<script>
+// ── Кнопка "К оглавлению" ──
+(function(){
+  var btn = document.getElementById('toTocBtn');
+  var toc = document.getElementById('toc');
+  if (!btn || !toc) return;
+  var tocBottom = 0;
+  function update(){
+    tocBottom = toc.getBoundingClientRect().bottom + window.scrollY + 120;
+    btn.classList.toggle('visible', window.scrollY > tocBottom);
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+
+function toggleBio(){
+  const btn=document.getElementById('bioBtn');
+  const full=document.getElementById('bioFull');
+  const open=btn.getAttribute('aria-expanded')==='true';
+  full.hidden=open;btn.setAttribute('aria-expanded',!open);
+  document.getElementById('bioText').textContent=open?'Read full biography':'Collapse biography';
+}
+const isTouch=()=>('ontouchstart' in window)||(navigator.maxTouchPoints>0);
+function openSheet(num,text){
+  document.getElementById('fnNum').textContent='Note '+num;
+  document.getElementById('fnText').textContent=text;
+  document.getElementById('fnOverlay').classList.add('active');
+  document.body.style.overflow='hidden';
+  var tb=document.getElementById('toTocBtn');if(tb)tb.style.opacity='0';
+}
+function closeSheet(){
+  document.getElementById('fnOverlay').classList.remove('active');
+  document.body.style.overflow='';
+  var tb=document.getElementById('toTocBtn');if(tb)tb.style.opacity='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+document.querySelectorAll('.fn-ref').forEach(ref=>{
+  const tip=ref.querySelector('.fn-tooltip');
+  const text=tip?tip.textContent.trim():'';
+  const num=ref.childNodes[0]?ref.childNodes[0].nodeValue.trim():'';
+  ref.setAttribute('tabindex','0');
+  if(isTouch()){
+    ref.classList.add('touch-device');
+    ref.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openSheet(num,text);});
+  } else {
+    ref.addEventListener('mouseenter',()=>{
+      const r=ref.getBoundingClientRect();
+      if(r.left>window.innerWidth*.6)ref.classList.add('fn-right');
+      else ref.classList.remove('fn-right');
+    });
+  }
+  ref.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSheet(num,text);}});
+});
+
+// ═════════════════════ Mobile section-nav ═════════════════════
+function toggleSectionNav(btn) {
+  var nav = btn.closest('.section-nav');
+  var open = !nav.classList.contains('is-open');
+  nav.classList.toggle('is-open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+// Close the menu on outside click
+document.addEventListener('click', function (e) {
+  var open = document.querySelector('.section-nav.is-open');
+  if (open && !open.contains(e.target)) {
+    open.classList.remove('is-open');
+    var btn = open.querySelector('.section-nav-trigger');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+}, true);
+</script>
+</body>
+</html>

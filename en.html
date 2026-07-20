@@ -19,11 +19,15 @@ function orthodoxEaster(year) {
   var today = new Date(); today.setHours(0,0,0,0);
   var pascha = orthodoxEaster(today.getFullYear()); pascha.setHours(0,0,0,0);
   var diff = Math.round((today - pascha) / 86400000);
+  // Great Lent: from Clean Monday (Pascha-48) to the eve of Pascha — stay on this page
+  if (diff >= -48 && diff <= -1) return;
   if (diff >= 0 && diff <= 49) { window.location.replace('pascha_red_en.html'); return; }
   // Day after Trinity (Pascha+50) … 30 November → The Year of the Lord
   var dec1UTC = Date.UTC(today.getFullYear(), 11, 1);
   var todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
-  if (diff >= 50 && todayUTC < dec1UTC) window.location.replace('leto_en.html');
+  if (diff >= 50 && todayUTC < dec1UTC) { window.location.replace('leto_en.html'); return; }
+  // Everything else: December 1 … the eve of the next cycle's Clean Monday → Winter and Christmastide
+  window.location.replace('zima_en.html');
 })();
 </script>
 
@@ -721,7 +725,7 @@ function orthodoxEaster(year) {
     <span>|</span>
     <a href="leto_en.html" onclick="sessionStorage.setItem('manualNav','1')">The Year of the Lord</a>
     <span>|</span>
-    <a href="#" style="opacity:.3;pointer-events:none">Christmastide</a>
+    <a href="zima_en.html" onclick="sessionStorage.setItem('manualNav','1')">Winter and Christmastide</a>
   </span></nav>
   
   <div class="lang-switcher">
