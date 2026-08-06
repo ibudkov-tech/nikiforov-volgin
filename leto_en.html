@@ -110,7 +110,7 @@ body{
 .toc-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--green-light);margin-left:auto;flex-shrink:0;padding-left:16px}
 .toc-audio-btn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--green-light);background:none;color:var(--green);cursor:pointer;flex-shrink:0;margin-left:0;margin-right:4px;transition:background .2s,color .2s;font-size:.6rem;line-height:1;padding:0 0 0 2px}
 .toc-audio-btn:hover{background:var(--green);color:#fff}
-.toc-audio-btn.playing{background:var(--red);border-color:var(--red);color:#fff}
+.toc-audio-btn.playing{background:var(--green-light);border-color:var(--green-light);color:#fff}
 
 /* ── STORY CARD ── */
 .story-card{
@@ -133,7 +133,7 @@ body{
 .story-audio-playbtn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:none;background:var(--green);color:#fff;cursor:pointer;flex-shrink:0;font-size:.8rem;transition:background .2s,transform .1s;padding:0 0 0 2px}
 .story-audio-playbtn:hover{background:var(--green-light)}
 .story-audio-playbtn:active{transform:scale(.95)}
-.story-audio-playbtn.playing{background:var(--red)}
+.story-audio-playbtn.playing{background:var(--green-light)}
 .story-audio-progress{flex:1;display:flex;flex-direction:column;gap:4px}
 .story-audio-bar{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:rgba(90,122,58,0.2);border-radius:2px;cursor:pointer;outline:none}
 .story-audio-bar::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:var(--green);cursor:pointer}
@@ -332,7 +332,7 @@ body{
 <nav class="toc-section" id="toc" aria-label="Contents">
   <div class="toc-title">Contents</div>
   <ol class="toc-list">
-    <li><span class="toc-name-group"><a href="#s1">The Choir Singer</a></span><span class="toc-subtitle">At the kliros</span></li>
+    <li><span class="toc-name-group"><a href="#s1">The Choir Singer</a><button class="toc-audio-btn" onclick="tocPlay(this,'audio/The_Choir_Singer1.mp3')" title="Listen">▶</button></span><span class="toc-subtitle">At the kliros</span></li>
     <li><span class="toc-name-group"><a href="#s2">Near the Holy Altar</a></span><span class="toc-subtitle">In the sanctuary</span></li>
     <li><span class="toc-name-group"><a href="#s3">The Sacred Mystery</a></span><span class="toc-subtitle">The Proskomedia</span></li>
     <li><span class="toc-name-group"><a href="#s4">Apples</a></span><span class="toc-subtitle">The Transfiguration of the Lord</span></li>
@@ -347,6 +347,17 @@ body{
 <div class="story-header">
   <div class="story-number">Story One</div>
   <h2 class="story-title">The Choir Singer</h2>
+</div>
+<div class="story-audio-wrap" id="player-s1">
+  <div class="story-audio-label">Audio version · <span>read by Oleg Barinboim</span></div>
+  <div class="story-audio-controls">
+    <button class="story-audio-playbtn" onclick="storyPlay(this,'s1')" id="playbtn-s1" title="Play">▶</button>
+    <div class="story-audio-progress">
+      <input class="story-audio-bar" type="range" min="0" max="100" value="0" id="bar-s1" oninput="storySeek('s1',this.value)">
+      <span class="story-audio-time" id="time-s1">0:00 / 0:00</span>
+    </div>
+  </div>
+  <audio id="aud-s1" src="audio/The_Choir_Singer1.mp3" preload="none"></audio>
 </div>
 <div class="story-body">
 
@@ -1144,6 +1155,90 @@ document.querySelectorAll('.fn-ref').forEach(ref=>{
   ref.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSheet(num,text);}});
 });
 
+// ═════════════════════ Audio playback ═════════════════════
+let tocAudio = null, tocBtn = null;
+
+function tocPlay(btn, src) {
+  if (tocAudio && tocBtn && tocBtn !== btn) {
+    tocAudio.pause(); tocAudio.currentTime = 0;
+    tocBtn.textContent = '▶'; tocBtn.classList.remove('playing');
+  }
+  if (!tocAudio || tocBtn !== btn) {
+    tocAudio = new Audio(src); tocBtn = btn;
+    tocAudio.addEventListener('ended', () => { btn.textContent = '▶'; btn.classList.remove('playing'); });
+  }
+  if (tocAudio.paused) {
+    if (currentStory) pauseStory(currentStory);
+    tocAudio.play();
+    btn.textContent = '⏸'; btn.classList.add('playing');
+  } else {
+    tocAudio.pause();
+    btn.textContent = '▶'; btn.classList.remove('playing');
+  }
+}
+
+// ── Story full player ──
+let currentStory = null;
+const storyAudios = {};
+
+function getAud(sid) {
+  if (!storyAudios[sid]) {
+    const el = document.getElementById('aud-' + sid);
+    storyAudios[sid] = el;
+    el.addEventListener('timeupdate', () => updateBar(sid));
+    el.addEventListener('ended', () => {
+      document.getElementById('playbtn-' + sid).textContent = '▶';
+      document.getElementById('playbtn-' + sid).classList.remove('playing');
+      currentStory = null;
+    });
+    el.addEventListener('loadedmetadata', () => updateBar(sid));
+  }
+  return storyAudios[sid];
+}
+
+function pauseStory(sid) {
+  const aud = getAud(sid);
+  aud.pause();
+  const btn = document.getElementById('playbtn-' + sid);
+  if (btn) { btn.textContent = '▶'; btn.classList.remove('playing'); }
+}
+
+function storyPlay(btn, sid) {
+  if (tocAudio && !tocAudio.paused) {
+    tocAudio.pause(); tocAudio.currentTime = 0;
+    if (tocBtn) { tocBtn.textContent = '▶'; tocBtn.classList.remove('playing'); }
+  }
+  if (currentStory && currentStory !== sid) pauseStory(currentStory);
+  const aud = getAud(sid);
+  if (aud.paused) {
+    aud.play();
+    btn.textContent = '⏸'; btn.classList.add('playing');
+    currentStory = sid;
+  } else {
+    aud.pause();
+    btn.textContent = '▶'; btn.classList.remove('playing');
+    currentStory = null;
+  }
+}
+
+function storySeek(sid, val) {
+  const aud = getAud(sid);
+  if (aud.duration) aud.currentTime = aud.duration * val / 100;
+}
+
+function updateBar(sid) {
+  const aud = getAud(sid);
+  const bar = document.getElementById('bar-' + sid);
+  const time = document.getElementById('time-' + sid);
+  if (bar && aud.duration) bar.value = (aud.currentTime / aud.duration) * 100;
+  if (time) time.textContent = fmt(aud.currentTime) + ' / ' + fmt(aud.duration);
+}
+
+function fmt(s) {
+  if (!s || isNaN(s)) return '0:00';
+  const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return m + ':' + String(sec).padStart(2, '0');
+}
 
 // ═════════════════════ Mobile section-nav ═════════════════════
 function toggleSectionNav(btn) {
